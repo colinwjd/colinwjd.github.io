@@ -1,0 +1,810 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="os,process,thread," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="从零到无穷大" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="在进入正题之前，先问一句，什么是操作系统，它和普通的应用程序有什么区别？这个问题虽然不难，但是它和我今天想要讲的内容密切相关。下面我就说说我的理解吧，我认为操作系统是一种抽象，这种抽象是人们经过长时间的实践和归纳提炼出来的，在没有操作系统的时候，人们仍然有办法制作程序并在机器上运行，但是人们必须针对硬件编程，这种方式十分繁琐而且有大量的重复劳动。人们慢慢发现，可以把程序对硬件资源的使用抽象出来，并">
+<meta property="og:type" content="article">
+<meta property="og:title" content="聊聊操作系统">
+<meta property="og:url" content="http://wjd1218.github.io/2015/03/29/TalkAboutOperatingSystem/index.html">
+<meta property="og:site_name" content="从零到无穷大">
+<meta property="og:description" content="在进入正题之前，先问一句，什么是操作系统，它和普通的应用程序有什么区别？这个问题虽然不难，但是它和我今天想要讲的内容密切相关。下面我就说说我的理解吧，我认为操作系统是一种抽象，这种抽象是人们经过长时间的实践和归纳提炼出来的，在没有操作系统的时候，人们仍然有办法制作程序并在机器上运行，但是人们必须针对硬件编程，这种方式十分繁琐而且有大量的重复劳动。人们慢慢发现，可以把程序对硬件资源的使用抽象出来，并">
+<meta property="og:updated_time" content="2015-06-18T07:59:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="聊聊操作系统">
+<meta name="twitter:description" content="在进入正题之前，先问一句，什么是操作系统，它和普通的应用程序有什么区别？这个问题虽然不难，但是它和我今天想要讲的内容密切相关。下面我就说说我的理解吧，我认为操作系统是一种抽象，这种抽象是人们经过长时间的实践和归纳提炼出来的，在没有操作系统的时候，人们仍然有办法制作程序并在机器上运行，但是人们必须针对硬件编程，这种方式十分繁琐而且有大量的重复劳动。人们慢慢发现，可以把程序对硬件资源的使用抽象出来，并">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 聊聊操作系统 | 从零到无穷大 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">从零到无穷大</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">辛苦敲下的一行行代码不知能否改变这个世界，而我的世界，不过就是你的心！</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                聊聊操作系统
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-03-29T14:42:56+08:00" content="2015-03-29">
+              2015-03-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/OS/" itemprop="url" rel="index">
+                    <span itemprop="name">OS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/03/29/TalkAboutOperatingSystem/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/29/TalkAboutOperatingSystem/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在进入正题之前，先问一句，什么是操作系统，它和普通的应用程序有什么区别？这个问题虽然不难，但是它和我今天想要讲的内容密切相关。下面我就说说我的理解吧，我认为操作系统是一种抽象，这种抽象是人们经过长时间的实践和归纳提炼出来的，在没有操作系统的时候，人们仍然有办法制作程序并在机器上运行，但是人们必须针对硬件编程，这种方式十分繁琐而且有大量的重复劳动。人们慢慢发现，可以把程序对硬件资源的使用抽象出来，并提供相应的编程接口，这样程序就不需要直接面向硬件编写。这样不仅简化了程序的编写，而且使程序移植性变得更好。这种抽象的的结果就是出现了操作系统，它提供了对处理器的抽象、对存储器的抽象等等。这样，我们的应用程序就可以只面向操作系统来编写，应用程序运行于操作系统上，操作系统便成了承载这些应用程序的<strong>平台</strong>。可是随着计算机的发展，这个平台也出现了许多种类，面向一种平台编写的程序便很难在其他的平台上运行，这也变成了程序可移植性的巨大阻碍，于是又产生了类似Java虚拟机（JVM）这种更高级的抽象，程序只需要面向虚拟机编写，而不需要考虑具体运行的平台，Java语言也因此流行。如果能够理解操作系统对硬件进行抽象的原理，我想即使不需要我们自己实现一个操作系统，这也会使我们对应用程序的编写产生莫大的启发。接下来我就聊聊操作系统中几个基本的概念和原理吧。</p>
+<h2 id="进程和线程">进程和线程</h2><p>进程也是一种抽象，它是操作系统对程序执行实例的抽象。进程是操作系统进行资源分配的基本单位，一个程序至少会有一个进程，操作系统会为每一个进程分配独立的内存空间，而且一个进程无法访问另一个进程的地址空间，如果需要获取其他进程中的资源，就要通过进程间通信来完成，比如通过管道、文件、套接字等。每一个进程都含有一个进程控制块（PCB），它可以唯一标识一个进程，操作系统也根据PCB来对进程进行调度。相比于进程，线程就要轻量很多了，进程可以说是线程的容器，线程是进程中的执行实体，一个进程中至少包含一个线程，CPU资源最终还是分配到了线程上。在同一个进程中的线程共享分配给该进程的资源，但每个线程都有自己的寄存器和栈。举个例子来说，要完成一个做饭任务，首先要分配一个厨房，这就好比创建了一个进程并为之分配了资源，厨房中有的人管洗菜切菜、有的人管烧水、有的人管炒菜，有的人管煮饭，其中每一个具体的工作就好比是一个工作线程，这些线程共享厨房这个资源，当切菜的人把菜切好后，炒菜的人就能看到，因为他们在同一间屋子里。但是每个线程也都有自己的一小块资源（寄存器和栈），这就好比切菜的人使用的切菜板不能让烧水的人占用。但是这些还不能保证做饭这个任务能正常的完成，比如厨房中每个人做的具体任务是有顺序要求的，炒菜的人必须等洗菜的人把菜洗好才能继续，他不能把还没洗的菜给炒了，所以线程之间需要进行<strong>同步</strong>。同时，有些必要的资源也不能多人共享，比如厕所，炒菜的人去厕所的时候，其他人都要等他出来才能进去，所以线程之间还需要进行<strong>互斥</strong>。当满足这些规则的时候，做饭这个任务才能有条不紊的完成，而不会出什么差错。其实很多时候把抽象的东西和现实世界中的现象进行类比，很多让人困惑的东西也就容易理解了。</p>
+<h3 id="进程调度算法">进程调度算法</h3><p>上文中也提到了进程控制块（PCB），其中存储了关于该进程的信息，其中就包括进程的调度信息。进程被提交给操作系统之后并不会直接就进入运行状态，它们首先会被放入一个叫做就绪队列的数据结构中，表示这些进程已经准备好了，可以运行它们。<strong>进程调度就是从就绪队列中选择合适的进程分配处理机，使它进入运行状态。</strong>下面就介绍几种常见的进程调度算法。</p>
+<ol>
+<li><strong>先来先服务调度算法</strong>：顾名思义，先进入就绪队列的进程先得到处理机，进入运行状态，直到运行结束或阻塞，才放弃处理机。</li>
+<li><strong>短作业优先调度算法</strong>：在就绪队列中选择一个估计运行时间最短的进程，分配处理机使之进入运行状态，直到运行完成或阻塞，才放弃处理机器。</li>
+<li><strong>基于优先级的非抢占式调度算法</strong>：在就绪队列中选择优先级最高的进程，为之分配处理机，然后让该进程运行直到结束或阻塞，才放弃处理机。</li>
+<li><strong>基于优先级的抢占式调度算法</strong>：在就绪队列中选择优先级最高的进程，分配处理机使之执行，但是在它运行过程中，就绪队列中出现了优先级更高的进程，该调度算法会将当前进程停止，并把处理机分配给更高优先权的进程。因此该算法能更好的满足紧急作业的需求，常用于实时系统中。</li>
+<li><strong>高响应比优先调度算法</strong>：响应比=响应时间/要求服务时间=（等待时间+要求服务时间）/要求服务时间。所以，进程等待的时间越长，要求服务的时间越短，它的响应比就越高。这样既考虑了进程等待的时间，又照顾了运行时间短的进程，是较为公平的调度算法。但是在调度之前需要先对进程的响应比进行计算，这会增加系统的开销。</li>
+<li><strong>时间片轮转调度算法</strong>：每次调度时，把处理机分配给队首进程，并令其执行一个时间片，当时间片用完时，调度程序便停止该进程的执行，并将它加入就绪队列的末尾。然后把处理机分配给就绪队列中新的队首进程。</li>
+<li><strong>多级反馈队列调度算法</strong>：设置多个就绪队列，为每个队列赋予不同的优先级，并且优先级越高的队列中，为每个进程分配的时间片越小。当一个进程进入内存后，首先将它放入优先级最高的队列末尾，按照先来先服务算法等待调度，当轮到它执行时，如果它在规定的一个时间片内还没有运行结束，就把它加入第二级的就绪队列末尾，同样按照FCFS算法等待调度，以此类推。仅当高优先级的队列为空时，低优先级队列中的进程才被调度执行。并且高优先级队列中的进程会抢占低优先级队列中正在执行进程的处理机。</li>
+</ol>
+<h2 id="分页与页面置换算法">分页与页面置换算法</h2><p>我们知道通过分页，可以使得一个数据结构一部分存储在内存中，另一部分则保存在磁盘中。这样当内存中没有需要的页面时，就需要把磁盘中的页面放入内存并在内存中选择一个页面淘汰掉。而页面置换算法就是要确定淘汰掉哪一个页面的算法。</p>
+<ol>
+<li><strong>最佳置换算法</strong>：内存中的每个页面都可以用在该页面被首次访问前需要执行的指令数进行标记，把标记最大的页面置换出去。但是由于当发生缺页时，操作系统无法知道各个页面下一次是在什么时候被访问，所以该算法是无法实现的，不过它可以作为衡量其他算法的标准。</li>
+<li><strong>先进先出置换算法</strong>：每次发生缺页时，总是淘汰最早进入内存的页面。</li>
+<li><strong>最近最久未使用（LRU）置换算法</strong>：当发生缺页时，淘汰掉最近一段时间中最长时间没有被使用过的页面。</li>
+<li><strong>最近最少使用置换算法</strong>：缺页时，淘汰掉最近一段时间使用次数最少的页面。</li>
+</ol>
+<h2 id="总结">总结</h2><p>学操作系统的意义是什么，我觉得操作系统是一种方法学，我们在写程序时遇到的很多问题，操作系统都给出了可供参考的很优秀的解决方案。同时，理解操作系统对硬件、对应用程序进行抽象的思想，我想也会对自身大有益处。然而事实总是你学的越多，就越发现自己懂的越少，所以学无止境，加油吧，少年！</p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/os/" rel="tag">#os</a>
+          
+            <a href="/tags/process/" rel="tag">#process</a>
+          
+            <a href="/tags/thread/" rel="tag">#thread</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/03/25/TheMySQLDatabaseEngine/" rel="next" title="MySQL数据库引擎详解">
+                <i class="fa fa-chevron-left"></i> MySQL数据库引擎详解
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/03/31/SomeInterestingProblemsAndItsSolution/" rel="prev" title="几个有趣的问题及其解法">
+                几个有趣的问题及其解法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/03/29/TalkAboutOperatingSystem/"
+     data-title="聊聊操作系统"
+     data-content=""
+     data-url="http://wjd1218.github.io/2015/03/29/TalkAboutOperatingSystem/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/03/29/TalkAboutOperatingSystem/"
+           data-title="聊聊操作系统" data-url="http://wjd1218.github.io/2015/03/29/TalkAboutOperatingSystem/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Colin Wang" />
+          <p class="site-author-name" itemprop="name">Colin Wang</p>
+          <p class="site-description motion-element" itemprop="description">生活纪录 | 技术分享</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">50</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-book"></i> Zhihu
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程和线程"><span class="nav-number">1.</span> <span class="nav-text">进程和线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程调度算法"><span class="nav-number">1.1.</span> <span class="nav-text">进程调度算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分页与页面置换算法"><span class="nav-number">2.</span> <span class="nav-text">分页与页面置换算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Colin Wang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"wjd1218"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>

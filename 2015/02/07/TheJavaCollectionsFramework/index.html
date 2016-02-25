@@ -1,0 +1,877 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="collection,java," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="从零到无穷大" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="先来看一张Java集合的类图。本来是想自己画一个的，但是在网上看到了这个图之后就觉得没有再重新画一个的必要了。这个图相对网上其他一些图来说更全面一些。
+
+下面我们根据这个图来逐一分析具体的常用集合类。
+
+Iterator接口：这个接口定义了从集合中获取元素和判断集合中是否还有元素的方法。下图中是jdk1.8中Iterator接口申明的两个方法
+
+
+通过hasNext()方法可以判断集合中是否还有剩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java集合框架">
+<meta property="og:url" content="http://wjd1218.github.io/2015/02/07/TheJavaCollectionsFramework/index.html">
+<meta property="og:site_name" content="从零到无穷大">
+<meta property="og:description" content="先来看一张Java集合的类图。本来是想自己画一个的，但是在网上看到了这个图之后就觉得没有再重新画一个的必要了。这个图相对网上其他一些图来说更全面一些。
+
+下面我们根据这个图来逐一分析具体的常用集合类。
+
+Iterator接口：这个接口定义了从集合中获取元素和判断集合中是否还有元素的方法。下图中是jdk1.8中Iterator接口申明的两个方法
+
+
+通过hasNext()方法可以判断集合中是否还有剩">
+<meta property="og:image" content="http://wjd1218.qiniudn.com/JavaCollection.jpg">
+<meta property="og:image" content="http://wjd1218.qiniudn.com/IteratorMethod.png">
+<meta property="og:image" content="http://wjd1218.qiniudn.com/IteratorMethodNew.png">
+<meta property="og:image" content="http://wjd1218.qiniudn.com/LinkedList$Node.png">
+<meta property="og:image" content="http://wjd1218.qiniudn.com/HashSet.png">
+<meta property="og:image" content="http://wjd1218.qiniudn.com/HashSetAdd.png">
+<meta property="og:image" content="http://wjd1218.qiniudn.com/TreeMap.png">
+<meta property="og:image" content="http://wjd1218.qiniudn.com/hash.png">
+<meta property="og:updated_time" content="2015-06-18T08:00:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java集合框架">
+<meta name="twitter:description" content="先来看一张Java集合的类图。本来是想自己画一个的，但是在网上看到了这个图之后就觉得没有再重新画一个的必要了。这个图相对网上其他一些图来说更全面一些。
+
+下面我们根据这个图来逐一分析具体的常用集合类。
+
+Iterator接口：这个接口定义了从集合中获取元素和判断集合中是否还有元素的方法。下图中是jdk1.8中Iterator接口申明的两个方法
+
+
+通过hasNext()方法可以判断集合中是否还有剩">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Java集合框架 | 从零到无穷大 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">从零到无穷大</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">辛苦敲下的一行行代码不知能否改变这个世界，而我的世界，不过就是你的心！</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Java集合框架
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-02-07T21:54:24+08:00" content="2015-02-07">
+              2015-02-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/02/07/TheJavaCollectionsFramework/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/02/07/TheJavaCollectionsFramework/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>先来看一张Java集合的类图。本来是想自己画一个的，但是在网上看到了这个图之后就觉得没有再重新画一个的必要了。这个图相对网上其他一些图来说更全面一些。</p>
+<p><img src="http://wjd1218.qiniudn.com/JavaCollection.jpg" alt="Java集合框架"></p>
+<p>下面我们根据这个图来逐一分析具体的常用集合类。</p>
+<ul>
+<li>Iterator接口：这个接口定义了从集合中获取元素和判断集合中是否还有元素的方法。下图中是jdk1.8中Iterator接口申明的两个方法</li>
+</ul>
+<p><img src="http://wjd1218.qiniudn.com/IteratorMethod.png" alt=""></p>
+<p>通过hasNext()方法可以判断集合中是否还有剩余元素，next()则可以将下一个元素取出。<br>当然该接口使用了Java8带来的一些新特性，比如接口中的这个方法</p>
+<p><img src="http://wjd1218.qiniudn.com/IteratorMethodNew.png" alt=""></p>
+<p>在接口中通过<strong>default</strong>关键字给出了方法的默认实现，并且好像还有了些函数式编程的意味，没错！这都是Java8的新特性，不过这些都不在本文的讨论范围，这里我们只谈Java集合框架。</p>
+<ul>
+<li><p>ListIterator接口：该接口是Iterator的子接口，它可以让程序员从不同的方向遍历列表，这个迭代器的光标位置在调用 previous() 所返回的元素和调用 next() 所返回的元素之间。所以调用next()或者previous()方法返回的都是迭代器光标所越过的元素。</p>
+</li>
+<li><p>Collection接口：Collection是最基本的集合接口，一个Collection代表一组Object，即Collection的元素（Elements）。该接口定义了一些最基本的集合操作的方法。</p>
+</li>
+<li><p>Queue接口：规定了队列操作需要的方法。LinkedList实现了Queue接口，使用Queue接口可以窄化LinkedList中方法的调用。这种方式会使程序有更好的可读性，并且也更安全。</p>
+</li>
+<li><p>Deque接口：Queue的子接口，它规定了双向队列操作需要的方法。</p>
+</li>
+<li><p>List接口：List是有顺序的集合，元素可以重复，使用此接口能够精确的控制每个元素插入的位置。用户能够使用索引（类似于数组下标）来访问List中的元素。</p>
+</li>
+<li><p>LinkedList类：该类实现了List接口，并允许null元素，这个实现是基于链表的，下图是LinkList的私有静态内部类Node的源码，一个Node表示链表的一个节点。根据源码也可以看出这是一个双向链表。</p>
+</li>
+</ul>
+<p><img src="http://wjd1218.qiniudn.com/LinkedList$Node.png" alt=""></p>
+<ul>
+<li><p>ArrayList类：实现了List接口，允许null元素，该类的实现是基于数组的，但是可以根据需要自动的扩充数组的大小。</p>
+</li>
+<li><p>Vector类：和ArrayList类似，不同之处在于Vector是线程安全的。</p>
+</li>
+<li><p>Stack类：继承自Vector，实现了后进先出的栈数据结构。</p>
+</li>
+<li><p>Set接口：不包含重复元素的集合。</p>
+</li>
+<li><p>HashSet类：这个类的实现是基于HashMap的。下面两张图是HashSet的部分源码</p>
+</li>
+</ul>
+<p><img src="http://wjd1218.qiniudn.com/HashSet.png" alt="HashSet构造方法"><br><img src="http://wjd1218.qiniudn.com/HashSetAdd.png" alt="HashSet中的add方法"></p>
+<p>由这两张图可以看出，在HashSet内部，是通过HashMap的Key来存储元素的，而HashMap的Value始终存储的是<em>PRESENT</em>对象。由此可见，该集合会浪费一些内存。</p>
+<ul>
+<li><p>TreeSet类：TreeSet是一个有序的集合，其实现基于TreeMap（类似于HashSet基于HashMap实现）。TreeSet会调用集合元素的compareTo(Object obj)方法来比较元素之间大小关系，然后将集合元素按升序排列。如果试图把一个对象添加进TreeSet时，则该对象的类必须实现Comparable接口。</p>
+</li>
+<li><p>Map接口：该接口并没有继承自Collection，它提供一种key到value的映射。该接口提供了3种集合的视图，Map的内容可以被当作一组key集合，一组value集合，或者一组key-value映射。</p>
+</li>
+<li><p>TreeMap类：基于红黑树实现。通过给定的或默认的Comparator（自然顺序）排序Keys，每一个key-value作为红黑树的一个节点。下图就是TreeMap的部分源码。</p>
+</li>
+</ul>
+<p><img src="http://wjd1218.qiniudn.com/TreeMap.png" alt="TreeMap部分源码"></p>
+<ul>
+<li>HashMap类：HashMap是一个散列表，它存储的内容是键值对(key-value)映射。有两个参数影响HashMap的性能：“初始容量” 和 “加载因子”。容量是散列表中桶的数量。加载因子是散列表在其容量自动增加之前可以达到多满的一种尺度。当散列表中的条目数超出了加载因子（默认0.75）与当前容量的乘积时，就会对散列表进行再哈希（rehash）操作。通过拉链法解决散列冲突的思想如下图</li>
+</ul>
+<p><img src="http://wjd1218.qiniudn.com/hash.png" alt=""></p>
+<p>该图中的数组下标可以看作是每一个桶的标号，需要注意的是，每一个桶中存放的元素也是键-值对，而不是仅仅有值。否则当一个桶中有多个值的时候就无法通过键来确定值（如果两个键相同，则它们的hash值一定相同；但是如果hash值相同，那么两个键不一定相同。即a.equals(b)==true是a.hashCode()==b.hashCode()的充分不必要条件）。</p>
+<ul>
+<li><p>WeakHashMap类：其中存放了对键对象的弱引用，当除了自身有对key的弱引用外，此key没有其他引用，那么就会自动丢弃此值。只具有弱引用的对象拥有更短暂的生命周期。垃圾回收器线程一旦发现了只具有弱引用的对象，就会回收它的内存。</p>
+</li>
+<li><p>Hashtable类：继承自Dictionary类，并实现了Map接口，它的Key和Value不允许为null。和HashMap不同，该类是线程安全的。</p>
+</li>
+</ul>
+<p>哇塞！一直觉得这些知识挺基础的，今天总结了一下，发现还是有很多细节没有弄清楚，就这样边查资料边看源码边总结，从下午到晚上这几个小时下来也是收获颇丰！看来真是：“纸上得来终觉浅，绝知此事要躬行”啊。</p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/collection/" rel="tag">#collection</a>
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/02/03/SpringThinking/" rel="next" title="Spring之思">
+                <i class="fa fa-chevron-left"></i> Spring之思
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/02/13/TheUseOfJavacAndJavaInCLI/" rel="prev" title="Javac和Java在CLI中的使用">
+                Javac和Java在CLI中的使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/02/07/TheJavaCollectionsFramework/"
+     data-title="Java集合框架"
+     data-content=""
+     data-url="http://wjd1218.github.io/2015/02/07/TheJavaCollectionsFramework/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/02/07/TheJavaCollectionsFramework/"
+           data-title="Java集合框架" data-url="http://wjd1218.github.io/2015/02/07/TheJavaCollectionsFramework/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Colin Wang" />
+          <p class="site-author-name" itemprop="name">Colin Wang</p>
+          <p class="site-description motion-element" itemprop="description">生活纪录 | 技术分享</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">50</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-book"></i> Zhihu
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Colin Wang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"wjd1218"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>

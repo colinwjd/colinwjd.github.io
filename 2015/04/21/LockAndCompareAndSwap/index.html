@@ -1,0 +1,796 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="cas,concurrent,lock," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="从零到无穷大" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="这篇文章我主要想总结两个内容，第一是关于锁的，第二是关于非阻塞同步CompareAndSwap的。这两个内容在Java多线程并发中都很重要，下面就直接进入主题吧。
+锁要提到并发，自然就要提到锁，通过使用锁，使得多线程的并发控制变得十分简单。但是付出的代价也很高，只有获取到锁的线程才能够执行代码，而其他线程必须挂起等待直到锁被释放，这期间它不能做任何事情。并且，在线程进行切换的过程中，即一个线程释放">
+<meta property="og:type" content="article">
+<meta property="og:title" content="锁与CompareAndSwap">
+<meta property="og:url" content="http://wjd1218.github.io/2015/04/21/LockAndCompareAndSwap/index.html">
+<meta property="og:site_name" content="从零到无穷大">
+<meta property="og:description" content="这篇文章我主要想总结两个内容，第一是关于锁的，第二是关于非阻塞同步CompareAndSwap的。这两个内容在Java多线程并发中都很重要，下面就直接进入主题吧。
+锁要提到并发，自然就要提到锁，通过使用锁，使得多线程的并发控制变得十分简单。但是付出的代价也很高，只有获取到锁的线程才能够执行代码，而其他线程必须挂起等待直到锁被释放，这期间它不能做任何事情。并且，在线程进行切换的过程中，即一个线程释放">
+<meta property="og:updated_time" content="2015-06-18T07:54:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="锁与CompareAndSwap">
+<meta name="twitter:description" content="这篇文章我主要想总结两个内容，第一是关于锁的，第二是关于非阻塞同步CompareAndSwap的。这两个内容在Java多线程并发中都很重要，下面就直接进入主题吧。
+锁要提到并发，自然就要提到锁，通过使用锁，使得多线程的并发控制变得十分简单。但是付出的代价也很高，只有获取到锁的线程才能够执行代码，而其他线程必须挂起等待直到锁被释放，这期间它不能做任何事情。并且，在线程进行切换的过程中，即一个线程释放">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 锁与CompareAndSwap | 从零到无穷大 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">从零到无穷大</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">辛苦敲下的一行行代码不知能否改变这个世界，而我的世界，不过就是你的心！</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                锁与CompareAndSwap
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-04-21T14:59:13+08:00" content="2015-04-21">
+              2015-04-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/04/21/LockAndCompareAndSwap/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/21/LockAndCompareAndSwap/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这篇文章我主要想总结两个内容，第一是关于锁的，第二是关于非阻塞同步CompareAndSwap的。这两个内容在Java多线程并发中都很重要，下面就直接进入主题吧。</p>
+<h2 id="锁">锁</h2><p>要提到并发，自然就要提到锁，通过使用锁，使得多线程的并发控制变得十分简单。但是付出的代价也很高，只有获取到锁的线程才能够执行代码，而其他线程必须挂起等待直到锁被释放，这期间它不能做任何事情。并且，在线程进行切换的过程中，即一个线程释放锁，另一个线程<strong>被调度</strong>获得锁并执行代码，也存在着很大的系统开销。然而人们对程序效率的追求并没有止步，程序的响应能不能更快一点、效率能不能更高一点等问题不断的激发着人们的热情。于是就产生了多种不同种类的锁，分别适用于在不同的场景下提高程序的并发效率。下面就先说说<strong>乐观锁</strong>和<strong>悲观锁</strong>，乐观锁与悲观锁都是概念上的，它们的区别在于悲观锁假设最坏的情况一定会发生，所以就在每次访问共享资源时都上锁。然而我们知道并不是所有的并发操作都会导致数据不一致，这就导致有些本来可以并发的线程由于不能获取到锁而必须等待，从而降低了并发的效率。乐观锁则与之不同，就像它的名字一样，它以一种乐观的态度去访问共享数据，即它认为对共享数据的修改不会造成冲突，所以访问共享资源的时候并不加锁，如果它对共享资源的修改真的产生了冲突，那么它就会放弃这次修改，然后不断的重试。这种乐观锁的形式在下文中还会具体将到，就是CompareAndSwap。讲完了乐观锁与悲观锁，就接着讲讲读写锁吧。读写锁是一种锁分离技术，它把读锁和写锁分开，读锁可以被多个线程持有，这样读线程就可以并发，而写锁是互斥的，它只能被一个线程持有，并且写锁与读锁也互斥。接下来就是可重入锁了，其实synchronized就是可重入的，可重入锁就是说一个线程获取到锁之后，在该线程内部又要递归的获取锁，如果锁不是可重入的，就会造成死锁，因为它不能获取到已经被自己保持的锁。但是可重入锁则不同，一个线程内部递归的获取锁时，会使锁计数器加一，该线程每释放一个锁，锁的计数器就减一，当锁计数器为零时，锁被完全释放。ReentrantLock就是一个可重入锁的实现，它的使用是显式的，并且要在finally块中释放锁，这点与synchronized使用的内置锁不同，在synchronized代码块中的代码如果抛出了异常，内置锁会被自动释放掉。（这样锁也变成了对象，正是万物皆对象！）它比synchronized更加灵活，它为处理锁的不可用性问题提供了解决方案，比如，可以中断一个正在等待获取锁的线程、或者在线程请求获取一个锁时设置超时时间而避免无限的等待下去。基于ReentrantLock机制，Java并发包中还引入了Condition接口，用来提供与Object类中的wait()，notify()和notifyAll()方法类似的await()，signal()和singalAll()方法。下面是一个使用读写锁实现的对Map的包装，增加了并发性能，请看代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Lock;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.ReadWriteLock;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.ReentrantReadWriteLock;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 使用读写锁包装Map，使它能在多个读线程之间安全共享，并且避免读写、写写冲突。</span><br><span class="line"> * 适用于对另一种Map实现提供并发性更高的访问。但是如果仅仅是需要一个并发的Map，</span><br><span class="line"> * 使用ConcurrentHashMap是一个很好的选择。</span><br><span class="line"> * <span class="doctag">@author</span> Colin Wang</span><br><span class="line"> * Created on Apr 24, 2015</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReadWriteMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">true<span class="keyword">private</span> <span class="keyword">final</span> Map&lt;K, V&gt; map;</span><br><span class="line">true<span class="keyword">private</span> <span class="keyword">final</span> ReadWriteLock lock = <span class="keyword">new</span> ReentrantReadWriteLock();</span><br><span class="line">true<span class="keyword">private</span> <span class="keyword">final</span> Lock readLock = lock.readLock();</span><br><span class="line">true<span class="keyword">private</span> <span class="keyword">final</span> Lock writeLock = lock.writeLock();</span><br><span class="line">true</span><br><span class="line">true<span class="comment">// 对传入的Map进行包装</span></span><br><span class="line">true<span class="function"><span class="keyword">public</span> <span class="title">ReadWriteMap</span><span class="params">(Map&lt;K, V&gt; map)</span> </span>&#123;</span><br><span class="line">truetrue<span class="keyword">this</span>.map = map;</span><br><span class="line">true&#125;</span><br><span class="line">true</span><br><span class="line">true<span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span> </span>&#123;</span><br><span class="line">truetrue<span class="comment">// 写操作需要取得写锁</span></span><br><span class="line">truetruewriteLock.lock();</span><br><span class="line">truetrue<span class="keyword">try</span> &#123;</span><br><span class="line">truetruetrue<span class="keyword">return</span> map.put(key, value);</span><br><span class="line">truetrue&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">truetruetruewriteLock.unlock();</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line">true</span><br><span class="line">true<span class="function"><span class="keyword">public</span> V <span class="title">get</span><span class="params">(K key)</span> </span>&#123;</span><br><span class="line">truetruereadLock.lock();</span><br><span class="line">truetrue<span class="keyword">try</span> &#123;</span><br><span class="line">truetruetrue<span class="keyword">return</span> map.get(key);</span><br><span class="line">truetrue&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">truetruetruereadLock.unlock();</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="非阻塞同步算法">非阻塞同步算法</h2><p>关于非阻塞同步算法，本文主要讲一下CompareAndSwap，即比较和交换。这就是前文提到的乐观锁技术，CompareAndSwap有三个操作数：内存值V，预期值A，新值B。当使用CompareAndSwap时，会先将预期值A与内存值V进行比较，如果相同，则把内存值V替换成新值B，如果不相同，则不进行替换，并返回内存中的实际值。这个语义可以解释为：我认为V的值应该为A，如果是，就把V的值替换成B，如果不是就不替换，并告诉我内存中的实际值。在JDK的原子类中都提供了这种基于乐观锁的CAS操作，而且concurrent包中的很多类也使用了这些原子类。在这些原子类中通过调用sun.misc.Unsafe里面的CAS算法，用CPU指令来实现无锁自增。所以，AtomicLong.incrementAndGet()的自增比使用synchronized这种悲观锁的效率要高很多。下面是使用原子引用实现的一个非阻塞栈，它是线程安全的，但是并不是通过同步来实现的。它使用了基于乐观锁的形式，在多线程并发的情况下，代码<code>top.compareAndSet(oldHead, newHead)</code>只会有一个线程执行成功，而其他线程均失败，并可以选择重试。这样避免了使用悲观锁时线程之间的等待唤醒，提高了并发效率。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.concurrent.atomic.AtomicReference;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 非阻塞栈</span><br><span class="line"> * <span class="doctag">@author</span> Colin Wang</span><br><span class="line"> * Created on Apr 25, 2015</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcurrentStack</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">true<span class="comment">// 使用原子引用保存当前栈顶元素的引用</span></span><br><span class="line">trueAtomicReference&lt;Node&lt;E&gt;&gt; top = <span class="keyword">new</span> AtomicReference&lt;&gt;();</span><br><span class="line">true</span><br><span class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">truetrue<span class="comment">// 创建一个新的结点</span></span><br><span class="line">truetrueNode&lt;E&gt; newHead = <span class="keyword">new</span> Node&lt;E&gt;(e);</span><br><span class="line">truetrue<span class="comment">// 存储旧的栈顶</span></span><br><span class="line">truetrueNode&lt;E&gt; oldHead;</span><br><span class="line">truetruedo &#123;</span><br><span class="line">truetruetrue<span class="comment">// 获取当前的栈顶</span></span><br><span class="line">truetruetrueoldHead = top.get();</span><br><span class="line">truetruetrue<span class="comment">// 新结点的next域指向当前的栈顶</span></span><br><span class="line">truetruetruenewHead.next = oldHead;</span><br><span class="line">truetruetrue<span class="comment">// 使用CAS更新当前栈顶，如果失败就进行重试。</span></span><br><span class="line">truetruetrue<span class="comment">// 如果当前栈顶为oldHead，则更新为newHead，操作成功。</span></span><br><span class="line">truetruetrue<span class="comment">// 如果当前栈顶值不是oldHead，表示其他线程已经对栈顶进行了修改，操作失败并重试。</span></span><br><span class="line">truetrue&#125; <span class="keyword">while</span> (!top.compareAndSet(oldHead, newHead));</span><br><span class="line">true&#125;</span><br><span class="line">true</span><br><span class="line">true<span class="function"><span class="keyword">public</span> E <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">truetrueNode&lt;E&gt; oldHead;</span><br><span class="line">truetrueNode&lt;E&gt; newHead;</span><br><span class="line">truetruedo &#123;</span><br><span class="line">truetruetrue<span class="comment">// 取出当前栈顶</span></span><br><span class="line">truetruetrueoldHead = top.get();</span><br><span class="line">truetruetrue<span class="keyword">if</span> (oldHead == <span class="keyword">null</span>) &#123;</span><br><span class="line">truetruetruetrue<span class="comment">// 如果当前栈顶为null则返回null</span></span><br><span class="line">truetruetruetrue<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetruetrue<span class="comment">// 新的栈顶指向当前栈顶的下一个元素</span></span><br><span class="line">truetruetruenewHead = oldHead.next;</span><br><span class="line">truetruetrue<span class="comment">// 尝试使用新的栈顶替换旧的栈顶，失败则重试</span></span><br><span class="line">truetrue&#125; <span class="keyword">while</span> (!top.compareAndSet(oldHead, newHead));</span><br><span class="line">truetrue<span class="comment">// 返回当前栈顶的元素值</span></span><br><span class="line">truetrue<span class="keyword">return</span> oldHead.value;</span><br><span class="line">true&#125;</span><br><span class="line">true</span><br><span class="line">true<span class="comment">// 栈中的元素</span></span><br><span class="line">true<span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">truetrue<span class="keyword">private</span> T value;</span><br><span class="line">truetrue<span class="keyword">public</span> Node&lt;T&gt; next;</span><br><span class="line">truetrue</span><br><span class="line">truetrue<span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(T value)</span> </span>&#123;</span><br><span class="line">truetruetrue<span class="keyword">this</span>.value = value;</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/cas/" rel="tag">#cas</a>
+          
+            <a href="/tags/concurrent/" rel="tag">#concurrent</a>
+          
+            <a href="/tags/lock/" rel="tag">#lock</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/04/18/DepthStudyOfMemcached/" rel="next" title="深入学习Memcached">
+                <i class="fa fa-chevron-left"></i> 深入学习Memcached
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/05/09/AManWithADream/" rel="prev" title="有梦想的人，始终在路上!(记阿里实习生霸面经历，拿到Offer)">
+                有梦想的人，始终在路上!(记阿里实习生霸面经历，拿到Offer) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/04/21/LockAndCompareAndSwap/"
+     data-title="锁与CompareAndSwap"
+     data-content=""
+     data-url="http://wjd1218.github.io/2015/04/21/LockAndCompareAndSwap/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/04/21/LockAndCompareAndSwap/"
+           data-title="锁与CompareAndSwap" data-url="http://wjd1218.github.io/2015/04/21/LockAndCompareAndSwap/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Colin Wang" />
+          <p class="site-author-name" itemprop="name">Colin Wang</p>
+          <p class="site-description motion-element" itemprop="description">生活纪录 | 技术分享</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">50</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-book"></i> Zhihu
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#锁"><span class="nav-number">1.</span> <span class="nav-text">锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非阻塞同步算法"><span class="nav-number">2.</span> <span class="nav-text">非阻塞同步算法</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Colin Wang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"wjd1218"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>

@@ -1,0 +1,828 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="gc,java,jvm," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="从零到无穷大" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="最近这段时间学习了Java虚拟机相关的一些知识，对Java程序的运行和JVM的内存管理策略有了更深的理解。这篇文章就对此做一下简单的总结。
+Java运行时数据区
+要理解JVM的内存管理策略，首先就要熟悉Java的运行时数据区，如上图所示，在执行Java程序的时候，虚拟机会把它所管理的内存划分为多个不同的数据区，称为运行时数据区。在程序执行过程中对内存的分配、垃圾的回收都在运行时数据区中进行。对于J">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JVM自动内存管理机制分析">
+<meta property="og:url" content="http://wjd1218.github.io/2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/index.html">
+<meta property="og:site_name" content="从零到无穷大">
+<meta property="og:description" content="最近这段时间学习了Java虚拟机相关的一些知识，对Java程序的运行和JVM的内存管理策略有了更深的理解。这篇文章就对此做一下简单的总结。
+Java运行时数据区
+要理解JVM的内存管理策略，首先就要熟悉Java的运行时数据区，如上图所示，在执行Java程序的时候，虚拟机会把它所管理的内存划分为多个不同的数据区，称为运行时数据区。在程序执行过程中对内存的分配、垃圾的回收都在运行时数据区中进行。对于J">
+<meta property="og:image" content="http://wjd1218.qiniudn.com/JVM内存模型.png">
+<meta property="og:updated_time" content="2015-06-18T07:57:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JVM自动内存管理机制分析">
+<meta name="twitter:description" content="最近这段时间学习了Java虚拟机相关的一些知识，对Java程序的运行和JVM的内存管理策略有了更深的理解。这篇文章就对此做一下简单的总结。
+Java运行时数据区
+要理解JVM的内存管理策略，首先就要熟悉Java的运行时数据区，如上图所示，在执行Java程序的时候，虚拟机会把它所管理的内存划分为多个不同的数据区，称为运行时数据区。在程序执行过程中对内存的分配、垃圾的回收都在运行时数据区中进行。对于J">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> JVM自动内存管理机制分析 | 从零到无穷大 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">从零到无穷大</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">辛苦敲下的一行行代码不知能否改变这个世界，而我的世界，不过就是你的心！</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JVM自动内存管理机制分析
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-03-19T13:26:03+08:00" content="2015-03-19">
+              2015-03-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近这段时间学习了Java虚拟机相关的一些知识，对Java程序的运行和JVM的内存管理策略有了更深的理解。这篇文章就对此做一下简单的总结。</p>
+<h2 id="Java运行时数据区">Java运行时数据区</h2><p><img src="http://wjd1218.qiniudn.com/JVM内存模型.png" alt="Java运行时数据区"></p>
+<p>要理解JVM的内存管理策略，首先就要熟悉Java的运行时数据区，如上图所示，在执行Java程序的时候，虚拟机会把它所管理的内存划分为多个不同的数据区，称为运行时数据区。在程序执行过程中对内存的分配、垃圾的回收都在运行时数据区中进行。对于Java程序员来说，其中最重要的就是堆区和JVM栈区了。注意图中的图形面积比例并不代表实际的内存比例。</p>
+<ul>
+<li>方法区是各个线程共享的内存区域，用于存储虚拟机加载进来的类信息、常量、静态变量和即时编译器编译后的代码等数据。相信大家也都听过<strong>运行时常量池</strong>的概念，这个常量池也是方法区的一部分，主要用于存放编译期生成的各种字面量和符号引用。</li>
+<li>堆区是JVM所管理的内存中最大的一块，这个区域是被所有线程共享的。主要用于存放对象实例，而所谓的垃圾回收也主要是在堆区进行。</li>
+<li>栈区则主要存放一些对象的引用和编译期可知的基本数据类型，这个区域是线程私有的，即每个线程都有自己的栈。</li>
+<li>程序计数器则是用来记录程序运行到什么位置的，显然它应该是线程私有的，相信这个学过微机原理与接口课程的同学都应该能够理解的。</li>
+</ul>
+<h2 id="内存的分配">内存的分配</h2><h3 id="在连续剩余空间中分配内存——指针碰撞">在连续剩余空间中分配内存——指针碰撞</h3><p>用一个指针指向内存已用区和空闲区的分界点，需要分配新的内存时候，只需要将指针向空闲区移动相应的距离即可。</p>
+<h3 id="在不规整的剩余空间中分配内存——空闲列表">在不规整的剩余空间中分配内存——空闲列表</h3><p>如果剩余内存是不规整的，就需要用一个列表记录下哪些内存块是可用的，当需要分配内存的时候就需要在这个列表中查找，找到一个足够大的空间进行分配，然后在更新这个列表。</p>
+<h3 id="分配方式的选择">分配方式的选择</h3><p>指针碰撞的分配方式明显要优于空闲列表的方式，但是使用哪种方式取决于堆内存是否规整，而堆内存是否规整则由使用的垃圾收集算法决定。如果堆内存是规整的，则采用指针碰撞的方式分配内存，而如果堆是不规整的，就会采用空闲列表的方式。</p>
+<h2 id="垃圾回收">垃圾回收</h2><p>上文已经提到，JVM的垃圾回收主要运行于堆区。下面我就来具体讲一下垃圾回收的原理。</p>
+<h3 id="找到需要回收的对象">找到需要回收的对象</h3><p>要对对象进行回收，首先需要找到哪些对象是垃圾，需要回收。有两种方法可以找到需要回收的对象，第一种叫做<strong>引用计数法</strong>。具体方法就是给对象添加一个引用计数器，计数器的值代表着这个对象被引用的次数，当计数器的值为0的时候，就代表没有引用指向这个对象，那么这个对象就是不可用的，所以就可以对它进行回收。但是有一个问题就是当对象之间循环引用时，其中每个对象的引用计数器的值都不为0，但是这些对象又是作为一个孤立的整体在内存中存在，其他的对象不持有这些对象的引用，这种情况下这些对象就无法被回收，这也是主流的Java虚拟机没有选用这种方法的原因。另一种方法就是把堆中的对象和对象之间的引用分别看作<strong>有向图</strong>的顶点和有向边。这样只需要从一些顶点开始，对有向图中的每个顶点进行可达性分析（深度优先遍历是有向图可达性算法的基础），这样就可以把不可达的对象找出来，这些不可达的对象还要再进行一次筛选，因为如果对象需要执行finalize()方法，那么它完全可以在finalize()方法中让自己变的可达。这个方法解决了对象之间循环引用的问题。上面提到了“从一些对象开始”进行可达性分析，这些起始对象被称为<strong>GC Roots</strong>，可以作为GC Roots的对象有：</p>
+<ol>
+<li>栈区中引用的对象</li>
+<li>方法区中静态属性或常量引用的对象</li>
+</ol>
+<p>上文中提到的引用均是<strong>强引用</strong>，Java中还存在其他三种引用，分别是，<strong>软引用</strong>、<strong>弱引用</strong>和<strong>虚引用</strong>，当系统即将发生内存溢出时，才会对软引用所引用的对象进行回收；而被弱引用所引用的对象会在下一次触发GC时被回收；虚引用则仅仅是为了在对象被回收时能够收到系统通知。</p>
+<h3 id="垃圾收集算法">垃圾收集算法</h3><p>已经找到了需要回收的对象，那么具体采用什么样的方式进行回收呢？下面就介绍几种算法。</p>
+<h4 id="标记-清除算法">标记-清除算法</h4><p>通过可达性分析算法找到可以回收的对象后，要对这些对象进行标记，代表它可以被回收了。标记完成之后就统一回收所有被标记的对象。这就完成了回收，但是这种方式会产生大量的内存碎片，就导致了可用内存不规整，于是分配新的内存时就需要采用空闲列表的方法，如果没有找到足够大的空间，那么就要提前触发下一次垃圾收集。</p>
+<h4 id="标记-整理算法">标记-整理算法</h4><p>标记的过程和标记-清除算法一样，但是标记完成之后，让所有存活的对象都向堆内存的一端移动，最后直接清除掉边界以外的内存。这样对内存进行回收之后，内存是规整的，于是可以使用指针碰撞的方式分配新的内存。</p>
+<h4 id="复制算法">复制算法</h4><p>上面所讲的两种算法都使用了先标记的方式，其实当对象数量很多时，这种算法的效率并不高。于是就产生了这种复制算法。它将可用内存分成两个部分，每次只使用其中的一部分，当其中一块用完时，就将仍然存活的对象复制到另外一块上，再把原来的那一块内存清理掉。这样回收的结果同样能得到规整的剩余空间，但是会浪费一部分内存。根据目前通过概率统计方面的研究，新生代中的对象的回收率能够达到90%以上，因此，便可以将新生代划分为三个部分，分别为Eden、Survivor from、Survivor to，大小比例为8：1：1。每次只使用Eden和其中的一块Survivor，回收时将存活的对象复制到另一块Survivor中，这样就只有10%的内存被浪费，但是如果存活的对象总大小超过了Survivor的大小，那么就把多出的对象放入老年代中。</p>
+<h4 id="分代收集算法">分代收集算法</h4><p>把Java堆分成新生代和老年代，新生代使用复制算法，老年代使用标记-清理或标记-整理算法。这样可以根据各个代自己的特点，选用合适的收集算法，提高内存收集的效率。在新生代中长期存活的对象会逐渐向老年代过渡，新生代中的对象每经历一次GC，年龄就增加一岁，当年龄超过一定值时，就会被移动到老年代。</p>
+<h2 id="垃圾收集器">垃圾收集器</h2><p>上文讲了JVM垃圾回收的原理和使用的算法，接下来就该讲JVM使用的具体的垃圾回收器了。垃圾回收器在JVM中作为一个守护线程运行，它不能过多的占用系统资源，否则将会极大的影响用户体验。在从GC Roots开始对对象进行可达性分析时，需要STOP THE WORLD，因为如果不这么做，程序一边修改引用，GC收集器一边进行标记，那么标记的结果肯定是有问题的，所以收集器应当采取适当的措施减少这个停顿的时间。</p>
+<ul>
+<li>Serial收集器：新生代使用复制算法，老年代使用标记-整理算法，单线程运行</li>
+<li>Concurrent Mark Sweep(CMS)收集器：它的工作过程为初始标记-&gt;并发标记-&gt;重新标记-&gt;并发清除，初始标记和重新标记阶段都需要Stop The World，但是这两个阶段速度都很快，在耗时最长的并发标记阶段可以和用户线程并行工作。该收集器缺点就是内存回收的结果不是规整的可用空间，但是可以通过开关参数来设置对回收后的内存进行碎片整理。</li>
+</ul>
+<p>垃圾收集器还有很多，比如ParNew收集器，最前沿的成果之一Garbage-First收集器等等这里就不一一介绍了，每种收集器都有自己的优点和不足，开发者应该选择适用于当前需求的收集器。</p>
+<h2 id="总结">总结</h2><p>以上内容很多总结自对《深入理解Java虚拟机》一书的学习，在此与技术爱好者分享。</p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/gc/" rel="tag">#gc</a>
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+            <a href="/tags/jvm/" rel="tag">#jvm</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/03/18/DatabaseTransactionAndTheIsolationLevel/" rel="next" title="数据库事务与其隔离级别">
+                <i class="fa fa-chevron-left"></i> 数据库事务与其隔离级别
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/03/21/JVMClassLoadingMechanism/" rel="prev" title="再谈JVM类加载机制">
+                再谈JVM类加载机制 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/"
+     data-title="JVM自动内存管理机制分析"
+     data-content=""
+     data-url="http://wjd1218.github.io/2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/"
+           data-title="JVM自动内存管理机制分析" data-url="http://wjd1218.github.io/2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Colin Wang" />
+          <p class="site-author-name" itemprop="name">Colin Wang</p>
+          <p class="site-description motion-element" itemprop="description">生活纪录 | 技术分享</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">50</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-book"></i> Zhihu
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java运行时数据区"><span class="nav-number">1.</span> <span class="nav-text">Java运行时数据区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存的分配"><span class="nav-number">2.</span> <span class="nav-text">内存的分配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在连续剩余空间中分配内存——指针碰撞"><span class="nav-number">2.1.</span> <span class="nav-text">在连续剩余空间中分配内存——指针碰撞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在不规整的剩余空间中分配内存——空闲列表"><span class="nav-number">2.2.</span> <span class="nav-text">在不规整的剩余空间中分配内存——空闲列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分配方式的选择"><span class="nav-number">2.3.</span> <span class="nav-text">分配方式的选择</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾回收"><span class="nav-number">3.</span> <span class="nav-text">垃圾回收</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#找到需要回收的对象"><span class="nav-number">3.1.</span> <span class="nav-text">找到需要回收的对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垃圾收集算法"><span class="nav-number">3.2.</span> <span class="nav-text">垃圾收集算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标记-清除算法"><span class="nav-number">3.2.1.</span> <span class="nav-text">标记-清除算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标记-整理算法"><span class="nav-number">3.2.2.</span> <span class="nav-text">标记-整理算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制算法"><span class="nav-number">3.2.3.</span> <span class="nav-text">复制算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分代收集算法"><span class="nav-number">3.2.4.</span> <span class="nav-text">分代收集算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾收集器"><span class="nav-number">4.</span> <span class="nav-text">垃圾收集器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Colin Wang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"wjd1218"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>

@@ -1,0 +1,818 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="lfs,linux," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="从零到无穷大" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="记得是大学刚入学的时候，开始对Linux操作系统产生了兴趣，那时候对Linux也不是很了解，但是作为一名学习软件工程专业的学生，渐渐地也在网上了解到了很多有关Linux的知识。我对新鲜的事物充满了好奇，尽管Linux在这世界上早已不是什么新鲜事物了，但是在那时的我眼里，它就是新鲜事物！记得当时接触的第一个Linux发行版是ubuntu12.04，那是还有学校里的学长写的使用手册，介绍了ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LinuxFromScratch7.5学习体会">
+<meta property="og:url" content="http://wjd1218.github.io/2014/12/02/LinuxFromScratch7-5LearningExperience/index.html">
+<meta property="og:site_name" content="从零到无穷大">
+<meta property="og:description" content="记得是大学刚入学的时候，开始对Linux操作系统产生了兴趣，那时候对Linux也不是很了解，但是作为一名学习软件工程专业的学生，渐渐地也在网上了解到了很多有关Linux的知识。我对新鲜的事物充满了好奇，尽管Linux在这世界上早已不是什么新鲜事物了，但是在那时的我眼里，它就是新鲜事物！记得当时接触的第一个Linux发行版是ubuntu12.04，那是还有学校里的学长写的使用手册，介绍了ubuntu">
+<meta property="og:updated_time" content="2015-06-18T08:03:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LinuxFromScratch7.5学习体会">
+<meta name="twitter:description" content="记得是大学刚入学的时候，开始对Linux操作系统产生了兴趣，那时候对Linux也不是很了解，但是作为一名学习软件工程专业的学生，渐渐地也在网上了解到了很多有关Linux的知识。我对新鲜的事物充满了好奇，尽管Linux在这世界上早已不是什么新鲜事物了，但是在那时的我眼里，它就是新鲜事物！记得当时接触的第一个Linux发行版是ubuntu12.04，那是还有学校里的学长写的使用手册，介绍了ubuntu">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> LinuxFromScratch7.5学习体会 | 从零到无穷大 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">从零到无穷大</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">辛苦敲下的一行行代码不知能否改变这个世界，而我的世界，不过就是你的心！</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                LinuxFromScratch7.5学习体会
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-12-02T18:39:45+08:00" content="2014-12-02">
+              2014-12-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/OS/" itemprop="url" rel="index">
+                    <span itemprop="name">OS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/12/02/LinuxFromScratch7-5LearningExperience/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/12/02/LinuxFromScratch7-5LearningExperience/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>记得是大学刚入学的时候，开始对Linux操作系统产生了兴趣，那时候对Linux也不是很了解，但是作为一名学习软件工程专业的学生，渐渐地也在网上了解到了很多有关Linux的知识。我对新鲜的事物充满了好奇，尽管Linux在这世界上早已不是什么新鲜事物了，但是在那时的我眼里，它就是新鲜事物！记得当时接触的第一个Linux发行版是ubuntu12.04，那是还有学校里的学长写的使用手册，介绍了ubuntu12.04图形界面的简单使用和一些特别基础的命令。慢慢的就对Linux入了门，然后深深的喜欢上了这个系统。后来，又陆陆续续的更换了很多发行版，Fedora、centOS、ArchLinux，不断的尝试，不断的重装系统，也不断的更换着图形界面，用gnome、kde、unity。慢慢的也就对Linux有了更深的理解，也对Linux的操作方式命令行更加熟悉。大二的时候在学校的实验室学习了Hadoop等一些分布式的架构，对Linux的应用更是充满神往之情。于是最近心血来潮，想要自己编译一下Linux系统，选择了当前算是比较新的LFS7.5，花费了大概一周的时间，完成了LFS7.5的编译安装，并成功通过Grub2启动，于是这篇文章也就应运而生了。</p>
+<hr>
+<p>先说一说编译安装LFS的过程吧，首先下载了LFS7.5的文档（html版）和所有需要用到的源码包。用了大概一天的时间，通读了一遍文档（当然有LFS6.6的中文对照版），了解了整个LFS的过程是要做什么，分清楚了LFS文档每个章节的任务和目的。整个LFS过程可以分成4个部分：<br><strong>1. 对磁盘和用户的准备</strong><br><strong>2. 通过宿主系统建立临时系统</strong><br><strong>3. 通过临时系统建立LFS系统</strong><br><strong>4. 最后的配置和调整</strong><br>我用了大概一周的时间，弄完了这四个步骤，其实也不是十分困难，只要按照LFS文档的步骤，一步一步的做下去，文档中容易被读者忽视的地方都会有重要提示标示出来，如果不是切身体会，我也不敢相信竟有如此为读者着想的高质量的文档！</p>
+<h2 id="一、对用户和磁盘的准备">一、对用户和磁盘的准备</h2><p>接下来我们就开始第一个步骤。首先要创建一个单独的硬盘分区作为LFS分区，我分了20个G，这个步骤我是在Windows下操作的，因为担心使用命令行操作失误使得硬盘数据丢失。然后就可以进入宿主系统了（我的宿主系统选择的是64位ubuntu14.04，简单粗暴有效，嘿嘿），编译LFS7.5对宿主系统有一些要求，ubuntu14.04下的gcc的版本过高，没有经过LFS测试过，LFS文档不推荐使用，所以把gcc4.8换成了gcc4.4（ubuntu14.04默认gcc4.8)，命令如下：</p>
+<pre><code>sudo apt-get <span class="operator"><span class="keyword">install</span> gcc-<span class="number">4.4</span> <span class="keyword">g</span>++-<span class="number">4.4</span>
+sudo rm <span class="string">`which gcc`</span>
+sudo rm  <span class="string">`which g++`</span>
+sudo <span class="keyword">ln</span> -sv /usr/<span class="keyword">bin</span>/gcc-<span class="number">4.4</span>  /usr/<span class="keyword">bin</span>/gcc
+sudo <span class="keyword">ln</span> -sv /usr/<span class="keyword">bin</span>/<span class="keyword">g</span>++-<span class="number">4.4</span>  /usr/<span class="keyword">bin</span>/<span class="keyword">g</span>++</span>
+</code></pre><p>LFS手册还要求安装Bison，命令如下：</p>
+<pre><code>sudo apt-<span class="keyword">get</span> install bison
+</code></pre><p>接下来就是格式化LFS分区：</p>
+<pre><code>sudo mkfs -v -t ext4  <span class="regexp">/dev/</span>sda12
+</code></pre><p>因为我的LFS分区号是sda12，这里是一些硬件基础，不了解的同学自行google。并且因为现在计算机的内存都比较大，所以可以不需要swap分区。（第一次进行LFS，一个根(/)分区就够了，等以后有经验了，在进行多分区的操作）。<br>接下来就是用户准备了，按照文档上的说明一步步来。需要注意的一点是：每次开机，或是重启后，在进入lfs用户前，都要对 LFS变量进行检查，查看LFS=/mnt/lfs变量是否存在，然后对lfs使用的分区进行挂载。这一部分没有什么难点，准备硬盘分区是因为要让LFS作为独立的硬盘来启动。新建分区、格式化分区、准备lfs用户是Linux操作的基础素质。至此，第一个步骤就算是完成了。</p>
+<h2 id="二、通过宿主系统建立临时系统">二、通过宿主系统建立临时系统</h2><p>下面开始进入第二个步骤，通过宿主系统建立临时系统，根据我的理解，因为LFS的目的是编译出一个可以独立启动独立运行的操作系统，而不能通过寄生在宿主系统上，所以需要通过宿主系统的编译工具，编译出一系列临时的编译工具，再通过这一系列临时的编译工具，编译出与宿主系统无关的LFS系统，当然这个与宿主系统无关的LFS系统中也包含一系列的编译工具，所以像Gcc，Binutils等将会编译至少三次！说的再多也比不上动手实践更容易理解这个过程，就让我们开始动手吧。<br>首先导入LFS变量</p>
+<pre><code><span class="keyword">export</span> LFS=<span class="regexp">/mnt/</span>lfs
+</code></pre><p>然后挂载lfs分区</p>
+<pre><code>sudo mount -v -t ext4 /dev/sda12 <span class="variable">$LFS</span>
+</code></pre><p>最后就可以切换到lfs用户了</p>
+<pre><code><span class="title">su</span> - lfs <span class="comment">#注意中间这个 - 符号是一定要的，代表为lfs用户启动一个login shell</span>
+</code></pre><p>每次重启系统进行LFS之前，参照以上步骤进入到LFS编译环境。<br>补充：通常我们在开机后，启动的第一个shell称之为login shell,当进入GUI界面后，不需要输入密码启动的shell称之为non-login shell。这两种shell是有区别的，大家都知道shell的运行是需要环境变量的支持的。配置这些环境变量的文件就是配置shell工作环境的文件。两种shell在读取配置文件时有很大的不同，下面是总结它们分别读取哪些配置文件：<br>login shell 启动—&gt;读取/etc/porfile文件—&gt;读取~/.bash_profile文件<br>no-login shell 启动—&gt;读取~/.bashrc文件<br>exec env -i /bin/bash命令会开启一个全新的non-login shell<br>&emsp;&emsp;这个阶段的主要任务是编译出一个临时系统，这个临时系统具有必要的编译工具，这个过程又分成以下两个个步骤：<br>第一步，编译出一个全新的与主机系统无关的工具链接。（这些工具链包含了：compiler(就是我们常用的gcc,g++),assembler(就是把汇编程序变成a.obj文件的工具)，linker(就是把很多*.obj文件和库文件链接成可运行文件a.out的工具)，还有各类库文件(为后面编译其它的软件提供基础设施)，当然还有大量的其它工具）<br>第二步，得用第一步编译出来的工具，编译其它的工具（这里可以看出，在制作LFS的过程中，编译的先后顺序是非常生要的，因为有了鸡，才能下蛋）</p>
+<blockquote>
+<p>当然有几点需要注意一下：<br>一、上面两步编译出来的工具都会安装到 \$LFS/tools目录下面（也就是/mnt/lfs/tools目录下面）。LFS手册中把这个称之为临时的文件系统，就是因为\$LFS/tools这个目录在第6章结束时就会被删除，因为$LFS/tools已经使用完了，没有利用价值了。<br>二、LFS文档上的configure的位置一定要注意有三种情况，第一种是在源代码目录之外进行configure，第二种是在源代码目录里面进行configure，第三种（特殊情况）如libstdc++是在gcc源码目录的子目录里面进行configure。所以在执行命令之前一定要看好执行命令的前提条件，不妨思考一下LFS的作者为什么这么写。</p>
+</blockquote>
+<p>到此，一个可以用来编译与当前宿主系统（ubuntu14.04）无关的LFS系统的临时系统已经创建完成。可以进入LFS手册的第六章了。</p>
+<h2 id="三、通过临时系统建立LFS系统">三、通过临时系统建立LFS系统</h2><p>现在来完成第三个阶段，通过宿主系统建立LFS系统。这个过程十分简单，仅仅是按照文档操作，把需要的软件源码包一个一个解压并打开，然后<strong>configure、make、make check、make install</strong>，当然，有一些对后续操作有重要影响的部分，如编译gcc等，文档会有重要提示，提醒读者进行check。只要细心的按照文档做，就不会出现问题。</p>
+<h2 id="四、最后的配置和调整">四、最后的配置和调整</h2><p>现在就要进入最后一个阶段了，因为我的电脑是ubuntu+windows双系统，而且拥有单独的/boot分区，并已经安装了grub，所以我没有再次在LFS时安装grub，在各个脚本都按照文档配置好之后，我直接选择了重启电脑，通过原来的grub2引导这个LFS7.5系统并且成功启动，心情十分激动！<br>以下就是我通过Grub2引导LFS的命令</p>
+<pre><code>grub&gt;set root=<span class="list">(<span class="keyword">hd0</span>,gpt12)</span>
+</code></pre><p>这个是vmlinuz和initrd.img所在分区，要搞不清楚就用 </p>
+<pre><code>grub&gt;<span class="keyword">search</span> -s -f -<span class="keyword">n</span> /vmlinuz
+grub&gt;linux /vmlinuz root=/dev/sda12
+grub&gt;initrd /initrd.img
+grub&gt;<span class="keyword">boot</span>
+</code></pre><p>这里就不再单独讲解grub了，因为grub足足可以单独写成一本书，我目前也正在学习当中。至此，整个LFS系统就算编译完成了。下面说一些我的体会吧。<br>从心血来潮产生了编译LFS的想法开始，到成功启动自己编译的LFS系统，总共花了不到一周的时间，文档中也有很多没有看懂的地方，有很多命令也是直接粘贴进命令行去执行，但是经过这整个流程后，也算是对Linux有了更深刻的理解，更加体会到了Linux模块化的优美，就像小时候玩的积木一样，一个庞大的系统，竟是由这一个个小模块组装起来的。对自己今后的软件开发也有一定的指导意义。再有就是体会到了软件是一个持续改进的过程与软件测试的重要性，在软件行业，没有最好，只有更好。<br>最后，希望自己可以在Linux世界中走的更远。</p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/lfs/" rel="tag">#lfs</a>
+          
+            <a href="/tags/linux/" rel="tag">#linux</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/12/05/AboutThisBlog/" rel="prev" title="关于本博客">
+                关于本博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2014/12/02/LinuxFromScratch7-5LearningExperience/"
+     data-title="LinuxFromScratch7.5学习体会"
+     data-content=""
+     data-url="http://wjd1218.github.io/2014/12/02/LinuxFromScratch7-5LearningExperience/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2014/12/02/LinuxFromScratch7-5LearningExperience/"
+           data-title="LinuxFromScratch7.5学习体会" data-url="http://wjd1218.github.io/2014/12/02/LinuxFromScratch7-5LearningExperience/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Colin Wang" />
+          <p class="site-author-name" itemprop="name">Colin Wang</p>
+          <p class="site-description motion-element" itemprop="description">生活纪录 | 技术分享</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">50</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-book"></i> Zhihu
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、对用户和磁盘的准备"><span class="nav-number">1.</span> <span class="nav-text">一、对用户和磁盘的准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、通过宿主系统建立临时系统"><span class="nav-number">2.</span> <span class="nav-text">二、通过宿主系统建立临时系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、通过临时系统建立LFS系统"><span class="nav-number">3.</span> <span class="nav-text">三、通过临时系统建立LFS系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、最后的配置和调整"><span class="nav-number">4.</span> <span class="nav-text">四、最后的配置和调整</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Colin Wang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"wjd1218"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>

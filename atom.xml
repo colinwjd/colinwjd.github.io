@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[从零到无穷大]]></title>
+  <subtitle><![CDATA[辛苦敲下的一行行代码不知能否改变这个世界，而我的世界，不过就是你的心！]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://wjd1218.github.io/"/>
+  <updated>2015-08-10T15:19:26.000Z</updated>
+  <id>http://wjd1218.github.io/</id>
+  
+  <author>
+    <name><![CDATA[Colin Wang]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Efficient Coding With Macbook Pro]]></title>
+    <link href="http://wjd1218.github.io/2015/08/10/Efficient%20Coding%20With%20Macbook%20Pro/"/>
+    <id>http://wjd1218.github.io/2015/08/10/Efficient Coding With Macbook Pro/</id>
+    <published>2015-08-09T16:00:00.000Z</published>
+    <updated>2015-08-10T15:19:26.000Z</updated>
+    <content type="html"><![CDATA[<p>时间过的真快，转眼就八月中旬了，一个多月前写了一篇关于Macbook Pro的文章，这篇文章继续写一点</p>
+<p>优秀的软件：<br>Ulysses<br>Alternote<br>SourceTree<br>Cornerstone<br>Beyond Compare<br>Reeder<br>Bartender<br>Unclutter<br>Fantastical<br>1Password<br>PopClip<br>CheatSheet<br>Shadowsocks:你懂的</p>
+<p>这是一种情怀，已经很少有人有这种情怀了</p>
+<p>要有自己的节奏，提高效率。进入职场，就不要再那么学生气了，别再那么幼稚了！凡事多动些脑子！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>时间过的真快，转眼就八月中旬了，一个多月前写了一篇关于Macbook Pro的文章，这篇文章继续写一点</p>
+<p>优秀的软件：<br>Ulysses<br>Alternote<br>SourceTree<br>Cornerstone<br>Beyond Compare<]]>
+    </summary>
+    
+      <category term="OS X" scheme="http://wjd1218.github.io/tags/OS-X/"/>
+    
+      <category term="macbookpro" scheme="http://wjd1218.github.io/tags/macbookpro/"/>
+    
+      <category term="Life" scheme="http://wjd1218.github.io/categories/Life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Macbook Pro入手一个月使用体验]]></title>
+    <link href="http://wjd1218.github.io/2015/07/01/MacbookPro%20Start%20Experience/"/>
+    <id>http://wjd1218.github.io/2015/07/01/MacbookPro Start Experience/</id>
+    <published>2015-06-30T16:00:00.000Z</published>
+    <updated>2015-12-10T07:53:16.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://7sbkoj.com1.z0.glb.clouddn.com/macmacbookpro.png" alt="Macbook Pro"><br>今年五月份入手了MacBook Pro和iPhone 6，现在已经使用了一个多月，感觉可以写写我的使用感受了。在没有使用苹果产品之前，我根本不能理解那些果粉们的行为，然而使用了苹果产品一个月后，我已经从一名Google粉变成了一名十足的果粉，没错，仅仅是一个月而已！</p>
+<h2 id="外观">外观</h2><p>首先说说外观，在这个看脸的世界，能有一个好看的外表就已经赢了一大半好么！不只是人，电脑也是一样，MacBook Pro的工业设计、摸上去的质感简直不知道甩我的那台联想几条街。自从我的Mac到手，那台联想笔记本我简直连看都不想看，而且又厚又重，以前我每天背着它去实验室的时候，简直跟背了两块砖头一样。自从用了Mac，背着书包一口气爬五楼，不费劲！我觉得它真的改变了我的生活质量，总之一句话，你值得拥有！</p>
+<h2 id="硬件配置">硬件配置</h2><p>再说配置，苹果的产品确实很贵，但是性价比很高，我们可以比较一下，相同配置的联想笔记本售价多少，然后再考虑Retina屏幕，Force Touch触摸板。</p>
+<h3 id="屏幕">屏幕</h3><p>我又忍不住要对比了，我用了一个多小时的Mac之后，并没有觉得Retina屏幕的优点在哪里，然而当我再使用那台联想的时候，我才发现，这特么是啥啊，感觉就是一个个的像素颗粒浮在眼前，而且还特别暗，简直是亵渎我的眼睛。这时才感受到Retina屏幕那细腻的画面，丰富的色彩，和超高的分辨率，只有通过这种对比，才能感受到Retina的魅力，真的是由俭入奢易，由奢入俭难！</p>
+<h3 id="触摸板">触摸板</h3><p>还有触控板，你能体会不用鼠标操作Windows PC的感受么，然而Mac却可以完全不使用鼠标，这触控板的手感丝滑细腻，还有各种手势简直不知道要比鼠标舒服到哪里去了。原来我用联想的时候，为了方便，我还买了两个鼠标，一个放在寝室，一个放在实验室，然而现在，一切都是多余的！</p>
+<h3 id="电池">电池</h3><p>对于普通的PC来说，续航能力一直都是硬伤，尽管厂商都宣传什么续航7个小时啥的，然而实际情况一般就是2到3个小时，7个小时估计是开着机什么都不干，还得把WI-FI，蓝牙啥的全都关闭才能凑够吧。原来用联想，上一下午的实验课，充满的电池能勉强坚持到下课，也就3个小时的样子。而现在呢，上3个小时的实验课也就能用掉20%－30%的电量，从此再也不用担心电量不足了。</p>
+<h2 id="操作系统">操作系统</h2><p>以上都是硬件方面的，下面来说说软件。先从操作系统说起吧，我是一个很喜欢折腾操作系统的人（只是折腾而已），当时windows8还是预览版的时候我就已经在使用了，那时也正是喜欢折腾的年纪，又有时间，于是后来又在我的大联想上装了linux，不停的更换着各种发行版，配各种软件系统，就这么折腾来折腾去，慢慢的就熟悉了使用命令行，后来还按着lfs文档自己从头做了一遍linux系统，也一直对高冷的Mac OS X充满了好奇，我相信不少人买Mac也正是冲着人家的操作系统去的吧，就像我，哈哈。由于之前接触过linux，所以对Mac OS X上手很快，毕竟类Unix操作系统的设计哲学很多都是相似的。我还是和Windows操作系统对比着来讲吧，说来还得感谢微软，使用Windows操作系统，让我学会了不少知识，比如怎么解决死机、蓝屏，怎么重装系统等等，虽然它教会了我很多，也是我的启蒙操作系统，然而使用了Mac之后，我还是决定抛弃了它，😏。下面我就讲讲原因吧：</p>
+<ol>
+<li>我喜欢使用命令行那种炫酷又高效的操作方式控制电脑，然而Windows里鸡肋的命令提示符，谁用谁知道。但是Mac则是图形界面和命令行的完美结合，再装一个终极shell——zsh，那感觉只有你用了才能体会到。</li>
+<li>不同的内存管理方式，我的联想是4G内存，然而使用了3个G左右的时候电脑就已经卡的不行，也就是说你需要保证有足够多的空闲内存才能保证正在运行的程序的高效运行。如果平时开的软件比较多，再加上十几个Chrome标签，呵呵，你懂的！而Mac呢，我可以同时开很多个软件，而丝毫感觉不到卡顿，Chrome标签多的时候开到20多个，然而系统依然是那么顺畅，对于Mac OS X来说，真的就是内存不用，空着浪费。（至于我为什么提到Chrome我想大家应该都懂吧，我可没有黑它哦）</li>
+<li>不需要频繁的关机、重启，你能想象一台Windows PC一个星期不关机的场景么，反正我没试过。而我的Mac自从买回来到现在这一个月左右的时间，基本没有关过机。从来都是开盖即用，合盖即走，永远是那么贴心！</li>
+<li>丰富并且酷炫的应用软件，用了Mac之后才发现，竟然有这么多堪称神器的软件，具体内容请看下一节！</li>
+</ol>
+<h2 id="应用软件">应用软件</h2><p>讲完了操作系统，就该讲讲应用软件了，Mac上有很多堪称神器的应用软件，极大的提高了使用者的工作效率，对程序员来说尤其如此，请看知乎上的一个相关问题：<a href="http://www.zhihu.com/question/20873070" target="_blank" rel="external">程序员如何优雅的使用Mac</a>。我们可以参照其中的回答把我们的Mac装扮的更有格调，😄！下面我就说几个我自己用着还不错的软件吧：</p>
+<ul>
+<li>Alfred，这款被称为Mac第一神器的软件真的不是吹的，真的算是一款极客工具，用着就一个字，爽！<img src="http://7sbkoj.com1.z0.glb.clouddn.com/macv2ex.png" alt="v2ex"> <img src="http://7sbkoj.com1.z0.glb.clouddn.com/macdouban.png" alt="douban"> <img src="http://7sbkoj.com1.z0.glb.clouddn.com/macsn.png" alt="Startup news"> <img src="http://7sbkoj.com1.z0.glb.clouddn.com/mackill.png" alt="kill workflow"> <img src="http://7sbkoj.com1.z0.glb.clouddn.com/macreddit.png" alt="reddit"></li>
+<li>Dash，最近这几天才出的3.0版本，程序员必备，结合Alfred workflow用着很舒服！<img src="http://7sbkoj.com1.z0.glb.clouddn.com/macdashworkflow.png" alt="dash workflow"> <img src="http://7sbkoj.com1.z0.glb.clouddn.com/macdash.png" alt="dash"> <img src="http://7sbkoj.com1.z0.glb.clouddn.com/macdash2.png" alt="dash workflow"></li>
+<li>Mou，一款Markdown编辑器，实时预览效果不错，我正在写的这篇文章就是用的这个编辑器。</li>
+<li>iStat Menus，一款实时监控软件，用来查看系统的状态，很实用而且逼格很高，推荐使用。<img src="http://7sbkoj.com1.z0.glb.clouddn.com/maciStat.png" alt="iStat Menus"></li>
+<li>AppCleaner，一款用来卸载App用的软件，可以搜索到对应App的缓存文件配置文件等，可以干净彻底的删除你的Mac应用。</li>
+<li>vlc，视频播放软件，自带的播放器有很多格式不支持，我自己用的是这个，就推荐这个了。</li>
+<li>印象笔记，全平台同步，平时用来记录一些资料什么的很方便。</li>
+<li>OmniFocus，一款GTD软件，是Mac上的另一款神器，有了它，再也不会不知道接下来该做什么了。</li>
+<li>OmniGraffle，类似于Windows中的Visio，画各种图很方便。</li>
+<li>iTerm 2，用来替换自带的Terminal，可定制性更强一些，搭配zsh，会极大的提高效率。</li>
+<li>BetterZip，一款压缩软件，比自带的打包工具支持的格式多些。</li>
+</ul>
+<p>当然还有其他的很多非常棒的软件，服务于不同的用户，我就列举这几个我在用的并且觉得还不错的吧。</p>
+<h2 id="使用经验">使用经验</h2><p>以上讲了这么多，下面就来写一点使用Mac这一个月总结的小技巧吧：</p>
+<ol>
+<li>快捷键什么的我就不多提了，用的久了自然就熟悉了，我只提一个吧：如何优雅的截图！全屏截图快捷键为command+shift+3，选择截图为command+shift+4，在选择截图的时候按下空格键，即可选择某个窗口截图，很方便，你看我文章里的图片就是这么截的。</li>
+<li>caffeinate命令：该命令可以阻止mac的自动休眠或者屏保，有几个参数供选择，在需要离开一阵却又不想让Mac停止工作的时候很有用。<img src="http://7sbkoj.com1.z0.glb.clouddn.com/maccaff.png" alt="caffeinate man page"></li>
+<li>使用Time Machine做好系统备份，出了问题可以随时恢复。</li>
+<li>使用原生的Mail.app，对比了Airmail和Unibox等等，最后还是觉得原生的好用，而且可以在iPhone上同步。</li>
+</ol>
+<p>暂时只想起来这么多，就先写着些吧，等我有了什么的新的发现，再来补充好了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://7sbkoj.com1.z0.glb.clouddn.com/macmacbookpro.png" alt="Macbook Pro"><br>今年五月份入手了MacBook Pro和iPhone 6，现在已经使用了一个多月，感觉可以写写我]]>
+    </summary>
+    
+      <category term="OS X" scheme="http://wjd1218.github.io/tags/OS-X/"/>
+    
+      <category term="macbookpro" scheme="http://wjd1218.github.io/tags/macbookpro/"/>
+    
+      <category term="Life" scheme="http://wjd1218.github.io/categories/Life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[有梦想的人，始终在路上!(记阿里实习生霸面经历，拿到Offer)]]></title>
+    <link href="http://wjd1218.github.io/2015/05/09/AManWithADream/"/>
+    <id>http://wjd1218.github.io/2015/05/09/AManWithADream/</id>
+    <published>2015-05-09T07:10:44.000Z</published>
+    <updated>2015-06-18T07:54:04.000Z</updated>
+    <content type="html"><![CDATA[<p>今年2月份的时候就在网上找了阿里实习生的内推，然后过年期间一直在家里准备算法，看完了《算法》一书，实现了书中提到的多种数据结构，比如堆、散列表、红黑树等等。因为没有面试经验，也不知道面试会是什么样的形式，会问什么样的问题，我只是觉得把数据结构和算法理解透彻就可以了。原来还是我太天真了，我完全没有准备常见面试题。然后阿里3月份的时候就开始了内推的电话面试，由于准备不充分，TCP三次握手的状态都没有弄清楚，Java垃圾回收的原理也没有深入了解，在二面的时候理所当然的挂掉了。然后就安慰自己还可以准备阿里的笔试，然而在出笔试结果的那一刻，自己也是感到莫名的失落，又是待回绝。不过自己早就打算好就算笔试没有通过，也是要去成都霸面的，心态没有崩溃，只是越来越感到压力山大，实验室的小伙伴们都已经陆陆续续的拿到了offer，唯独自己还在为面试做准备。但是现在自己确很感激过去的这两个月时光，也真的佩服自己能够化压力为动力，佩服自己能坚持下来。在这两个月的时间里，自己不断的看书、总结，真的感觉自己的能力有了一个质的提升，相信这也是我能在去成都面试时保持自信的原因之一吧。</p>
+<p>时间飞逝，很快就进入了5月份，今年阿里在成都沃特酒店面试，我因为笔试没有通过，也很清除这是最后的机会，就只能去霸面了。而且那天我真的很有自信，可以说自己从来没有这么自信过，我甚至觉得只要能有面试机会，我就能通过面试。然而实际情况总不如自己想的那么如意，5月5号上午，我们几个小伙伴早早的就到了酒店等候，等时间差不多的时候，我们几个上楼说明来意，然后把简历交给了工作人员，然后就进了等候区静静的等。大概等了3个小时吧，在上午11点左右的时候，HR姐姐把我们的简历退回来了，说面试官觉得不太合适，说我们可以回去了。我们等电梯的时候还安慰我们说我们可以等阿里的校招。</p>
+<p>起初自己本是一个很放松的心情等待面试，并且经过跟面试结束的同学交流，觉得自己水平应该能达到要求，然后心里更放松了。可是万万没想到，自己的简历居然都没有通过，直接被退了回来，心情还是一下子变得很失落。当时就想，没有机会了，跟小伙伴一起默默回到了酒店，如果不是因为我们早上出门时续了房，估计当天也就会回重庆了吧。回到酒店之后，在网上查了查别人霸面的经历，察觉到霸面的人基本上都不是第一次就成功争取到机会的，然后我们就决定下午再去一次，几个小伙伴还修改了自己的简历。我因为来之前简历已经改了无数次，让同学、老师都提过不少建议，觉得实在是没什么可以改的了，就带着同样的简历，继续去霸面。这次根本就不让我们进屋子里等了，让我们在外面等。然而这次自己仍然没有通过简历筛选，HR姐姐又把我们的简历退了回来，说面试官觉得不合适，但是我猜测我们的简历根本就没有经过面试官，我同学也说他听到HR姐姐说这个人已经被刷过了，当时真的觉得没有一点希望了。然后就和同学到12层，找另外几个面试产品的小伙伴。在和小伙伴交流的过程中，我做了一个决定——换个职位再申请一次，经过了几分钟的心理挣扎之后，我毅然的上了25楼，这次我没有把简历交给工作人员，而是直接给了那个HR姐姐，然后说明自己希望能够换个职位试一试，还讲了自己是从重庆过来，希望能有一个面试机会，不想就这样带着遗憾回去。</p>
+<p>估计HR姐姐也是真的被我打动了吧，接过我的简历说帮我去问一下，让我先在外面等一会。我也只好默默的等，但是至少觉得还有一线希望。然后没几分钟，工作人员就叫我过去在简历上写上职位意向和工作城市意向，写好后就让我进屋子里面等叫号了，这下终于觉得有希望了。说来也真是运气好，时间大概是下午不到5点钟，我投的数据研发工程师的职位，估计正常预约面试的人基本都结束了。所以我等了大概半个小时就被叫到去参加一面，一面的面试官很和蔼，我在他对面坐下以后，所有的紧张感都消失了。面试官浏览了一下我的简历，然后就让我讲讲自己觉得做的不错的一个项目，因为来之前我对我的项目进行了充分的准备，几个重要的点都讲的很清楚。面试官听我讲完，还给我的项目提出了几个值得改进的地方，并从架构上给我分析了我的项目，那一刻我对面试官也是充满了钦佩，所以最后面试官问我有什么问题的时候，我就问了下他的花名，并让面试官给我今后的学习提了些建议。初面大概进行了50分钟，面试官最后直接跟我说你一面通过了，但只是勉强通过，说对于本科生，能了解到这些也很不错。出来之后我就在等候区等待二面，不到10分钟我就被叫到了，二面的面试官是个主管，给我的感觉是十分平易近人然而又不失严肃，既有一种气场又不给人压力。先让我做了自我介绍，然后就以聊天的语气问了些问题，氛围一直都很轻松，面试官也没有问我太多的技术细节，主要还是以了解我的视野、世界观、性格、学习能力、学习热情等方面为主。最后面试官还给我提了一些学习上的建议，我觉得十分受用。二面大概一个小时，结束时已经快要晚上8点钟了，我在等候区等待结果，不知道自己过没过，心里还是有些忐忑。不过我等了不到5分钟就有工作人员叫我到25层进行HR面试，然后我被带到了25层的等候区，这时候等候区就只有我一个人了，说来也真的是运气好，我应该是当天最后一个HR面试的人。HR姐姐知道我是从重庆过来的，就了解了一些具体情况，还问了一些有关我的大学生活、实验室生活、家庭环境等方面的问题。就像是在和朋友聊天，表露出真诚就好了。面试大概进行了40分钟，结束的时候已经快到晚上9点了，并且那个HR姐姐晚饭还没有吃。结束时HR姐姐让我先在外面等一下，我正准备回到等候区，发现等候区灯都关了，工作人员说今天的面试已经结束了，让我回去等结果就可以了。我就说是HR姐姐让我在外面等一下，然后工作人员就进去问了一下，出来跟我说，刚才HR姐姐让我留下是考虑到我是从重庆过来的，而后天上午要邀请我参加阿里的圆桌沙龙，想问我有没有打算在成都多住一天，我当然决定多住一天了！工作人员最后说，现在你可以放心的回去了吧。然后我谢过工作人员，就下楼去找小伙伴了。</p>
+<p>这一天真的很累，很疲倦，然而结果总算令人满意，当晚大概在凌晨四五点钟才睡着，满脑子都是当天面试的过程，十分感慨，觉得所有的付出都值了。7号上午，开开心心的去参加了圆桌沙龙，我被分到了蚂蚁金服，这天上午了解了很多阿里的文化，HR姐姐们和主管们给我们解答了很多问题。结束时也已经11点多了，然后匆匆回到酒店，退房，准备返校。这三天经历，虽然坎坷，但收获很多，仅以此文留作纪念。</p>
+<p>总结一下我的收获吧：</p>
+<ol>
+<li>学习要脚踏实地，要真正的学进去、钻进去，有真才实学，才能充满自信，才能创造价值。</li>
+<li>遇到挫折要敢于面对，要能坚持下去，要相信自己，给自己鼓励，学会化压力为动力。</li>
+<li>机会要自己争取，要敢于尝试，一次次的逃避只会让你失去的更多。</li>
+<li>不要找借口，而要找原因。找借口只会让你越来越弱而自大，找原因则会让你越来越强且谦虚。</li>
+<li>要保持乐观平静的心态，除了生死，其他的都是小事。</li>
+<li>学会感恩，感恩每一个给你带来帮助的人，如果没有他们，结果可能完全不同。</li>
+</ol>
+<p>每天去实验室或者图书馆的路上，总能看到一个写着名言的牌子：人生最大的光荣，不在于永不失败，而在于屡仆屡起！每次经过那里，总会受到莫大的鼓舞，感谢我身边的一切，路还很长，在一个新的起点，期待一个更好的自己。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今年2月份的时候就在网上找了阿里实习生的内推，然后过年期间一直在家里准备算法，看完了《算法》一书，实现了书中提到的多种数据结构，比如堆、散列表、红黑树等等。因为没有面试经验，也不知道面试会是什么样的形式，会问什么样的问题，我只是觉得把数据结构和算法理解透彻就可以了。原来还是]]>
+    </summary>
+    
+      <category term="interview" scheme="http://wjd1218.github.io/tags/interview/"/>
+    
+      <category term="Life" scheme="http://wjd1218.github.io/categories/Life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[锁与CompareAndSwap]]></title>
+    <link href="http://wjd1218.github.io/2015/04/21/LockAndCompareAndSwap/"/>
+    <id>http://wjd1218.github.io/2015/04/21/LockAndCompareAndSwap/</id>
+    <published>2015-04-21T06:59:13.000Z</published>
+    <updated>2015-06-18T07:54:24.000Z</updated>
+    <content type="html"><![CDATA[<p>这篇文章我主要想总结两个内容，第一是关于锁的，第二是关于非阻塞同步CompareAndSwap的。这两个内容在Java多线程并发中都很重要，下面就直接进入主题吧。</p>
+<h2 id="锁">锁</h2><p>要提到并发，自然就要提到锁，通过使用锁，使得多线程的并发控制变得十分简单。但是付出的代价也很高，只有获取到锁的线程才能够执行代码，而其他线程必须挂起等待直到锁被释放，这期间它不能做任何事情。并且，在线程进行切换的过程中，即一个线程释放锁，另一个线程<strong>被调度</strong>获得锁并执行代码，也存在着很大的系统开销。然而人们对程序效率的追求并没有止步，程序的响应能不能更快一点、效率能不能更高一点等问题不断的激发着人们的热情。于是就产生了多种不同种类的锁，分别适用于在不同的场景下提高程序的并发效率。下面就先说说<strong>乐观锁</strong>和<strong>悲观锁</strong>，乐观锁与悲观锁都是概念上的，它们的区别在于悲观锁假设最坏的情况一定会发生，所以就在每次访问共享资源时都上锁。然而我们知道并不是所有的并发操作都会导致数据不一致，这就导致有些本来可以并发的线程由于不能获取到锁而必须等待，从而降低了并发的效率。乐观锁则与之不同，就像它的名字一样，它以一种乐观的态度去访问共享数据，即它认为对共享数据的修改不会造成冲突，所以访问共享资源的时候并不加锁，如果它对共享资源的修改真的产生了冲突，那么它就会放弃这次修改，然后不断的重试。这种乐观锁的形式在下文中还会具体将到，就是CompareAndSwap。讲完了乐观锁与悲观锁，就接着讲讲读写锁吧。读写锁是一种锁分离技术，它把读锁和写锁分开，读锁可以被多个线程持有，这样读线程就可以并发，而写锁是互斥的，它只能被一个线程持有，并且写锁与读锁也互斥。接下来就是可重入锁了，其实synchronized就是可重入的，可重入锁就是说一个线程获取到锁之后，在该线程内部又要递归的获取锁，如果锁不是可重入的，就会造成死锁，因为它不能获取到已经被自己保持的锁。但是可重入锁则不同，一个线程内部递归的获取锁时，会使锁计数器加一，该线程每释放一个锁，锁的计数器就减一，当锁计数器为零时，锁被完全释放。ReentrantLock就是一个可重入锁的实现，它的使用是显式的，并且要在finally块中释放锁，这点与synchronized使用的内置锁不同，在synchronized代码块中的代码如果抛出了异常，内置锁会被自动释放掉。（这样锁也变成了对象，正是万物皆对象！）它比synchronized更加灵活，它为处理锁的不可用性问题提供了解决方案，比如，可以中断一个正在等待获取锁的线程、或者在线程请求获取一个锁时设置超时时间而避免无限的等待下去。基于ReentrantLock机制，Java并发包中还引入了Condition接口，用来提供与Object类中的wait()，notify()和notifyAll()方法类似的await()，signal()和singalAll()方法。下面是一个使用读写锁实现的对Map的包装，增加了并发性能，请看代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.Lock;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.ReadWriteLock;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.locks.ReentrantReadWriteLock;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 使用读写锁包装Map，使它能在多个读线程之间安全共享，并且避免读写、写写冲突。</span><br><span class="line"> * 适用于对另一种Map实现提供并发性更高的访问。但是如果仅仅是需要一个并发的Map，</span><br><span class="line"> * 使用ConcurrentHashMap是一个很好的选择。</span><br><span class="line"> * <span class="doctag">@author</span> Colin Wang</span><br><span class="line"> * Created on Apr 24, 2015</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReadWriteMap</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">true<span class="keyword">private</span> <span class="keyword">final</span> Map&lt;K, V&gt; map;</span><br><span class="line">true<span class="keyword">private</span> <span class="keyword">final</span> ReadWriteLock lock = <span class="keyword">new</span> ReentrantReadWriteLock();</span><br><span class="line">true<span class="keyword">private</span> <span class="keyword">final</span> Lock readLock = lock.readLock();</span><br><span class="line">true<span class="keyword">private</span> <span class="keyword">final</span> Lock writeLock = lock.writeLock();</span><br><span class="line">true</span><br><span class="line">true<span class="comment">// 对传入的Map进行包装</span></span><br><span class="line">true<span class="function"><span class="keyword">public</span> <span class="title">ReadWriteMap</span><span class="params">(Map&lt;K, V&gt; map)</span> </span>&#123;</span><br><span class="line">truetrue<span class="keyword">this</span>.map = map;</span><br><span class="line">true&#125;</span><br><span class="line">true</span><br><span class="line">true<span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span> </span>&#123;</span><br><span class="line">truetrue<span class="comment">// 写操作需要取得写锁</span></span><br><span class="line">truetruewriteLock.lock();</span><br><span class="line">truetrue<span class="keyword">try</span> &#123;</span><br><span class="line">truetruetrue<span class="keyword">return</span> map.put(key, value);</span><br><span class="line">truetrue&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">truetruetruewriteLock.unlock();</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line">true</span><br><span class="line">true<span class="function"><span class="keyword">public</span> V <span class="title">get</span><span class="params">(K key)</span> </span>&#123;</span><br><span class="line">truetruereadLock.lock();</span><br><span class="line">truetrue<span class="keyword">try</span> &#123;</span><br><span class="line">truetruetrue<span class="keyword">return</span> map.get(key);</span><br><span class="line">truetrue&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">truetruetruereadLock.unlock();</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="非阻塞同步算法">非阻塞同步算法</h2><p>关于非阻塞同步算法，本文主要讲一下CompareAndSwap，即比较和交换。这就是前文提到的乐观锁技术，CompareAndSwap有三个操作数：内存值V，预期值A，新值B。当使用CompareAndSwap时，会先将预期值A与内存值V进行比较，如果相同，则把内存值V替换成新值B，如果不相同，则不进行替换，并返回内存中的实际值。这个语义可以解释为：我认为V的值应该为A，如果是，就把V的值替换成B，如果不是就不替换，并告诉我内存中的实际值。在JDK的原子类中都提供了这种基于乐观锁的CAS操作，而且concurrent包中的很多类也使用了这些原子类。在这些原子类中通过调用sun.misc.Unsafe里面的CAS算法，用CPU指令来实现无锁自增。所以，AtomicLong.incrementAndGet()的自增比使用synchronized这种悲观锁的效率要高很多。下面是使用原子引用实现的一个非阻塞栈，它是线程安全的，但是并不是通过同步来实现的。它使用了基于乐观锁的形式，在多线程并发的情况下，代码<code>top.compareAndSet(oldHead, newHead)</code>只会有一个线程执行成功，而其他线程均失败，并可以选择重试。这样避免了使用悲观锁时线程之间的等待唤醒，提高了并发效率。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.concurrent.atomic.AtomicReference;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 非阻塞栈</span><br><span class="line"> * <span class="doctag">@author</span> Colin Wang</span><br><span class="line"> * Created on Apr 25, 2015</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcurrentStack</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">true<span class="comment">// 使用原子引用保存当前栈顶元素的引用</span></span><br><span class="line">trueAtomicReference&lt;Node&lt;E&gt;&gt; top = <span class="keyword">new</span> AtomicReference&lt;&gt;();</span><br><span class="line">true</span><br><span class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">truetrue<span class="comment">// 创建一个新的结点</span></span><br><span class="line">truetrueNode&lt;E&gt; newHead = <span class="keyword">new</span> Node&lt;E&gt;(e);</span><br><span class="line">truetrue<span class="comment">// 存储旧的栈顶</span></span><br><span class="line">truetrueNode&lt;E&gt; oldHead;</span><br><span class="line">truetruedo &#123;</span><br><span class="line">truetruetrue<span class="comment">// 获取当前的栈顶</span></span><br><span class="line">truetruetrueoldHead = top.get();</span><br><span class="line">truetruetrue<span class="comment">// 新结点的next域指向当前的栈顶</span></span><br><span class="line">truetruetruenewHead.next = oldHead;</span><br><span class="line">truetruetrue<span class="comment">// 使用CAS更新当前栈顶，如果失败就进行重试。</span></span><br><span class="line">truetruetrue<span class="comment">// 如果当前栈顶为oldHead，则更新为newHead，操作成功。</span></span><br><span class="line">truetruetrue<span class="comment">// 如果当前栈顶值不是oldHead，表示其他线程已经对栈顶进行了修改，操作失败并重试。</span></span><br><span class="line">truetrue&#125; <span class="keyword">while</span> (!top.compareAndSet(oldHead, newHead));</span><br><span class="line">true&#125;</span><br><span class="line">true</span><br><span class="line">true<span class="function"><span class="keyword">public</span> E <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">truetrueNode&lt;E&gt; oldHead;</span><br><span class="line">truetrueNode&lt;E&gt; newHead;</span><br><span class="line">truetruedo &#123;</span><br><span class="line">truetruetrue<span class="comment">// 取出当前栈顶</span></span><br><span class="line">truetruetrueoldHead = top.get();</span><br><span class="line">truetruetrue<span class="keyword">if</span> (oldHead == <span class="keyword">null</span>) &#123;</span><br><span class="line">truetruetruetrue<span class="comment">// 如果当前栈顶为null则返回null</span></span><br><span class="line">truetruetruetrue<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetruetrue<span class="comment">// 新的栈顶指向当前栈顶的下一个元素</span></span><br><span class="line">truetruetruenewHead = oldHead.next;</span><br><span class="line">truetruetrue<span class="comment">// 尝试使用新的栈顶替换旧的栈顶，失败则重试</span></span><br><span class="line">truetrue&#125; <span class="keyword">while</span> (!top.compareAndSet(oldHead, newHead));</span><br><span class="line">truetrue<span class="comment">// 返回当前栈顶的元素值</span></span><br><span class="line">truetrue<span class="keyword">return</span> oldHead.value;</span><br><span class="line">true&#125;</span><br><span class="line">true</span><br><span class="line">true<span class="comment">// 栈中的元素</span></span><br><span class="line">true<span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">truetrue<span class="keyword">private</span> T value;</span><br><span class="line">truetrue<span class="keyword">public</span> Node&lt;T&gt; next;</span><br><span class="line">truetrue</span><br><span class="line">truetrue<span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(T value)</span> </span>&#123;</span><br><span class="line">truetruetrue<span class="keyword">this</span>.value = value;</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>这篇文章我主要想总结两个内容，第一是关于锁的，第二是关于非阻塞同步CompareAndSwap的。这两个内容在Java多线程并发中都很重要，下面就直接进入主题吧。</p>
+<h2 id="锁">锁</h2><p>要提到并发，自然就要提到锁，通过使用锁，使得多线程的并发控制变]]>
+    </summary>
+    
+      <category term="cas" scheme="http://wjd1218.github.io/tags/cas/"/>
+    
+      <category term="concurrent" scheme="http://wjd1218.github.io/tags/concurrent/"/>
+    
+      <category term="lock" scheme="http://wjd1218.github.io/tags/lock/"/>
+    
+      <category term="Java" scheme="http://wjd1218.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[深入学习Memcached]]></title>
+    <link href="http://wjd1218.github.io/2015/04/18/DepthStudyOfMemcached/"/>
+    <id>http://wjd1218.github.io/2015/04/18/DepthStudyOfMemcached/</id>
+    <published>2015-04-18T14:20:03.000Z</published>
+    <updated>2015-06-18T07:55:04.000Z</updated>
+    <content type="html"><![CDATA[<p>由于实验室在一个项目中用到了Memcached分布式缓存，自己这段时间也对分布式缓存深入学习了一下，本文就总结一下自己的收获，还是从Memcached是什么谈起吧。</p>
+<h2 id="Memcached是什么">Memcached是什么</h2><p>Memcached是一款高性能的分布式内存对象缓存系统，使用它可以减少应用系统对数据库的直接访问，减轻了数据库负载，并且提升了应用程序的响应速度。可以将Memcached比作一个巨大的、存储了很多<key,value>对的哈希表，通过key可以存储或查询任意的数据。它的实现依赖于几个重要的算法，下面就详细讲讲<strong>最近最少使用（LRU）算法</strong>和<strong>一致性哈希算法</strong>。</key,value></p>
+<h2 id="LRU算法">LRU算法</h2><p>操作系统的页面置换算法中也包括该算法，这种算法非常适合于缓存系统。它基于一种假设：过去一段时间使用频率最低的数据，将来也会很少使用。下面是我自己实现的一个基于LRU算法的缓存，它实现了基本的缓存功能，不过需要改进的一点是该缓存应该是单例的。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> colin.cache;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * </span><br><span class="line"> * <span class="doctag">@author</span> Colin Wang</span><br><span class="line"> * Created on Apr 18, 2015</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span> </span>&#123;</span><br><span class="line">true<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_MAX_SIZE = <span class="number">10</span>;</span><br><span class="line">true<span class="keyword">private</span> Object[] elements;</span><br><span class="line">true<span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line"></span><br><span class="line">true<span class="function"><span class="keyword">public</span> <span class="title">LRUCache</span><span class="params">(<span class="keyword">int</span> maxSize)</span> </span>&#123;</span><br><span class="line">truetrueelements = <span class="keyword">new</span> Object[maxSize];</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="function"><span class="keyword">public</span> <span class="title">LRUCache</span><span class="params">()</span> </span>&#123;</span><br><span class="line">truetrue<span class="keyword">this</span>(DEFAULT_MAX_SIZE);</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">truetrue<span class="keyword">return</span> size == <span class="number">0</span>;</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span> </span>&#123;</span><br><span class="line">truetrue<span class="keyword">return</span> size;</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFull</span><span class="params">()</span> </span>&#123;</span><br><span class="line">truetrue<span class="keyword">return</span> size == elements.length;</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="comment">/**</span><br><span class="line">true * 返回元素在数组中的位置</span><br><span class="line">true * </span><br><span class="line">true * <span class="doctag">@param</span> element</span><br><span class="line">true * <span class="doctag">@return</span></span><br><span class="line">true */</span></span><br><span class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(Object element)</span> </span>&#123;</span><br><span class="line">truetrue<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">truetruetrue<span class="keyword">if</span> (element.equals(elements[i])) &#123;</span><br><span class="line">truetruetruetrue<span class="keyword">return</span> i;</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetrue&#125;</span><br><span class="line">truetrue<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="function"><span class="keyword">public</span> Object <span class="title">push</span><span class="params">(Object element)</span> </span>&#123;</span><br><span class="line">truetrue<span class="keyword">int</span> index = -<span class="number">1</span>;</span><br><span class="line">truetrue<span class="keyword">if</span> (!isFull() &amp;&amp; indexOf(element) == -<span class="number">1</span>) &#123;</span><br><span class="line">truetruetrue<span class="comment">// 缓存未满，并且其中不含有待插入的元素</span></span><br><span class="line">truetruetrueelements[size++] = element;</span><br><span class="line">truetrue&#125; <span class="keyword">else</span> <span class="keyword">if</span> (isFull() &amp;&amp; indexOf(element) == -<span class="number">1</span>) &#123;</span><br><span class="line">truetruetrue<span class="comment">// 缓存已满，并且其中不含有待插入的元素</span></span><br><span class="line">truetruetrue<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size - <span class="number">1</span>; i++) &#123;</span><br><span class="line">truetruetruetrueelements[i] = elements[i + <span class="number">1</span>];</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetruetrueelements[size - <span class="number">1</span>] = element;</span><br><span class="line">truetrue&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">truetruetrueindex = indexOf(element);</span><br><span class="line">truetruetrue<span class="keyword">for</span> (<span class="keyword">int</span> i = index; i &lt; size - <span class="number">1</span>; i++) &#123;</span><br><span class="line">truetruetruetrueelements[i] = elements[i + <span class="number">1</span>];</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetruetrueelements[size - <span class="number">1</span>] = element;</span><br><span class="line">truetrue&#125;</span><br><span class="line">truetrue<span class="keyword">return</span> index == -<span class="number">1</span> ? <span class="keyword">null</span> : elements[index];</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">truetrue<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">truetruetrueSystem.out.print(elements[i].toString() + <span class="string">" "</span>);</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="一致性哈希算法">一致性哈希算法</h2><p>该算法在分布式缓存系统中应用十分广泛，它的关键之处在于使用环形的哈希空间。首先我们先考虑一下JDK中HashMap的实现，我们知道，HashMap有一个初始容量和装载因子，当HashMap中元素的数量达到了<code>初始容量*装载因子</code>这么多时，HashMap就会进行扩容（变为原来的2倍）然后再哈希，当元素很多时，这种再哈希操作实际上是很消耗资源的。尽管HashMap使用了一种比较优化的方式，比如HashMap的大小总是为2的n次幂（默认大小为16），这样既减少了哈希碰撞的几率（因为<code>2的n次幂-1</code>转化为二进制时所有位均为1，这样就避免了某些位不能发挥作用），又增加了HashMap在定位元素时的效率，比如方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">indexFor</span><span class="params">(<span class="keyword">int</span> h, <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> h &amp; (length-<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当length总是2的n次方时，<code>h &amp; (length - 1)</code>运算等价于对length取模。但是这些仍然不能完全弥补所有元素必须全部重新哈希的弱点。比如我们拥有N台缓存服务器，所有的热数据已经通过Hash算法映射到了这N台服务器上，这时候当其中一台缓存服务器挂掉，或者我们又新添了几台缓存服务器进来时，所有已经映射好的数据都将失效，而我们的后端数据库将会承受这一切！所以，一致性Hash算法就派上用场了，上面已经提到，一致性哈希算法使用的是环形的哈希空间，如下图所示：</p>
+<p><img src="http://wjd1218.qiniudn.com/cache.jpg" alt="环形哈希空间"></p>
+<p>常规的Hash算法为将某个key映射为一个32位整数，我们将这0至2^32-1的数值空间首位相接便形成了一个环。然后把我们的缓存服务器通过散列（对IP或机器名等进行散列）映射到这个环上，这样，当一个对象被散列到某个位置后，我们就把该对象缓存到<strong>顺时针方向</strong>离它最近的缓存服务器结点上。使用这种方式，当其中一个缓存服务器结点失效时，不会导致所有的缓存数据都失效，也仅仅需要把原来被缓存到该结点上的数据继续缓存到下一个顺时针方向离它最近的结点上即可。当新增一个结点时，同样也只需要对很少的一部分数据进行再哈希并映射到新的结点上即可。为了避免出现数据分配不均匀的情况，比如绝大多数的数据都被缓存到了一个结点上，而其他的结点则缓存很少的数据，一致性哈希算法还提出了<strong>虚拟结点</strong>的概念。如下图所示：</p>
+<p><img src="http://wjd1218.qiniudn.com/virtualCache.jpg" alt="加入虚拟结点"></p>
+<p>A1和A2为结点A的虚拟结点，虚拟结点的hash值计算可以采用对应结点的IP地址加数字后缀的方式，如“192.168.1.1#1”。这样就可以将被散列到A1和A2的数据都缓存进结点A中，从而避免了数据分布不平衡的现象。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>由于实验室在一个项目中用到了Memcached分布式缓存，自己这段时间也对分布式缓存深入学习了一下，本文就总结一下自己的收获，还是从Memcached是什么谈起吧。</p>
+<h2 id="Memcached是什么">Memcached是什么</h2><p>Memcache]]>
+    </summary>
+    
+      <category term="distributed" scheme="http://wjd1218.github.io/tags/distributed/"/>
+    
+      <category term="hash" scheme="http://wjd1218.github.io/tags/hash/"/>
+    
+      <category term="lru" scheme="http://wjd1218.github.io/tags/lru/"/>
+    
+      <category term="memcached" scheme="http://wjd1218.github.io/tags/memcached/"/>
+    
+      <category term="Database" scheme="http://wjd1218.github.io/categories/Database/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[什么是CopyOnWrite]]></title>
+    <link href="http://wjd1218.github.io/2015/04/16/WhatIsCopyOnWrite/"/>
+    <id>http://wjd1218.github.io/2015/04/16/WhatIsCopyOnWrite/</id>
+    <published>2015-04-16T14:27:34.000Z</published>
+    <updated>2015-06-18T07:54:46.000Z</updated>
+    <content type="html"><![CDATA[<p>前段时间写过一篇关于concurrentHashMap的文章<a href="http://colin.coding.io/2015/03/24/PrincipleOfConcurrentHashMap/" target="_blank" rel="external">ConcurrentHashMap实现原理</a>，其中讲到了实现ConcurrentHashMap的原理，这篇文章就讲一下CopyOnWrite的实现原理。Java中提供了两个CopyOnWrite容器，分别是CopyOnWriteArrayList和CopyOnWriteArraySet。如果想要高效的使用这两个容器，我觉的首先要弄懂CopyOnWrite的原理。那么下面就先来谈谈什么是CopyOnWrite吧。</p>
+<h2 id="什么是CopyOnWrite">什么是CopyOnWrite</h2><p>CopyOnWrite即写时复制，该机制在于控制对数据的操作，什么时候需要对数据的操作进行控制呢，当然是在并发的时候，如果程序只是单线程的，所有对数据的操作都是顺序执行，那么数据的一致性就自然能得到保证。但是当有多个线程并发对数据进行操作的时候，情况就没那么简单了，一个线程修改了数据，另一个线程在数据被修改的过程中又读取了数据并对它进行修改，然后把修改的结果写回主内存，于是就会丢失一个线程对数据所做的修改。这种情况可以通过线程同步来解决，但是同步代码会大大降低并发效率。那么，有没有什么更好的方法来解决这个问题呢，当然，这个方法就是CopyOnWrite！首先我们可以来分析一下对数据的并发访问有哪些情况，如果我们仔细一想就会发现，并发访问数据的情况也无非下面这几种：读读、读写、写读、写写。针对这几种情况，可以分别对并发效率进行优化。</p>
+<ul>
+<li><strong>读读</strong>这种情况是不需要加锁的，多个线程可以同时读取数据。</li>
+<li><strong>读写</strong>这种情况我们可以将<strong>读锁</strong>和<strong>写锁</strong>分离，读取数据时加读锁，修改数据时加写锁，读锁可以被多个线程持有，适用于读多写少的情况。</li>
+<li><strong>写读</strong>这种情况，同样可以使用读写锁分离的方式，但是更好的方法就是使用CopyOnWrite，对读线程不加锁，写线程修改数据时，先把原数据复制一份进行修改，读线程仍然读到的是旧数据，修改完之后再将原数据的引用指向新的数据，注意这时候写线程仍然是需要加锁的，否则多个线程将会复制出多个副本。</li>
+<li><strong>写写</strong>这种情况就只好进行同步了，但是仍然可以通过降低锁的粒度来进行优化。</li>
+</ul>
+<p>其实上面所讲到的这些，不仅仅是在Java多线程并发处理领域有应用，在数据库并发事务处理方面也有广泛应用，这篇文章<a href="http://colin.coding.io/2015/03/18/DatabaseTransactionAndTheIsolationLevel/" target="_blank" rel="external">数据库事务与其隔离级别</a>中有相关概念的介绍。</p>
+<h2 id="对多线程并发的分析">对多线程并发的分析</h2><p>Java类库中实现了很多并发容器，比如concurrent包下实现的ConcurrentHashMap，CopyOnWriteArrayList等。这些并发容器与同步容器实现机制不同，在同步容器，比如Hashtable、Vector、……中，是通过synchronized关键字获取对象锁来实现同步，这个锁将会锁住整个容器，如果容器的规模很大时对容器进行遍历将会消耗很长的时间，而因为锁的存在，其他线程必须等待。持有锁的时间越长，那么在锁上的竞争就可能越激烈，如果等待锁的线程很多，将极大的降低吞吐量和CPU利用率。如果不希望在对容器中的内容进行迭代时锁住容器，有一种方法就是把该容器复制（复制时仍需要对容器加锁）一份，使线程在容器副本中对元素进行迭代。因此多个线程可以同时对CopyOnWrite容器进行迭代而不彼此干扰也不会被修改容器的线程干扰。但是，当容器中元素数量过多时，底层数组的复制仍然会有很大的开销。</p>
+<h2 id="CopyOnWrite适用场景">CopyOnWrite适用场景</h2><p>CopyOnWrite机制适用于读多写少的场景，比如搜索引擎对某些关键词的过滤使用的黑名单，黑名单很久才会更新一次，但是几乎每时每刻都在被读取。这种机制不适用于对数据实时性要求较高的场景中，因为一个线程修改了数据，其他线程并不一定能够马上读取到新的数据。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>前段时间写过一篇关于concurrentHashMap的文章<a href="http://colin.coding.io/2015/03/24/PrincipleOfConcurrentHashMap/" target="_blank" rel="external">Co]]>
+    </summary>
+    
+      <category term="concurrent" scheme="http://wjd1218.github.io/tags/concurrent/"/>
+    
+      <category term="copy on write" scheme="http://wjd1218.github.io/tags/copy-on-write/"/>
+    
+      <category term="Java" scheme="http://wjd1218.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Java中的线程]]></title>
+    <link href="http://wjd1218.github.io/2015/04/16/ThreadInJava/"/>
+    <id>http://wjd1218.github.io/2015/04/16/ThreadInJava/</id>
+    <published>2015-04-16T12:46:29.000Z</published>
+    <updated>2015-06-18T07:54:40.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="理解线程">理解线程</h2><p>这段时间在看《Java并发编程实战》这本书，使自己对Java多线程的理解又加深一些，感觉自己可以总结一下了，本文就讲讲与线程有关的内容吧。我们要使用线程，首先需要理解线程，前短时间我在<a href="http://colin.coding.io/2015/03/29/TalkAboutOperatingSystem/" target="_blank" rel="external">聊聊操作系统</a>这篇文章中提到了一点关于线程的东西，有兴趣的同学可以读一下。有一点需要理解的就是，我们虽然常说“Java多线程”，但实际上线程这东西是由<strong>操作系统</strong>提供支持的，它并不是由Java本身提供支持的，所以实际上线程的实现是平台相关的！看过Object类源码的同学应该都能注意到，Object类中实现的控制线程的<strong>wait()</strong>，<strong>notify()</strong>方法都是被native关键字修饰的<strong>本地方法</strong>，也表示了这些方法是平台相关的，所以实际上我们通过调用wait()，notify()实现的线程等待唤醒机制是通过使用C语言调用操作系统提供的接口来实现的（个人理解，如有错误还望指正）。操作系统在执行系统调用的时候还涉及到一个用户态与内核态切换的问题，其中包括了程序执行状态的保存和数据的复制，这个过程便消耗一些资源。而且当线程数量很多时，系统的<strong>上下文切换</strong>时间也会增加，这样过多的线程反而会降低系统的响应速度。其实我认为Java应用只是对操作系统中的线程进行了抽象和封装，这也算是Java能够实现平台无关性的原因之一。</p>
+<h2 id="Java中实现线程的方式（三种）">Java中实现线程的方式（三种）</h2><p>Java是几乎完全面向对象的语言，起初学Java的时候对对象的理解太肤浅，以至于有很多现象不能理解。经过了这么久的学习，感觉自己对对象的理解更加深入。现在就从对象的角度，来谈一下线程。在Java中，每个线程实例就是一个对象实例，这也符合<strong>一切皆是对象</strong>的思想。所以，<strong>如何创建一个线程的问题就变成了如何创建一个对象的问题</strong>，我们对这个线程的操纵也就是对这个对象的操纵。如何创建一个对象这个问题我想在Java中应该不算是一个问题了吧！创建对象，当然是通过类来创建，这个类就是Thread类。这也就是创建线程的第一种方法了——继承Thread类。但是这种方式有一点不好就是在Java只允许继承一个类，如果类已经继承了Thread类，就不能再继承其他类了。于是就产生了实现<code>Runnable</code>接口的方式，但是实现了该接口的对象并不是一个线程对象，它只是一个可以被线程执行的对象，如果要启动这个线程，还需要把该对象传递给一个线程对象去执行它，比如通过Thread类的构造方法——<code>public Thread(Runnable r)</code>。那么第三种方式是什么呢，是通过实现<code>Callable</code>接口，这种方式和实现<code>Runnable</code>接口的方式类似，但是<code>Callable</code>中的<code>call()</code>方法<strong>可以抛出异常</strong>并且<strong>可以有返回值</strong>。</p>
+<h3 id="关于线程池">关于线程池</h3><p>在java.util.concurrent包中提供了一套线程池框架，JDK中的实现当然很棒，Doug Lea的作品自然让人惊叹，但有时候杀鸡焉用宰牛刀。只要弄清楚了基本原理，自己实现一个轻量的线程池也并不是很难。下面就是我自己实现的一个<a href="https://github.com/wjd1218/BeautyCode/blob/master/src/colin/algorithm/thread/ThreadPool.java" target="_blank" rel="external">Java线程池</a>，还有很多不完善的地方，大家可以简单参考。线程池的精髓在于持有两个集合，一个任务集合，一个线程集合。线程集合中的线程不断从任务集合中取出任务并执行，执行完毕之后线程并不结束，继续等待执行任务。在我的实现中，任务集合选择了阻塞队列，这样就不需要自己判断队列的状态来让添加任务或取出任务的线程等待或唤醒。那么，使用线程池到底有什么好处呢？第一，线程池避免了不断创建和销毁线程的开销。第二，线程池的使用，避免了程序创建大量的线程从而导致系统上下文切换时间增加的问题。第三，因为每个线程都需要占有一定的内存，当线程数量过多时，可能会导致内存不足，而线程池则避免了该问题。但是使用了线程池也并不意味着我们就可以高枕无忧了，我们仍然需要考虑很多问题，比如线程池的大小设置为多少才合适，如果线程池过大，那么大量的线程将在相对很少的CPU和内存资源上发生竞争，而设置的太小又会导致有处理器空闲而降低吞吐率。要合理的设置线程池的大小，需要考虑的因素有：CPU的数量、内存的大小、任务的类型（计算密集型还是I/O密集型）等。</p>
+<blockquote>
+<p>对于计算密集型的任务，在拥有N个CPU的系统上，当线程池的大小为N+1时，通常能实现最优的利用率（即使当线程偶尔由于缺页故障或其他原因而暂停时，这个“额外”的线程也能确保CPU的时钟周期不会被浪费）。而对于I/O密集型的任务，由于线程并不会一直执行，因此线程池的规模应该更大。</p>
+</blockquote>
+<h2 id="总结">总结</h2><p>并发的确是个问题，它导致我们的程序总是出现意想不到的结果，使得程序编写更加复杂，但是并发确实在一定程度上提高了程序的运行效率。只要我们弄懂其中的原理，遵守相应的规则，并发程序便一定会按照我们的想法做事。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="理解线程">理解线程</h2><p>这段时间在看《Java并发编程实战》这本书，使自己对Java多线程的理解又加深一些，感觉自己可以总结一下了，本文就讲讲与线程有关的内容吧。我们要使用线程，首先需要理解线程，前短时间我在<a href="http://colin.]]>
+    </summary>
+    
+      <category term="concurrent" scheme="http://wjd1218.github.io/tags/concurrent/"/>
+    
+      <category term="thread" scheme="http://wjd1218.github.io/tags/thread/"/>
+    
+      <category term="threadPool" scheme="http://wjd1218.github.io/tags/threadPool/"/>
+    
+      <category term="Java" scheme="http://wjd1218.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[几个有趣的问题及其解法]]></title>
+    <link href="http://wjd1218.github.io/2015/03/31/SomeInterestingProblemsAndItsSolution/"/>
+    <id>http://wjd1218.github.io/2015/03/31/SomeInterestingProblemsAndItsSolution/</id>
+    <published>2015-03-31T01:50:37.000Z</published>
+    <updated>2015-06-18T07:58:16.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="实现一个算法，找出单项链表中倒数第K个结点。">实现一个算法，找出单项链表中倒数第K个结点。</h2><p>一种比较高效的解法是使用两个指针，使这两个指针分别指向链表中相距K个结点的两个结点。然后沿着链表同时移动这两个指针，当其中一个首先到达链表末端的时候，另一个指针指向的就是倒数第K个结点。显然，该算法的时间复杂度为O(n)。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">kthToLast</span><span class="params">(ListNode head, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">true<span class="keyword">if</span> (K &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">trueListNode fast = head;</span><br><span class="line">trueListNode slow = head;</span><br><span class="line"></span><br><span class="line">true<span class="comment">// fast指针向前移动k个结点</span></span><br><span class="line">true<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++) &#123;</span><br><span class="line">truetrue<span class="keyword">if</span> (slow == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">truetruefast = fast.next;</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="keyword">if</span> (fast == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">true<span class="comment">// fast到达末尾时，slow正好指向倒数第K个结点</span></span><br><span class="line">true<span class="keyword">while</span> (fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">truetruefast = fast.next;</span><br><span class="line">truetrueslow = slow.next;</span><br><span class="line">true&#125;</span><br><span class="line">true<span class="keyword">return</span> slow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="检测链表是否存在环路。">检测链表是否存在环路。</h2><p>使用快慢指针法，快指针一次移动2步，慢指针一次移动1步。如果链表中存在环路，则两个指针必然会相遇。使用这种快慢指针的方式可以为解决很多链表相关的问题提供思路，比如使用两倍速的快指针可以让慢指针定位到链表中间位置，三倍速的快指针可以让慢指针定位到链表三分之一的位置等等，这也是解决不少链表问题的基础。</p>
+<h2 id="代码(n_&amp;_(n-1))_==_0是什么含义？">代码<code>(n &amp; (n-1)) == 0</code>是什么含义？</h2><p>该代码可以用用来检查n是否为0或2的某次方。同样的<code>n = n &amp; (n-1)</code>会清除n的最低有效位。</p>
+<h2 id="实现一个方法，不使用临时变量，直接交换两个数。">实现一个方法，不使用临时变量，直接交换两个数。</h2><p>该问题有两种解法，第一种：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">truea = a - b;</span><br><span class="line">trueb = a + b;</span><br><span class="line">truea = b - a;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>解法二，使用位操作：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">truea = a^b;</span><br><span class="line">trueb = a^b;</span><br><span class="line">truea = a^b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当转化为二进制时，只要能正确交换两个比特位即可。</p>
+<h2 id="实现一个方法，将两个数字相加，不能使用“+”号或其他运算符。">实现一个方法，将两个数字相加，不能使用“+”号或其他运算符。</h2><p>求解该题的关键在于把“相加”和“进位”两个操作分开进行，对于二进制，两个数相加而不考虑进位，即相当于进行<strong>异或</strong>操作。但是若只考虑进位，则又相当于<strong>按位与</strong>加上<strong>移位</strong>操作。因此代码可以实现为：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">true<span class="keyword">if</span> (b == <span class="number">0</span>) <span class="keyword">return</span> a;</span><br><span class="line"></span><br><span class="line">true<span class="comment">// 相加但不进位</span></span><br><span class="line">true<span class="keyword">int</span> sum = a ^ b;</span><br><span class="line">true<span class="comment">// 只进位</span></span><br><span class="line">true<span class="keyword">int</span> carry = (a &amp; b) &lt;&lt; <span class="number">1</span>;</span><br><span class="line">true<span class="comment">// 递归执行</span></span><br><span class="line">true<span class="keyword">return</span> add(sum, carry);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="有20瓶药丸，其中19瓶装有1克/粒的药丸，余下一瓶装有1-1克/粒的药丸。给你一台精准的天平，怎么找出比较重的那瓶药丸？天平只能用一次。">有20瓶药丸，其中19瓶装有1克/粒的药丸，余下一瓶装有1.1克/粒的药丸。给你一台精准的天平，怎么找出比较重的那瓶药丸？天平只能用一次。</h2><p>对20瓶药丸从1到20编号，从每瓶药丸中取出对应编号颗药丸，如从一号瓶中取出1颗，二号瓶中取出2颗……，然后把这些取出的药丸一起放到天平上称重。如果每颗药丸都重1克，那么总重量应为（1+2+3+4+……+19+20）= 210克，所以如果实际重量大于210克，那么多出来的重量一定来自于没粒多0.1克的那瓶药丸。所以由多出来的重量，除以0.1克，得到的即为瓶子的编号。</p>
+<h2 id="给定两条绳子，每条绳子烧尽正好需要一个小时，怎样用这两条绳子准确计量十五分钟？绳子密度不均匀。">给定两条绳子，每条绳子烧尽正好需要一个小时，怎样用这两条绳子准确计量十五分钟？绳子密度不均匀。</h2><p>此题关键在于，绳子密度虽然不均匀，但是如果从两头同时点燃绳子，那么一根绳子烧完正好需要30分钟。所以，把这两根绳子中的一根从一头点燃，另一根同时从两头点燃，等两头点燃的绳子烧完时，正好过去30分钟。这时从一头点燃的绳子还可以再烧30分钟，这时再点燃这根绳子的另一头，并开始计时，等它烧完时，正好计量15分钟。</p>
+<h2 id="给定一个方法isSubString()可以用来检查一个字符串是否是其他字符串的子串，再给定两个字符串s1和s2。实现一个方法，检查s2是否为s1旋转而成，且只能调用一次isSubString()方法。">给定一个方法isSubString()可以用来检查一个字符串是否是其他字符串的子串，再给定两个字符串s1和s2。实现一个方法，检查s2是否为s1旋转而成，且只能调用一次isSubString()方法。</h2><p>举个例子：s2=colinwang就是由s1=wangcolin旋转而成，所以可以将s1分成两个部分，即：s1=xy，x=wang，y=colin。这时我们会发现yx一定会是xyxy的子串，也就是说，s2一定是s1s1的子串，所以只需要调用isSubString(s1s1,s2)即可。</p>
+<h2 id="给定一个能产生0到4之间整数随机数的方法rand5()，实现一个能产生0到6之间整数随机数的方法rand7()。">给定一个能产生0到4之间整数随机数的方法rand5()，实现一个能产生0到6之间整数随机数的方法rand7()。</h2><p>rand7()应当返回0到6之间的整数，且返回每个整数的概率都应为七分之一。我们可以使用while循环，产生出一个范围的数值（至少含有7个元素），其中每个数值出现的概率相同。这样，我们再舍弃掉其中大于7的倍数的部分，最后在除以7取余数，得到范围0到6的随机数，每个值出现的概率都是七分之一。见下面的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">rand7</span><span class="params">()</span> </span>&#123;</span><br><span class="line">true<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">truetrue<span class="comment">// 该rand取值在0到24之间，取得其中每个值的概率相同，</span></span><br><span class="line">truetrue<span class="comment">// 舍弃掉21、22、23、24，否则该方法返回的0到3之间的数字会偏多</span></span><br><span class="line">truetrue<span class="keyword">int</span> rand = <span class="number">5</span>*rand5() + rand5();</span><br><span class="line">truetrue<span class="keyword">if</span> (rand &lt; <span class="number">21</span>) &#123;</span><br><span class="line">truetruetrue<span class="keyword">return</span> rand % <span class="number">7</span>;</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>仍然有个问题要提一下，上面的代码中为什么选择<code>rand=5*rand5()+rand5()</code>呢，因为它能均匀的产生0到24之间的数字，这样就保证了0到24之间每个数字出现的概率相同。如果选择<code>rand=2*rand5()+rand5()</code>则不行，因为这些值不是均匀分布的，比如取得6有两种方式（<code>6=2*1+4和6=2*2+2</code>），而取得0却只有一种方式（<code>0=2*0+0</code>），这样就导致了每个值出现的概率不等。该题目的关键就在于找到一个范围，并使得其中每个值出现的概率相同。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="实现一个算法，找出单项链表中倒数第K个结点。">实现一个算法，找出单项链表中倒数第K个结点。</h2><p>一种比较高效的解法是使用两个指针，使这两个指针分别指向链表中相距K个结点的两个结点。然后沿着链表同时移动这两个指针，当其中一个首先到达链表末端的时候，另一个]]>
+    </summary>
+    
+      <category term="interview" scheme="http://wjd1218.github.io/tags/interview/"/>
+    
+      <category term="Algorithm" scheme="http://wjd1218.github.io/categories/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[聊聊操作系统]]></title>
+    <link href="http://wjd1218.github.io/2015/03/29/TalkAboutOperatingSystem/"/>
+    <id>http://wjd1218.github.io/2015/03/29/TalkAboutOperatingSystem/</id>
+    <published>2015-03-29T06:42:56.000Z</published>
+    <updated>2015-06-18T07:59:36.000Z</updated>
+    <content type="html"><![CDATA[<p>在进入正题之前，先问一句，什么是操作系统，它和普通的应用程序有什么区别？这个问题虽然不难，但是它和我今天想要讲的内容密切相关。下面我就说说我的理解吧，我认为操作系统是一种抽象，这种抽象是人们经过长时间的实践和归纳提炼出来的，在没有操作系统的时候，人们仍然有办法制作程序并在机器上运行，但是人们必须针对硬件编程，这种方式十分繁琐而且有大量的重复劳动。人们慢慢发现，可以把程序对硬件资源的使用抽象出来，并提供相应的编程接口，这样程序就不需要直接面向硬件编写。这样不仅简化了程序的编写，而且使程序移植性变得更好。这种抽象的的结果就是出现了操作系统，它提供了对处理器的抽象、对存储器的抽象等等。这样，我们的应用程序就可以只面向操作系统来编写，应用程序运行于操作系统上，操作系统便成了承载这些应用程序的<strong>平台</strong>。可是随着计算机的发展，这个平台也出现了许多种类，面向一种平台编写的程序便很难在其他的平台上运行，这也变成了程序可移植性的巨大阻碍，于是又产生了类似Java虚拟机（JVM）这种更高级的抽象，程序只需要面向虚拟机编写，而不需要考虑具体运行的平台，Java语言也因此流行。如果能够理解操作系统对硬件进行抽象的原理，我想即使不需要我们自己实现一个操作系统，这也会使我们对应用程序的编写产生莫大的启发。接下来我就聊聊操作系统中几个基本的概念和原理吧。</p>
+<h2 id="进程和线程">进程和线程</h2><p>进程也是一种抽象，它是操作系统对程序执行实例的抽象。进程是操作系统进行资源分配的基本单位，一个程序至少会有一个进程，操作系统会为每一个进程分配独立的内存空间，而且一个进程无法访问另一个进程的地址空间，如果需要获取其他进程中的资源，就要通过进程间通信来完成，比如通过管道、文件、套接字等。每一个进程都含有一个进程控制块（PCB），它可以唯一标识一个进程，操作系统也根据PCB来对进程进行调度。相比于进程，线程就要轻量很多了，进程可以说是线程的容器，线程是进程中的执行实体，一个进程中至少包含一个线程，CPU资源最终还是分配到了线程上。在同一个进程中的线程共享分配给该进程的资源，但每个线程都有自己的寄存器和栈。举个例子来说，要完成一个做饭任务，首先要分配一个厨房，这就好比创建了一个进程并为之分配了资源，厨房中有的人管洗菜切菜、有的人管烧水、有的人管炒菜，有的人管煮饭，其中每一个具体的工作就好比是一个工作线程，这些线程共享厨房这个资源，当切菜的人把菜切好后，炒菜的人就能看到，因为他们在同一间屋子里。但是每个线程也都有自己的一小块资源（寄存器和栈），这就好比切菜的人使用的切菜板不能让烧水的人占用。但是这些还不能保证做饭这个任务能正常的完成，比如厨房中每个人做的具体任务是有顺序要求的，炒菜的人必须等洗菜的人把菜洗好才能继续，他不能把还没洗的菜给炒了，所以线程之间需要进行<strong>同步</strong>。同时，有些必要的资源也不能多人共享，比如厕所，炒菜的人去厕所的时候，其他人都要等他出来才能进去，所以线程之间还需要进行<strong>互斥</strong>。当满足这些规则的时候，做饭这个任务才能有条不紊的完成，而不会出什么差错。其实很多时候把抽象的东西和现实世界中的现象进行类比，很多让人困惑的东西也就容易理解了。</p>
+<h3 id="进程调度算法">进程调度算法</h3><p>上文中也提到了进程控制块（PCB），其中存储了关于该进程的信息，其中就包括进程的调度信息。进程被提交给操作系统之后并不会直接就进入运行状态，它们首先会被放入一个叫做就绪队列的数据结构中，表示这些进程已经准备好了，可以运行它们。<strong>进程调度就是从就绪队列中选择合适的进程分配处理机，使它进入运行状态。</strong>下面就介绍几种常见的进程调度算法。</p>
+<ol>
+<li><strong>先来先服务调度算法</strong>：顾名思义，先进入就绪队列的进程先得到处理机，进入运行状态，直到运行结束或阻塞，才放弃处理机。</li>
+<li><strong>短作业优先调度算法</strong>：在就绪队列中选择一个估计运行时间最短的进程，分配处理机使之进入运行状态，直到运行完成或阻塞，才放弃处理机器。</li>
+<li><strong>基于优先级的非抢占式调度算法</strong>：在就绪队列中选择优先级最高的进程，为之分配处理机，然后让该进程运行直到结束或阻塞，才放弃处理机。</li>
+<li><strong>基于优先级的抢占式调度算法</strong>：在就绪队列中选择优先级最高的进程，分配处理机使之执行，但是在它运行过程中，就绪队列中出现了优先级更高的进程，该调度算法会将当前进程停止，并把处理机分配给更高优先权的进程。因此该算法能更好的满足紧急作业的需求，常用于实时系统中。</li>
+<li><strong>高响应比优先调度算法</strong>：响应比=响应时间/要求服务时间=（等待时间+要求服务时间）/要求服务时间。所以，进程等待的时间越长，要求服务的时间越短，它的响应比就越高。这样既考虑了进程等待的时间，又照顾了运行时间短的进程，是较为公平的调度算法。但是在调度之前需要先对进程的响应比进行计算，这会增加系统的开销。</li>
+<li><strong>时间片轮转调度算法</strong>：每次调度时，把处理机分配给队首进程，并令其执行一个时间片，当时间片用完时，调度程序便停止该进程的执行，并将它加入就绪队列的末尾。然后把处理机分配给就绪队列中新的队首进程。</li>
+<li><strong>多级反馈队列调度算法</strong>：设置多个就绪队列，为每个队列赋予不同的优先级，并且优先级越高的队列中，为每个进程分配的时间片越小。当一个进程进入内存后，首先将它放入优先级最高的队列末尾，按照先来先服务算法等待调度，当轮到它执行时，如果它在规定的一个时间片内还没有运行结束，就把它加入第二级的就绪队列末尾，同样按照FCFS算法等待调度，以此类推。仅当高优先级的队列为空时，低优先级队列中的进程才被调度执行。并且高优先级队列中的进程会抢占低优先级队列中正在执行进程的处理机。</li>
+</ol>
+<h2 id="分页与页面置换算法">分页与页面置换算法</h2><p>我们知道通过分页，可以使得一个数据结构一部分存储在内存中，另一部分则保存在磁盘中。这样当内存中没有需要的页面时，就需要把磁盘中的页面放入内存并在内存中选择一个页面淘汰掉。而页面置换算法就是要确定淘汰掉哪一个页面的算法。</p>
+<ol>
+<li><strong>最佳置换算法</strong>：内存中的每个页面都可以用在该页面被首次访问前需要执行的指令数进行标记，把标记最大的页面置换出去。但是由于当发生缺页时，操作系统无法知道各个页面下一次是在什么时候被访问，所以该算法是无法实现的，不过它可以作为衡量其他算法的标准。</li>
+<li><strong>先进先出置换算法</strong>：每次发生缺页时，总是淘汰最早进入内存的页面。</li>
+<li><strong>最近最久未使用（LRU）置换算法</strong>：当发生缺页时，淘汰掉最近一段时间中最长时间没有被使用过的页面。</li>
+<li><strong>最近最少使用置换算法</strong>：缺页时，淘汰掉最近一段时间使用次数最少的页面。</li>
+</ol>
+<h2 id="总结">总结</h2><p>学操作系统的意义是什么，我觉得操作系统是一种方法学，我们在写程序时遇到的很多问题，操作系统都给出了可供参考的很优秀的解决方案。同时，理解操作系统对硬件、对应用程序进行抽象的思想，我想也会对自身大有益处。然而事实总是你学的越多，就越发现自己懂的越少，所以学无止境，加油吧，少年！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在进入正题之前，先问一句，什么是操作系统，它和普通的应用程序有什么区别？这个问题虽然不难，但是它和我今天想要讲的内容密切相关。下面我就说说我的理解吧，我认为操作系统是一种抽象，这种抽象是人们经过长时间的实践和归纳提炼出来的，在没有操作系统的时候，人们仍然有办法制作程序并在机]]>
+    </summary>
+    
+      <category term="os" scheme="http://wjd1218.github.io/tags/os/"/>
+    
+      <category term="process" scheme="http://wjd1218.github.io/tags/process/"/>
+    
+      <category term="thread" scheme="http://wjd1218.github.io/tags/thread/"/>
+    
+      <category term="OS" scheme="http://wjd1218.github.io/categories/OS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[MySQL数据库引擎详解]]></title>
+    <link href="http://wjd1218.github.io/2015/03/25/TheMySQLDatabaseEngine/"/>
+    <id>http://wjd1218.github.io/2015/03/25/TheMySQLDatabaseEngine/</id>
+    <published>2015-03-25T05:28:35.000Z</published>
+    <updated>2015-06-18T07:58:08.000Z</updated>
+    <content type="html"><![CDATA[<p>作为Java程序员，MySQL数据库大家平时应该都没少使用吧，对MySQL数据库的引擎应该也有所了解，这篇文章就让我详细的说说MySQL数据库的Innodb和MyISAM两种引擎以及其索引结构。也来巩固一下自己对这块知识的掌握。</p>
+<h2 id="Innodb引擎">Innodb引擎</h2><p>Innodb引擎提供了对数据库ACID事务的支持，并且实现了SQL标准的四种隔离级别，关于数据库事务与其隔离级别的内容请见<a href="http://wjd1218.github.io/2015/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1%E4%B8%8E%E5%85%B6%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/">数据库事务与其隔离级别</a>这篇文章。该引擎还提供了行级锁和外键约束，它的设计目标是处理大容量数据库系统，它本身其实就是基于MySQL后台的完整数据库系统，MySQL运行时Innodb会在内存中建立缓冲池，用于缓冲数据和索引。但是该引擎不支持FULLTEXT类型的索引，而且它没有保存表的行数，当<code>SELECT COUNT(*) FROM TABLE</code>时需要扫描全表。当需要使用数据库事务时，该引擎当然是首选。由于锁的粒度更小，写操作不会锁定全表，所以在并发较高时，使用Innodb引擎会提升效率。但是使用行级锁也不是绝对的，如果在执行一个SQL语句时MySQL不能确定要扫描的范围，InnoDB表同样会锁全表。</p>
+<h2 id="MyISAM引擎">MyISAM引擎</h2><p>MyISAM是MySQL默认的引擎，但是它没有提供对数据库事务的支持，也不支持行级锁和外键，因此当INSERT(插入)或UPDATE(更新)数据时即写操作需要锁定整个表，效率便会低一些。不过和Innodb不同，MyISAM中存储了表的行数，于是<code>SELECT COUNT(*) FROM TABLE</code>时只需要直接读取已经保存好的值而不需要进行全表扫描。如果表的读操作远远多于写操作且不需要数据库事务的支持，那么MyISAM也是很好的选择。</p>
+<h2 id="两种引擎的选择">两种引擎的选择</h2><p>大尺寸的数据集趋向于选择InnoDB引擎，因为它支持事务处理和故障恢复。数据库的大小决定了故障恢复的时间长短，InnoDB可以利用事务日志进行数据恢复，这会比较快。主键查询在InnoDB引擎下也会相当快，不过需要注意的是如果主键太长也会导致性能问题，关于这个问题我会在下文中讲到。大批的<code>INSERT</code>语句(在每个<code>INSERT</code>语句中写入多行，批量插入)在MyISAM下会快一些，但是<code>UPDATE</code>语句在InnoDB下则会更快一些，尤其是在并发量大的时候。</p>
+<h2 id="Index——索引">Index——索引</h2><p>索引（Index）是帮助MySQL高效获取数据的数据结构。MyISAM和Innodb都使用了树这种数据结构做为索引，关于树我也曾经写过一篇文章<a href="http://wjd1218.github.io/2015/02/21/%E6%A0%91%E6%98%AF%E4%B8%80%E7%A7%8D%E4%BC%9F%E5%A4%A7%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">树是一种伟大的数据结构</a>，只是自己的理解，有兴趣的朋友可以去阅读。下面我接着讲这两种引擎使用的索引结构，讲到这里，首先应该谈一下B-Tree和B+Tree。</p>
+<h3 id="B-Tree和B+Tree">B-Tree和B+Tree</h3><p>B+Tree是B-Tree的变种，那么我就先讲B-Tree吧，相信大家都知道<a href="https://github.com/wjd1218/Algorithms/blob/master/colinSrc%2Fcolin%2Fsearch%2FRedBlackTree.java" target="_blank" rel="external">红黑树</a>，这是我前段时间学《算法》一书时，实现的一颗红黑树，大家可以参考。其实红黑树类似2,3-查找树，这种树既有2叉结点又有3叉结点。B-Tree也与之类似，它的每个结点做多可以有d个分支（叉），d称为B-Tree的度，如下图所示，它的每个结点可以有4个元素，5个分支，于是它的度为5。B-Tree中的元素是有序的，比如图中元素7左边的指针指向的结点中的元素都小于7，而元素7和16之间的指针指向的结点中的元素都处于7和16之间，正是满足这样的关系，才能高效的查找：首先从根节点进行二分查找，找到就返回对应的值，否则就进入相应的区间结点递归的查找，直到找到对应的元素或找到null指针，找到null指针则表示查找失败。这个查找是十分高效的，其时间复杂度为O(logN)（以d为底，当d很大时，树的高度就很低），因为每次检索最多只需要检索树高h个结点。</p>
+<p><img src="http://wjd1218.qiniudn.com/B-Tree.png" alt="B-Tree"></p>
+<p>接下来就该讲B+Tree了，它是B-Tree的变种，如下面两张图所示：</p>
+<p><img src="http://wjd1218.qiniudn.com/B+Tree.png" alt="B+Tree"><br><img src="http://wjd1218.qiniudn.com/B+Tree2.png" alt="B+Tree2"></p>
+<p>从图中就可以看出，B+Tree的内部结点不存储数据，只存储指针，而叶子结点则只存储数据，不存储指针。并且在其每个叶子节点上增加了一个指向相邻叶子节点的指针，这个优化提高区间访问的性能，比如在第二张图中要查询键为从18到49的所有数据，当找到18后，只需顺着节点和指针顺序遍历就可以一次性访问到所有数据节点，极大提到了区间查询效率。</p>
+<h3 id="MyISAM引擎的索引结构">MyISAM引擎的索引结构</h3><p>MyISAM引擎的索引结构为B+Tree，其中B+Tree的数据域存储的内容为实际数据的地址，也就是说它的索引和实际的数据是分开的，只不过是用索引指向了实际的数据，这种索引就是所谓的<strong>非聚集索引</strong>。</p>
+<h3 id="Innodb引擎的索引结构">Innodb引擎的索引结构</h3><p>MyISAM引擎的索引结构同样也是B+Tree，但是Innodb的索引文件本身就是数据文件，即B+Tree的数据域存储的就是实际的数据，这种索引就是<strong>聚集索引</strong>。这个索引的key就是数据表的主键，因此InnoDB表数据文件本身就是主索引。</p>
+<blockquote>
+<p>因为InnoDB的数据文件本身要按主键聚集，所以InnoDB要求表必须有主键（MyISAM可以没有），如果没有显式指定，则MySQL系统会自动选择一个可以唯一标识数据记录的列作为主键，如果不存在这种列，则MySQL自动为InnoDB表生成一个隐含字段作为主键，这个字段长度为6个字节，类型为长整形。</p>
+</blockquote>
+<p>并且和MyISAM不同，InnoDB的辅助索引数据域存储的也是相应记录主键的值而不是地址，所以当以辅助索引查找时，会先根据辅助索引找到主键，再根据主键索引找到实际的数据。所以Innodb不建议使用过长的主键，否则会使辅助索引变得过大。建议使用自增的字段作为主键，这样B+Tree的每一个结点都会被顺序的填满，而不会频繁的分裂调整，会有效的提升插入数据的效率。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>作为Java程序员，MySQL数据库大家平时应该都没少使用吧，对MySQL数据库的引擎应该也有所了解，这篇文章就让我详细的说说MySQL数据库的Innodb和MyISAM两种引擎以及其索引结构。也来巩固一下自己对这块知识的掌握。</p>
+<h2 id="Innodb引擎">]]>
+    </summary>
+    
+      <category term="B+Tree" scheme="http://wjd1218.github.io/tags/B-Tree/"/>
+    
+      <category term="index" scheme="http://wjd1218.github.io/tags/index/"/>
+    
+      <category term="innodb" scheme="http://wjd1218.github.io/tags/innodb/"/>
+    
+      <category term="myisam" scheme="http://wjd1218.github.io/tags/myisam/"/>
+    
+      <category term="mysql" scheme="http://wjd1218.github.io/tags/mysql/"/>
+    
+      <category term="Database" scheme="http://wjd1218.github.io/categories/Database/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ConcurrentHashMap实现原理]]></title>
+    <link href="http://wjd1218.github.io/2015/03/24/PrincipleOfConcurrentHashMap/"/>
+    <id>http://wjd1218.github.io/2015/03/24/PrincipleOfConcurrentHashMap/</id>
+    <published>2015-03-24T08:50:03.000Z</published>
+    <updated>2015-06-18T07:54:54.000Z</updated>
+    <content type="html"><![CDATA[<p>寒假阶段复习了下<a href="http://wjd1218.github.io/2015/02/07/Java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/">Java集合框架</a>，感觉有些收获，但是文中没有提到有关并发集合的内容，这篇文章就来谈谈并发散列表——ConcurrentHashMap，我们知道HashMap本身并不是线程安全的，如果程序需要在多线程的环境下运行，那么我们可以选择Hashtable做为替代，但是看过Hashtable源码的同学应该都知道，Hashtable内部实现是将需要同步的方法加上<code>synchronized</code>关键字来实现同步的，而且相当于锁定了整个表，这种方式虽然可行，但是却会很大程度的影响程序的并发效率，并造成资源浪费。于是Doug Lea便开发了Java的并发包，我今天所说的<code>ConcurrentHashMap</code>就是属于这个包的，该类的作者就是Doug Lea。下面就来具体讲讲这个并发散列表。</p>
+<p>首先ConcurrentHashMap是线程安全的，不然也不必以Concurrent修饰，它使用段粒度的锁和锁分离技术，避免了put和get操作对整个map的锁定，尤其在get中，只对一个HashEntry做锁定操作，这种性能提升是显而易见的。它和Hashtable的区别在于将锁的粒度控制的更小。使用这种方式，较好的解决了因程序并发导致的资源浪费的问题。下面我们来看一下ConcurrentHashMap的结构：</p>
+<p><img src="http://wjd1218.qiniudn.com/ConcurrentHashMap.png" alt="ConcurrentHashMap"></p>
+<p>如上图所示，每一个ConcurrentHashMap内部都维护了一个含有多个Segment（段）的数组，其中每一个Segment都是一个类似Hashtable的结构。通过这种方式，便可以将每次写操作的锁的粒度控制到每一个Segment，而其他的Segment不受影响，这样便可以提高并发的效率，ConcurrentHashMap默认包含16个Segment，也就是说最多可以同时支持16个线程进行写操作，如此当然会比只有一个线程进行写操作效率要高。但是也正是因为这样的结构，所以要定位一个元素，需要进行两次hash操作。第一次hash操作是找到元素所在的Segment，第二次hash操作用来找到元素所在的链表表头。和普通的HashMap类似，ConcurrentHashMap也有两个重要的参数，<strong>初始容量</strong>和<strong>装载因子</strong>，通过这两个参数可以控制何时对ConcurrentHashMap进行rehash操作，因为和HashMap类似，当其中元素数量过多时，会导致有些链表过长，查找效率降低，于是就需要进行扩容再哈希以提高查找的效率。ConcurrentHashMap还多一个比较重要的参数叫做<strong>并发级别（concurrentLevel）</strong>，该参数用来设置ConcurrentHashMap中Segment的数量，从上文可以知道，Segment的数量越多，那么可以同时支持的线程数量也就越多，并发程度也就越高，因此称之为<strong>并发级别</strong>也是合理的。但是这个并发级别经过初始化之后就不能再改变了，也就是说Segment的数量确定之后就不会再更改了。如果元素数量过多的时候，也只会对Segment中的数组进行扩容，然后只对其中的元素进行一次再哈希。这样也避免了要对整个ConcurrentHashMap进行rehash的操作。</p>
+<p>我对ConcurrentHashMap的理解就是它相当于把多个Hashtable包装到一起作为一个整体，它的关键在于两次hash操作，第一次用来找到到底使用的是哪一个Hashtable，第二次就相当于Hashtable内部的hash。这种思想看起来很好理解，实现也并不困难，但是实际上这是在更高的角度，更高的层面看待问题，Doug Lea，大师不愧为大师！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>寒假阶段复习了下<a href="http://wjd1218.github.io/2015/02/07/Java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/">Java集合框架</a>，感觉有些收获，但是文中没有提到有关并发集合的内容，这篇文]]>
+    </summary>
+    
+      <category term="concurrent" scheme="http://wjd1218.github.io/tags/concurrent/"/>
+    
+      <category term="hashmap" scheme="http://wjd1218.github.io/tags/hashmap/"/>
+    
+      <category term="java" scheme="http://wjd1218.github.io/tags/java/"/>
+    
+      <category term="Java" scheme="http://wjd1218.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Java内存模型与volatile关键字]]></title>
+    <link href="http://wjd1218.github.io/2015/03/22/JMMAndTheVolatileKeyword/"/>
+    <id>http://wjd1218.github.io/2015/03/22/JMMAndTheVolatileKeyword/</id>
+    <published>2015-03-22T13:14:49.000Z</published>
+    <updated>2015-06-18T07:59:50.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Java内存模型（Java_Memory_Model）">Java内存模型（Java Memory Model）</h2><p>Java内存模型（JMM），不同于Java运行时数据区，JMM的主要目标是定义程序中各个变量的访问规则，即在虚拟机中将变量存储到内存和从内存中读取数据这样的底层细节。JMM规定了所有的变量都存储在<strong>主内存</strong>中，但每个线程还有自己的<strong>工作内存</strong>，线程的工作内存中保存了被该线程使用到的变量的主内存副本拷贝。线程对变量的所有操作都必须在工作内存中进行，而不能直接读写主内存中的变量，工作内存是线程之间独立的，线程之间变量值的传递均需要通过主内存来完成。</p>
+<h2 id="volatile关键字">volatile关键字</h2><p>平时在阅读jdk源码的时候，经常看到源码中有写变量被volatile关键字修饰，但是却不是十分清除这个关键字到底有什么用处，现在终于弄清楚了，那么我就来讲讲这个volatile到底有什么用吧。</p>
+<p>当一个变量被定义为volatile之后，就可以保证此变量对所有线程的可见性，即当一个线程修改了此变量的值的时候，变量新的值对于其他线程来说是可以立即得知的。可以理解成：<strong>对volatile变量所有的写操作都能立刻被其他线程得知</strong>。但是这并不代表基于volatile变量的运算在并发下是安全的，因为volatile只能保证内存可见性，却没有保证对变量操作的原子性。比如下面的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 发起20个线程，每个线程对race变量进行10000次自增操作，如果代码能够正确并发，</span><br><span class="line"> * 则最终race的结果应为200000，但实际的运行结果却小于200000。</span><br><span class="line"> * </span><br><span class="line"> * <span class="doctag">@author</span> Colin Wang</span><br><span class="line"> *</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">VolatileTest</span> </span>&#123;</span><br><span class="line">true<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">volatile</span> <span class="keyword">int</span> race = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">increase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">truetruerace++;</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> THREADS_COUNT = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">truetrueThread[] threads = <span class="keyword">new</span> Thread[THREADS_COUNT];</span><br><span class="line"></span><br><span class="line">truetrue<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; THREADS_COUNT; i++) &#123;</span><br><span class="line">truetruetruethreads[i] = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line"></span><br><span class="line">truetruetruetrue<span class="annotation">@Override</span></span><br><span class="line">truetruetruetrue<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">truetruetruetruetrue<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++) &#123;</span><br><span class="line">truetruetruetruetruetrueincrease();</span><br><span class="line">truetruetruetruetrue&#125;</span><br><span class="line">truetruetruetrue&#125;</span><br><span class="line">truetruetrue&#125;);</span><br><span class="line">truetruetruethreads[i].start();</span><br><span class="line">truetrue&#125;</span><br><span class="line">truetrue</span><br><span class="line">truetrue<span class="keyword">while</span> (Thread.activeCount() &gt; <span class="number">1</span>)</span><br><span class="line">truetruetrueThread.yield();</span><br><span class="line"></span><br><span class="line">truetrueSystem.out.println(race);</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这便是因为race++操作不是一个原子操作，导致一些线程对变量race的修改丢失。若要使用volatale变量，一般要符合以下两种场景：</p>
+<ol>
+<li>变量的运算结果并不依赖于变量的当前值，或能够保证只有单一的线程修改变量的值。</li>
+<li>变量不需要与其他的状态变量共同参与不变约束。</li>
+</ol>
+<p>使用volatile变量还可以禁止JIT编译器进行指令重排序优化，这里使用单例模式来举个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 单例模式例程一</span><br><span class="line"> * </span><br><span class="line"> * <span class="doctag">@author</span> Colin Wang</span><br><span class="line"> *</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton_1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">true<span class="keyword">private</span> <span class="keyword">static</span> Singleton_1 instance = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">true<span class="function"><span class="keyword">private</span> <span class="title">Singleton_1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton_1 <span class="title">getInstacne</span><span class="params">()</span> </span>&#123;</span><br><span class="line">truetrue<span class="comment">/*</span><br><span class="line">truetrue * 这种实现进行了两次instance==null的判断，这便是单例模式的双检锁。</span><br><span class="line">truetrue * 第一次检查是说如果对象实例已经被创建了，则直接返回，不需要再进入同步代码。</span><br><span class="line">truetrue * 否则就开始同步线程，进入临界区后，进行的第二次检查是说：</span><br><span class="line">truetrue * 如果被同步的线程有一个创建了对象实例， 其它的线程就不必再创建实例了。</span><br><span class="line">truetrue */</span></span><br><span class="line">truetrue<span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">truetruetrue<span class="keyword">synchronized</span> (Singleton_1.class) &#123;</span><br><span class="line">truetruetruetrue<span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">truetruetruetruetrue<span class="comment">/*</span><br><span class="line">truetruetruetruetrue * 仍然存在的问题：下面这句代码并不是一个原子操作，JVM在执行这行代码时，会分解成如下的操作：</span><br><span class="line">truetruetruetruetrue * 1.给instance分配内存，在栈中分配并初始化为null</span><br><span class="line">truetruetruetruetrue * 2.调用Singleton_1的构造函数，生成对象实例，在堆中分配 </span><br><span class="line">truetruetruetruetrue * 3.把instance指向在堆中分配的对象</span><br><span class="line">truetruetruetruetrue * 由于指令重排序优化，执行顺序可能会变成1，3，2，</span><br><span class="line">truetruetruetruetrue * 那么当一个线程执行完1，3之后，被另一个线程抢占，</span><br><span class="line">truetruetruetruetrue * 这时instance已经不是null了，就会直接返回。</span><br><span class="line">truetruetruetruetrue * 然而2还没有执行过，也就是说这个对象实例还没有初始化过。</span><br><span class="line">truetruetruetruetrue */</span></span><br><span class="line">truetruetruetruetrueinstance = <span class="keyword">new</span> Singleton_1();</span><br><span class="line">truetruetruetrue&#125;</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetrue&#125;</span><br><span class="line">truetrue<span class="keyword">return</span> instance;</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 单例模式例程二</span><br><span class="line"> * </span><br><span class="line"> * <span class="doctag">@author</span> Colin Wang</span><br><span class="line"> *</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton_2</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">true<span class="comment">/*</span><br><span class="line">true * 为了避免JIT编译器对代码的指令重排序优化，可以使用volatile关键字，</span><br><span class="line">true * 通过这个关键字还可以使该变量不会在多个线程中存在副本，</span><br><span class="line">true * 变量可以看作是直接从主内存中读取，相当于实现了一个轻量级的锁。</span><br><span class="line">true */</span></span><br><span class="line">true<span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton_2 instance = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">true<span class="function"><span class="keyword">private</span> <span class="title">Singleton_2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">true&#125;</span><br><span class="line"></span><br><span class="line">true<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton_2 <span class="title">getInstacne</span><span class="params">()</span> </span>&#123;</span><br><span class="line">truetrue<span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">truetruetrue<span class="keyword">synchronized</span> (Singleton_2.class) &#123;</span><br><span class="line">truetruetruetrue<span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">truetruetruetruetrueinstance = <span class="keyword">new</span> Singleton_2();</span><br><span class="line">truetruetruetrue&#125;</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetrue&#125;</span><br><span class="line">truetrue<span class="keyword">return</span> instance;</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>变量在有了volatile修饰之后，对变量的修改会有一个内存屏障的保护，使得后面的指令不能被重排序到内存屏障之前的位置。volalite变量的读性能与普通变量类似，但是写性能要低一些，因为它需要插入内存屏障指令来保证处理器不会发生乱序执行。即便如此，大多数场景下volatile的总开销仍然要比锁低，所以volatile的语义能满足需求时候，选择volatile要优于使用锁。</p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Java内存模型（Java_Memory_Model）">Java内存模型（Java Memory Model）</h2><p>Java内存模型（JMM），不同于Java运行时数据区，JMM的主要目标是定义程序中各个变量的访问规则，即在虚拟机中将变量存储到内存和从]]>
+    </summary>
+    
+      <category term="java" scheme="http://wjd1218.github.io/tags/java/"/>
+    
+      <category term="jmm" scheme="http://wjd1218.github.io/tags/jmm/"/>
+    
+      <category term="volatile" scheme="http://wjd1218.github.io/tags/volatile/"/>
+    
+      <category term="Java" scheme="http://wjd1218.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[再谈JVM类加载机制]]></title>
+    <link href="http://wjd1218.github.io/2015/03/21/JVMClassLoadingMechanism/"/>
+    <id>http://wjd1218.github.io/2015/03/21/JVMClassLoadingMechanism/</id>
+    <published>2015-03-21T12:28:55.000Z</published>
+    <updated>2015-06-18T08:00:00.000Z</updated>
+    <content type="html"><![CDATA[<p>几个月前写了<a href="http://wjd1218.github.io/2014/12/12/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%8E%9F%E7%90%86/">深入理解Java类加载原理</a>这篇文章，简单的谈了下我对Java类加载的理解，最近这段时间又研习了《深入理解Java虚拟机》一书，对JVM的类加载机制又有了更加系统的认识，下面我就再来讲讲学习心得吧。</p>
+<h2 id="虚拟机如何进行类的加载">虚拟机如何进行类的加载</h2><ol>
+<li>通过一个类的全限定名来获取定义此类的二进制字节流。</li>
+<li>将这个字节流所代表的静态存储结构转化为方法区中的运行时数据结构。</li>
+<li>在内存（对于HotSpot虚拟机来说，这个内存是指方法区）中生成一个代表这个类的java.lang.Class对象，作为方法区中这个类型信息的访问入口。</li>
+</ol>
+<h2 id="对加载进内存的类的准备">对加载进内存的类的准备</h2><p>类刚刚被加载进内存之后还不能直接使用，需要进行基础的准备，在准备阶段，会对类变量（静态变量或理解成全局变量）进行赋初值（这个初值为数据类型的“零值”）的操作，类变量使用的内存在方法区中分配，对于方法区的介绍请见<a href="http://wjd1218.github.io/2015/03/19/JVM%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90/">JVM自动内存管理机制分析</a>这篇文章。而把类变量赋成程序员指定的值是在类进行<strong>初始化</strong>的阶段完成的，这个操作位于类的构造器<code>&lt;clinit&gt;()</code>中。比如代码<code>public static int value = 1218;</code>，在经过准备阶段之后，value的值为0，在经过初始化阶段之后value的值才为1218。但是如果给value变量加上final修饰，那么在准备阶段value的值就会被设置为1218。</p>
+<h2 id="类的初始化">类的初始化</h2><h3 id="何时对类进行初始化">何时对类进行初始化</h3><ol>
+<li>使用new关键字实例化对象时。</li>
+<li>访问类的静态字段时，但是被final修饰的静态字段除外。</li>
+<li>调用一个类的静态方法时。</li>
+<li>通过反射对类进行调用时。</li>
+<li>进行一个类的初始化时要先初始化其父类。</li>
+<li>JVM启动时会首先初始化主类。</li>
+<li>当使用JDK1.7的动态语言支持时，java.lang.invoke.MethodHandle实例最后的解析结果REF_getStatic、REF_putStatic、REF_invokeStatic的方法句柄所对应的类还未初始化时。</li>
+</ol>
+<p>这几种方式称为对类的主动引用，而其他的任何方式引用类都不会触发类的初始化，称为被动引用。</p>
+<h3 id="初始化的过程">初始化的过程</h3><p>执行类构造器<code>&lt;clinit&gt;()</code>方法，该方法由编译器自动收集类中的所有类变量的赋值动作和静态语句块中的语句合并产生的，该方法不同于类的构造函数（实例构造器），构造函数是用于创建对象的，而类构造器是用来创建类的。在多线程环境下虚拟机会保证该方法被正确的同步，并且在同一个类加载器下，一个类只会被初始化一次。我觉得可以这样理解，类的初始化表示创建一个构造对象的模版，而对象的初始化则表示调用构造方法构造一个对象。</p>
+<h2 id="类加载器">类加载器</h2><p>顾名思义，类加载器是用来加载类的，每一个类加载器都拥有自己的类命名空间，即由两个类加载器分别加载的类不会相等。<strong>Java的类加载遵循双亲委派模型，即当一个加载器收到了加载类的请求时，它首先会把这项工作委派给父类加载器去完成，当父类加载器反馈自己无法完成加载请求（它的搜索范围没有找到所需的类）时，子类才会尝试自己加载。</strong>这种机制保证了越基础的类由越上层的类加载器加载，因此java.lang.Object在多种类加载器环境中都是同一个类。如果用户自己编写了一个java.lang.Object，那么这个类就根本不会被加载进内存。</p>
+<ul>
+<li>启动类加载器：BootStrap ClassLoader，不能被Java程序直接引用，如果需要把类加载请求委派给它，只需要使用null即可。它负责加载Java的核心库。</li>
+<li>扩展类加载器：Extension ClassLoader，用来加载Java扩展库。</li>
+<li>应用程序类加载器：Application ClassLoader，也称作系统类加载器，用于加载用户类路径上所指定的类库。</li>
+</ul>
+<p>以上便是读过书之后一点新的理解，书上讲的更加系统一些，对自己理解其原理有很大的帮助，仅以此文做一个总结，希望自己今后能够做的更好。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>几个月前写了<a href="http://wjd1218.github.io/2014/12/12/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%8E%9F%E7%90%86/]]>
+    </summary>
+    
+      <category term="classloader" scheme="http://wjd1218.github.io/tags/classloader/"/>
+    
+      <category term="java" scheme="http://wjd1218.github.io/tags/java/"/>
+    
+      <category term="jvm" scheme="http://wjd1218.github.io/tags/jvm/"/>
+    
+      <category term="Java" scheme="http://wjd1218.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[JVM自动内存管理机制分析]]></title>
+    <link href="http://wjd1218.github.io/2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/"/>
+    <id>http://wjd1218.github.io/2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/</id>
+    <published>2015-03-19T05:26:03.000Z</published>
+    <updated>2015-06-18T07:57:54.000Z</updated>
+    <content type="html"><![CDATA[<p>最近这段时间学习了Java虚拟机相关的一些知识，对Java程序的运行和JVM的内存管理策略有了更深的理解。这篇文章就对此做一下简单的总结。</p>
+<h2 id="Java运行时数据区">Java运行时数据区</h2><p><img src="http://wjd1218.qiniudn.com/JVM内存模型.png" alt="Java运行时数据区"></p>
+<p>要理解JVM的内存管理策略，首先就要熟悉Java的运行时数据区，如上图所示，在执行Java程序的时候，虚拟机会把它所管理的内存划分为多个不同的数据区，称为运行时数据区。在程序执行过程中对内存的分配、垃圾的回收都在运行时数据区中进行。对于Java程序员来说，其中最重要的就是堆区和JVM栈区了。注意图中的图形面积比例并不代表实际的内存比例。</p>
+<ul>
+<li>方法区是各个线程共享的内存区域，用于存储虚拟机加载进来的类信息、常量、静态变量和即时编译器编译后的代码等数据。相信大家也都听过<strong>运行时常量池</strong>的概念，这个常量池也是方法区的一部分，主要用于存放编译期生成的各种字面量和符号引用。</li>
+<li>堆区是JVM所管理的内存中最大的一块，这个区域是被所有线程共享的。主要用于存放对象实例，而所谓的垃圾回收也主要是在堆区进行。</li>
+<li>栈区则主要存放一些对象的引用和编译期可知的基本数据类型，这个区域是线程私有的，即每个线程都有自己的栈。</li>
+<li>程序计数器则是用来记录程序运行到什么位置的，显然它应该是线程私有的，相信这个学过微机原理与接口课程的同学都应该能够理解的。</li>
+</ul>
+<h2 id="内存的分配">内存的分配</h2><h3 id="在连续剩余空间中分配内存——指针碰撞">在连续剩余空间中分配内存——指针碰撞</h3><p>用一个指针指向内存已用区和空闲区的分界点，需要分配新的内存时候，只需要将指针向空闲区移动相应的距离即可。</p>
+<h3 id="在不规整的剩余空间中分配内存——空闲列表">在不规整的剩余空间中分配内存——空闲列表</h3><p>如果剩余内存是不规整的，就需要用一个列表记录下哪些内存块是可用的，当需要分配内存的时候就需要在这个列表中查找，找到一个足够大的空间进行分配，然后在更新这个列表。</p>
+<h3 id="分配方式的选择">分配方式的选择</h3><p>指针碰撞的分配方式明显要优于空闲列表的方式，但是使用哪种方式取决于堆内存是否规整，而堆内存是否规整则由使用的垃圾收集算法决定。如果堆内存是规整的，则采用指针碰撞的方式分配内存，而如果堆是不规整的，就会采用空闲列表的方式。</p>
+<h2 id="垃圾回收">垃圾回收</h2><p>上文已经提到，JVM的垃圾回收主要运行于堆区。下面我就来具体讲一下垃圾回收的原理。</p>
+<h3 id="找到需要回收的对象">找到需要回收的对象</h3><p>要对对象进行回收，首先需要找到哪些对象是垃圾，需要回收。有两种方法可以找到需要回收的对象，第一种叫做<strong>引用计数法</strong>。具体方法就是给对象添加一个引用计数器，计数器的值代表着这个对象被引用的次数，当计数器的值为0的时候，就代表没有引用指向这个对象，那么这个对象就是不可用的，所以就可以对它进行回收。但是有一个问题就是当对象之间循环引用时，其中每个对象的引用计数器的值都不为0，但是这些对象又是作为一个孤立的整体在内存中存在，其他的对象不持有这些对象的引用，这种情况下这些对象就无法被回收，这也是主流的Java虚拟机没有选用这种方法的原因。另一种方法就是把堆中的对象和对象之间的引用分别看作<strong>有向图</strong>的顶点和有向边。这样只需要从一些顶点开始，对有向图中的每个顶点进行可达性分析（深度优先遍历是有向图可达性算法的基础），这样就可以把不可达的对象找出来，这些不可达的对象还要再进行一次筛选，因为如果对象需要执行finalize()方法，那么它完全可以在finalize()方法中让自己变的可达。这个方法解决了对象之间循环引用的问题。上面提到了“从一些对象开始”进行可达性分析，这些起始对象被称为<strong>GC Roots</strong>，可以作为GC Roots的对象有：</p>
+<ol>
+<li>栈区中引用的对象</li>
+<li>方法区中静态属性或常量引用的对象</li>
+</ol>
+<p>上文中提到的引用均是<strong>强引用</strong>，Java中还存在其他三种引用，分别是，<strong>软引用</strong>、<strong>弱引用</strong>和<strong>虚引用</strong>，当系统即将发生内存溢出时，才会对软引用所引用的对象进行回收；而被弱引用所引用的对象会在下一次触发GC时被回收；虚引用则仅仅是为了在对象被回收时能够收到系统通知。</p>
+<h3 id="垃圾收集算法">垃圾收集算法</h3><p>已经找到了需要回收的对象，那么具体采用什么样的方式进行回收呢？下面就介绍几种算法。</p>
+<h4 id="标记-清除算法">标记-清除算法</h4><p>通过可达性分析算法找到可以回收的对象后，要对这些对象进行标记，代表它可以被回收了。标记完成之后就统一回收所有被标记的对象。这就完成了回收，但是这种方式会产生大量的内存碎片，就导致了可用内存不规整，于是分配新的内存时就需要采用空闲列表的方法，如果没有找到足够大的空间，那么就要提前触发下一次垃圾收集。</p>
+<h4 id="标记-整理算法">标记-整理算法</h4><p>标记的过程和标记-清除算法一样，但是标记完成之后，让所有存活的对象都向堆内存的一端移动，最后直接清除掉边界以外的内存。这样对内存进行回收之后，内存是规整的，于是可以使用指针碰撞的方式分配新的内存。</p>
+<h4 id="复制算法">复制算法</h4><p>上面所讲的两种算法都使用了先标记的方式，其实当对象数量很多时，这种算法的效率并不高。于是就产生了这种复制算法。它将可用内存分成两个部分，每次只使用其中的一部分，当其中一块用完时，就将仍然存活的对象复制到另外一块上，再把原来的那一块内存清理掉。这样回收的结果同样能得到规整的剩余空间，但是会浪费一部分内存。根据目前通过概率统计方面的研究，新生代中的对象的回收率能够达到90%以上，因此，便可以将新生代划分为三个部分，分别为Eden、Survivor from、Survivor to，大小比例为8：1：1。每次只使用Eden和其中的一块Survivor，回收时将存活的对象复制到另一块Survivor中，这样就只有10%的内存被浪费，但是如果存活的对象总大小超过了Survivor的大小，那么就把多出的对象放入老年代中。</p>
+<h4 id="分代收集算法">分代收集算法</h4><p>把Java堆分成新生代和老年代，新生代使用复制算法，老年代使用标记-清理或标记-整理算法。这样可以根据各个代自己的特点，选用合适的收集算法，提高内存收集的效率。在新生代中长期存活的对象会逐渐向老年代过渡，新生代中的对象每经历一次GC，年龄就增加一岁，当年龄超过一定值时，就会被移动到老年代。</p>
+<h2 id="垃圾收集器">垃圾收集器</h2><p>上文讲了JVM垃圾回收的原理和使用的算法，接下来就该讲JVM使用的具体的垃圾回收器了。垃圾回收器在JVM中作为一个守护线程运行，它不能过多的占用系统资源，否则将会极大的影响用户体验。在从GC Roots开始对对象进行可达性分析时，需要STOP THE WORLD，因为如果不这么做，程序一边修改引用，GC收集器一边进行标记，那么标记的结果肯定是有问题的，所以收集器应当采取适当的措施减少这个停顿的时间。</p>
+<ul>
+<li>Serial收集器：新生代使用复制算法，老年代使用标记-整理算法，单线程运行</li>
+<li>Concurrent Mark Sweep(CMS)收集器：它的工作过程为初始标记-&gt;并发标记-&gt;重新标记-&gt;并发清除，初始标记和重新标记阶段都需要Stop The World，但是这两个阶段速度都很快，在耗时最长的并发标记阶段可以和用户线程并行工作。该收集器缺点就是内存回收的结果不是规整的可用空间，但是可以通过开关参数来设置对回收后的内存进行碎片整理。</li>
+</ul>
+<p>垃圾收集器还有很多，比如ParNew收集器，最前沿的成果之一Garbage-First收集器等等这里就不一一介绍了，每种收集器都有自己的优点和不足，开发者应该选择适用于当前需求的收集器。</p>
+<h2 id="总结">总结</h2><p>以上内容很多总结自对《深入理解Java虚拟机》一书的学习，在此与技术爱好者分享。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近这段时间学习了Java虚拟机相关的一些知识，对Java程序的运行和JVM的内存管理策略有了更深的理解。这篇文章就对此做一下简单的总结。</p>
+<h2 id="Java运行时数据区">Java运行时数据区</h2><p><img src="http://wjd1218.]]>
+    </summary>
+    
+      <category term="gc" scheme="http://wjd1218.github.io/tags/gc/"/>
+    
+      <category term="java" scheme="http://wjd1218.github.io/tags/java/"/>
+    
+      <category term="jvm" scheme="http://wjd1218.github.io/tags/jvm/"/>
+    
+      <category term="Java" scheme="http://wjd1218.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[数据库事务与其隔离级别]]></title>
+    <link href="http://wjd1218.github.io/2015/03/18/DatabaseTransactionAndTheIsolationLevel/"/>
+    <id>http://wjd1218.github.io/2015/03/18/DatabaseTransactionAndTheIsolationLevel/</id>
+    <published>2015-03-18T02:14:30.000Z</published>
+    <updated>2015-06-18T08:00:14.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="什么是数据库事务">什么是数据库事务</h2><p>数据库事务就是一系列的数据库操作。我对事务的理解就是事务是一系列要做的操作，并按照特定的顺序完成。例如：1.换上运动装。2.打篮球。3.洗澡。这三个操作便可以组成一个事务，并且顺序是确定的。这三个操作要么全都做，要么都不做，不能出现如：只换上了运动装，打了篮球，而没有洗澡这样的情况。通过把一组相关的操作组成事务，可以使错误恢复更方便，并且能提高应用程序的可靠性。</p>
+<h2 id="数据库事务的属性（ACID）">数据库事务的属性（ACID）</h2><h3 id="原子性（Atomicity）">原子性（Atomicity）</h3><p>我们提到数据库事务是一系列数据库操作的序列，而这一系列操作应当被视为一个整体。即这一系列操作要么全都执行，要么全都不执行，不能只执行一部分。这便是数据库事务的原子性。</p>
+<h3 id="一致性（Consistency）">一致性（Consistency）</h3><p>事务执行的结果必须是使数据库从一个一致性状态变到另一个一致性状态。关系型数据库中，所有的规则必须应用到事务的修改上，以便维护所有数据的完整性。</p>
+<h3 id="隔离性（Isolation）">隔离性（Isolation）</h3><p>由并发事务所作的修改必须与任何其它并发事务所作的修改隔离。事务查看数据时数据所处的状态，要么是另一并发事务修改它之前的状态，要么是另一事务修改它之后的状态，事务不能查看中间状态的数据。这时事务将获得最高的隔离级别（可序列化）。</p>
+<h3 id="持久性（Durability）">持久性（Durability）</h3><p>事务完成之后，它对于系统的影响是永久性的。即使出现致命的系统故障这个修改也将一直保持。</p>
+<h2 id="事务的隔离级别">事务的隔离级别</h2><p>在对数据库进行并发访问的时候，如多个事务并发执行时，如果没有相应的机制对数据的并发访问进行控制，就会导致错误。比如事务A对数据进行了修改但还未提交修改，这是事务B读取了事务A修改过的数据，结果事务A进行了回滚，最终事务B读取到的数据就是不真实的，这就称为<strong>脏读</strong>。下面就从低到高介绍一下数据库事务的四种隔离级别，通过数据库隔离级别的设置对事务并发进行控制，从而减少错误的发生。</p>
+<h3 id="未提交读">未提交读</h3><p>最低级别的隔离，即一个事务可以访问另一个事务修改但未提交的数据。会引发<strong>丢失数据修改</strong>、<strong>脏读</strong>、<strong>不可重复读</strong>、<strong>幻象</strong>等问题。</p>
+<h3 id="已提交读">已提交读</h3><p>事务只能读取其他写事务提交修改后的数据，避免了<strong>脏读</strong>的问题。但是这个事务在读取数据时，其他事务仍可以对数据进行修改并提交，所以就会导致多次读取统一数据的结果不一致，即<strong>不可重复读</strong>。很多数据库默认的就是这个级别。</p>
+<h3 id="可重复读">可重复读</h3><p>在这个隔离级别下，一个事务在读取数据时，其他事务不能对数据进行修改，因此就保证了同一事务多次读取数据的结果一致。但是这个隔离级别仍然不能保证不发生<strong>幻象</strong>问题。MySQL数据库默认为该级别。</p>
+<h3 id="可串行化">可串行化</h3><p>该级别是最高的隔离级别，从名字便可以看出，事务并发执行的结果和串行执行的结果一致。这个级别可以保证不出现<strong>幻象</strong>问题。</p>
+<h2 id="总结">总结</h2><p>数据库通过设置事务隔离级别对事务并发进行控制，可以减少并发问题。但是隔离级别应该按照需求来设置，不能一味的认为最高的隔离级别就是最好的。事务隔离是通过锁来实现的，<strong>事务隔离级别越高，则并发程度就越低</strong>。高级别的事务隔离会降低执行效率，因此应当根据需要来选择合适的隔离级别。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="什么是数据库事务">什么是数据库事务</h2><p>数据库事务就是一系列的数据库操作。我对事务的理解就是事务是一系列要做的操作，并按照特定的顺序完成。例如：1.换上运动装。2.打篮球。3.洗澡。这三个操作便可以组成一个事务，并且顺序是确定的。这三个操作要么全都做，]]>
+    </summary>
+    
+      <category term="database" scheme="http://wjd1218.github.io/tags/database/"/>
+    
+      <category term="transaction" scheme="http://wjd1218.github.io/tags/transaction/"/>
+    
+      <category term="Database" scheme="http://wjd1218.github.io/categories/Database/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[TCP原理]]></title>
+    <link href="http://wjd1218.github.io/2015/03/17/ThePrincipleOfTCP/"/>
+    <id>http://wjd1218.github.io/2015/03/17/ThePrincipleOfTCP/</id>
+    <published>2015-03-17T06:20:48.000Z</published>
+    <updated>2015-06-18T07:55:12.000Z</updated>
+    <content type="html"><![CDATA[<p>写这篇文章我已经考虑了很久，总是不愿意草草的下笔，总想等到自己对TCP理解的更深入些再提笔来写。但是又觉得，在写这篇文章的过程中，才能发现自己哪些地方理解的还不够深入，哪些地方已经掌握了。因为检测自己是否理解了一个技术原理的很好的途径，就是看自己能不能把它讲出来。下面就看看我能讲到什么程度吧。</p>
+<h2 id="TCP是什么？">TCP是什么？</h2><p>TCP是Transmission Control Protocol（传输控制协议）的缩写。它位于网络OSI七层模型中的传输层（IP协议位于网络层；ARP协议位于数据链路层，ARP协议将IP地址解析为物理地址）。程序中的数据会先由TCP协议包装，然后再由IP协议包装，各层由上到下用自己的协议对上层传下来的数据进行包装，传到对端后，各层再由下到上解析自己的协议并把本层解析后的数据交给更高层的协议处理。</p>
+<h2 id="TCP的特点">TCP的特点</h2><ul>
+<li>TCP是面向连接的，这里的连接指的是逻辑上的连接（虚连接），就是说在通讯的双方都维护一个“连接状态”，看上去就像有链接一样，而实际上数据在网络中的传输是没有链接的。</li>
+<li>每一个TCP链接有且只有两个端点，数据的点对点传输。</li>
+<li>TCP是可靠的，使用TCP连接传送的数据，无差错，不重复，不丢失。</li>
+<li>TCP是全双工的，TCP允许通信双方的应用进程在任何时候向对方发送数据。</li>
+<li>TCP是面向字节流的，即二进制流，TCP只管数据传送，而不管是什么数据，或者数据是什么结构。</li>
+<li>TCP的发送方和接收方都设有发送缓存和接收缓存，发送方应用程序把数据放入发送缓存，TCP在合适的时候将数据发送出去，放入接收方的接收缓存。接收方应用程序在合适的时候从接收缓存中取出数据。这就好比生活中的邮箱，我们需要寄信的时候就把信放到邮箱里，邮递员会在合适的时候把我们的信件取走寄出，放入对方的邮箱中，收信人也会在需要的时候去查看他的邮箱。我觉得这便是一种解耦，应用程序不需要知道通信的细节，它只需要把数据传给专门负责通信的TCP协议，真正的数据通信则由TCP代劳。</li>
+</ul>
+<h2 id="TCP可靠传输的工作原理">TCP可靠传输的工作原理</h2><p>我们知道，TCP下面的网络层提供的是不可靠的传输。而TCP要保证可靠传输，就要采取适当的措施：</p>
+<ol>
+<li>当传输的数据出现差错时，让发送方重传出现差错的数据。</li>
+<li>在接收方来不及处理收到的数据的时候，让发送方适当降低发送数据的速度。</li>
+</ol>
+<p>那么，发送方是如何知道传输的数据出现了差错呢，在正常的情况下，即传输的数据没有出现差错的时候，接收方会向发送方回应一个确认号。当发送方经过了一段时间之后仍然没有收到接收方的确认，就认为刚才发送的数据丢失了，因此就对刚才发送的数据进行重传，这便是<strong>超时重传</strong>。这就像两个人对话，A对B说一句话，B要回应A说他听见了第一句，然后A再对B说下一句，B再回应A说听见了第二句……如果A经过了一段时间没有收到B的回应，那么A就会认为B没有听见，A就会再说一次。这其实就是一种规则，而这种规则就是所谓的协议，通信双方都要遵守这个协议，可靠通信才能达成。</p>
+<h2 id="TCP报文首部格式">TCP报文首部格式</h2><p><img src="http://wjd1218.qiniudn.com/TCPHeader.png" alt="TCPHeader"></p>
+<p>如图所示：</p>
+<ul>
+<li>Sequence Number即报文段序号，TCP是面向字节流的，在一个TCP连接中传送的字节流中的每一个字节都按顺序编号，起始序号要在连接建立时设置。该序号指本报文段所发送的数据的第一个字节的序号。</li>
+<li>Acknowledgment Number即确认号，表示期望收到对方下一个报文段数据的第一个字节的序号。</li>
+</ul>
+<p>通过序号和确认号，解决了网络传输中报文段乱序和报文段丢失的问题。</p>
+<p>TCP Flags：</p>
+<ul>
+<li>Ack的值来控制确认号是否有效，只有当ACK=1时，确认号才有效。</li>
+<li>Urgent=1表示该报文段紧急，<strong>发送方</strong>会将紧急数据插入该报文段数据的最前面。</li>
+<li>Push=1时，<strong>接收方</strong>会尽快的解析并交付给上层，而不再等到缓冲区填满。</li>
+<li>Reset=1时，表明TCP连接中出现严重差错，必须释放连接，然后重新建立连接。</li>
+<li>Syn用来在连接建立时同步序号。Syn=1表示该报文为一个连接请求或连接接受报文。</li>
+<li>Fin用来释放一个连接，Fin=1时表明发送方的数据已发送完毕，并请求关闭连接。</li>
+</ul>
+<p>TCP滑动窗口（Window）：滑动窗口用来做网络流控制，因为TCP要做到可靠传输，需要知道网络实际的数据处理速度，然后根据网络的实际情况进行数据发送，这样才不会引起网络拥塞，导致丢包。Window这个字段被<strong>接收端</strong>用来告诉<strong>发送端</strong>自己还有多少缓冲区可以用来接收数据。于是发送端就可以参考这个值来发送数据，避免接收端处理不过来。</p>
+<h2 id="TCP连接的建立与释放">TCP连接的建立与释放</h2><p><img src="http://wjd1218.qiniudn.com/TCPConnection.jpg" alt="TCPConnection"></p>
+<h3 id="TCP连接的建立，三次握手">TCP连接的建立，三次握手</h3><ol>
+<li>起初Client端和Server端都处于<strong>Close</strong>状态。</li>
+<li>服务器端创建TCB（传输控制块），进入<strong>Listen（监听）</strong>状态。</li>
+<li>客户端首先建立TCB，然后向服务器发送连接请求报文段。客户端进入<strong>同步已发送</strong>状态。</li>
+<li>服务器收到连接请求后，向客户端发送确认。服务器进入<strong>同步收到</strong>状态。</li>
+<li>客户端收到服务器的确认后，客户端进入<strong>连接建立</strong>状态。同时向服务器发送确认的确认。</li>
+<li>服务器收到客户端发送的确认的确认后，进入<strong>连接建立</strong>状态。</li>
+</ol>
+<h3 id="TCP连接的释放，四次挥手">TCP连接的释放，四次挥手</h3><ol>
+<li>连接释放前双方都处于<strong>连接建立</strong>状态。</li>
+<li>客户端向其TCP发送缓冲放入连接释放报文段(Fin=1)，停止再发送数据，客户端进入<strong>终止等待_1</strong>状态，等待服务器的确认。</li>
+<li>服务器收到释放连接请求后发出确认，服务器进入<strong>关闭等待</strong>状态。此时TCP连接处于半关闭状态，即客户端已经没有数据要发送了，但是服务器要发送数据，客户端仍要接收。</li>
+<li>客户端收到服务器的确认后，进入<strong>终止等待_2</strong>状态。</li>
+<li>服务器也没有要发送的数据了，则向客户端发送Fin=1的连接释放请求，服务器进入<strong>最后确认</strong>状态。</li>
+<li>客户端收到服务器的连接释放请求后，进入<strong>时间等待</strong>状态，并向服务器发送确认。</li>
+<li>服务器收到客户端的确认后，进入<strong>Close</strong>状态。</li>
+<li>客户端经过<strong>时间等待计时器</strong>设置的时间后，进入<strong>Close</strong>状态。</li>
+</ol>
+<p>所谓的四次挥手，实际上是两个两次握手，因为TCP是全双工通信，双方都需要告诉对方我要关闭了，并得到对方的确认。</p>
+<h2 id="简单聊聊UDP">简单聊聊UDP</h2><p>UDP和TCP都是传输层协议，但他们之间有很大的区别，UDP是用户数据报协议（User Datagram Protocol）的缩写，它具有如下的特点：</p>
+<ol>
+<li><strong>不面向连接</strong>，即在发送数据之前不需要建立连接，数据发送完毕时也不需要断开连接，因此减少了建立连接和释放连接的开销。</li>
+<li><strong>不可靠</strong>，UDP只是尽最大努力交付，但不能保证可靠性。</li>
+<li><strong>面向报文</strong>，发送方的UDP把上层应用交下来的报文<strong>直接添加首部</strong>后就交给IP层，它对上层应用传递下来的报文既不合并也不拆分，只是照样发送。接收方的UDP同样只是对IP层传递上来的报文去除首部后直接交付给上层应用。所以当应用程序使用UDP时，必须选择合适大小的报文，报文过长会导致IP层在传递时对数据进行分片，降低IP层的效率；报文过短会导致IP数据报的首部相对长度过大，同样影响效率。</li>
+<li><strong>不进行拥塞控制</strong>，因此网络拥塞时，源主机仍然不会降低发送速率。这种方式适用于实时性比较高的场景，比如视频会议。</li>
+<li>支持一对一、一对多、多对一和多对多的交互通信。</li>
+<li>首部占用8个字节，而TCP至少需要20个字节。</li>
+</ol>
+<h2 id="总结">总结</h2><p>此文梳理了一下TCP协议的基本原理，也仅仅是最基本的东西而已，由于TCP协议过于复杂，有一些算法自己也没有完全理解，写下这篇文章，算是对自己近期所学的一个反馈吧。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>写这篇文章我已经考虑了很久，总是不愿意草草的下笔，总想等到自己对TCP理解的更深入些再提笔来写。但是又觉得，在写这篇文章的过程中，才能发现自己哪些地方理解的还不够深入，哪些地方已经掌握了。因为检测自己是否理解了一个技术原理的很好的途径，就是看自己能不能把它讲出来。下面就看看]]>
+    </summary>
+    
+      <category term="tcp" scheme="http://wjd1218.github.io/tags/tcp/"/>
+    
+      <category term="Network" scheme="http://wjd1218.github.io/categories/Network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[树是一种伟大的数据结构]]></title>
+    <link href="http://wjd1218.github.io/2015/02/21/TreeIsANiceDataStructure/"/>
+    <id>http://wjd1218.github.io/2015/02/21/TreeIsANiceDataStructure/</id>
+    <published>2015-02-21T02:26:27.000Z</published>
+    <updated>2015-06-18T08:00:24.000Z</updated>
+    <content type="html"><![CDATA[<p>这篇文章用来简单聊聊“树”这种数据结构，我不想罗列太多的概念，只是讲一讲近期学习新产生的理解和体会。如标题所说，树是一种伟大的数据结构，那么它伟大在哪里呢？我认为树的伟大之处，就在于使用了树，可以让很多看起来不可能做到的事情变成了可能！</p>
+<p>只是凭借直观的想象可能难以感受得到，我就先列举一个树的应用的例子，然后在用简单的数字说明一下，相信就会有很深的体会了。树在查找领域有广泛的应用，我就用二叉查找树来讲吧。相信大家都知道大名鼎鼎的二分查找，二分查找可以极大的降低查找所需的时间复杂度。比方说在N个数据中查找某个值key，如果使用顺序查找，可分成两种情况：一种是查找可以命中，在最坏情况下需要N次比较（从第一个比较到最后一个）。第二种是查找无法命中，即这N个数据中根本就没有要查找的key，那么计算机也需要把这N个数据都比较一次才能知道其中没有要查找的key。所以当数据量非常大，比如1000万、1亿、10亿甚至更大时，顺序查找的耗时可能根本无法接受。于是二分查找就派上用场了。</p>
+<p>使用二分查找可以将比较次数降低到对数级别（每次都将查找范围减半），在N个数据中查找指定的key最多只需要logN（以2为底）+1次比较，无论查找是否命中。于是在128个数据中查找最多需要8次比较，而顺序查找在最坏情况下需要128次比较，即使平均情况也需要60多次。这个比较还不明显，但是当N等于10亿的时候，效果就非常明显了。这时候二分查找最多需要30次比较（2的30次幂大于10亿），而顺序查找呢，很明显了吧，二分查找将查找效率提升了将近1亿倍，一亿倍是什么概念大家可以感受下，这就是线性级别和对数级别的差距。但是二分查找需要一个前提，就是数据必须是有序的。我们知道要维持一个不断有新数据插入的数组有序需要付出很高昂的代价。于是就有了二叉查找树这种数据结构，可以在不断插入数据的过程中维持树有序，付出的代价也可以接受。这就是树的好处，在一颗完全二叉树中，只有N达到了2的k次幂的时候，树高才会加一，所以树高和N是一个对数关系，有10亿个结点的完全二叉树，树高也不超过30。但是仍有一个缺点，就是最终形成的树可能过于不平衡，如果这样就体现不出二分查找的优势，那解决办法是什么呢？</p>
+<p>红黑树便进入了人们的视野，红黑树是平衡的二叉查找树，它可以对比于2-3查找树，这种树有两种结点，一种是2叉结点，一种是3叉结点，3叉结点可以看作是红黑树中红结点和它的父结点组成的结点。红黑树中可以认为每个红色结点和它的父结点高度相同，可以通过左旋、右旋和变色三种操作来实现平衡。具体的实现请看<a href="https://github.com/wjd1218/Algorithms/blob/master/colinSrc%2Fcolin%2Fsearch%2FRedBlackTree.java" target="_blank" rel="external">红黑树</a>，这里不再具体介绍。这样，无论数据插入的顺序如何，红黑树都几乎是完美平衡的。于是就实现了对数级别的插入和对数级别的查找。所以即使数据量达到了上千亿，我们的计算机也只不过需要比较几十次而已，这样，称之为伟大的数据结构，不足为过吧。</p>
+<p>以上仅仅是自己的一点体会，但是自身水平有限，文中表述若有偏颇，还望读者能够批评指正。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>这篇文章用来简单聊聊“树”这种数据结构，我不想罗列太多的概念，只是讲一讲近期学习新产生的理解和体会。如标题所说，树是一种伟大的数据结构，那么它伟大在哪里呢？我认为树的伟大之处，就在于使用了树，可以让很多看起来不可能做到的事情变成了可能！</p>
+<p>只是凭借直观的想象可能]]>
+    </summary>
+    
+      <category term="tree" scheme="http://wjd1218.github.io/tags/tree/"/>
+    
+      <category term="Algorithm" scheme="http://wjd1218.github.io/categories/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[再谈基础排序算法——堆排序]]></title>
+    <link href="http://wjd1218.github.io/2015/02/19/TheHeapSort/"/>
+    <id>http://wjd1218.github.io/2015/02/19/TheHeapSort/</id>
+    <published>2015-02-19T09:22:59.000Z</published>
+    <updated>2015-06-18T08:00:34.000Z</updated>
+    <content type="html"><![CDATA[<p>前段时间写了这篇文章<a href="http://wjd1218.github.io/2014/12/06/%E5%87%A0%E4%B8%AA%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/">几个常见排序算法的实现</a>，仅仅是对自己所学知识的一点总结。这不寒假这段时间又在看《算法》一书，前两章也是在讲基础排序算法，感觉书中的思路比我自己总结的好太多，于是就抽出时间来再写一写新的理解和体会。也算是对前面那篇文章的一点补充吧。</p>
+<h2 id="关于堆排序"><a href="https://github.com/wjd1218/Algorithms/blob/master/colinSrc%2Fcolin%2Fsort%2FHeap.java" target="_blank" rel="external">关于堆排序</a></h2><p>说到堆排序，我们应该不陌生，以前在数据结构课堂上也曾学习过。但是当时老师直接就引出了堆排序，加上当时听课也没有特别认真，于是就听的云里雾里。现如今看了《算法》中的讲解，觉得有点收获，于是便进行一下总结。说到堆排序，首先应当提<strong>优先队列</strong>。下面我们就先来了解一下优先队列。</p>
+<h3 id="优先队列">优先队列</h3><p>优先队列顾名思义是一个队列，不过当然有别于我们所熟知的先入先出队列，否则也就不必冠以<strong>优先</strong>两字了。优先是指优先级，优先队列中的元素需要根据优先级顺序来出队。我们可以规定元素的值越大，优先级越高，于是优先队列中每次出队的元素都是最大的元素。这种数据结构的实现请见<a href="https://github.com/wjd1218/Algorithms/blob/master/colinSrc%2Fcolin%2Fbase%2FMaxPriorityQueue.java" target="_blank" rel="external">优先队列</a>，当然也可以实现每次从队列中删除最小元素的<a href="https://github.com/wjd1218/Algorithms/blob/master/colinSrc%2Fcolin%2Fbase%2FMinPriorityQueue.java" target="_blank" rel="external">优先队列</a>。优先队列有多种实现方法，比较优秀且经典的实现是基于二叉堆的实现。优先队列应用广泛，常见的如根据优先级进行任务调度、在大量数据中找出TopM、还有一会就要介绍的堆排序算法。</p>
+<h4 id="TopM问题">TopM问题</h4><p>既然说到了优先队列，那就说一下使用优先队列求解TopM的方法。比如在输入的数据中找出M个最大的元素。如果不使用优先队列，我们可以先把输入数据排序，然后从中找出最大的M个。这种方式在数据数据量较小时还可行，但是当输入数据非常庞大时就不可能了，首先对大量数据排序是个不简单的问题，再有这种方法所需的计算机内存也不能接受。但是使用了优先队列情况就不同了，我们可以不对输入数据进行排序，需要的内存也只是常熟级别。我们只需要直接将输入数据按照输入顺序插入优先队列，并固定队列的容量为M+1，每当队列中的元素数量达到M+1时候，就删除其中最小的元素。这样当所有元素都输入完之后，队列中的M个元素即是所有输入数据中最大的M个。</p>
+<h3 id="堆">堆</h3><p>堆分成大根堆和小根堆，当一棵二叉树的每个结点都大于等于它的两个子结点时，被称为堆有序，这个堆为大根堆。当每个结点都小于等于它的两个子结点时，这个堆为小根堆。在大根堆中，根节点是最大的结点。二叉堆是一组能够用堆有序的<strong>完全二叉树</strong>排序的元素。我们可以用数组来实现完全二叉树，数组的索引（不使用第一个位置0）对应完全二叉树中结点的标号。由此便可以简洁的实现堆的有序化。具体的实现请见上文中提到的优先队列的代码链接。</p>
+<h3 id="堆排序">堆排序</h3><p>讲到正题了，堆排序就是使用二叉堆这种数据结构进行排序，主要分成两个步骤，先把输入数据构造成一个堆，然后再进行排序。那么怎么构造堆呢？一种方法是从堆顶开始构造，类似于把每个元素依次插入优先队列，每插入一个元素，进行一次堆的有序化。另一种方法是从堆底（数组末端，即完全二叉树中结点标号大的一端）开始构造，因为数组的每个位置都已经是一个子堆的根节点了，并且当一个结点的两个子结点都是堆时，可以把这两个堆合并成一个堆。类似于把多个子堆不断的合并，这种方法比从堆顶开始构造堆更加高效。堆构造完成后就是进行排序了，忘了说，堆排序也是基于原址的。当堆构造好之后，堆顶（根元素）即为最大的元素，将这个元素和堆底（数组末端）交换，即完成了一个元素的排序。然后把堆的大小缩小一，再进行堆的有序化。重复进行这样的操作，直到堆的大小为1，整个数组有序。这个过程有些类似于选择排序，但是比选择排序需要的比较次数要少的多，因为堆提供了一种在未排序元素中找到最大元素的有效方法。</p>
+<h2 id="总结">总结</h2><p>以上就是堆排序内容的一点总结，不同的排序算法有不同的适用场景，比如当稳定性很重要而且内存又不是问题时，归并排序可能是最好的选择；但是当运行时间很重要时，快速排序便可能是更好的选择。写这些文章，是希望自己能够理解种种不同算法的思想，并了解其适用场景。了解多种不同的思考方式，从不同的角度看待问题，我想不只是算法学习上，还有思维能力上，甚至生活上，大概都能从中受益吧。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>前段时间写了这篇文章<a href="http://wjd1218.github.io/2014/12/06/%E5%87%A0%E4%B8%AA%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%]]>
+    </summary>
+    
+      <category term="heap" scheme="http://wjd1218.github.io/tags/heap/"/>
+    
+      <category term="queue" scheme="http://wjd1218.github.io/tags/queue/"/>
+    
+      <category term="sort" scheme="http://wjd1218.github.io/tags/sort/"/>
+    
+      <category term="Java" scheme="http://wjd1218.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Javac和Java在CLI中的使用]]></title>
+    <link href="http://wjd1218.github.io/2015/02/13/TheUseOfJavacAndJavaInCLI/"/>
+    <id>http://wjd1218.github.io/2015/02/13/TheUseOfJavacAndJavaInCLI/</id>
+    <published>2015-02-13T03:29:55.000Z</published>
+    <updated>2015-06-18T08:00:46.000Z</updated>
+    <content type="html"><![CDATA[<p>最近这几天在学习Robert Sedgewick和Kevin Wayne的《算法》一书。第一章讲了一些Java编程的基础，第二章讲了一些最基础的排序算法。目前刚刚看完这两章，虽然很基础，但是毕竟不能只看书不练习，于是就动手写代码实践一下。可是刚开始写代码我就遇到了麻烦，我始终不知道在Eclipse中如何把标准输入流重定向到文件，就像在命令行中输入<code>java Test &lt; data.txt</code>这样。我知道在Eclipse中能够将标准输出重定向到文件，所以我觉得做到标准输入重定向应该不难。可是在网上查了很多资料，却都是通过在程序中解析命令行参数做到的。平时用IDE用惯了，很少直接在命令行中使用jdk提供的javac、java等工具，对其各种参数更是不甚了解。于是觉得与其被这个问题绊住，倒不如就在命令行中编译、运行程序来的方便。也正好借此机会学习下jdk工具的使用，岂不是一举两得。</p>
+<p>常言道，实践出真知，想的再周全也不如真正动手试一试，这不，我刚刚就试了试。结果真的是不如想象的顺利-_-，javac编译一个只有几行代码的HelloWorld.java没问题，然后<code>java HelloWorld</code>也能正常运行。可是当我编译一个稍微复杂些的源文件时，就出了字符编码的问题，源文件中的中文注释出了问题，可是在Eclipse中明明可以正常编译。于是查了下资料，原来在编译的时候，如果没有用-encoding参数指定源程序的字符编码，则javac.exe会读取操作系统的file.encoding参数(操作系统默认的字符编码，我的是GBK)，然后把源程序从file.encoding编码转化为unicode编码读进内存再进行编译。我的源程序本身就是utf-8编码的，按照GBK编码读取再转换成utf-8时，中文字符就出了问题。解决办法就是在编译时加上-encoding utf-8参数，就像这样<code>javac -encoding utf-8 xxx.java</code>。这样就编译成功了，当然javac命令还有很多其他参数，比如-d参数可以指定生成的类文件的存放位置，默认是存放在跟源文件相同的目录。还有一个比较重要的参数是-cp或者-classpath，通过这个参数可以指定搜索类文件的位置，可以是目录或者是jar包。源程序编译时，会将它所依赖的类一起编译。</p>
+<p>编译完了，接着就是运行了。结果运行又遇到了问题，说<code>Could not find or load main class ...</code>我就纳闷了，这个类文件分明就在这，刚刚编译好的，怎么就找不到呢。然后又去查资料，这次就没那么容易找到答案了，我试了多种网上给出的方案，但是始终都是提示找不到或无法加载类。然后我发现网上问这个问题的基本都是运行HalloWorld程序的，我就想，难道这个问题是一个简单到不值得问的问题？当我找到答案后，我觉得，似乎是的！问题在哪，在于我输入的类名不是<strong>全类名</strong>，因为我分了包，所以全类名应该是包名加类名，比如util包下的类MyTest的全类名应该是util.MyTest。所以要运行bin/util/MyTest.class应该执行<code>java -cp bin util.MyTest</code>这个命令。-cp参数同样指定了类的搜索路径。现在想来java的这种机制也是合理的，因为只有通过<strong>全类名</strong>才能唯一指定一个类，然后JVM才能找到这个类并加载它。</p>
+<p>就先说一下这两条命令，都是自己实践得来的经验，希望对需要的人有所帮助。其中还有很多参数暂时还没有用到，今后用到了再进行补充。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近这几天在学习Robert Sedgewick和Kevin Wayne的《算法》一书。第一章讲了一些Java编程的基础，第二章讲了一些最基础的排序算法。目前刚刚看完这两章，虽然很基础，但是毕竟不能只看书不练习，于是就动手写代码实践一下。可是刚开始写代码我就遇到了麻烦，我始]]>
+    </summary>
+    
+      <category term="cli" scheme="http://wjd1218.github.io/tags/cli/"/>
+    
+      <category term="java" scheme="http://wjd1218.github.io/tags/java/"/>
+    
+      <category term="javac" scheme="http://wjd1218.github.io/tags/javac/"/>
+    
+      <category term="Java" scheme="http://wjd1218.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Java集合框架]]></title>
+    <link href="http://wjd1218.github.io/2015/02/07/TheJavaCollectionsFramework/"/>
+    <id>http://wjd1218.github.io/2015/02/07/TheJavaCollectionsFramework/</id>
+    <published>2015-02-07T13:54:24.000Z</published>
+    <updated>2015-06-18T08:00:56.000Z</updated>
+    <content type="html"><![CDATA[<p>先来看一张Java集合的类图。本来是想自己画一个的，但是在网上看到了这个图之后就觉得没有再重新画一个的必要了。这个图相对网上其他一些图来说更全面一些。</p>
+<p><img src="http://wjd1218.qiniudn.com/JavaCollection.jpg" alt="Java集合框架"></p>
+<p>下面我们根据这个图来逐一分析具体的常用集合类。</p>
+<ul>
+<li>Iterator接口：这个接口定义了从集合中获取元素和判断集合中是否还有元素的方法。下图中是jdk1.8中Iterator接口申明的两个方法</li>
+</ul>
+<p><img src="http://wjd1218.qiniudn.com/IteratorMethod.png" alt=""></p>
+<p>通过hasNext()方法可以判断集合中是否还有剩余元素，next()则可以将下一个元素取出。<br>当然该接口使用了Java8带来的一些新特性，比如接口中的这个方法</p>
+<p><img src="http://wjd1218.qiniudn.com/IteratorMethodNew.png" alt=""></p>
+<p>在接口中通过<strong>default</strong>关键字给出了方法的默认实现，并且好像还有了些函数式编程的意味，没错！这都是Java8的新特性，不过这些都不在本文的讨论范围，这里我们只谈Java集合框架。</p>
+<ul>
+<li><p>ListIterator接口：该接口是Iterator的子接口，它可以让程序员从不同的方向遍历列表，这个迭代器的光标位置在调用 previous() 所返回的元素和调用 next() 所返回的元素之间。所以调用next()或者previous()方法返回的都是迭代器光标所越过的元素。</p>
+</li>
+<li><p>Collection接口：Collection是最基本的集合接口，一个Collection代表一组Object，即Collection的元素（Elements）。该接口定义了一些最基本的集合操作的方法。</p>
+</li>
+<li><p>Queue接口：规定了队列操作需要的方法。LinkedList实现了Queue接口，使用Queue接口可以窄化LinkedList中方法的调用。这种方式会使程序有更好的可读性，并且也更安全。</p>
+</li>
+<li><p>Deque接口：Queue的子接口，它规定了双向队列操作需要的方法。</p>
+</li>
+<li><p>List接口：List是有顺序的集合，元素可以重复，使用此接口能够精确的控制每个元素插入的位置。用户能够使用索引（类似于数组下标）来访问List中的元素。</p>
+</li>
+<li><p>LinkedList类：该类实现了List接口，并允许null元素，这个实现是基于链表的，下图是LinkList的私有静态内部类Node的源码，一个Node表示链表的一个节点。根据源码也可以看出这是一个双向链表。</p>
+</li>
+</ul>
+<p><img src="http://wjd1218.qiniudn.com/LinkedList$Node.png" alt=""></p>
+<ul>
+<li><p>ArrayList类：实现了List接口，允许null元素，该类的实现是基于数组的，但是可以根据需要自动的扩充数组的大小。</p>
+</li>
+<li><p>Vector类：和ArrayList类似，不同之处在于Vector是线程安全的。</p>
+</li>
+<li><p>Stack类：继承自Vector，实现了后进先出的栈数据结构。</p>
+</li>
+<li><p>Set接口：不包含重复元素的集合。</p>
+</li>
+<li><p>HashSet类：这个类的实现是基于HashMap的。下面两张图是HashSet的部分源码</p>
+</li>
+</ul>
+<p><img src="http://wjd1218.qiniudn.com/HashSet.png" alt="HashSet构造方法"><br><img src="http://wjd1218.qiniudn.com/HashSetAdd.png" alt="HashSet中的add方法"></p>
+<p>由这两张图可以看出，在HashSet内部，是通过HashMap的Key来存储元素的，而HashMap的Value始终存储的是<em>PRESENT</em>对象。由此可见，该集合会浪费一些内存。</p>
+<ul>
+<li><p>TreeSet类：TreeSet是一个有序的集合，其实现基于TreeMap（类似于HashSet基于HashMap实现）。TreeSet会调用集合元素的compareTo(Object obj)方法来比较元素之间大小关系，然后将集合元素按升序排列。如果试图把一个对象添加进TreeSet时，则该对象的类必须实现Comparable接口。</p>
+</li>
+<li><p>Map接口：该接口并没有继承自Collection，它提供一种key到value的映射。该接口提供了3种集合的视图，Map的内容可以被当作一组key集合，一组value集合，或者一组key-value映射。</p>
+</li>
+<li><p>TreeMap类：基于红黑树实现。通过给定的或默认的Comparator（自然顺序）排序Keys，每一个key-value作为红黑树的一个节点。下图就是TreeMap的部分源码。</p>
+</li>
+</ul>
+<p><img src="http://wjd1218.qiniudn.com/TreeMap.png" alt="TreeMap部分源码"></p>
+<ul>
+<li>HashMap类：HashMap是一个散列表，它存储的内容是键值对(key-value)映射。有两个参数影响HashMap的性能：“初始容量” 和 “加载因子”。容量是散列表中桶的数量。加载因子是散列表在其容量自动增加之前可以达到多满的一种尺度。当散列表中的条目数超出了加载因子（默认0.75）与当前容量的乘积时，就会对散列表进行再哈希（rehash）操作。通过拉链法解决散列冲突的思想如下图</li>
+</ul>
+<p><img src="http://wjd1218.qiniudn.com/hash.png" alt=""></p>
+<p>该图中的数组下标可以看作是每一个桶的标号，需要注意的是，每一个桶中存放的元素也是键-值对，而不是仅仅有值。否则当一个桶中有多个值的时候就无法通过键来确定值（如果两个键相同，则它们的hash值一定相同；但是如果hash值相同，那么两个键不一定相同。即a.equals(b)==true是a.hashCode()==b.hashCode()的充分不必要条件）。</p>
+<ul>
+<li><p>WeakHashMap类：其中存放了对键对象的弱引用，当除了自身有对key的弱引用外，此key没有其他引用，那么就会自动丢弃此值。只具有弱引用的对象拥有更短暂的生命周期。垃圾回收器线程一旦发现了只具有弱引用的对象，就会回收它的内存。</p>
+</li>
+<li><p>Hashtable类：继承自Dictionary类，并实现了Map接口，它的Key和Value不允许为null。和HashMap不同，该类是线程安全的。</p>
+</li>
+</ul>
+<p>哇塞！一直觉得这些知识挺基础的，今天总结了一下，发现还是有很多细节没有弄清楚，就这样边查资料边看源码边总结，从下午到晚上这几个小时下来也是收获颇丰！看来真是：“纸上得来终觉浅，绝知此事要躬行”啊。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>先来看一张Java集合的类图。本来是想自己画一个的，但是在网上看到了这个图之后就觉得没有再重新画一个的必要了。这个图相对网上其他一些图来说更全面一些。</p>
+<p><img src="http://wjd1218.qiniudn.com/JavaCollection.jp]]>
+    </summary>
+    
+      <category term="collection" scheme="http://wjd1218.github.io/tags/collection/"/>
+    
+      <category term="java" scheme="http://wjd1218.github.io/tags/java/"/>
+    
+      <category term="Java" scheme="http://wjd1218.github.io/categories/Java/"/>
+    
+  </entry>
+  
+</feed>

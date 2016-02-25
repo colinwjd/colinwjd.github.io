@@ -1,0 +1,801 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="interview," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="从零到无穷大" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="今年2月份的时候就在网上找了阿里实习生的内推，然后过年期间一直在家里准备算法，看完了《算法》一书，实现了书中提到的多种数据结构，比如堆、散列表、红黑树等等。因为没有面试经验，也不知道面试会是什么样的形式，会问什么样的问题，我只是觉得把数据结构和算法理解透彻就可以了。原来还是我太天真了，我完全没有准备常见面试题。然后阿里3月份的时候就开始了内推的电话面试，由于准备不充分，TCP三次握手的状态都没有弄">
+<meta property="og:type" content="article">
+<meta property="og:title" content="有梦想的人，始终在路上!(记阿里实习生霸面经历，拿到Offer)">
+<meta property="og:url" content="http://wjd1218.github.io/2015/05/09/AManWithADream/index.html">
+<meta property="og:site_name" content="从零到无穷大">
+<meta property="og:description" content="今年2月份的时候就在网上找了阿里实习生的内推，然后过年期间一直在家里准备算法，看完了《算法》一书，实现了书中提到的多种数据结构，比如堆、散列表、红黑树等等。因为没有面试经验，也不知道面试会是什么样的形式，会问什么样的问题，我只是觉得把数据结构和算法理解透彻就可以了。原来还是我太天真了，我完全没有准备常见面试题。然后阿里3月份的时候就开始了内推的电话面试，由于准备不充分，TCP三次握手的状态都没有弄">
+<meta property="og:updated_time" content="2015-06-18T07:54:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="有梦想的人，始终在路上!(记阿里实习生霸面经历，拿到Offer)">
+<meta name="twitter:description" content="今年2月份的时候就在网上找了阿里实习生的内推，然后过年期间一直在家里准备算法，看完了《算法》一书，实现了书中提到的多种数据结构，比如堆、散列表、红黑树等等。因为没有面试经验，也不知道面试会是什么样的形式，会问什么样的问题，我只是觉得把数据结构和算法理解透彻就可以了。原来还是我太天真了，我完全没有准备常见面试题。然后阿里3月份的时候就开始了内推的电话面试，由于准备不充分，TCP三次握手的状态都没有弄">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 有梦想的人，始终在路上!(记阿里实习生霸面经历，拿到Offer) | 从零到无穷大 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">从零到无穷大</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">辛苦敲下的一行行代码不知能否改变这个世界，而我的世界，不过就是你的心！</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                有梦想的人，始终在路上!(记阿里实习生霸面经历，拿到Offer)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-05-09T15:10:44+08:00" content="2015-05-09">
+              2015-05-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Life/" itemprop="url" rel="index">
+                    <span itemprop="name">Life</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/05/09/AManWithADream/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/05/09/AManWithADream/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今年2月份的时候就在网上找了阿里实习生的内推，然后过年期间一直在家里准备算法，看完了《算法》一书，实现了书中提到的多种数据结构，比如堆、散列表、红黑树等等。因为没有面试经验，也不知道面试会是什么样的形式，会问什么样的问题，我只是觉得把数据结构和算法理解透彻就可以了。原来还是我太天真了，我完全没有准备常见面试题。然后阿里3月份的时候就开始了内推的电话面试，由于准备不充分，TCP三次握手的状态都没有弄清楚，Java垃圾回收的原理也没有深入了解，在二面的时候理所当然的挂掉了。然后就安慰自己还可以准备阿里的笔试，然而在出笔试结果的那一刻，自己也是感到莫名的失落，又是待回绝。不过自己早就打算好就算笔试没有通过，也是要去成都霸面的，心态没有崩溃，只是越来越感到压力山大，实验室的小伙伴们都已经陆陆续续的拿到了offer，唯独自己还在为面试做准备。但是现在自己确很感激过去的这两个月时光，也真的佩服自己能够化压力为动力，佩服自己能坚持下来。在这两个月的时间里，自己不断的看书、总结，真的感觉自己的能力有了一个质的提升，相信这也是我能在去成都面试时保持自信的原因之一吧。</p>
+<p>时间飞逝，很快就进入了5月份，今年阿里在成都沃特酒店面试，我因为笔试没有通过，也很清除这是最后的机会，就只能去霸面了。而且那天我真的很有自信，可以说自己从来没有这么自信过，我甚至觉得只要能有面试机会，我就能通过面试。然而实际情况总不如自己想的那么如意，5月5号上午，我们几个小伙伴早早的就到了酒店等候，等时间差不多的时候，我们几个上楼说明来意，然后把简历交给了工作人员，然后就进了等候区静静的等。大概等了3个小时吧，在上午11点左右的时候，HR姐姐把我们的简历退回来了，说面试官觉得不太合适，说我们可以回去了。我们等电梯的时候还安慰我们说我们可以等阿里的校招。</p>
+<p>起初自己本是一个很放松的心情等待面试，并且经过跟面试结束的同学交流，觉得自己水平应该能达到要求，然后心里更放松了。可是万万没想到，自己的简历居然都没有通过，直接被退了回来，心情还是一下子变得很失落。当时就想，没有机会了，跟小伙伴一起默默回到了酒店，如果不是因为我们早上出门时续了房，估计当天也就会回重庆了吧。回到酒店之后，在网上查了查别人霸面的经历，察觉到霸面的人基本上都不是第一次就成功争取到机会的，然后我们就决定下午再去一次，几个小伙伴还修改了自己的简历。我因为来之前简历已经改了无数次，让同学、老师都提过不少建议，觉得实在是没什么可以改的了，就带着同样的简历，继续去霸面。这次根本就不让我们进屋子里等了，让我们在外面等。然而这次自己仍然没有通过简历筛选，HR姐姐又把我们的简历退了回来，说面试官觉得不合适，但是我猜测我们的简历根本就没有经过面试官，我同学也说他听到HR姐姐说这个人已经被刷过了，当时真的觉得没有一点希望了。然后就和同学到12层，找另外几个面试产品的小伙伴。在和小伙伴交流的过程中，我做了一个决定——换个职位再申请一次，经过了几分钟的心理挣扎之后，我毅然的上了25楼，这次我没有把简历交给工作人员，而是直接给了那个HR姐姐，然后说明自己希望能够换个职位试一试，还讲了自己是从重庆过来，希望能有一个面试机会，不想就这样带着遗憾回去。</p>
+<p>估计HR姐姐也是真的被我打动了吧，接过我的简历说帮我去问一下，让我先在外面等一会。我也只好默默的等，但是至少觉得还有一线希望。然后没几分钟，工作人员就叫我过去在简历上写上职位意向和工作城市意向，写好后就让我进屋子里面等叫号了，这下终于觉得有希望了。说来也真是运气好，时间大概是下午不到5点钟，我投的数据研发工程师的职位，估计正常预约面试的人基本都结束了。所以我等了大概半个小时就被叫到去参加一面，一面的面试官很和蔼，我在他对面坐下以后，所有的紧张感都消失了。面试官浏览了一下我的简历，然后就让我讲讲自己觉得做的不错的一个项目，因为来之前我对我的项目进行了充分的准备，几个重要的点都讲的很清楚。面试官听我讲完，还给我的项目提出了几个值得改进的地方，并从架构上给我分析了我的项目，那一刻我对面试官也是充满了钦佩，所以最后面试官问我有什么问题的时候，我就问了下他的花名，并让面试官给我今后的学习提了些建议。初面大概进行了50分钟，面试官最后直接跟我说你一面通过了，但只是勉强通过，说对于本科生，能了解到这些也很不错。出来之后我就在等候区等待二面，不到10分钟我就被叫到了，二面的面试官是个主管，给我的感觉是十分平易近人然而又不失严肃，既有一种气场又不给人压力。先让我做了自我介绍，然后就以聊天的语气问了些问题，氛围一直都很轻松，面试官也没有问我太多的技术细节，主要还是以了解我的视野、世界观、性格、学习能力、学习热情等方面为主。最后面试官还给我提了一些学习上的建议，我觉得十分受用。二面大概一个小时，结束时已经快要晚上8点钟了，我在等候区等待结果，不知道自己过没过，心里还是有些忐忑。不过我等了不到5分钟就有工作人员叫我到25层进行HR面试，然后我被带到了25层的等候区，这时候等候区就只有我一个人了，说来也真的是运气好，我应该是当天最后一个HR面试的人。HR姐姐知道我是从重庆过来的，就了解了一些具体情况，还问了一些有关我的大学生活、实验室生活、家庭环境等方面的问题。就像是在和朋友聊天，表露出真诚就好了。面试大概进行了40分钟，结束的时候已经快到晚上9点了，并且那个HR姐姐晚饭还没有吃。结束时HR姐姐让我先在外面等一下，我正准备回到等候区，发现等候区灯都关了，工作人员说今天的面试已经结束了，让我回去等结果就可以了。我就说是HR姐姐让我在外面等一下，然后工作人员就进去问了一下，出来跟我说，刚才HR姐姐让我留下是考虑到我是从重庆过来的，而后天上午要邀请我参加阿里的圆桌沙龙，想问我有没有打算在成都多住一天，我当然决定多住一天了！工作人员最后说，现在你可以放心的回去了吧。然后我谢过工作人员，就下楼去找小伙伴了。</p>
+<p>这一天真的很累，很疲倦，然而结果总算令人满意，当晚大概在凌晨四五点钟才睡着，满脑子都是当天面试的过程，十分感慨，觉得所有的付出都值了。7号上午，开开心心的去参加了圆桌沙龙，我被分到了蚂蚁金服，这天上午了解了很多阿里的文化，HR姐姐们和主管们给我们解答了很多问题。结束时也已经11点多了，然后匆匆回到酒店，退房，准备返校。这三天经历，虽然坎坷，但收获很多，仅以此文留作纪念。</p>
+<p>总结一下我的收获吧：</p>
+<ol>
+<li>学习要脚踏实地，要真正的学进去、钻进去，有真才实学，才能充满自信，才能创造价值。</li>
+<li>遇到挫折要敢于面对，要能坚持下去，要相信自己，给自己鼓励，学会化压力为动力。</li>
+<li>机会要自己争取，要敢于尝试，一次次的逃避只会让你失去的更多。</li>
+<li>不要找借口，而要找原因。找借口只会让你越来越弱而自大，找原因则会让你越来越强且谦虚。</li>
+<li>要保持乐观平静的心态，除了生死，其他的都是小事。</li>
+<li>学会感恩，感恩每一个给你带来帮助的人，如果没有他们，结果可能完全不同。</li>
+</ol>
+<p>每天去实验室或者图书馆的路上，总能看到一个写着名言的牌子：人生最大的光荣，不在于永不失败，而在于屡仆屡起！每次经过那里，总会受到莫大的鼓舞，感谢我身边的一切，路还很长，在一个新的起点，期待一个更好的自己。</p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/interview/" rel="tag">#interview</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/04/21/LockAndCompareAndSwap/" rel="next" title="锁与CompareAndSwap">
+                <i class="fa fa-chevron-left"></i> 锁与CompareAndSwap
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/07/01/MacbookPro Start Experience/" rel="prev" title="Macbook Pro入手一个月使用体验">
+                Macbook Pro入手一个月使用体验 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/05/09/AManWithADream/"
+     data-title="有梦想的人，始终在路上!(记阿里实习生霸面经历，拿到Offer)"
+     data-content=""
+     data-url="http://wjd1218.github.io/2015/05/09/AManWithADream/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/05/09/AManWithADream/"
+           data-title="有梦想的人，始终在路上!(记阿里实习生霸面经历，拿到Offer)" data-url="http://wjd1218.github.io/2015/05/09/AManWithADream/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Colin Wang" />
+          <p class="site-author-name" itemprop="name">Colin Wang</p>
+          <p class="site-description motion-element" itemprop="description">生活纪录 | 技术分享</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">50</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/wjd1218" target="_blank">
+                  
+                    <i class="fa fa-book"></i> Zhihu
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Colin Wang</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"wjd1218"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>
