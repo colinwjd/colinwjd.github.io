@@ -234,8 +234,8 @@
             
               
                 
-                <a class="post-title-link" href="/2014/12/02/LinuxFromScratch7-5LearningExperience/" itemprop="url">
-                  LinuxFromScratch7.5学习体会
+                <a class="post-title-link" href="/2015/02/03/SpringThinking/" itemprop="url">
+                  Spring之思
                 </a>
               
             
@@ -248,8 +248,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-12-02T18:39:45+08:00" content="2014-12-02">
-              2014-12-02
+            <time itemprop="dateCreated" datetime="2015-02-03T15:30:07+08:00" content="2015-02-03">
+              2015-02-03
             </time>
           </span>
 
@@ -262,8 +262,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/OS/" itemprop="url" rel="index">
-                    <span itemprop="name">OS</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -278,8 +278,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2014/12/02/LinuxFromScratch7-5LearningExperience/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/12/02/LinuxFromScratch7-5LearningExperience/" itemprop="commentsCount"></span>
+                <a href="/2015/02/03/SpringThinking/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/02/03/SpringThinking/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -302,11 +302,475 @@
       
         
           
-          记得是大学刚入学的时候，开始对Linux操作系统产生了兴趣，那时候对Linux也不是很了解，但是作为一名学习软件工程专业的学生，渐渐地也在网上了解到了很多有关Linux的知识。我对新鲜的事物充满了好奇，尽管Linux在这世界上早已不是什么新鲜事物了，但是在那时的我眼里，它就是新鲜事物！记得当时接触的
+          一直在断断续续的学习Spring框架，到目前为止，虽然没有在实际项目中应用过，但也算是有一些收获了吧。由于刚刚读完吴军博士的《数学之美》，深受其启发，觉得无论做什么事情，心中都一定要有大格局。就像所谓的学习，我看来就可以分成两种，一种是“道”的学习，另一种是“术”的学习。道就是原理，术就是技术。技术
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2014/12/02/LinuxFromScratch7-5LearningExperience/#more" rel="contents">
+            <a class="btn" href="/2015/02/03/SpringThinking/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/01/30/CleanCode/" itemprop="url">
+                  代码整洁之道
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-01-30T20:51:05+08:00" content="2015-01-30">
+              2015-01-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Technology/" itemprop="url" rel="index">
+                    <span itemprop="name">Technology</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/01/30/CleanCode/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/01/30/CleanCode/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+是的，我们就是一群代码猴子，上窜下跳，自以为领略了编程的真谛。可惜，当我们抓着几个酸桃子，得意洋洋的坐到树枝上，却对自己造成的混乱熟视无睹。那堆“可以运行”的乱麻程序，就在我们的眼皮底下慢慢腐坏。
+
+这段话引用自Robert C.Martin（鲍勃大叔）所著的《代码整洁之道》。当时刚买来这本书时，
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/01/30/CleanCode/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/01/29/FunctionalProgramming/" itemprop="url">
+                  我所理解的函数式编程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-01-29T22:02:45+08:00" content="2015-01-29">
+              2015-01-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Technology/" itemprop="url" rel="index">
+                    <span itemprop="name">Technology</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/01/29/FunctionalProgramming/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/01/29/FunctionalProgramming/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          第一次听说函数式编程应该是至少一年前的事情了，那时候也仅仅是知道有这么个东西，一点也不了解它具体是什么意思。函数式编程本身也不是什么新鲜事物，早在很久以前就已经出现了。而这些日子函数式编程变得越来越受关注，最新推出的Java1.8也加入了函数式编程的特性，于是这些天就认真了解了一下有关函数式编程的内
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/01/29/FunctionalProgramming/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/" itemprop="url">
+                  计算机科学知识和技能评估
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-01-18T14:39:05+08:00" content="2015-01-18">
+              2015-01-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Life/" itemprop="url" rel="index">
+                    <span itemprop="name">Life</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          前段时间在网上看到《30分钟，让你成为更好的程序员》这篇文章，觉得很有实用价值，对我也很有启发。通过画一张图表分析自己的知识和技能，很高效而且很实用，所以我也对自己的知识和技能进行了分析。也正如那篇文章所说，这个图表并不是要详细列出自己所有的知识和技能，而是让你自己对自己的专业技能有一个全局的了解。
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/01/16/JavaReflectionMechanism/" itemprop="url">
+                  Java的反射机制
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-01-16T13:57:20+08:00" content="2015-01-16">
+              2015-01-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/01/16/JavaReflectionMechanism/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/01/16/JavaReflectionMechanism/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          今天在慕课网上看了一些有关Java反射的视频，感觉收获不小。反射（Reflection）能够让运行于JVM中的程序检测和修改运行时的行为。自从学Java以来就一直对反射这块内容不是很理解，今天就觉得自己突然开窍了，好像理解了些什么，于是就趁热打铁记录下来吧。
+一切皆是对象要学习面向对象编程，首先要理
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/01/16/JavaReflectionMechanism/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -333,7 +797,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -447,6 +911,18 @@
             
               <span class="links-of-author-item">
                 <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.yinwang.org/" target="_blank">王垠的博客</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://coolshell.cn/" target="_blank">酷壳</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/a837199685/" target="_blank">蜗牛的专栏</a>
               </span>
             
           

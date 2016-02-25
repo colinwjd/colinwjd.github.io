@@ -234,8 +234,8 @@
             
               
                 
-                <a class="post-title-link" href="/2015/02/21/TreeIsANiceDataStructure/" itemprop="url">
-                  树是一种伟大的数据结构
+                <a class="post-title-link" href="/2015/03/24/PrincipleOfConcurrentHashMap/" itemprop="url">
+                  ConcurrentHashMap实现原理
                 </a>
               
             
@@ -248,124 +248,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-02-21T10:26:27+08:00" content="2015-02-21">
-              2015-02-21
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/02/21/TreeIsANiceDataStructure/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/02/21/TreeIsANiceDataStructure/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          这篇文章用来简单聊聊“树”这种数据结构，我不想罗列太多的概念，只是讲一讲近期学习新产生的理解和体会。如标题所说，树是一种伟大的数据结构，那么它伟大在哪里呢？我认为树的伟大之处，就在于使用了树，可以让很多看起来不可能做到的事情变成了可能！
-只是凭借直观的想象可能难以感受得到，我就先列举一个树的应用的例
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/02/21/TreeIsANiceDataStructure/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/02/19/TheHeapSort/" itemprop="url">
-                  再谈基础排序算法——堆排序
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-02-19T17:22:59+08:00" content="2015-02-19">
-              2015-02-19
+            <time itemprop="dateCreated" datetime="2015-03-24T16:50:03+08:00" content="2015-03-24">
+              2015-03-24
             </time>
           </span>
 
@@ -394,8 +278,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/02/19/TheHeapSort/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/02/19/TheHeapSort/" itemprop="commentsCount"></span>
+                <a href="/2015/03/24/PrincipleOfConcurrentHashMap/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/24/PrincipleOfConcurrentHashMap/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -418,12 +302,11 @@
       
         
           
-          前段时间写了这篇文章几个常见排序算法的实现，仅仅是对自己所学知识的一点总结。这不寒假这段时间又在看《算法》一书，前两章也是在讲基础排序算法，感觉书中的思路比我自己总结的好太多，于是就抽出时间来再写一写新的理解和体会。也算是对前面那篇文章的一点补充吧。
-关于堆排序说到堆排序，我们应该不陌生，以前在数据
+          寒假阶段复习了下Java集合框架，感觉有些收获，但是文中没有提到有关并发集合的内容，这篇文章就来谈谈并发散列表——ConcurrentHashMap，我们知道HashMap本身并不是线程安全的，如果程序需要在多线程的环境下运行，那么我们可以选择Hashtable做为替代，但是看过Hashtable源
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/02/19/TheHeapSort/#more" rel="contents">
+            <a class="btn" href="/2015/03/24/PrincipleOfConcurrentHashMap/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -466,8 +349,8 @@
             
               
                 
-                <a class="post-title-link" href="/2015/02/13/TheUseOfJavacAndJavaInCLI/" itemprop="url">
-                  Javac和Java在CLI中的使用
+                <a class="post-title-link" href="/2015/03/22/JMMAndTheVolatileKeyword/" itemprop="url">
+                  Java内存模型与volatile关键字
                 </a>
               
             
@@ -480,8 +363,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-02-13T11:29:55+08:00" content="2015-02-13">
-              2015-02-13
+            <time itemprop="dateCreated" datetime="2015-03-22T21:14:49+08:00" content="2015-03-22">
+              2015-03-22
             </time>
           </span>
 
@@ -510,8 +393,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/02/13/TheUseOfJavacAndJavaInCLI/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/02/13/TheUseOfJavacAndJavaInCLI/" itemprop="commentsCount"></span>
+                <a href="/2015/03/22/JMMAndTheVolatileKeyword/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/22/JMMAndTheVolatileKeyword/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -534,11 +417,11 @@
       
         
           
-          最近这几天在学习Robert Sedgewick和Kevin Wayne的《算法》一书。第一章讲了一些Java编程的基础，第二章讲了一些最基础的排序算法。目前刚刚看完这两章，虽然很基础，但是毕竟不能只看书不练习，于是就动手写代码实践一下。可是刚开始写代码我就遇到了麻烦，我始终不知道在Eclipse中
+          Java内存模型（Java Memory Model）Java内存模型（JMM），不同于Java运行时数据区，JMM的主要目标是定义程序中各个变量的访问规则，即在虚拟机中将变量存储到内存和从内存中读取数据这样的底层细节。JMM规定了所有的变量都存储在主内存中，但每个线程还有自己的工作内存，线程的工作
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/02/13/TheUseOfJavacAndJavaInCLI/#more" rel="contents">
+            <a class="btn" href="/2015/03/22/JMMAndTheVolatileKeyword/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -581,8 +464,8 @@
             
               
                 
-                <a class="post-title-link" href="/2015/02/07/TheJavaCollectionsFramework/" itemprop="url">
-                  Java集合框架
+                <a class="post-title-link" href="/2015/03/21/JVMClassLoadingMechanism/" itemprop="url">
+                  再谈JVM类加载机制
                 </a>
               
             
@@ -595,8 +478,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-02-07T21:54:24+08:00" content="2015-02-07">
-              2015-02-07
+            <time itemprop="dateCreated" datetime="2015-03-21T20:28:55+08:00" content="2015-03-21">
+              2015-03-21
             </time>
           </span>
 
@@ -625,8 +508,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/02/07/TheJavaCollectionsFramework/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/02/07/TheJavaCollectionsFramework/" itemprop="commentsCount"></span>
+                <a href="/2015/03/21/JVMClassLoadingMechanism/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/21/JVMClassLoadingMechanism/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -649,15 +532,14 @@
       
         
           
-          先来看一张Java集合的类图。本来是想自己画一个的，但是在网上看到了这个图之后就觉得没有再重新画一个的必要了。这个图相对网上其他一些图来说更全面一些。
-
-下面我们根据这个图来逐一分析具体的常用集合类。
-
-Iterator接口：这个接口定义了从集合中获取元素和判断集合中是否还有元素的方法。下图中是jd
+          几个月前写了深入理解Java类加载原理这篇文章，简单的谈了下我对Java类加载的理解，最近这段时间又研习了《深入理解Java虚拟机》一书，对JVM的类加载机制又有了更加系统的认识，下面我就再来讲讲学习心得吧。
+虚拟机如何进行类的加载
+通过一个类的全限定名来获取定义此类的二进制字节流。
+将这个字节流所
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/02/07/TheJavaCollectionsFramework/#more" rel="contents">
+            <a class="btn" href="/2015/03/21/JVMClassLoadingMechanism/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -700,8 +582,8 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
             
               
                 
-                <a class="post-title-link" href="/2015/02/03/SpringThinking/" itemprop="url">
-                  Spring之思
+                <a class="post-title-link" href="/2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/" itemprop="url">
+                  JVM自动内存管理机制分析
                 </a>
               
             
@@ -714,8 +596,8 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-02-03T15:30:07+08:00" content="2015-02-03">
-              2015-02-03
+            <time itemprop="dateCreated" datetime="2015-03-19T13:26:03+08:00" content="2015-03-19">
+              2015-03-19
             </time>
           </span>
 
@@ -744,8 +626,8 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/02/03/SpringThinking/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/02/03/SpringThinking/" itemprop="commentsCount"></span>
+                <a href="/2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -768,11 +650,13 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
       
         
           
-          一直在断断续续的学习Spring框架，到目前为止，虽然没有在实际项目中应用过，但也算是有一些收获了吧。由于刚刚读完吴军博士的《数学之美》，深受其启发，觉得无论做什么事情，心中都一定要有大格局。就像所谓的学习，我看来就可以分成两种，一种是“道”的学习，另一种是“术”的学习。道就是原理，术就是技术。技术
+          最近这段时间学习了Java虚拟机相关的一些知识，对Java程序的运行和JVM的内存管理策略有了更深的理解。这篇文章就对此做一下简单的总结。
+Java运行时数据区
+要理解JVM的内存管理策略，首先就要熟悉Java的运行时数据区，如上图所示，在执行Java程序的时候，虚拟机会把它所管理的内存划分为多个不
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/02/03/SpringThinking/#more" rel="contents">
+            <a class="btn" href="/2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -815,8 +699,8 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
             
               
                 
-                <a class="post-title-link" href="/2015/01/30/CleanCode/" itemprop="url">
-                  代码整洁之道
+                <a class="post-title-link" href="/2015/03/18/DatabaseTransactionAndTheIsolationLevel/" itemprop="url">
+                  数据库事务与其隔离级别
                 </a>
               
             
@@ -829,8 +713,8 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-01-30T20:51:05+08:00" content="2015-01-30">
-              2015-01-30
+            <time itemprop="dateCreated" datetime="2015-03-18T10:14:30+08:00" content="2015-03-18">
+              2015-03-18
             </time>
           </span>
 
@@ -843,8 +727,8 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Technology/" itemprop="url" rel="index">
-                    <span itemprop="name">Technology</span>
+                  <a href="/categories/Database/" itemprop="url" rel="index">
+                    <span itemprop="name">Database</span>
                   </a>
                 </span>
 
@@ -859,8 +743,8 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/01/30/CleanCode/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/01/30/CleanCode/" itemprop="commentsCount"></span>
+                <a href="/2015/03/18/DatabaseTransactionAndTheIsolationLevel/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/18/DatabaseTransactionAndTheIsolationLevel/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -883,244 +767,11 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
       
         
           
-          
-是的，我们就是一群代码猴子，上窜下跳，自以为领略了编程的真谛。可惜，当我们抓着几个酸桃子，得意洋洋的坐到树枝上，却对自己造成的混乱熟视无睹。那堆“可以运行”的乱麻程序，就在我们的眼皮底下慢慢腐坏。
-
-这段话引用自Robert C.Martin（鲍勃大叔）所著的《代码整洁之道》。当时刚买来这本书时，
+          什么是数据库事务数据库事务就是一系列的数据库操作。我对事务的理解就是事务是一系列要做的操作，并按照特定的顺序完成。例如：1.换上运动装。2.打篮球。3.洗澡。这三个操作便可以组成一个事务，并且顺序是确定的。这三个操作要么全都做，要么都不做，不能出现如：只换上了运动装，打了篮球，而没有洗澡这样的情况。
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/01/30/CleanCode/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/01/29/FunctionalProgramming/" itemprop="url">
-                  我所理解的函数式编程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-01-29T22:02:45+08:00" content="2015-01-29">
-              2015-01-29
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Technology/" itemprop="url" rel="index">
-                    <span itemprop="name">Technology</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/01/29/FunctionalProgramming/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/01/29/FunctionalProgramming/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          第一次听说函数式编程应该是至少一年前的事情了，那时候也仅仅是知道有这么个东西，一点也不了解它具体是什么意思。函数式编程本身也不是什么新鲜事物，早在很久以前就已经出现了。而这些日子函数式编程变得越来越受关注，最新推出的Java1.8也加入了函数式编程的特性，于是这些天就认真了解了一下有关函数式编程的内
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/01/29/FunctionalProgramming/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/" itemprop="url">
-                  计算机科学知识和技能评估
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-01-18T14:39:05+08:00" content="2015-01-18">
-              2015-01-18
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Life/" itemprop="url" rel="index">
-                    <span itemprop="name">Life</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          前段时间在网上看到《30分钟，让你成为更好的程序员》这篇文章，觉得很有实用价值，对我也很有启发。通过画一张图表分析自己的知识和技能，很高效而且很实用，所以我也对自己的知识和技能进行了分析。也正如那篇文章所说，这个图表并不是要详细列出自己所有的知识和技能，而是让你自己对自己的专业技能有一个全局的了解。
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/#more" rel="contents">
+            <a class="btn" href="/2015/03/18/DatabaseTransactionAndTheIsolationLevel/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1147,7 +798,7 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1261,6 +912,18 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
             
               <span class="links-of-author-item">
                 <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.yinwang.org/" target="_blank">王垠的博客</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://coolshell.cn/" target="_blank">酷壳</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.csdn.net/a837199685/" target="_blank">蜗牛的专栏</a>
               </span>
             
           
