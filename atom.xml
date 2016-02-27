@@ -4,7 +4,7 @@
   <subtitle><![CDATA[辛苦敲下的一行行代码不知能否改变这个世界，而我的世界，不过就是你的心！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://wjd1218.github.io/"/>
-  <updated>2015-08-10T15:19:26.000Z</updated>
+  <updated>2015-12-10T07:53:16.000Z</updated>
   <id>http://wjd1218.github.io/</id>
   
   <author>
@@ -13,30 +13,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title><![CDATA[Efficient Coding With Macbook Pro]]></title>
-    <link href="http://wjd1218.github.io/2015/08/10/Efficient%20Coding%20With%20Macbook%20Pro/"/>
-    <id>http://wjd1218.github.io/2015/08/10/Efficient Coding With Macbook Pro/</id>
-    <published>2015-08-09T16:00:00.000Z</published>
-    <updated>2015-08-10T15:19:26.000Z</updated>
-    <content type="html"><![CDATA[<p>时间过的真快，转眼就八月中旬了，一个多月前写了一篇关于Macbook Pro的文章，这篇文章继续写一点</p>
-<p>优秀的软件：<br>Ulysses<br>Alternote<br>SourceTree<br>Cornerstone<br>Beyond Compare<br>Reeder<br>Bartender<br>Unclutter<br>Fantastical<br>1Password<br>PopClip<br>CheatSheet<br>Shadowsocks:你懂的</p>
-<p>这是一种情怀，已经很少有人有这种情怀了</p>
-<p>要有自己的节奏，提高效率。进入职场，就不要再那么学生气了，别再那么幼稚了！凡事多动些脑子！</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>时间过的真快，转眼就八月中旬了，一个多月前写了一篇关于Macbook Pro的文章，这篇文章继续写一点</p>
-<p>优秀的软件：<br>Ulysses<br>Alternote<br>SourceTree<br>Cornerstone<br>Beyond Compare<]]>
-    </summary>
-    
-      <category term="OS X" scheme="http://wjd1218.github.io/tags/OS-X/"/>
-    
-      <category term="macbookpro" scheme="http://wjd1218.github.io/tags/macbookpro/"/>
-    
-      <category term="Life" scheme="http://wjd1218.github.io/categories/Life/"/>
-    
-  </entry>
   
   <entry>
     <title><![CDATA[Macbook Pro入手一个月使用体验]]></title>
@@ -776,6 +752,32 @@
       <category term="collection" scheme="http://wjd1218.github.io/tags/collection/"/>
     
       <category term="java" scheme="http://wjd1218.github.io/tags/java/"/>
+    
+      <category term="Java" scheme="http://wjd1218.github.io/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Spring之思]]></title>
+    <link href="http://wjd1218.github.io/2015/02/03/SpringThinking/"/>
+    <id>http://wjd1218.github.io/2015/02/03/SpringThinking/</id>
+    <published>2015-02-03T07:30:07.000Z</published>
+    <updated>2015-06-18T08:04:10.000Z</updated>
+    <content type="html"><![CDATA[<p>一直在断断续续的学习Spring框架，到目前为止，虽然没有在实际项目中应用过，但也算是有一些收获了吧。由于刚刚读完吴军博士的《数学之美》，深受其启发，觉得无论做什么事情，心中都一定要有大格局。就像所谓的学习，我看来就可以分成两种，一种是“<strong>道</strong>”的学习，另一种是“<strong>术</strong>”的学习。道就是原理，术就是技术。技术可以千变万化，而原理永远都是那个原理。这也是我最近又认真学习算法知识的原因之一——新技术虽然层出不穷，但是应用的算法还是那些算法。</p>
+<p>我们回到正题，说到Spring，当然要提IoC（控制反转），Spring就是一个轻量级的IoC容器。IoC是什么意思呢？简单说就是将控制权交出去，创建对象由容器控制，而不需要硬编码，对象之间更加松耦合。做个比喻，我需要一套房子，我不需要自己画图纸然后再自己建造一栋房子，我只需要到房地产开发商那里买他们建造好的房子即可。而依赖注入(Dependency Injection)是控制反转的一种实现方法，通过依赖注入在运行时将实例变量传入到一个对象中去。当然，Spring的控制反转是通过Java的反射机制实现的，关于Java的反射我也写过一点学习心得，详见<a href="http://wjd1218.github.io/2015/01/16/Java%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/">Java的反射机制</a>。</p>
+<p>下面继续来谈一下AOP（面向切面编程），AOP可以将那些与业务无关，却被业务模块所共同调用的逻辑或责任，例如日志管理、权限控制等封装起来，减少了系统的重复代码，降低了模块间的耦合度。我总结了一下有关AOP的概念，见下图：<br><img src="http://wjd1218.qiniudn.com/SpringAOP.png" alt="SpringAOP相关概念"><br>我觉得可以这样理解：AOP就是在不同的角度，对业务逻辑的抽象。通过AOP，可以使系统更加灵活，更易于扩展。</p>
+<p>框架的底层实现可能会很复杂，但是框架本身的使用不应该复杂，否则不就违背了框架设计者的初衷了么！集成SSH框架的系统一般可以分为四层：表示层、业务逻辑层、数据持久层和实体层。Struts作为系统的整体基础架构，负责MVC的分离，在Struts框架的模型部分，控制业务跳转。利用Hibernate框架对持久层提供支持。<strong>Spring则作为一个轻量级的IoC容器，负责查找、定位、创建和管理对象及对象之间的依赖关系，并且能使Struts和Hibernate更好地工作。</strong></p>
+<p>我深深的知道，自己仅仅是学到了Spring的一点皮毛，但是罗马也不是一天建成的，希望自己日后能多多积累，多多实践，真正领会其中的“道”。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>一直在断断续续的学习Spring框架，到目前为止，虽然没有在实际项目中应用过，但也算是有一些收获了吧。由于刚刚读完吴军博士的《数学之美》，深受其启发，觉得无论做什么事情，心中都一定要有大格局。就像所谓的学习，我看来就可以分成两种，一种是“<strong>道</strong>]]>
+    </summary>
+    
+      <category term="aop" scheme="http://wjd1218.github.io/tags/aop/"/>
+    
+      <category term="java" scheme="http://wjd1218.github.io/tags/java/"/>
+    
+      <category term="spring" scheme="http://wjd1218.github.io/tags/spring/"/>
     
       <category term="Java" scheme="http://wjd1218.github.io/categories/Java/"/>
     

@@ -239,11 +239,6 @@
 
     
     
-      
-      
-
-      
-    
 
     
       
@@ -267,8 +262,8 @@
             
               
                 
-                <a class="post-title-link" href="/2015/04/16/WhatIsCopyOnWrite/" itemprop="url">
-                  什么是CopyOnWrite
+                <a class="post-title-link" href="/2015/04/16/ThreadInJava/" itemprop="url">
+                  Java中的线程
                 </a>
               
             
@@ -281,7 +276,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-04-16T22:27:34+08:00" content="2015-04-16">
+            <time itemprop="dateCreated" datetime="2015-04-16T20:46:29+08:00" content="2015-04-16">
               2015-04-16
             </time>
           </span>
@@ -311,8 +306,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/04/16/WhatIsCopyOnWrite/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/16/WhatIsCopyOnWrite/" itemprop="commentsCount"></span>
+                <a href="/2015/04/16/ThreadInJava/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/16/ThreadInJava/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -322,7 +317,7 @@
 
           
           
-             <span id="/2015/04/16/WhatIsCopyOnWrite/" class="leancloud_visitors" data-flag-title="什么是CopyOnWrite">
+             <span id="/2015/04/16/ThreadInJava/" class="leancloud_visitors" data-flag-title="Java中的线程">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -344,11 +339,509 @@
       
         
           
-          前段时间写过一篇关于concurrentHashMap的文章ConcurrentHashMap实现原理，其中讲到了实现ConcurrentHashMap的原理，这篇文章就讲一下CopyOnWrite的实现原理。Java中提供了两个CopyOnWrite容器，分别是CopyOnWriteArrayLi
+          理解线程这段时间在看《Java并发编程实战》这本书，使自己对Java多线程的理解又加深一些，感觉自己可以总结一下了，本文就讲讲与线程有关的内容吧。我们要使用线程，首先需要理解线程，前短时间我在聊聊操作系统这篇文章中提到了一点关于线程的东西，有兴趣的同学可以读一下。有一点需要理解的就是，我们虽然常说“
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/04/16/WhatIsCopyOnWrite/#more" rel="contents">
+            <a class="btn" href="/2015/04/16/ThreadInJava/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/03/31/SomeInterestingProblemsAndItsSolution/" itemprop="url">
+                  几个有趣的问题及其解法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-03-31T09:50:37+08:00" content="2015-03-31">
+              2015-03-31
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/03/31/SomeInterestingProblemsAndItsSolution/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/31/SomeInterestingProblemsAndItsSolution/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/03/31/SomeInterestingProblemsAndItsSolution/" class="leancloud_visitors" data-flag-title="几个有趣的问题及其解法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          实现一个算法，找出单项链表中倒数第K个结点。一种比较高效的解法是使用两个指针，使这两个指针分别指向链表中相距K个结点的两个结点。然后沿着链表同时移动这两个指针，当其中一个首先到达链表末端的时候，另一个指针指向的就是倒数第K个结点。显然，该算法的时间复杂度为O(n)。
+1234567891011121
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/03/31/SomeInterestingProblemsAndItsSolution/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/03/29/TalkAboutOperatingSystem/" itemprop="url">
+                  聊聊操作系统
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-03-29T14:42:56+08:00" content="2015-03-29">
+              2015-03-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/OS/" itemprop="url" rel="index">
+                    <span itemprop="name">OS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/03/29/TalkAboutOperatingSystem/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/29/TalkAboutOperatingSystem/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/03/29/TalkAboutOperatingSystem/" class="leancloud_visitors" data-flag-title="聊聊操作系统">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          在进入正题之前，先问一句，什么是操作系统，它和普通的应用程序有什么区别？这个问题虽然不难，但是它和我今天想要讲的内容密切相关。下面我就说说我的理解吧，我认为操作系统是一种抽象，这种抽象是人们经过长时间的实践和归纳提炼出来的，在没有操作系统的时候，人们仍然有办法制作程序并在机器上运行，但是人们必须针对
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/03/29/TalkAboutOperatingSystem/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/03/25/TheMySQLDatabaseEngine/" itemprop="url">
+                  MySQL数据库引擎详解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-03-25T13:28:35+08:00" content="2015-03-25">
+              2015-03-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Database/" itemprop="url" rel="index">
+                    <span itemprop="name">Database</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/03/25/TheMySQLDatabaseEngine/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/25/TheMySQLDatabaseEngine/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/03/25/TheMySQLDatabaseEngine/" class="leancloud_visitors" data-flag-title="MySQL数据库引擎详解">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          作为Java程序员，MySQL数据库大家平时应该都没少使用吧，对MySQL数据库的引擎应该也有所了解，这篇文章就让我详细的说说MySQL数据库的Innodb和MyISAM两种引擎以及其索引结构。也来巩固一下自己对这块知识的掌握。
+Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/03/25/TheMySQLDatabaseEngine/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/03/24/PrincipleOfConcurrentHashMap/" itemprop="url">
+                  ConcurrentHashMap实现原理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-03-24T16:50:03+08:00" content="2015-03-24">
+              2015-03-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/03/24/PrincipleOfConcurrentHashMap/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/24/PrincipleOfConcurrentHashMap/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/03/24/PrincipleOfConcurrentHashMap/" class="leancloud_visitors" data-flag-title="ConcurrentHashMap实现原理">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          寒假阶段复习了下Java集合框架，感觉有些收获，但是文中没有提到有关并发集合的内容，这篇文章就来谈谈并发散列表——ConcurrentHashMap，我们知道HashMap本身并不是线程安全的，如果程序需要在多线程的环境下运行，那么我们可以选择Hashtable做为替代，但是看过Hashtable源
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/03/24/PrincipleOfConcurrentHashMap/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -416,7 +909,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
