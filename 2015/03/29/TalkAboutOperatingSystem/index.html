@@ -62,7 +62,7 @@
 <meta name="description" content="在进入正题之前，先问一句，什么是操作系统，它和普通的应用程序有什么区别？这个问题虽然不难，但是它和我今天想要讲的内容密切相关。下面我就说说我的理解吧，我认为操作系统是一种抽象，这种抽象是人们经过长时间的实践和归纳提炼出来的，在没有操作系统的时候，人们仍然有办法制作程序并在机器上运行，但是人们必须针对硬件编程，这种方式十分繁琐而且有大量的重复劳动。人们慢慢发现，可以把程序对硬件资源的使用抽象出来，并">
 <meta property="og:type" content="article">
 <meta property="og:title" content="聊聊操作系统">
-<meta property="og:url" content="http://wjd1218.github.io/2015/03/29/TalkAboutOperatingSystem/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/03/29/TalkAboutOperatingSystem/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="在进入正题之前，先问一句，什么是操作系统，它和普通的应用程序有什么区别？这个问题虽然不难，但是它和我今天想要讲的内容密切相关。下面我就说说我的理解吧，我认为操作系统是一种抽象，这种抽象是人们经过长时间的实践和归纳提炼出来的，在没有操作系统的时候，人们仍然有办法制作程序并在机器上运行，但是人们必须针对硬件编程，这种方式十分繁琐而且有大量的重复劳动。人们慢慢发现，可以把程序对硬件资源的使用抽象出来，并">
 <meta property="og:updated_time" content="2015-06-18T07:59:36.000Z">
@@ -198,10 +198,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -326,6 +330,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -358,6 +363,12 @@
 </ol>
 <h2 id="总结">总结</h2><p>学操作系统的意义是什么，我觉得操作系统是一种方法学，我们在写程序时遇到的很多问题，操作系统都给出了可供参考的很优秀的解决方案。同时，理解操作系统对硬件、对应用程序进行抽象的思想，我想也会对自身大有益处。然而事实总是你学的越多，就越发现自己懂的越少，所以学无止境，加油吧，少年！</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -406,7 +417,7 @@
         <div class="ds-share flat" data-thread-key="2015/03/29/TalkAboutOperatingSystem/"
      data-title="聊聊操作系统"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/03/29/TalkAboutOperatingSystem/">
+     data-url="http://colinwang.cn/2015/03/29/TalkAboutOperatingSystem/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -434,7 +445,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/03/29/TalkAboutOperatingSystem/"
-           data-title="聊聊操作系统" data-url="http://wjd1218.github.io/2015/03/29/TalkAboutOperatingSystem/">
+           data-title="聊聊操作系统" data-url="http://colinwang.cn/2015/03/29/TalkAboutOperatingSystem/">
       </div>
     
   </div>
@@ -813,7 +824,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -852,6 +863,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -860,6 +874,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

@@ -67,7 +67,7 @@ sudo vim /etc/mysql/my.cnf
 然后启动M">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决不能远程连接Linux服务器上MySQL的问题">
-<meta property="og:url" content="http://wjd1218.github.io/2014/12/09/MySQLConnectedProblemSolved/index.html">
+<meta property="og:url" content="http://colinwang.cn/2014/12/09/MySQLConnectedProblemSolved/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="今天在实验室的服务器上安装MySQL，装好后却发现远程的电脑无法连接到MySql服务器。服务器操作系统是Ubuntu 14.04。于是在网上查了些资料，折腾了半天后终于搞定了，下面是具体的步骤。
 
@@ -213,10 +213,14 @@ sudo vim /etc/mysql/my.cnf
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -341,6 +345,7 @@ sudo vim /etc/mysql/my.cnf
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -372,6 +377,12 @@ sudo vim /etc/mysql/my.cnf
 <pre><code>sudo <span class="regexp">/etc/i</span>nit.d<span class="regexp">/mysql restart</span>
 </code></pre><p>然后其他的电脑就可以远程连接服务器上的MySLQ了，问题虽然不大，也不是第一次遇到了，但是每次都要花费很多的时间才能解决，做个小记录，以防今后再碰到类似的问题，又要从头开始。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -418,7 +429,7 @@ sudo vim /etc/mysql/my.cnf
         <div class="ds-share flat" data-thread-key="2014/12/09/MySQLConnectedProblemSolved/"
      data-title="解决不能远程连接Linux服务器上MySQL的问题"
      data-content=""
-     data-url="http://wjd1218.github.io/2014/12/09/MySQLConnectedProblemSolved/">
+     data-url="http://colinwang.cn/2014/12/09/MySQLConnectedProblemSolved/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -446,7 +457,7 @@ sudo vim /etc/mysql/my.cnf
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2014/12/09/MySQLConnectedProblemSolved/"
-           data-title="解决不能远程连接Linux服务器上MySQL的问题" data-url="http://wjd1218.github.io/2014/12/09/MySQLConnectedProblemSolved/">
+           data-title="解决不能远程连接Linux服务器上MySQL的问题" data-url="http://colinwang.cn/2014/12/09/MySQLConnectedProblemSolved/">
       </div>
     
   </div>
@@ -825,7 +836,7 @@ sudo vim /etc/mysql/my.cnf
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -864,6 +875,9 @@ sudo vim /etc/mysql/my.cnf
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -872,6 +886,31 @@ sudo vim /etc/mysql/my.cnf
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

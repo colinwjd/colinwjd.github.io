@@ -62,7 +62,7 @@
 <meta name="description" content="一直在断断续续的学习Spring框架，到目前为止，虽然没有在实际项目中应用过，但也算是有一些收获了吧。由于刚刚读完吴军博士的《数学之美》，深受其启发，觉得无论做什么事情，心中都一定要有大格局。就像所谓的学习，我看来就可以分成两种，一种是“道”的学习，另一种是“术”的学习。道就是原理，术就是技术。技术可以千变万化，而原理永远都是那个原理。这也是我最近又认真学习算法知识的原因之一——新技术虽然层出不穷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring之思">
-<meta property="og:url" content="http://wjd1218.github.io/2015/02/03/SpringThinking/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/02/03/SpringThinking/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="一直在断断续续的学习Spring框架，到目前为止，虽然没有在实际项目中应用过，但也算是有一些收获了吧。由于刚刚读完吴军博士的《数学之美》，深受其启发，觉得无论做什么事情，心中都一定要有大格局。就像所谓的学习，我看来就可以分成两种，一种是“道”的学习，另一种是“术”的学习。道就是原理，术就是技术。技术可以千变万化，而原理永远都是那个原理。这也是我最近又认真学习算法知识的原因之一——新技术虽然层出不穷">
 <meta property="og:image" content="http://wjd1218.qiniudn.com/SpringAOP.png">
@@ -199,10 +199,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -327,6 +331,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -339,11 +344,17 @@
 
       
         <p>一直在断断续续的学习Spring框架，到目前为止，虽然没有在实际项目中应用过，但也算是有一些收获了吧。由于刚刚读完吴军博士的《数学之美》，深受其启发，觉得无论做什么事情，心中都一定要有大格局。就像所谓的学习，我看来就可以分成两种，一种是“<strong>道</strong>”的学习，另一种是“<strong>术</strong>”的学习。道就是原理，术就是技术。技术可以千变万化，而原理永远都是那个原理。这也是我最近又认真学习算法知识的原因之一——新技术虽然层出不穷，但是应用的算法还是那些算法。</p>
-<p>我们回到正题，说到Spring，当然要提IoC（控制反转），Spring就是一个轻量级的IoC容器。IoC是什么意思呢？简单说就是将控制权交出去，创建对象由容器控制，而不需要硬编码，对象之间更加松耦合。做个比喻，我需要一套房子，我不需要自己画图纸然后再自己建造一栋房子，我只需要到房地产开发商那里买他们建造好的房子即可。而依赖注入(Dependency Injection)是控制反转的一种实现方法，通过依赖注入在运行时将实例变量传入到一个对象中去。当然，Spring的控制反转是通过Java的反射机制实现的，关于Java的反射我也写过一点学习心得，详见<a href="http://wjd1218.github.io/2015/01/16/Java%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/">Java的反射机制</a>。</p>
+<p>我们回到正题，说到Spring，当然要提IoC（控制反转），Spring就是一个轻量级的IoC容器。IoC是什么意思呢？简单说就是将控制权交出去，创建对象由容器控制，而不需要硬编码，对象之间更加松耦合。做个比喻，我需要一套房子，我不需要自己画图纸然后再自己建造一栋房子，我只需要到房地产开发商那里买他们建造好的房子即可。而依赖注入(Dependency Injection)是控制反转的一种实现方法，通过依赖注入在运行时将实例变量传入到一个对象中去。当然，Spring的控制反转是通过Java的反射机制实现的，关于Java的反射我也写过一点学习心得，详见<a href="http://wjd1218.github.io/2015/01/16/Java%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/" target="_blank" rel="external">Java的反射机制</a>。</p>
 <p>下面继续来谈一下AOP（面向切面编程），AOP可以将那些与业务无关，却被业务模块所共同调用的逻辑或责任，例如日志管理、权限控制等封装起来，减少了系统的重复代码，降低了模块间的耦合度。我总结了一下有关AOP的概念，见下图：<br><img src="http://wjd1218.qiniudn.com/SpringAOP.png" alt="SpringAOP相关概念"><br>我觉得可以这样理解：AOP就是在不同的角度，对业务逻辑的抽象。通过AOP，可以使系统更加灵活，更易于扩展。</p>
 <p>框架的底层实现可能会很复杂，但是框架本身的使用不应该复杂，否则不就违背了框架设计者的初衷了么！集成SSH框架的系统一般可以分为四层：表示层、业务逻辑层、数据持久层和实体层。Struts作为系统的整体基础架构，负责MVC的分离，在Struts框架的模型部分，控制业务跳转。利用Hibernate框架对持久层提供支持。<strong>Spring则作为一个轻量级的IoC容器，负责查找、定位、创建和管理对象及对象之间的依赖关系，并且能使Struts和Hibernate更好地工作。</strong></p>
 <p>我深深的知道，自己仅仅是学到了Spring的一点皮毛，但是罗马也不是一天建成的，希望自己日后能多多积累，多多实践，真正领会其中的“道”。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -392,7 +403,7 @@
         <div class="ds-share flat" data-thread-key="2015/02/03/SpringThinking/"
      data-title="Spring之思"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/02/03/SpringThinking/">
+     data-url="http://colinwang.cn/2015/02/03/SpringThinking/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -420,7 +431,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/02/03/SpringThinking/"
-           data-title="Spring之思" data-url="http://wjd1218.github.io/2015/02/03/SpringThinking/">
+           data-title="Spring之思" data-url="http://colinwang.cn/2015/02/03/SpringThinking/">
       </div>
     
   </div>
@@ -799,7 +810,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -838,6 +849,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -846,6 +860,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

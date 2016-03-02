@@ -64,7 +64,7 @@
 这段话引用自Robert C.Martin（鲍勃大叔）所著的《代码整洁之道》。当时刚买来这本书时，只是随便翻了翻，觉得没什么意思就扔到一边去了。最近在书堆里又偶然发现了它，便又拿出来重新读了读。而这次">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码整洁之道">
-<meta property="og:url" content="http://wjd1218.github.io/2015/01/30/CleanCode/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/01/30/CleanCode/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="是的，我们就是一群代码猴子，上窜下跳，自以为领略了编程的真谛。可惜，当我们抓着几个酸桃子，得意洋洋的坐到树枝上，却对自己造成的混乱熟视无睹。那堆“可以运行”的乱麻程序，就在我们的眼皮底下慢慢腐坏。
 
@@ -204,10 +204,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -332,6 +336,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -382,6 +387,12 @@
       
     </div>
 
+    <div>
+      
+        
+      
+    </div>
+
     <footer class="post-footer">
       
         <div class="post-tags">
@@ -427,7 +438,7 @@
         <div class="ds-share flat" data-thread-key="2015/01/30/CleanCode/"
      data-title="代码整洁之道"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/01/30/CleanCode/">
+     data-url="http://colinwang.cn/2015/01/30/CleanCode/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -455,7 +466,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/01/30/CleanCode/"
-           data-title="代码整洁之道" data-url="http://wjd1218.github.io/2015/01/30/CleanCode/">
+           data-title="代码整洁之道" data-url="http://colinwang.cn/2015/01/30/CleanCode/">
       </div>
     
   </div>
@@ -834,7 +845,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -873,6 +884,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -881,6 +895,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

@@ -64,7 +64,7 @@ Java运行时数据区
 要理解JVM的内存管理策略，首先就要熟悉Java的运行时数据区，如上图所示，在执行Java程序的时候，虚拟机会把它所管理的内存划分为多个不同的数据区，称为运行时数据区。在程序执行过程中对内存的分配、垃圾的回收都在运行时数据区中进行。对于J">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM自动内存管理机制分析">
-<meta property="og:url" content="http://wjd1218.github.io/2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="最近这段时间学习了Java虚拟机相关的一些知识，对Java程序的运行和JVM的内存管理策略有了更深的理解。这篇文章就对此做一下简单的总结。
 Java运行时数据区
@@ -205,10 +205,14 @@ Java运行时数据区
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -333,6 +337,7 @@ Java运行时数据区
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -376,6 +381,12 @@ Java运行时数据区
 <p>垃圾收集器还有很多，比如ParNew收集器，最前沿的成果之一Garbage-First收集器等等这里就不一一介绍了，每种收集器都有自己的优点和不足，开发者应该选择适用于当前需求的收集器。</p>
 <h2 id="总结">总结</h2><p>以上内容很多总结自对《深入理解Java虚拟机》一书的学习，在此与技术爱好者分享。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -424,7 +435,7 @@ Java运行时数据区
         <div class="ds-share flat" data-thread-key="2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/"
      data-title="JVM自动内存管理机制分析"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/">
+     data-url="http://colinwang.cn/2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -452,7 +463,7 @@ Java运行时数据区
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/"
-           data-title="JVM自动内存管理机制分析" data-url="http://wjd1218.github.io/2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/">
+           data-title="JVM自动内存管理机制分析" data-url="http://colinwang.cn/2015/03/19/AnalysisOfJVMAutomaticMemoryManagementMechanism/">
       </div>
     
   </div>
@@ -831,7 +842,7 @@ Java运行时数据区
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -870,6 +881,9 @@ Java运行时数据区
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -878,6 +892,31 @@ Java运行时数据区
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

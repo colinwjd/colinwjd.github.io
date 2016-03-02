@@ -62,7 +62,7 @@
 <meta name="description" content="今年2月份的时候就在网上找了阿里实习生的内推，然后过年期间一直在家里准备算法，看完了《算法》一书，实现了书中提到的多种数据结构，比如堆、散列表、红黑树等等。因为没有面试经验，也不知道面试会是什么样的形式，会问什么样的问题，我只是觉得把数据结构和算法理解透彻就可以了。原来还是我太天真了，我完全没有准备常见面试题。然后阿里3月份的时候就开始了内推的电话面试，由于准备不充分，TCP三次握手的状态都没有弄">
 <meta property="og:type" content="article">
 <meta property="og:title" content="有梦想的人，始终在路上!(记阿里实习生霸面经历)">
-<meta property="og:url" content="http://wjd1218.github.io/2015/05/09/AManWithADream/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/05/09/AManWithADream/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="今年2月份的时候就在网上找了阿里实习生的内推，然后过年期间一直在家里准备算法，看完了《算法》一书，实现了书中提到的多种数据结构，比如堆、散列表、红黑树等等。因为没有面试经验，也不知道面试会是什么样的形式，会问什么样的问题，我只是觉得把数据结构和算法理解透彻就可以了。原来还是我太天真了，我完全没有准备常见面试题。然后阿里3月份的时候就开始了内推的电话面试，由于准备不充分，TCP三次握手的状态都没有弄">
 <meta property="og:updated_time" content="2016-02-27T06:23:12.000Z">
@@ -198,10 +198,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -326,6 +330,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -353,6 +358,12 @@
 </ol>
 <p>每天去实验室或者图书馆的路上，总能看到一个写着名言的牌子：人生最大的光荣，不在于永不失败，而在于屡仆屡起！每次经过那里，总会受到莫大的鼓舞，感谢我身边的一切，路还很长，在一个新的起点，期待一个更好的自己。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -397,7 +408,7 @@
         <div class="ds-share flat" data-thread-key="2015/05/09/AManWithADream/"
      data-title="有梦想的人，始终在路上!(记阿里实习生霸面经历)"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/05/09/AManWithADream/">
+     data-url="http://colinwang.cn/2015/05/09/AManWithADream/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -425,7 +436,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/05/09/AManWithADream/"
-           data-title="有梦想的人，始终在路上!(记阿里实习生霸面经历)" data-url="http://wjd1218.github.io/2015/05/09/AManWithADream/">
+           data-title="有梦想的人，始终在路上!(记阿里实习生霸面经历)" data-url="http://colinwang.cn/2015/05/09/AManWithADream/">
       </div>
     
   </div>
@@ -804,7 +815,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -843,6 +854,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -851,6 +865,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

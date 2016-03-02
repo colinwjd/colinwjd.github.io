@@ -64,7 +64,7 @@ git init #把这个目录变成Git可以管理的目录
 git add &amp;lt;file&amp;gt;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git的简单使用">
-<meta property="og:url" content="http://wjd1218.github.io/2014/12/08/SimpleUseOfGit/index.html">
+<meta property="og:url" content="http://colinwang.cn/2014/12/08/SimpleUseOfGit/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="Git作为一款强大的分布式版本控制系统，如今已经变得十分流行，俗话讲：技多不压身。更况且作为一名码农，连Git都不会用的话，也是会很忧伤的。前几天在廖雪峰的官方网站学习了他的Git教程，感觉收获颇丰。他的教程很详细，很适合初学者学习，现在把我学到的一点东西和大家分享下，并巩固一下经常用到的Git命令。
 git init #把这个目录变成Git可以管理的目录
@@ -204,10 +204,14 @@ git add &amp;lt;file&amp;gt;">
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -332,6 +336,7 @@ git add &amp;lt;file&amp;gt;">
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -376,6 +381,12 @@ git checkout -b branch-<span class="built_in">name</span> origin/branch-<span cl
       
     </div>
 
+    <div>
+      
+        
+      
+    </div>
+
     <footer class="post-footer">
       
         <div class="post-tags">
@@ -417,7 +428,7 @@ git checkout -b branch-<span class="built_in">name</span> origin/branch-<span cl
         <div class="ds-share flat" data-thread-key="2014/12/08/SimpleUseOfGit/"
      data-title="Git的简单使用"
      data-content=""
-     data-url="http://wjd1218.github.io/2014/12/08/SimpleUseOfGit/">
+     data-url="http://colinwang.cn/2014/12/08/SimpleUseOfGit/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -445,7 +456,7 @@ git checkout -b branch-<span class="built_in">name</span> origin/branch-<span cl
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2014/12/08/SimpleUseOfGit/"
-           data-title="Git的简单使用" data-url="http://wjd1218.github.io/2014/12/08/SimpleUseOfGit/">
+           data-title="Git的简单使用" data-url="http://colinwang.cn/2014/12/08/SimpleUseOfGit/">
       </div>
     
   </div>
@@ -824,7 +835,7 @@ git checkout -b branch-<span class="built_in">name</span> origin/branch-<span cl
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -863,6 +874,9 @@ git checkout -b branch-<span class="built_in">name</span> origin/branch-<span cl
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -871,6 +885,31 @@ git checkout -b branch-<span class="built_in">name</span> origin/branch-<span cl
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

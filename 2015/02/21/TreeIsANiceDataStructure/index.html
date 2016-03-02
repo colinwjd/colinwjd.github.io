@@ -63,7 +63,7 @@
 只是凭借直观的想象可能难以感受得到，我就先列举一个树的应用的例子，然后在用简单的数字说明一下，相信就会有很深的体会了。树在查找领域有广泛的应用，我就用二叉查找树来">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树是一种伟大的数据结构">
-<meta property="og:url" content="http://wjd1218.github.io/2015/02/21/TreeIsANiceDataStructure/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/02/21/TreeIsANiceDataStructure/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="这篇文章用来简单聊聊“树”这种数据结构，我不想罗列太多的概念，只是讲一讲近期学习新产生的理解和体会。如标题所说，树是一种伟大的数据结构，那么它伟大在哪里呢？我认为树的伟大之处，就在于使用了树，可以让很多看起来不可能做到的事情变成了可能！
 只是凭借直观的想象可能难以感受得到，我就先列举一个树的应用的例子，然后在用简单的数字说明一下，相信就会有很深的体会了。树在查找领域有广泛的应用，我就用二叉查找树来">
@@ -201,10 +201,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -329,6 +333,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -346,6 +351,12 @@
 <p>红黑树便进入了人们的视野，红黑树是平衡的二叉查找树，它可以对比于2-3查找树，这种树有两种结点，一种是2叉结点，一种是3叉结点，3叉结点可以看作是红黑树中红结点和它的父结点组成的结点。红黑树中可以认为每个红色结点和它的父结点高度相同，可以通过左旋、右旋和变色三种操作来实现平衡。具体的实现请看<a href="https://github.com/wjd1218/Algorithms/blob/master/colinSrc%2Fcolin%2Fsearch%2FRedBlackTree.java" target="_blank" rel="external">红黑树</a>，这里不再具体介绍。这样，无论数据插入的顺序如何，红黑树都几乎是完美平衡的。于是就实现了对数级别的插入和对数级别的查找。所以即使数据量达到了上千亿，我们的计算机也只不过需要比较几十次而已，这样，称之为伟大的数据结构，不足为过吧。</p>
 <p>以上仅仅是自己的一点体会，但是自身水平有限，文中表述若有偏颇，还望读者能够批评指正。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -390,7 +401,7 @@
         <div class="ds-share flat" data-thread-key="2015/02/21/TreeIsANiceDataStructure/"
      data-title="树是一种伟大的数据结构"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/02/21/TreeIsANiceDataStructure/">
+     data-url="http://colinwang.cn/2015/02/21/TreeIsANiceDataStructure/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -418,7 +429,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/02/21/TreeIsANiceDataStructure/"
-           data-title="树是一种伟大的数据结构" data-url="http://wjd1218.github.io/2015/02/21/TreeIsANiceDataStructure/">
+           data-title="树是一种伟大的数据结构" data-url="http://colinwang.cn/2015/02/21/TreeIsANiceDataStructure/">
       </div>
     
   </div>
@@ -797,7 +808,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -836,6 +847,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -844,6 +858,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

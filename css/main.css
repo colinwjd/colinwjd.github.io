@@ -396,6 +396,24 @@ dd {
 .use-motion .motion-element {
   opacity: 0;
 }
+.site-search input {
+  padding: 3px;
+  border: none;
+  text-indent: 14px;
+  border-radius: 0;
+  width: 140px;
+  outline: none;
+  border-bottom: 1px solid #999;
+  background: inherit;
+  opacity: 0.5;
+}
+.site-search input:focus {
+  opacity: 1;
+}
+.site-search .fa-search {
+  position: absolute;
+  top: 6px;
+}
 table {
   margin: 20px 0;
   width: 100%;
@@ -441,7 +459,7 @@ body {
 .header-inner {
   margin: 0 auto;
   padding: 100px 0 70px;
-  max-width: 700px;
+  width: 700px;
 }
 @media (min-width: 1600px) {
   .container .header-inner {
@@ -470,7 +488,7 @@ body {
 .footer-inner {
   box-sizing: border-box;
   margin: 20px auto;
-  max-width: 700px;
+  width: 700px;
 }
 @media (min-width: 1600px) {
   .container .footer-inner {
@@ -988,11 +1006,6 @@ pre .javascript .function {
   padding-left: 0;
   text-align: center;
 }
-@media (max-width: 767px) {
-  .menu {
-    padding-left: 10px;
-  }
-}
 .menu .menu-item {
   display: inline-block;
   margin: 0 10px;
@@ -1006,7 +1019,7 @@ pre .javascript .function {
   display: block;
   font-size: 13px;
   text-transform: capitalize;
-  line-height: 1.5;
+  line-height: inherit;
   border-bottom: 1px solid transparent;
   transition-property: border-color;
   transition-duration: 0.2s;
@@ -1093,6 +1106,9 @@ pre .javascript .function {
 .posts-expand .post-body h5:hover .header-anchor,
 .posts-expand .post-body h6:hover .header-anchor {
   visibility: visible;
+}
+.posts-expand .post-body ul li {
+  list-style: circle;
 }
 .posts-expand .post-body img {
   box-sizing: border-box;
@@ -1528,7 +1544,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b498ff;
+  background: #c669d4;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -1903,6 +1919,80 @@ pre .javascript .function {
 .jiathis_style a {
   border: none;
 }
+.search-result-list li {
+  list-style-type: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ul.search-result-list {
+  padding-left: 0px;
+  margin: 0px 0px 0px 12px;
+}
+a.search-result-title {
+  font-weight: bold;
+}
+a.search-result {
+  border-bottom: transparent;
+}
+.search-keyword {
+  border-bottom: 1px dashed #4088b8;
+  font-weight: bold;
+}
+#search-result {
+  display: none;
+  position: absolute;
+  width: 158px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: default;
+  overflow: auto;
+  margin: 0px;
+  z-index: 999;
+}
+#local-search-result {
+  overflow: auto;
+  max-height: 3in;
+}
+.site-search-form {
+  background: #f5f5f5;
+}
+.popup {
+  display: none;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  width: 700px;
+  min-height: 300px;
+  margin-left: -350px;
+  padding: 0px 10px;
+  background: #fff;
+  color: #333;
+  z-index: 9999;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
+}
+#local-search-input {
+  width: 50%;
+}
+.popup-mobile {
+  padding: 0px 0px;
+  top: 0;
+  left: 0;
+  margin: 0px 0 0;
+  width: 100%;
+}
+.popup-btn-close {
+  position: absolute;
+  top: 5px;
+  right: 14px;
+  color: #4ebd79;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
 .use-motion .post {
   opacity: 0;
 }
@@ -1978,6 +2068,13 @@ pre .javascript .function {
 .page-post-detail .comments {
   overflow: hidden;
 }
+@media (max-width: 767px) {
+  .header-inner,
+  .container .main-inner,
+  .footer-inner {
+    width: auto;
+  }
+}
 .custom-logo .site-meta-headline {
   text-align: center;
 }
@@ -2005,6 +2102,7 @@ pre .javascript .function {
     top: 52px;
     margin: 0;
     width: 100%;
+    padding: 0;
     background: #fff;
     border-bottom: 1px solid #ddd;
   }
@@ -2017,7 +2115,7 @@ pre .javascript .function {
 @media (max-width: 767px) {
   .menu .menu-item {
     display: block;
-    margin-left: 0;
+    margin: 0 10px;
     vertical-align: top;
   }
 }
@@ -2027,34 +2125,13 @@ pre .javascript .function {
   }
 }
 @media (max-width: 767px) {
-  .menu .menu-item-icon {
-    font-size: 15px;
+  .menu .menu-item a {
+    padding: 5px 10px;
   }
 }
-.site-search {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 0;
-}
-@media (max-width: 767px) {
-  .site-search {
-    position: static;
-  }
+.menu .menu-item .fa {
+  margin-right: 5px;
 }
 .site-search form {
   display: none;
-}
-@media (max-width: 767px) {
-  .site-search form {
-    background: none;
-  }
-}
-.use-motion .site-search form {
-  top: -50px;
-}
-@media (max-width: 767px) {
-  .use-motion .site-search form {
-    top: 0 !important;
-  }
 }

@@ -63,7 +63,7 @@
 数据库事务的属性（">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库事务与其隔离级别">
-<meta property="og:url" content="http://wjd1218.github.io/2015/03/18/DatabaseTransactionAndTheIsolationLevel/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/03/18/DatabaseTransactionAndTheIsolationLevel/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="什么是数据库事务数据库事务就是一系列的数据库操作。我对事务的理解就是事务是一系列要做的操作，并按照特定的顺序完成。例如：1.换上运动装。2.打篮球。3.洗澡。这三个操作便可以组成一个事务，并且顺序是确定的。这三个操作要么全都做，要么都不做，不能出现如：只换上了运动装，打了篮球，而没有洗澡这样的情况。通过把一组相关的操作组成事务，可以使错误恢复更方便，并且能提高应用程序的可靠性。
 数据库事务的属性（">
@@ -201,10 +201,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -329,6 +333,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -352,6 +357,12 @@
 <h3 id="可串行化">可串行化</h3><p>该级别是最高的隔离级别，从名字便可以看出，事务并发执行的结果和串行执行的结果一致。这个级别可以保证不出现<strong>幻象</strong>问题。</p>
 <h2 id="总结">总结</h2><p>数据库通过设置事务隔离级别对事务并发进行控制，可以减少并发问题。但是隔离级别应该按照需求来设置，不能一味的认为最高的隔离级别就是最好的。事务隔离是通过锁来实现的，<strong>事务隔离级别越高，则并发程度就越低</strong>。高级别的事务隔离会降低执行效率，因此应当根据需要来选择合适的隔离级别。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -398,7 +409,7 @@
         <div class="ds-share flat" data-thread-key="2015/03/18/DatabaseTransactionAndTheIsolationLevel/"
      data-title="数据库事务与其隔离级别"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/03/18/DatabaseTransactionAndTheIsolationLevel/">
+     data-url="http://colinwang.cn/2015/03/18/DatabaseTransactionAndTheIsolationLevel/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -426,7 +437,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/03/18/DatabaseTransactionAndTheIsolationLevel/"
-           data-title="数据库事务与其隔离级别" data-url="http://wjd1218.github.io/2015/03/18/DatabaseTransactionAndTheIsolationLevel/">
+           data-title="数据库事务与其隔离级别" data-url="http://colinwang.cn/2015/03/18/DatabaseTransactionAndTheIsolationLevel/">
       </div>
     
   </div>
@@ -805,7 +816,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -844,6 +855,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -852,6 +866,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

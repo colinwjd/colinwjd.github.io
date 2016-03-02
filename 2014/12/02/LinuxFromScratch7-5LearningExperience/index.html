@@ -62,7 +62,7 @@
 <meta name="description" content="记得是大学刚入学的时候，开始对Linux操作系统产生了兴趣，那时候对Linux也不是很了解，但是作为一名学习软件工程专业的学生，渐渐地也在网上了解到了很多有关Linux的知识。我对新鲜的事物充满了好奇，尽管Linux在这世界上早已不是什么新鲜事物了，但是在那时的我眼里，它就是新鲜事物！记得当时接触的第一个Linux发行版是ubuntu12.04，那是还有学校里的学长写的使用手册，介绍了ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LinuxFromScratch7.5学习体会">
-<meta property="og:url" content="http://wjd1218.github.io/2014/12/02/LinuxFromScratch7-5LearningExperience/index.html">
+<meta property="og:url" content="http://colinwang.cn/2014/12/02/LinuxFromScratch7-5LearningExperience/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="记得是大学刚入学的时候，开始对Linux操作系统产生了兴趣，那时候对Linux也不是很了解，但是作为一名学习软件工程专业的学生，渐渐地也在网上了解到了很多有关Linux的知识。我对新鲜的事物充满了好奇，尽管Linux在这世界上早已不是什么新鲜事物了，但是在那时的我眼里，它就是新鲜事物！记得当时接触的第一个Linux发行版是ubuntu12.04，那是还有学校里的学长写的使用手册，介绍了ubuntu">
 <meta property="og:updated_time" content="2015-06-18T08:03:28.000Z">
@@ -198,10 +198,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -326,6 +330,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -375,6 +380,12 @@ grub&gt;<span class="keyword">boot</span>
       
     </div>
 
+    <div>
+      
+        
+      
+    </div>
+
     <footer class="post-footer">
       
         <div class="post-tags">
@@ -414,7 +425,7 @@ grub&gt;<span class="keyword">boot</span>
         <div class="ds-share flat" data-thread-key="2014/12/02/LinuxFromScratch7-5LearningExperience/"
      data-title="LinuxFromScratch7.5学习体会"
      data-content=""
-     data-url="http://wjd1218.github.io/2014/12/02/LinuxFromScratch7-5LearningExperience/">
+     data-url="http://colinwang.cn/2014/12/02/LinuxFromScratch7-5LearningExperience/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -442,7 +453,7 @@ grub&gt;<span class="keyword">boot</span>
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2014/12/02/LinuxFromScratch7-5LearningExperience/"
-           data-title="LinuxFromScratch7.5学习体会" data-url="http://wjd1218.github.io/2014/12/02/LinuxFromScratch7-5LearningExperience/">
+           data-title="LinuxFromScratch7.5学习体会" data-url="http://colinwang.cn/2014/12/02/LinuxFromScratch7-5LearningExperience/">
       </div>
     
   </div>
@@ -821,7 +832,7 @@ grub&gt;<span class="keyword">boot</span>
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -860,6 +871,9 @@ grub&gt;<span class="keyword">boot</span>
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -868,6 +882,31 @@ grub&gt;<span class="keyword">boot</span>
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

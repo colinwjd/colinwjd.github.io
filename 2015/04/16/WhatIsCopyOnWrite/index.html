@@ -62,7 +62,7 @@
 <meta name="description" content="前段时间写过一篇关于concurrentHashMap的文章ConcurrentHashMap实现原理，其中讲到了实现ConcurrentHashMap的原理，这篇文章就讲一下CopyOnWrite的实现原理。Java中提供了两个CopyOnWrite容器，分别是CopyOnWriteArrayList和CopyOnWriteArraySet。如果想要高效的使用这两个容器，我觉的首先要弄懂Copy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="什么是CopyOnWrite">
-<meta property="og:url" content="http://wjd1218.github.io/2015/04/16/WhatIsCopyOnWrite/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/04/16/WhatIsCopyOnWrite/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="前段时间写过一篇关于concurrentHashMap的文章ConcurrentHashMap实现原理，其中讲到了实现ConcurrentHashMap的原理，这篇文章就讲一下CopyOnWrite的实现原理。Java中提供了两个CopyOnWrite容器，分别是CopyOnWriteArrayList和CopyOnWriteArraySet。如果想要高效的使用这两个容器，我觉的首先要弄懂Copy">
 <meta property="og:updated_time" content="2015-06-18T07:54:46.000Z">
@@ -198,10 +198,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -326,6 +330,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -349,6 +354,12 @@
 <h2 id="对多线程并发的分析">对多线程并发的分析</h2><p>Java类库中实现了很多并发容器，比如concurrent包下实现的ConcurrentHashMap，CopyOnWriteArrayList等。这些并发容器与同步容器实现机制不同，在同步容器，比如Hashtable、Vector、……中，是通过synchronized关键字获取对象锁来实现同步，这个锁将会锁住整个容器，如果容器的规模很大时对容器进行遍历将会消耗很长的时间，而因为锁的存在，其他线程必须等待。持有锁的时间越长，那么在锁上的竞争就可能越激烈，如果等待锁的线程很多，将极大的降低吞吐量和CPU利用率。如果不希望在对容器中的内容进行迭代时锁住容器，有一种方法就是把该容器复制（复制时仍需要对容器加锁）一份，使线程在容器副本中对元素进行迭代。因此多个线程可以同时对CopyOnWrite容器进行迭代而不彼此干扰也不会被修改容器的线程干扰。但是，当容器中元素数量过多时，底层数组的复制仍然会有很大的开销。</p>
 <h2 id="CopyOnWrite适用场景">CopyOnWrite适用场景</h2><p>CopyOnWrite机制适用于读多写少的场景，比如搜索引擎对某些关键词的过滤使用的黑名单，黑名单很久才会更新一次，但是几乎每时每刻都在被读取。这种机制不适用于对数据实时性要求较高的场景中，因为一个线程修改了数据，其他线程并不一定能够马上读取到新的数据。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -395,7 +406,7 @@
         <div class="ds-share flat" data-thread-key="2015/04/16/WhatIsCopyOnWrite/"
      data-title="什么是CopyOnWrite"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/04/16/WhatIsCopyOnWrite/">
+     data-url="http://colinwang.cn/2015/04/16/WhatIsCopyOnWrite/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -423,7 +434,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/04/16/WhatIsCopyOnWrite/"
-           data-title="什么是CopyOnWrite" data-url="http://wjd1218.github.io/2015/04/16/WhatIsCopyOnWrite/">
+           data-title="什么是CopyOnWrite" data-url="http://colinwang.cn/2015/04/16/WhatIsCopyOnWrite/">
       </div>
     
   </div>
@@ -802,7 +813,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -841,6 +852,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -849,6 +863,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

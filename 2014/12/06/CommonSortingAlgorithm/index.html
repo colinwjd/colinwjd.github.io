@@ -62,7 +62,7 @@
 <meta name="description" content="冒泡排序突然心血来潮想要自己再重新实现一下当时学过的几个排序算法，然后马上就打开eclipse开始敲代码。说到排序，首先想到的就是冒泡，记得这个算法还是大一入学不久，编程入门老师讲过的。当时还是用c++实现的冒泡，现在虽然知道冒泡的原理，但是很多实现细节都感觉有些模糊了，今天就重新用Java实现一下，加深一下对其的理解。代码详见冒泡排序java实现。冒泡排序的原理十分简单也很容易理解，比较两个相邻">
 <meta property="og:type" content="article">
 <meta property="og:title" content="几个常见排序算法的实现">
-<meta property="og:url" content="http://wjd1218.github.io/2014/12/06/CommonSortingAlgorithm/index.html">
+<meta property="og:url" content="http://colinwang.cn/2014/12/06/CommonSortingAlgorithm/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="冒泡排序突然心血来潮想要自己再重新实现一下当时学过的几个排序算法，然后马上就打开eclipse开始敲代码。说到排序，首先想到的就是冒泡，记得这个算法还是大一入学不久，编程入门老师讲过的。当时还是用c++实现的冒泡，现在虽然知道冒泡的原理，但是很多实现细节都感觉有些模糊了，今天就重新用Java实现一下，加深一下对其的理解。代码详见冒泡排序java实现。冒泡排序的原理十分简单也很容易理解，比较两个相邻">
 <meta property="og:image" content="http://wjd1218.qiniudn.com/Merge-sort-example-300px.gif">
@@ -200,10 +200,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -328,6 +332,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -354,6 +359,12 @@
 <p>关于这个优化递归的问题也是我前几天在学python的时候看到的，我自己也不是十分理解，但是对于今后的编程兴许能起到一些作用吧。</p>
 <h2 id="总结">总结</h2><p>终于要写完了，这几个算法虽然看上去简单，实现起来也还是挺费脑子的，就这几个算法的代码，我写了整整一天的时间，不过也算是把思路理清晰了，给自己今后的学习做了一点积累。在这里给大家分享一下自己的心得，希望能和大家共同进步！</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -400,7 +411,7 @@
         <div class="ds-share flat" data-thread-key="2014/12/06/CommonSortingAlgorithm/"
      data-title="几个常见排序算法的实现"
      data-content=""
-     data-url="http://wjd1218.github.io/2014/12/06/CommonSortingAlgorithm/">
+     data-url="http://colinwang.cn/2014/12/06/CommonSortingAlgorithm/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -428,7 +439,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2014/12/06/CommonSortingAlgorithm/"
-           data-title="几个常见排序算法的实现" data-url="http://wjd1218.github.io/2014/12/06/CommonSortingAlgorithm/">
+           data-title="几个常见排序算法的实现" data-url="http://colinwang.cn/2014/12/06/CommonSortingAlgorithm/">
       </div>
     
   </div>
@@ -807,7 +818,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -846,6 +857,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -854,6 +868,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

@@ -62,7 +62,7 @@
 <meta name="description" content="寒假阶段复习了下Java集合框架，感觉有些收获，但是文中没有提到有关并发集合的内容，这篇文章就来谈谈并发散列表——ConcurrentHashMap，我们知道HashMap本身并不是线程安全的，如果程序需要在多线程的环境下运行，那么我们可以选择Hashtable做为替代，但是看过Hashtable源码的同学应该都知道，Hashtable内部实现是将需要同步的方法加上synchronized关键字来">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ConcurrentHashMap实现原理">
-<meta property="og:url" content="http://wjd1218.github.io/2015/03/24/PrincipleOfConcurrentHashMap/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/03/24/PrincipleOfConcurrentHashMap/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="寒假阶段复习了下Java集合框架，感觉有些收获，但是文中没有提到有关并发集合的内容，这篇文章就来谈谈并发散列表——ConcurrentHashMap，我们知道HashMap本身并不是线程安全的，如果程序需要在多线程的环境下运行，那么我们可以选择Hashtable做为替代，但是看过Hashtable源码的同学应该都知道，Hashtable内部实现是将需要同步的方法加上synchronized关键字来">
 <meta property="og:image" content="http://wjd1218.qiniudn.com/ConcurrentHashMap.png">
@@ -199,10 +199,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -327,6 +331,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -338,12 +343,18 @@
       
 
       
-        <p>寒假阶段复习了下<a href="http://wjd1218.github.io/2015/02/07/Java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/">Java集合框架</a>，感觉有些收获，但是文中没有提到有关并发集合的内容，这篇文章就来谈谈并发散列表——ConcurrentHashMap，我们知道HashMap本身并不是线程安全的，如果程序需要在多线程的环境下运行，那么我们可以选择Hashtable做为替代，但是看过Hashtable源码的同学应该都知道，Hashtable内部实现是将需要同步的方法加上<code>synchronized</code>关键字来实现同步的，而且相当于锁定了整个表，这种方式虽然可行，但是却会很大程度的影响程序的并发效率，并造成资源浪费。于是Doug Lea便开发了Java的并发包，我今天所说的<code>ConcurrentHashMap</code>就是属于这个包的，该类的作者就是Doug Lea。下面就来具体讲讲这个并发散列表。</p>
+        <p>寒假阶段复习了下<a href="http://wjd1218.github.io/2015/02/07/Java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/" target="_blank" rel="external">Java集合框架</a>，感觉有些收获，但是文中没有提到有关并发集合的内容，这篇文章就来谈谈并发散列表——ConcurrentHashMap，我们知道HashMap本身并不是线程安全的，如果程序需要在多线程的环境下运行，那么我们可以选择Hashtable做为替代，但是看过Hashtable源码的同学应该都知道，Hashtable内部实现是将需要同步的方法加上<code>synchronized</code>关键字来实现同步的，而且相当于锁定了整个表，这种方式虽然可行，但是却会很大程度的影响程序的并发效率，并造成资源浪费。于是Doug Lea便开发了Java的并发包，我今天所说的<code>ConcurrentHashMap</code>就是属于这个包的，该类的作者就是Doug Lea。下面就来具体讲讲这个并发散列表。</p>
 <p>首先ConcurrentHashMap是线程安全的，不然也不必以Concurrent修饰，它使用段粒度的锁和锁分离技术，避免了put和get操作对整个map的锁定，尤其在get中，只对一个HashEntry做锁定操作，这种性能提升是显而易见的。它和Hashtable的区别在于将锁的粒度控制的更小。使用这种方式，较好的解决了因程序并发导致的资源浪费的问题。下面我们来看一下ConcurrentHashMap的结构：</p>
 <p><img src="http://wjd1218.qiniudn.com/ConcurrentHashMap.png" alt="ConcurrentHashMap"></p>
 <p>如上图所示，每一个ConcurrentHashMap内部都维护了一个含有多个Segment（段）的数组，其中每一个Segment都是一个类似Hashtable的结构。通过这种方式，便可以将每次写操作的锁的粒度控制到每一个Segment，而其他的Segment不受影响，这样便可以提高并发的效率，ConcurrentHashMap默认包含16个Segment，也就是说最多可以同时支持16个线程进行写操作，如此当然会比只有一个线程进行写操作效率要高。但是也正是因为这样的结构，所以要定位一个元素，需要进行两次hash操作。第一次hash操作是找到元素所在的Segment，第二次hash操作用来找到元素所在的链表表头。和普通的HashMap类似，ConcurrentHashMap也有两个重要的参数，<strong>初始容量</strong>和<strong>装载因子</strong>，通过这两个参数可以控制何时对ConcurrentHashMap进行rehash操作，因为和HashMap类似，当其中元素数量过多时，会导致有些链表过长，查找效率降低，于是就需要进行扩容再哈希以提高查找的效率。ConcurrentHashMap还多一个比较重要的参数叫做<strong>并发级别（concurrentLevel）</strong>，该参数用来设置ConcurrentHashMap中Segment的数量，从上文可以知道，Segment的数量越多，那么可以同时支持的线程数量也就越多，并发程度也就越高，因此称之为<strong>并发级别</strong>也是合理的。但是这个并发级别经过初始化之后就不能再改变了，也就是说Segment的数量确定之后就不会再更改了。如果元素数量过多的时候，也只会对Segment中的数组进行扩容，然后只对其中的元素进行一次再哈希。这样也避免了要对整个ConcurrentHashMap进行rehash的操作。</p>
 <p>我对ConcurrentHashMap的理解就是它相当于把多个Hashtable包装到一起作为一个整体，它的关键在于两次hash操作，第一次用来找到到底使用的是哪一个Hashtable，第二次就相当于Hashtable内部的hash。这种思想看起来很好理解，实现也并不困难，但是实际上这是在更高的角度，更高的层面看待问题，Doug Lea，大师不愧为大师！</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -392,7 +403,7 @@
         <div class="ds-share flat" data-thread-key="2015/03/24/PrincipleOfConcurrentHashMap/"
      data-title="ConcurrentHashMap实现原理"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/03/24/PrincipleOfConcurrentHashMap/">
+     data-url="http://colinwang.cn/2015/03/24/PrincipleOfConcurrentHashMap/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -420,7 +431,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/03/24/PrincipleOfConcurrentHashMap/"
-           data-title="ConcurrentHashMap实现原理" data-url="http://wjd1218.github.io/2015/03/24/PrincipleOfConcurrentHashMap/">
+           data-title="ConcurrentHashMap实现原理" data-url="http://colinwang.cn/2015/03/24/PrincipleOfConcurrentHashMap/">
       </div>
     
   </div>
@@ -799,7 +810,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -838,6 +849,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -846,6 +860,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

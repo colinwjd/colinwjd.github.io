@@ -63,7 +63,7 @@
 1234567891011121314151617181920public ListNode kthToLast(ListNode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="几个有趣的问题及其解法">
-<meta property="og:url" content="http://wjd1218.github.io/2015/03/31/SomeInterestingProblemsAndItsSolution/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/03/31/SomeInterestingProblemsAndItsSolution/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="实现一个算法，找出单项链表中倒数第K个结点。一种比较高效的解法是使用两个指针，使这两个指针分别指向链表中相距K个结点的两个结点。然后沿着链表同时移动这两个指针，当其中一个首先到达链表末端的时候，另一个指针指向的就是倒数第K个结点。显然，该算法的时间复杂度为O(n)。
 1234567891011121314151617181920public ListNode kthToLast(ListNode">
@@ -201,10 +201,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -329,6 +333,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -354,6 +359,12 @@
 <h2 id="给定一个能产生0到4之间整数随机数的方法rand5()，实现一个能产生0到6之间整数随机数的方法rand7()。">给定一个能产生0到4之间整数随机数的方法rand5()，实现一个能产生0到6之间整数随机数的方法rand7()。</h2><p>rand7()应当返回0到6之间的整数，且返回每个整数的概率都应为七分之一。我们可以使用while循环，产生出一个范围的数值（至少含有7个元素），其中每个数值出现的概率相同。这样，我们再舍弃掉其中大于7的倍数的部分，最后在除以7取余数，得到范围0到6的随机数，每个值出现的概率都是七分之一。见下面的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">rand7</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">		<span class="comment">// 该rand取值在0到24之间，取得其中每个值的概率相同，</span></span><br><span class="line">		<span class="comment">// 舍弃掉21、22、23、24，否则该方法返回的0到3之间的数字会偏多</span></span><br><span class="line">		<span class="keyword">int</span> rand = <span class="number">5</span>*rand5() + rand5();</span><br><span class="line">		<span class="keyword">if</span> (rand &lt; <span class="number">21</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> rand % <span class="number">7</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>仍然有个问题要提一下，上面的代码中为什么选择<code>rand=5*rand5()+rand5()</code>呢，因为它能均匀的产生0到24之间的数字，这样就保证了0到24之间每个数字出现的概率相同。如果选择<code>rand=2*rand5()+rand5()</code>则不行，因为这些值不是均匀分布的，比如取得6有两种方式（<code>6=2*1+4和6=2*2+2</code>），而取得0却只有一种方式（<code>0=2*0+0</code>），这样就导致了每个值出现的概率不等。该题目的关键就在于找到一个范围，并使得其中每个值出现的概率相同。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -398,7 +409,7 @@
         <div class="ds-share flat" data-thread-key="2015/03/31/SomeInterestingProblemsAndItsSolution/"
      data-title="几个有趣的问题及其解法"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/03/31/SomeInterestingProblemsAndItsSolution/">
+     data-url="http://colinwang.cn/2015/03/31/SomeInterestingProblemsAndItsSolution/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -426,7 +437,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/03/31/SomeInterestingProblemsAndItsSolution/"
-           data-title="几个有趣的问题及其解法" data-url="http://wjd1218.github.io/2015/03/31/SomeInterestingProblemsAndItsSolution/">
+           data-title="几个有趣的问题及其解法" data-url="http://colinwang.cn/2015/03/31/SomeInterestingProblemsAndItsSolution/">
       </div>
     
   </div>
@@ -805,7 +816,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -844,6 +855,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -852,6 +866,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

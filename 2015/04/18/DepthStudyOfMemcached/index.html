@@ -63,7 +63,7 @@
 Memcached是什么Memcached是一款高性能的分布式内存对象缓存系统，使用它可以减少应用系统对数据库的直接访问，减轻了数据库负载，并且提升了应用程序的响应速度。可以将Memcached比作一个巨大的、存储了很多对的哈希表，通">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入学习Memcached">
-<meta property="og:url" content="http://wjd1218.github.io/2015/04/18/DepthStudyOfMemcached/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/04/18/DepthStudyOfMemcached/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="由于实验室在一个项目中用到了Memcached分布式缓存，自己这段时间也对分布式缓存深入学习了一下，本文就总结一下自己的收获，还是从Memcached是什么谈起吧。
 Memcached是什么Memcached是一款高性能的分布式内存对象缓存系统，使用它可以减少应用系统对数据库的直接访问，减轻了数据库负载，并且提升了应用程序的响应速度。可以将Memcached比作一个巨大的、存储了很多对的哈希表，通">
@@ -203,10 +203,14 @@ Memcached是什么Memcached是一款高性能的分布式内存对象缓存系�
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -331,6 +335,7 @@ Memcached是什么Memcached是一款高性能的分布式内存对象缓存系�
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -352,6 +357,12 @@ Memcached是什么Memcached是一款高性能的分布式内存对象缓存系�
 <p><img src="http://wjd1218.qiniudn.com/virtualCache.jpg" alt="加入虚拟结点"></p>
 <p>A1和A2为结点A的虚拟结点，虚拟结点的hash值计算可以采用对应结点的IP地址加数字后缀的方式，如“192.168.1.1#1”。这样就可以将被散列到A1和A2的数据都缓存进结点A中，从而避免了数据分布不平衡的现象。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -402,7 +413,7 @@ Memcached是什么Memcached是一款高性能的分布式内存对象缓存系�
         <div class="ds-share flat" data-thread-key="2015/04/18/DepthStudyOfMemcached/"
      data-title="深入学习Memcached"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/04/18/DepthStudyOfMemcached/">
+     data-url="http://colinwang.cn/2015/04/18/DepthStudyOfMemcached/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -430,7 +441,7 @@ Memcached是什么Memcached是一款高性能的分布式内存对象缓存系�
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/04/18/DepthStudyOfMemcached/"
-           data-title="深入学习Memcached" data-url="http://wjd1218.github.io/2015/04/18/DepthStudyOfMemcached/">
+           data-title="深入学习Memcached" data-url="http://colinwang.cn/2015/04/18/DepthStudyOfMemcached/">
       </div>
     
   </div>
@@ -809,7 +820,7 @@ Memcached是什么Memcached是一款高性能的分布式内存对象缓存系�
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -848,6 +859,9 @@ Memcached是什么Memcached是一款高性能的分布式内存对象缓存系�
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -856,6 +870,31 @@ Memcached是什么Memcached是一款高性能的分布式内存对象缓存系�
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

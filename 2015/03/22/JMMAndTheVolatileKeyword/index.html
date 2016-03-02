@@ -62,7 +62,7 @@
 <meta name="description" content="Java内存模型（Java Memory Model）Java内存模型（JMM），不同于Java运行时数据区，JMM的主要目标是定义程序中各个变量的访问规则，即在虚拟机中将变量存储到内存和从内存中读取数据这样的底层细节。JMM规定了所有的变量都存储在主内存中，但每个线程还有自己的工作内存，线程的工作内存中保存了被该线程使用到的变量的主内存副本拷贝。线程对变量的所有操作都必须在工作内存中进行，而不能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java内存模型与volatile关键字">
-<meta property="og:url" content="http://wjd1218.github.io/2015/03/22/JMMAndTheVolatileKeyword/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/03/22/JMMAndTheVolatileKeyword/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="Java内存模型（Java Memory Model）Java内存模型（JMM），不同于Java运行时数据区，JMM的主要目标是定义程序中各个变量的访问规则，即在虚拟机中将变量存储到内存和从内存中读取数据这样的底层细节。JMM规定了所有的变量都存储在主内存中，但每个线程还有自己的工作内存，线程的工作内存中保存了被该线程使用到的变量的主内存副本拷贝。线程对变量的所有操作都必须在工作内存中进行，而不能">
 <meta property="og:updated_time" content="2015-06-18T07:59:50.000Z">
@@ -198,10 +198,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -326,6 +330,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -353,6 +358,12 @@
 <p>变量在有了volatile修饰之后，对变量的修改会有一个内存屏障的保护，使得后面的指令不能被重排序到内存屏障之前的位置。volalite变量的读性能与普通变量类似，但是写性能要低一些，因为它需要插入内存屏障指令来保证处理器不会发生乱序执行。即便如此，大多数场景下volatile的总开销仍然要比锁低，所以volatile的语义能满足需求时候，选择volatile要优于使用锁。</p>
 </blockquote>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -401,7 +412,7 @@
         <div class="ds-share flat" data-thread-key="2015/03/22/JMMAndTheVolatileKeyword/"
      data-title="Java内存模型与volatile关键字"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/03/22/JMMAndTheVolatileKeyword/">
+     data-url="http://colinwang.cn/2015/03/22/JMMAndTheVolatileKeyword/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -429,7 +440,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/03/22/JMMAndTheVolatileKeyword/"
-           data-title="Java内存模型与volatile关键字" data-url="http://wjd1218.github.io/2015/03/22/JMMAndTheVolatileKeyword/">
+           data-title="Java内存模型与volatile关键字" data-url="http://colinwang.cn/2015/03/22/JMMAndTheVolatileKeyword/">
       </div>
     
   </div>
@@ -808,7 +819,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -847,6 +858,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -855,6 +869,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

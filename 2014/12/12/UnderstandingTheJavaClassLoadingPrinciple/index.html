@@ -62,7 +62,7 @@
 <meta name="description" content="虽然每天都在用Java，现在做的项目后台也是用的Java语言，近期帮师兄做的算法实验也是用Java实现的，但是总觉得自己对这门语言学习的不够深入，仅仅停留在会用的层面上。今天看了一位中科大师姐的文章，觉得自己很有必要再深入学习这门语言，还需要加深自己对Java的理解。我个人觉得，对一个程序员来说，理解力十分重要。一门编程语言，学会使用很容易，但是要真正理解这门语言的设计哲学似乎就没那么容易了。而一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解Java类加载原理">
-<meta property="og:url" content="http://wjd1218.github.io/2014/12/12/UnderstandingTheJavaClassLoadingPrinciple/index.html">
+<meta property="og:url" content="http://colinwang.cn/2014/12/12/UnderstandingTheJavaClassLoadingPrinciple/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="虽然每天都在用Java，现在做的项目后台也是用的Java语言，近期帮师兄做的算法实验也是用Java实现的，但是总觉得自己对这门语言学习的不够深入，仅仅停留在会用的层面上。今天看了一位中科大师姐的文章，觉得自己很有必要再深入学习这门语言，还需要加深自己对Java的理解。我个人觉得，对一个程序员来说，理解力十分重要。一门编程语言，学会使用很容易，但是要真正理解这门语言的设计哲学似乎就没那么容易了。而一">
 <meta property="og:image" content="http://wjd1218.qiniudn.com/JavaClassloader.jpg">
@@ -199,10 +199,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -327,6 +331,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -413,6 +418,12 @@ SubClass:Non <span class="keyword">static</span> blocks <span class="keyword">of
       
     </div>
 
+    <div>
+      
+        
+      
+    </div>
+
     <footer class="post-footer">
       
         <div class="post-tags">
@@ -454,7 +465,7 @@ SubClass:Non <span class="keyword">static</span> blocks <span class="keyword">of
         <div class="ds-share flat" data-thread-key="2014/12/12/UnderstandingTheJavaClassLoadingPrinciple/"
      data-title="深入理解Java类加载原理"
      data-content=""
-     data-url="http://wjd1218.github.io/2014/12/12/UnderstandingTheJavaClassLoadingPrinciple/">
+     data-url="http://colinwang.cn/2014/12/12/UnderstandingTheJavaClassLoadingPrinciple/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -482,7 +493,7 @@ SubClass:Non <span class="keyword">static</span> blocks <span class="keyword">of
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2014/12/12/UnderstandingTheJavaClassLoadingPrinciple/"
-           data-title="深入理解Java类加载原理" data-url="http://wjd1218.github.io/2014/12/12/UnderstandingTheJavaClassLoadingPrinciple/">
+           data-title="深入理解Java类加载原理" data-url="http://colinwang.cn/2014/12/12/UnderstandingTheJavaClassLoadingPrinciple/">
       </div>
     
   </div>
@@ -861,7 +872,7 @@ SubClass:Non <span class="keyword">static</span> blocks <span class="keyword">of
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -900,6 +911,9 @@ SubClass:Non <span class="keyword">static</span> blocks <span class="keyword">of
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -908,6 +922,31 @@ SubClass:Non <span class="keyword">static</span> blocks <span class="keyword">of
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

@@ -62,7 +62,7 @@
 <meta name="description" content="最近这几天在学习Robert Sedgewick和Kevin Wayne的《算法》一书。第一章讲了一些Java编程的基础，第二章讲了一些最基础的排序算法。目前刚刚看完这两章，虽然很基础，但是毕竟不能只看书不练习，于是就动手写代码实践一下。可是刚开始写代码我就遇到了麻烦，我始终不知道在Eclipse中如何把标准输入流重定向到文件，就像在命令行中输入java Test &amp;lt; data.txt这样。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javac和Java在CLI中的使用">
-<meta property="og:url" content="http://wjd1218.github.io/2015/02/13/TheUseOfJavacAndJavaInCLI/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/02/13/TheUseOfJavacAndJavaInCLI/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="最近这几天在学习Robert Sedgewick和Kevin Wayne的《算法》一书。第一章讲了一些Java编程的基础，第二章讲了一些最基础的排序算法。目前刚刚看完这两章，虽然很基础，但是毕竟不能只看书不练习，于是就动手写代码实践一下。可是刚开始写代码我就遇到了麻烦，我始终不知道在Eclipse中如何把标准输入流重定向到文件，就像在命令行中输入java Test &amp;lt; data.txt这样。">
 <meta property="og:updated_time" content="2015-06-18T08:00:46.000Z">
@@ -198,10 +198,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -326,6 +330,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -342,6 +347,12 @@
 <p>编译完了，接着就是运行了。结果运行又遇到了问题，说<code>Could not find or load main class ...</code>我就纳闷了，这个类文件分明就在这，刚刚编译好的，怎么就找不到呢。然后又去查资料，这次就没那么容易找到答案了，我试了多种网上给出的方案，但是始终都是提示找不到或无法加载类。然后我发现网上问这个问题的基本都是运行HalloWorld程序的，我就想，难道这个问题是一个简单到不值得问的问题？当我找到答案后，我觉得，似乎是的！问题在哪，在于我输入的类名不是<strong>全类名</strong>，因为我分了包，所以全类名应该是包名加类名，比如util包下的类MyTest的全类名应该是util.MyTest。所以要运行bin/util/MyTest.class应该执行<code>java -cp bin util.MyTest</code>这个命令。-cp参数同样指定了类的搜索路径。现在想来java的这种机制也是合理的，因为只有通过<strong>全类名</strong>才能唯一指定一个类，然后JVM才能找到这个类并加载它。</p>
 <p>就先说一下这两条命令，都是自己实践得来的经验，希望对需要的人有所帮助。其中还有很多参数暂时还没有用到，今后用到了再进行补充。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -390,7 +401,7 @@
         <div class="ds-share flat" data-thread-key="2015/02/13/TheUseOfJavacAndJavaInCLI/"
      data-title="Javac和Java在CLI中的使用"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/02/13/TheUseOfJavacAndJavaInCLI/">
+     data-url="http://colinwang.cn/2015/02/13/TheUseOfJavacAndJavaInCLI/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -418,7 +429,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/02/13/TheUseOfJavacAndJavaInCLI/"
-           data-title="Javac和Java在CLI中的使用" data-url="http://wjd1218.github.io/2015/02/13/TheUseOfJavacAndJavaInCLI/">
+           data-title="Javac和Java在CLI中的使用" data-url="http://colinwang.cn/2015/02/13/TheUseOfJavacAndJavaInCLI/">
       </div>
     
   </div>
@@ -797,7 +808,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -836,6 +847,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -844,6 +858,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

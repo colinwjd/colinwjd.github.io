@@ -62,7 +62,7 @@
 <meta name="description" content="理解线程这段时间在看《Java并发编程实战》这本书，使自己对Java多线程的理解又加深一些，感觉自己可以总结一下了，本文就讲讲与线程有关的内容吧。我们要使用线程，首先需要理解线程，前短时间我在聊聊操作系统这篇文章中提到了一点关于线程的东西，有兴趣的同学可以读一下。有一点需要理解的就是，我们虽然常说“Java多线程”，但实际上线程这东西是由操作系统提供支持的，它并不是由Java本身提供支持的，所以实">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java中的线程">
-<meta property="og:url" content="http://wjd1218.github.io/2015/04/16/ThreadInJava/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/04/16/ThreadInJava/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="理解线程这段时间在看《Java并发编程实战》这本书，使自己对Java多线程的理解又加深一些，感觉自己可以总结一下了，本文就讲讲与线程有关的内容吧。我们要使用线程，首先需要理解线程，前短时间我在聊聊操作系统这篇文章中提到了一点关于线程的东西，有兴趣的同学可以读一下。有一点需要理解的就是，我们虽然常说“Java多线程”，但实际上线程这东西是由操作系统提供支持的，它并不是由Java本身提供支持的，所以实">
 <meta property="og:updated_time" content="2015-06-18T07:54:40.000Z">
@@ -198,10 +198,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -326,6 +330,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -345,6 +350,12 @@
 </blockquote>
 <h2 id="总结">总结</h2><p>并发的确是个问题，它导致我们的程序总是出现意想不到的结果，使得程序编写更加复杂，但是并发确实在一定程度上提高了程序的运行效率。只要我们弄懂其中的原理，遵守相应的规则，并发程序便一定会按照我们的想法做事。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -393,7 +404,7 @@
         <div class="ds-share flat" data-thread-key="2015/04/16/ThreadInJava/"
      data-title="Java中的线程"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/04/16/ThreadInJava/">
+     data-url="http://colinwang.cn/2015/04/16/ThreadInJava/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -421,7 +432,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/04/16/ThreadInJava/"
-           data-title="Java中的线程" data-url="http://wjd1218.github.io/2015/04/16/ThreadInJava/">
+           data-title="Java中的线程" data-url="http://colinwang.cn/2015/04/16/ThreadInJava/">
       </div>
     
   </div>
@@ -800,7 +811,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -839,6 +850,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -847,6 +861,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

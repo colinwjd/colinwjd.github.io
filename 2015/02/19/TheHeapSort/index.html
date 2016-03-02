@@ -63,7 +63,7 @@
 关于堆排序说到堆排序，我们应该不陌生，以前在数据结构课堂上也曾学习过。但是当时老师直接就引出了堆排序，加上当时听课也没有特别认真，于是就听的云里雾里">
 <meta property="og:type" content="article">
 <meta property="og:title" content="再谈基础排序算法——堆排序">
-<meta property="og:url" content="http://wjd1218.github.io/2015/02/19/TheHeapSort/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/02/19/TheHeapSort/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="前段时间写了这篇文章几个常见排序算法的实现，仅仅是对自己所学知识的一点总结。这不寒假这段时间又在看《算法》一书，前两章也是在讲基础排序算法，感觉书中的思路比我自己总结的好太多，于是就抽出时间来再写一写新的理解和体会。也算是对前面那篇文章的一点补充吧。
 关于堆排序说到堆排序，我们应该不陌生，以前在数据结构课堂上也曾学习过。但是当时老师直接就引出了堆排序，加上当时听课也没有特别认真，于是就听的云里雾里">
@@ -201,10 +201,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -329,6 +333,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -340,7 +345,7 @@
       
 
       
-        <p>前段时间写了这篇文章<a href="http://wjd1218.github.io/2014/12/06/%E5%87%A0%E4%B8%AA%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/">几个常见排序算法的实现</a>，仅仅是对自己所学知识的一点总结。这不寒假这段时间又在看《算法》一书，前两章也是在讲基础排序算法，感觉书中的思路比我自己总结的好太多，于是就抽出时间来再写一写新的理解和体会。也算是对前面那篇文章的一点补充吧。</p>
+        <p>前段时间写了这篇文章<a href="http://wjd1218.github.io/2014/12/06/%E5%87%A0%E4%B8%AA%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/" target="_blank" rel="external">几个常见排序算法的实现</a>，仅仅是对自己所学知识的一点总结。这不寒假这段时间又在看《算法》一书，前两章也是在讲基础排序算法，感觉书中的思路比我自己总结的好太多，于是就抽出时间来再写一写新的理解和体会。也算是对前面那篇文章的一点补充吧。</p>
 <h2 id="关于堆排序"><a href="https://github.com/wjd1218/Algorithms/blob/master/colinSrc%2Fcolin%2Fsort%2FHeap.java" target="_blank" rel="external">关于堆排序</a></h2><p>说到堆排序，我们应该不陌生，以前在数据结构课堂上也曾学习过。但是当时老师直接就引出了堆排序，加上当时听课也没有特别认真，于是就听的云里雾里。现如今看了《算法》中的讲解，觉得有点收获，于是便进行一下总结。说到堆排序，首先应当提<strong>优先队列</strong>。下面我们就先来了解一下优先队列。</p>
 <h3 id="优先队列">优先队列</h3><p>优先队列顾名思义是一个队列，不过当然有别于我们所熟知的先入先出队列，否则也就不必冠以<strong>优先</strong>两字了。优先是指优先级，优先队列中的元素需要根据优先级顺序来出队。我们可以规定元素的值越大，优先级越高，于是优先队列中每次出队的元素都是最大的元素。这种数据结构的实现请见<a href="https://github.com/wjd1218/Algorithms/blob/master/colinSrc%2Fcolin%2Fbase%2FMaxPriorityQueue.java" target="_blank" rel="external">优先队列</a>，当然也可以实现每次从队列中删除最小元素的<a href="https://github.com/wjd1218/Algorithms/blob/master/colinSrc%2Fcolin%2Fbase%2FMinPriorityQueue.java" target="_blank" rel="external">优先队列</a>。优先队列有多种实现方法，比较优秀且经典的实现是基于二叉堆的实现。优先队列应用广泛，常见的如根据优先级进行任务调度、在大量数据中找出TopM、还有一会就要介绍的堆排序算法。</p>
 <h4 id="TopM问题">TopM问题</h4><p>既然说到了优先队列，那就说一下使用优先队列求解TopM的方法。比如在输入的数据中找出M个最大的元素。如果不使用优先队列，我们可以先把输入数据排序，然后从中找出最大的M个。这种方式在数据数据量较小时还可行，但是当输入数据非常庞大时就不可能了，首先对大量数据排序是个不简单的问题，再有这种方法所需的计算机内存也不能接受。但是使用了优先队列情况就不同了，我们可以不对输入数据进行排序，需要的内存也只是常熟级别。我们只需要直接将输入数据按照输入顺序插入优先队列，并固定队列的容量为M+1，每当队列中的元素数量达到M+1时候，就删除其中最小的元素。这样当所有元素都输入完之后，队列中的M个元素即是所有输入数据中最大的M个。</p>
@@ -348,6 +353,12 @@
 <h3 id="堆排序">堆排序</h3><p>讲到正题了，堆排序就是使用二叉堆这种数据结构进行排序，主要分成两个步骤，先把输入数据构造成一个堆，然后再进行排序。那么怎么构造堆呢？一种方法是从堆顶开始构造，类似于把每个元素依次插入优先队列，每插入一个元素，进行一次堆的有序化。另一种方法是从堆底（数组末端，即完全二叉树中结点标号大的一端）开始构造，因为数组的每个位置都已经是一个子堆的根节点了，并且当一个结点的两个子结点都是堆时，可以把这两个堆合并成一个堆。类似于把多个子堆不断的合并，这种方法比从堆顶开始构造堆更加高效。堆构造完成后就是进行排序了，忘了说，堆排序也是基于原址的。当堆构造好之后，堆顶（根元素）即为最大的元素，将这个元素和堆底（数组末端）交换，即完成了一个元素的排序。然后把堆的大小缩小一，再进行堆的有序化。重复进行这样的操作，直到堆的大小为1，整个数组有序。这个过程有些类似于选择排序，但是比选择排序需要的比较次数要少的多，因为堆提供了一种在未排序元素中找到最大元素的有效方法。</p>
 <h2 id="总结">总结</h2><p>以上就是堆排序内容的一点总结，不同的排序算法有不同的适用场景，比如当稳定性很重要而且内存又不是问题时，归并排序可能是最好的选择；但是当运行时间很重要时，快速排序便可能是更好的选择。写这些文章，是希望自己能够理解种种不同算法的思想，并了解其适用场景。了解多种不同的思考方式，从不同的角度看待问题，我想不只是算法学习上，还有思维能力上，甚至生活上，大概都能从中受益吧。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -396,7 +407,7 @@
         <div class="ds-share flat" data-thread-key="2015/02/19/TheHeapSort/"
      data-title="再谈基础排序算法——堆排序"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/02/19/TheHeapSort/">
+     data-url="http://colinwang.cn/2015/02/19/TheHeapSort/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -424,7 +435,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/02/19/TheHeapSort/"
-           data-title="再谈基础排序算法——堆排序" data-url="http://wjd1218.github.io/2015/02/19/TheHeapSort/">
+           data-title="再谈基础排序算法——堆排序" data-url="http://colinwang.cn/2015/02/19/TheHeapSort/">
       </div>
     
   </div>
@@ -803,7 +814,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -842,6 +853,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -850,6 +864,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

@@ -62,7 +62,7 @@
 <meta name="description" content="第一次听说函数式编程应该是至少一年前的事情了，那时候也仅仅是知道有这么个东西，一点也不了解它具体是什么意思。函数式编程本身也不是什么新鲜事物，早在很久以前就已经出现了。而这些日子函数式编程变得越来越受关注，最新推出的Java1.8也加入了函数式编程的特性，于是这些天就认真了解了一下有关函数式编程的内容，这篇文章就总结一下我这几天的所学和我对函数式编程的理解。也希望其他对函数式编程有兴趣的新手同学能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我所理解的函数式编程">
-<meta property="og:url" content="http://wjd1218.github.io/2015/01/29/FunctionalProgramming/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/01/29/FunctionalProgramming/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="第一次听说函数式编程应该是至少一年前的事情了，那时候也仅仅是知道有这么个东西，一点也不了解它具体是什么意思。函数式编程本身也不是什么新鲜事物，早在很久以前就已经出现了。而这些日子函数式编程变得越来越受关注，最新推出的Java1.8也加入了函数式编程的特性，于是这些天就认真了解了一下有关函数式编程的内容，这篇文章就总结一下我这几天的所学和我对函数式编程的理解。也希望其他对函数式编程有兴趣的新手同学能">
 <meta property="og:updated_time" content="2015-06-18T08:02:44.000Z">
@@ -198,10 +198,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -326,6 +330,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -350,6 +355,12 @@
 </code></pre><p>可见，函数式编程直接把函数传递给另一个函数，而不需要借助多余的外部变量，而且这种形式也非常易于理解。</p>
 <p>其实计算机程序设计，归根结底还是数学的应用，最近这两天看了吴军博士的《数学之美》，使我对数学和计算机科学的联系有了更深刻的认识，更让我意识到了理论和工程实践相结合的重要性。计算机只不过是可以做计算，编程不过是让计算机按照我们的意愿去做计算，而这个<strong>意愿</strong>说到底就是所谓的<strong>数学模型</strong>，函数式编程更接近于数学语言，可以更容易的表达出这个意愿，我想最近函数式语言的兴起也正是编程领域在数学本质上的回归吧。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -394,7 +405,7 @@
         <div class="ds-share flat" data-thread-key="2015/01/29/FunctionalProgramming/"
      data-title="我所理解的函数式编程"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/01/29/FunctionalProgramming/">
+     data-url="http://colinwang.cn/2015/01/29/FunctionalProgramming/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -422,7 +433,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/01/29/FunctionalProgramming/"
-           data-title="我所理解的函数式编程" data-url="http://wjd1218.github.io/2015/01/29/FunctionalProgramming/">
+           data-title="我所理解的函数式编程" data-url="http://colinwang.cn/2015/01/29/FunctionalProgramming/">
       </div>
     
   </div>
@@ -801,7 +812,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -840,6 +851,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -848,6 +862,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

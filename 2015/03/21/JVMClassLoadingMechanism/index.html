@@ -66,7 +66,7 @@
 在内存（对于HotSpot虚拟机来说，这个内存是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="再谈JVM类加载机制">
-<meta property="og:url" content="http://wjd1218.github.io/2015/03/21/JVMClassLoadingMechanism/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/03/21/JVMClassLoadingMechanism/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="几个月前写了深入理解Java类加载原理这篇文章，简单的谈了下我对Java类加载的理解，最近这段时间又研习了《深入理解Java虚拟机》一书，对JVM的类加载机制又有了更加系统的认识，下面我就再来讲讲学习心得吧。
 虚拟机如何进行类的加载
@@ -210,10 +210,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -338,6 +342,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -349,13 +354,13 @@
       
 
       
-        <p>几个月前写了<a href="http://wjd1218.github.io/2014/12/12/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%8E%9F%E7%90%86/">深入理解Java类加载原理</a>这篇文章，简单的谈了下我对Java类加载的理解，最近这段时间又研习了《深入理解Java虚拟机》一书，对JVM的类加载机制又有了更加系统的认识，下面我就再来讲讲学习心得吧。</p>
+        <p>几个月前写了<a href="http://wjd1218.github.io/2014/12/12/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%8E%9F%E7%90%86/" target="_blank" rel="external">深入理解Java类加载原理</a>这篇文章，简单的谈了下我对Java类加载的理解，最近这段时间又研习了《深入理解Java虚拟机》一书，对JVM的类加载机制又有了更加系统的认识，下面我就再来讲讲学习心得吧。</p>
 <h2 id="虚拟机如何进行类的加载">虚拟机如何进行类的加载</h2><ol>
 <li>通过一个类的全限定名来获取定义此类的二进制字节流。</li>
 <li>将这个字节流所代表的静态存储结构转化为方法区中的运行时数据结构。</li>
 <li>在内存（对于HotSpot虚拟机来说，这个内存是指方法区）中生成一个代表这个类的java.lang.Class对象，作为方法区中这个类型信息的访问入口。</li>
 </ol>
-<h2 id="对加载进内存的类的准备">对加载进内存的类的准备</h2><p>类刚刚被加载进内存之后还不能直接使用，需要进行基础的准备，在准备阶段，会对类变量（静态变量或理解成全局变量）进行赋初值（这个初值为数据类型的“零值”）的操作，类变量使用的内存在方法区中分配，对于方法区的介绍请见<a href="http://wjd1218.github.io/2015/03/19/JVM%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90/">JVM自动内存管理机制分析</a>这篇文章。而把类变量赋成程序员指定的值是在类进行<strong>初始化</strong>的阶段完成的，这个操作位于类的构造器<code>&lt;clinit&gt;()</code>中。比如代码<code>public static int value = 1218;</code>，在经过准备阶段之后，value的值为0，在经过初始化阶段之后value的值才为1218。但是如果给value变量加上final修饰，那么在准备阶段value的值就会被设置为1218。</p>
+<h2 id="对加载进内存的类的准备">对加载进内存的类的准备</h2><p>类刚刚被加载进内存之后还不能直接使用，需要进行基础的准备，在准备阶段，会对类变量（静态变量或理解成全局变量）进行赋初值（这个初值为数据类型的“零值”）的操作，类变量使用的内存在方法区中分配，对于方法区的介绍请见<a href="http://wjd1218.github.io/2015/03/19/JVM%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90/" target="_blank" rel="external">JVM自动内存管理机制分析</a>这篇文章。而把类变量赋成程序员指定的值是在类进行<strong>初始化</strong>的阶段完成的，这个操作位于类的构造器<code>&lt;clinit&gt;()</code>中。比如代码<code>public static int value = 1218;</code>，在经过准备阶段之后，value的值为0，在经过初始化阶段之后value的值才为1218。但是如果给value变量加上final修饰，那么在准备阶段value的值就会被设置为1218。</p>
 <h2 id="类的初始化">类的初始化</h2><h3 id="何时对类进行初始化">何时对类进行初始化</h3><ol>
 <li>使用new关键字实例化对象时。</li>
 <li>访问类的静态字段时，但是被final修饰的静态字段除外。</li>
@@ -375,6 +380,12 @@
 </ul>
 <p>以上便是读过书之后一点新的理解，书上讲的更加系统一些，对自己理解其原理有很大的帮助，仅以此文做一个总结，希望自己今后能够做的更好。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -423,7 +434,7 @@
         <div class="ds-share flat" data-thread-key="2015/03/21/JVMClassLoadingMechanism/"
      data-title="再谈JVM类加载机制"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/03/21/JVMClassLoadingMechanism/">
+     data-url="http://colinwang.cn/2015/03/21/JVMClassLoadingMechanism/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -451,7 +462,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/03/21/JVMClassLoadingMechanism/"
-           data-title="再谈JVM类加载机制" data-url="http://wjd1218.github.io/2015/03/21/JVMClassLoadingMechanism/">
+           data-title="再谈JVM类加载机制" data-url="http://colinwang.cn/2015/03/21/JVMClassLoadingMechanism/">
       </div>
     
   </div>
@@ -830,7 +841,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -869,6 +880,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -877,6 +891,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

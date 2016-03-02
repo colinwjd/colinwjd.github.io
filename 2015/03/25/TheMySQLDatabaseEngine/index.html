@@ -63,7 +63,7 @@
 Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且实现了SQL标准的四种隔离级别，关于数据库事务与其隔离级别的内容请见数据库事务与其隔离级别这篇文章。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL数据库引擎详解">
-<meta property="og:url" content="http://wjd1218.github.io/2015/03/25/TheMySQLDatabaseEngine/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/03/25/TheMySQLDatabaseEngine/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="作为Java程序员，MySQL数据库大家平时应该都没少使用吧，对MySQL数据库的引擎应该也有所了解，这篇文章就让我详细的说说MySQL数据库的Innodb和MyISAM两种引擎以及其索引结构。也来巩固一下自己对这块知识的掌握。
 Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且实现了SQL标准的四种隔离级别，关于数据库事务与其隔离级别的内容请见数据库事务与其隔离级别这篇文章。">
@@ -204,10 +204,14 @@ Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且实现�
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -332,6 +336,7 @@ Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且实现�
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -344,10 +349,10 @@ Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且实现�
 
       
         <p>作为Java程序员，MySQL数据库大家平时应该都没少使用吧，对MySQL数据库的引擎应该也有所了解，这篇文章就让我详细的说说MySQL数据库的Innodb和MyISAM两种引擎以及其索引结构。也来巩固一下自己对这块知识的掌握。</p>
-<h2 id="Innodb引擎">Innodb引擎</h2><p>Innodb引擎提供了对数据库ACID事务的支持，并且实现了SQL标准的四种隔离级别，关于数据库事务与其隔离级别的内容请见<a href="http://wjd1218.github.io/2015/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1%E4%B8%8E%E5%85%B6%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/">数据库事务与其隔离级别</a>这篇文章。该引擎还提供了行级锁和外键约束，它的设计目标是处理大容量数据库系统，它本身其实就是基于MySQL后台的完整数据库系统，MySQL运行时Innodb会在内存中建立缓冲池，用于缓冲数据和索引。但是该引擎不支持FULLTEXT类型的索引，而且它没有保存表的行数，当<code>SELECT COUNT(*) FROM TABLE</code>时需要扫描全表。当需要使用数据库事务时，该引擎当然是首选。由于锁的粒度更小，写操作不会锁定全表，所以在并发较高时，使用Innodb引擎会提升效率。但是使用行级锁也不是绝对的，如果在执行一个SQL语句时MySQL不能确定要扫描的范围，InnoDB表同样会锁全表。</p>
+<h2 id="Innodb引擎">Innodb引擎</h2><p>Innodb引擎提供了对数据库ACID事务的支持，并且实现了SQL标准的四种隔离级别，关于数据库事务与其隔离级别的内容请见<a href="http://wjd1218.github.io/2015/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1%E4%B8%8E%E5%85%B6%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/" target="_blank" rel="external">数据库事务与其隔离级别</a>这篇文章。该引擎还提供了行级锁和外键约束，它的设计目标是处理大容量数据库系统，它本身其实就是基于MySQL后台的完整数据库系统，MySQL运行时Innodb会在内存中建立缓冲池，用于缓冲数据和索引。但是该引擎不支持FULLTEXT类型的索引，而且它没有保存表的行数，当<code>SELECT COUNT(*) FROM TABLE</code>时需要扫描全表。当需要使用数据库事务时，该引擎当然是首选。由于锁的粒度更小，写操作不会锁定全表，所以在并发较高时，使用Innodb引擎会提升效率。但是使用行级锁也不是绝对的，如果在执行一个SQL语句时MySQL不能确定要扫描的范围，InnoDB表同样会锁全表。</p>
 <h2 id="MyISAM引擎">MyISAM引擎</h2><p>MyISAM是MySQL默认的引擎，但是它没有提供对数据库事务的支持，也不支持行级锁和外键，因此当INSERT(插入)或UPDATE(更新)数据时即写操作需要锁定整个表，效率便会低一些。不过和Innodb不同，MyISAM中存储了表的行数，于是<code>SELECT COUNT(*) FROM TABLE</code>时只需要直接读取已经保存好的值而不需要进行全表扫描。如果表的读操作远远多于写操作且不需要数据库事务的支持，那么MyISAM也是很好的选择。</p>
 <h2 id="两种引擎的选择">两种引擎的选择</h2><p>大尺寸的数据集趋向于选择InnoDB引擎，因为它支持事务处理和故障恢复。数据库的大小决定了故障恢复的时间长短，InnoDB可以利用事务日志进行数据恢复，这会比较快。主键查询在InnoDB引擎下也会相当快，不过需要注意的是如果主键太长也会导致性能问题，关于这个问题我会在下文中讲到。大批的<code>INSERT</code>语句(在每个<code>INSERT</code>语句中写入多行，批量插入)在MyISAM下会快一些，但是<code>UPDATE</code>语句在InnoDB下则会更快一些，尤其是在并发量大的时候。</p>
-<h2 id="Index——索引">Index——索引</h2><p>索引（Index）是帮助MySQL高效获取数据的数据结构。MyISAM和Innodb都使用了树这种数据结构做为索引，关于树我也曾经写过一篇文章<a href="http://wjd1218.github.io/2015/02/21/%E6%A0%91%E6%98%AF%E4%B8%80%E7%A7%8D%E4%BC%9F%E5%A4%A7%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">树是一种伟大的数据结构</a>，只是自己的理解，有兴趣的朋友可以去阅读。下面我接着讲这两种引擎使用的索引结构，讲到这里，首先应该谈一下B-Tree和B+Tree。</p>
+<h2 id="Index——索引">Index——索引</h2><p>索引（Index）是帮助MySQL高效获取数据的数据结构。MyISAM和Innodb都使用了树这种数据结构做为索引，关于树我也曾经写过一篇文章<a href="http://wjd1218.github.io/2015/02/21/%E6%A0%91%E6%98%AF%E4%B8%80%E7%A7%8D%E4%BC%9F%E5%A4%A7%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" target="_blank" rel="external">树是一种伟大的数据结构</a>，只是自己的理解，有兴趣的朋友可以去阅读。下面我接着讲这两种引擎使用的索引结构，讲到这里，首先应该谈一下B-Tree和B+Tree。</p>
 <h3 id="B-Tree和B+Tree">B-Tree和B+Tree</h3><p>B+Tree是B-Tree的变种，那么我就先讲B-Tree吧，相信大家都知道<a href="https://github.com/wjd1218/Algorithms/blob/master/colinSrc%2Fcolin%2Fsearch%2FRedBlackTree.java" target="_blank" rel="external">红黑树</a>，这是我前段时间学《算法》一书时，实现的一颗红黑树，大家可以参考。其实红黑树类似2,3-查找树，这种树既有2叉结点又有3叉结点。B-Tree也与之类似，它的每个结点做多可以有d个分支（叉），d称为B-Tree的度，如下图所示，它的每个结点可以有4个元素，5个分支，于是它的度为5。B-Tree中的元素是有序的，比如图中元素7左边的指针指向的结点中的元素都小于7，而元素7和16之间的指针指向的结点中的元素都处于7和16之间，正是满足这样的关系，才能高效的查找：首先从根节点进行二分查找，找到就返回对应的值，否则就进入相应的区间结点递归的查找，直到找到对应的元素或找到null指针，找到null指针则表示查找失败。这个查找是十分高效的，其时间复杂度为O(logN)（以d为底，当d很大时，树的高度就很低），因为每次检索最多只需要检索树高h个结点。</p>
 <p><img src="http://wjd1218.qiniudn.com/B-Tree.png" alt="B-Tree"></p>
 <p>接下来就该讲B+Tree了，它是B-Tree的变种，如下面两张图所示：</p>
@@ -360,6 +365,12 @@ Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且实现�
 </blockquote>
 <p>并且和MyISAM不同，InnoDB的辅助索引数据域存储的也是相应记录主键的值而不是地址，所以当以辅助索引查找时，会先根据辅助索引找到主键，再根据主键索引找到实际的数据。所以Innodb不建议使用过长的主键，否则会使辅助索引变得过大。建议使用自增的字段作为主键，这样B+Tree的每一个结点都会被顺序的填满，而不会频繁的分裂调整，会有效的提升插入数据的效率。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -412,7 +423,7 @@ Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且实现�
         <div class="ds-share flat" data-thread-key="2015/03/25/TheMySQLDatabaseEngine/"
      data-title="MySQL数据库引擎详解"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/03/25/TheMySQLDatabaseEngine/">
+     data-url="http://colinwang.cn/2015/03/25/TheMySQLDatabaseEngine/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -440,7 +451,7 @@ Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且实现�
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/03/25/TheMySQLDatabaseEngine/"
-           data-title="MySQL数据库引擎详解" data-url="http://wjd1218.github.io/2015/03/25/TheMySQLDatabaseEngine/">
+           data-title="MySQL数据库引擎详解" data-url="http://colinwang.cn/2015/03/25/TheMySQLDatabaseEngine/">
       </div>
     
   </div>
@@ -819,7 +830,7 @@ Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且实现�
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -858,6 +869,9 @@ Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且实现�
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -866,6 +880,31 @@ Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且实现�
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

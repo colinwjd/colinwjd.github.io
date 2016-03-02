@@ -63,7 +63,7 @@
 外观首先说说外观，在这个看脸的世界，能有一个好看的外表就已经赢了一大半好么！不只是人，电脑也是一样，MacBook Pro的工业设计">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Macbook Pro入手一个月使用体验">
-<meta property="og:url" content="http://wjd1218.github.io/2015/07/01/MacbookPro Start Experience/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/07/01/MacbookPro Start Experience/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="今年五月份入手了MacBook Pro和iPhone 6，现在已经使用了一个多月，感觉可以写写我的使用感受了。在没有使用苹果产品之前，我根本不能理解那些果粉们的行为，然而使用了苹果产品一个月后，我已经从一名Google粉变成了一名十足的果粉，没错，仅仅是一个月而已！
 外观首先说说外观，在这个看脸的世界，能有一个好看的外表就已经赢了一大半好么！不只是人，电脑也是一样，MacBook Pro的工业设计">
@@ -212,10 +212,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -340,6 +344,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -391,6 +396,12 @@
       
     </div>
 
+    <div>
+      
+        
+      
+    </div>
+
     <footer class="post-footer">
       
         <div class="post-tags">
@@ -430,7 +441,7 @@
         <div class="ds-share flat" data-thread-key="2015/07/01/MacbookPro Start Experience/"
      data-title="Macbook Pro入手一个月使用体验"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/07/01/MacbookPro Start Experience/">
+     data-url="http://colinwang.cn/2015/07/01/MacbookPro Start Experience/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -458,7 +469,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/07/01/MacbookPro Start Experience/"
-           data-title="Macbook Pro入手一个月使用体验" data-url="http://wjd1218.github.io/2015/07/01/MacbookPro Start Experience/">
+           data-title="Macbook Pro入手一个月使用体验" data-url="http://colinwang.cn/2015/07/01/MacbookPro Start Experience/">
       </div>
     
   </div>
@@ -837,7 +848,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -876,6 +887,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -884,6 +898,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

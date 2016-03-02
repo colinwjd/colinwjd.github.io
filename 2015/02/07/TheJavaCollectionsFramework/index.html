@@ -69,7 +69,7 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
 通过hasNext()方法可以判断集合中是否还有剩">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java集合框架">
-<meta property="og:url" content="http://wjd1218.github.io/2015/02/07/TheJavaCollectionsFramework/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/02/07/TheJavaCollectionsFramework/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="先来看一张Java集合的类图。本来是想自己画一个的，但是在网上看到了这个图之后就觉得没有再重新画一个的必要了。这个图相对网上其他一些图来说更全面一些。
 
@@ -227,10 +227,14 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -355,6 +359,7 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -430,6 +435,12 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
       
     </div>
 
+    <div>
+      
+        
+      
+    </div>
+
     <footer class="post-footer">
       
         <div class="post-tags">
@@ -473,7 +484,7 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
         <div class="ds-share flat" data-thread-key="2015/02/07/TheJavaCollectionsFramework/"
      data-title="Java集合框架"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/02/07/TheJavaCollectionsFramework/">
+     data-url="http://colinwang.cn/2015/02/07/TheJavaCollectionsFramework/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -501,7 +512,7 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/02/07/TheJavaCollectionsFramework/"
-           data-title="Java集合框架" data-url="http://wjd1218.github.io/2015/02/07/TheJavaCollectionsFramework/">
+           data-title="Java集合框架" data-url="http://colinwang.cn/2015/02/07/TheJavaCollectionsFramework/">
       </div>
     
   </div>
@@ -880,7 +891,7 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -919,6 +930,9 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -927,6 +941,31 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

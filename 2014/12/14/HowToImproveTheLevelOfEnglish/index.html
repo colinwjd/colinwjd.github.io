@@ -63,7 +63,7 @@
 很多高质量的学习资源，尤其是和计算机相关的高质量学习资源，基本上都是英文的。像一些先进技术的资料就更不用提了。即使有了中文翻译版本，也要落后至少半年。况且英文原文经过翻译之后，会有很多不准确的、不能表达作者原意的地方，有时便会误导读者。再者，英文水平的高低也会影响程序员写出的代码质量。比如变量的命名、函">
 <meta property="og:type" content="article">
 <meta property="og:title" content="码农该如何提高英文水平">
-<meta property="og:url" content="http://wjd1218.github.io/2014/12/14/HowToImproveTheLevelOfEnglish/index.html">
+<meta property="og:url" content="http://colinwang.cn/2014/12/14/HowToImproveTheLevelOfEnglish/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="为什么要写这篇文章呢？原因在于自己深深的认识到了英语水平对于一个不愿安于现状的程序员的重要性。
 很多高质量的学习资源，尤其是和计算机相关的高质量学习资源，基本上都是英文的。像一些先进技术的资料就更不用提了。即使有了中文翻译版本，也要落后至少半年。况且英文原文经过翻译之后，会有很多不准确的、不能表达作者原意的地方，有时便会误导读者。再者，英文水平的高低也会影响程序员写出的代码质量。比如变量的命名、函">
@@ -201,10 +201,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -329,6 +333,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -345,6 +350,12 @@
 <p>作为一名码农，每天绝大多数的时间都在使用电脑，不管是工作、学习、休息还是娱乐都能通过电脑完成。想要提高英语水平，我个人认为，一个有效的做法就是把电脑操作系统默认语言换成英文。使用Linux操作系统时就更应该如此了，没什么比在命令行中看到中文更让人不爽的了。然后更进一步，就是把使用的软件的默认语言也换成英文，即使这个软件有汉语版本。这么做不是为了装的很厉害，而是当我们真正这样使用一年以后，就会发现自己产生了英语思维，就是直接用英语去思考，而不是还要把英语转换成汉语然后在思考。尤其是码农，通过这种方式，会慢慢的积累很多专业名词，对以后的学习和发展也大有好处。</p>
 <p>最后呢，就是经常光顾一些英文网站，我推荐几个，<a href="https://news.ycombinator.com/" target="_blank" rel="external">Hacker News</a>、<a href="https://github.com/" target="_blank" rel="external">GitHub</a>、<a href="https://www.quora.com/" target="_blank" rel="external">Quora</a>和<a href="http://stackoverflow.com/" target="_blank" rel="external">Stack Overflow</a>。这几个网站简直就是程序员必备，谁用谁知道。理论大概就说这么多，但是要学好英语还是需要多多实践呐！</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -389,7 +400,7 @@
         <div class="ds-share flat" data-thread-key="2014/12/14/HowToImproveTheLevelOfEnglish/"
      data-title="码农该如何提高英文水平"
      data-content=""
-     data-url="http://wjd1218.github.io/2014/12/14/HowToImproveTheLevelOfEnglish/">
+     data-url="http://colinwang.cn/2014/12/14/HowToImproveTheLevelOfEnglish/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -417,7 +428,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2014/12/14/HowToImproveTheLevelOfEnglish/"
-           data-title="码农该如何提高英文水平" data-url="http://wjd1218.github.io/2014/12/14/HowToImproveTheLevelOfEnglish/">
+           data-title="码农该如何提高英文水平" data-url="http://colinwang.cn/2014/12/14/HowToImproveTheLevelOfEnglish/">
       </div>
     
   </div>
@@ -796,7 +807,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -835,6 +846,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -843,6 +857,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   

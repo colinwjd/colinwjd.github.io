@@ -62,7 +62,7 @@
 <meta name="description" content="前段时间在网上看到《30分钟，让你成为更好的程序员》这篇文章，觉得很有实用价值，对我也很有启发。通过画一张图表分析自己的知识和技能，很高效而且很实用，所以我也对自己的知识和技能进行了分析。也正如那篇文章所说，这个图表并不是要详细列出自己所有的知识和技能，而是让你自己对自己的专业技能有一个全局的了解。下图就是我自己现阶段的相关专业技能评估，每个技能分为5个等级，1代表了解但没有实际操作过，5代表熟练">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机科学知识和技能评估">
-<meta property="og:url" content="http://wjd1218.github.io/2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/index.html">
+<meta property="og:url" content="http://colinwang.cn/2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="前段时间在网上看到《30分钟，让你成为更好的程序员》这篇文章，觉得很有实用价值，对我也很有启发。通过画一张图表分析自己的知识和技能，很高效而且很实用，所以我也对自己的知识和技能进行了分析。也正如那篇文章所说，这个图表并不是要详细列出自己所有的知识和技能，而是让你自己对自己的专业技能有一个全局的了解。下图就是我自己现阶段的相关专业技能评估，每个技能分为5个等级，1代表了解但没有实际操作过，5代表熟练">
 <meta property="og:image" content="http://wjd1218.qiniudn.com/Skills.jpg">
@@ -199,10 +199,14 @@
       
 
       
+
+
       
       
         <li class="menu-item menu-item-search">
+        
           <a href="#" class="st-search-show-outputs">
+        
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -327,6 +331,7 @@
                <span class="leancloud-visitors-count"></span>
               </span>
           
+
         </div>
       </header>
     
@@ -343,6 +348,12 @@
 <p>通过这次分析，还真的发现了自己很多薄弱的知识点和技能。比如计算机网络的相关知识就感觉自己有些欠缺，TCP/IP的原理也没有十分清楚。再比如关于Java虚拟机方面的内容，自己也仅仅是停留在了解，能使用的阶段，而没有深刻理解一些原理性的东西，如垃圾回收机制使用的算法以及不同算法的优缺点。这些我都应该加强学习。</p>
 <p>今后应当多做一些类似的工作，以对自己的能力进行正确的评估，并持续改进，提高自己。</p>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -387,7 +398,7 @@
         <div class="ds-share flat" data-thread-key="2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/"
      data-title="计算机科学知识和技能评估"
      data-content=""
-     data-url="http://wjd1218.github.io/2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/">
+     data-url="http://colinwang.cn/2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -415,7 +426,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/"
-           data-title="计算机科学知识和技能评估" data-url="http://wjd1218.github.io/2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/">
+           data-title="计算机科学知识和技能评估" data-url="http://colinwang.cn/2015/01/18/ComputerScienceKnowledgeAndSkillsAssessment/">
       </div>
     
   </div>
@@ -794,7 +805,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -833,6 +844,9 @@
 
   
     
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
   
 
 
@@ -841,6 +855,31 @@
 
   
   
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
 
   
   
