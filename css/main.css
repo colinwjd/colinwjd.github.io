@@ -1544,7 +1544,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #61ffff;
+  background: #f52996;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -2233,9 +2233,6 @@ hr {
   .menu-left {
     float: none;
   }
-}
-.menu-item-icon {
-  display: none;
 }
 .posts-expand {
   padding-top: 0;
