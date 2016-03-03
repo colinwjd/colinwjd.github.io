@@ -1544,7 +1544,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #362aff;
+  background: #a3056c;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -2128,9 +2128,6 @@ a.search-result {
   .menu .menu-item a {
     padding: 5px 10px;
   }
-}
-.menu .menu-item .fa {
-  margin-right: 5px;
 }
 .site-search form {
   display: none;
