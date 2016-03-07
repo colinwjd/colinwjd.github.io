@@ -4,7 +4,7 @@
   <subtitle><![CDATA[辛苦敲下的一行行代码不知能否改变这个世界，而我的世界，不过就是你的心！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://colinwang.cn/"/>
-  <updated>2015-12-10T07:53:16.000Z</updated>
+  <updated>2016-03-07T08:33:44.000Z</updated>
   <id>http://colinwang.cn/</id>
   
   <author>
@@ -13,6 +13,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[反转二叉树]]></title>
+    <link href="http://colinwang.cn/2016/03/06/%E5%8F%8D%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    <id>http://colinwang.cn/2016/03/06/反转二叉树/</id>
+    <published>2016-03-06T07:08:20.000Z</published>
+    <updated>2016-03-07T08:33:44.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="先说说Max_Howell">先说说Max Howell</h1><p>我想用Mac作为开发工具的程序员应该都知道Homebrew吧，我们使用Homebrew安装、升级一些工具简直不能更方便。Max Howell就是这款程序员必备软件的作者，可是他在前段时间面试Google时，却因为没有回答出如何获得二叉树的镜像而没有被Google公司录用。</p>
+<blockquote>
+<p>Max Howell在事后发推特：”Google：90% of our engineers use the software you wrote(Homebrew), but you can’t invert a binary tree on a whiteboard so fuck off.” 并且吐槽说：“我当真可以算是iOS业界的专家了，那家伙几乎没问我任何有关iOS的问题。”</p>
+</blockquote>
+<p>这个消息广为流传，同时引起了大量程序员关于技术面试的吐槽：</p>
+<ol>
+<li>这算什么，Google 当年让我现场重写 TCP 协议！（当然我被拒了）</li>
+<li>技术面试都这德行……当年他们让我翻转一个链接列表，当时我的灵魂就已逃离了那个房间。</li>
+<li>1997 年他们面试了我 6 个小时，最后一个问题是「为什么我们要聘用你？」我的回答是：你们 TM 自己想吧。最后我拿到了 offer</li>
+<li>如果是我，我会当场把那个白板翻过来然后说「看，我完成了」。</li>
+</ol>
+<p>不过由于他没有回答上来，这个题目在LeetCode上火了，请点击<a href="https://leetcode.com/problems/invert-binary-tree/" target="_blank" rel="external">反转二叉树</a>——难度标识：Easy，小伙伴们可以去感受一下超越大牛的感觉啦！同时我还想知道那个被要求现场重写TCP协议的人的心理阴影面积！好了，闲言少述，下面我们就言归正传吧。</p>
+<h1 id="反转二叉树">反转二叉树</h1><ul>
+<li>第一种是递归的方式，用递归的话代码很简单，也容易理解，但是当树高很大时，递归深度会很深，容易导致爆栈。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 二叉树节点定义</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    TreeNode left = <span class="keyword">null</span>;</span><br><span class="line">    TreeNode right = <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 递归方式反转二叉树</span><br><span class="line"> * <span class="doctag">@param</span> root</span><br><span class="line"> * <span class="doctag">@return</span></span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">invertTree</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (root.left == <span class="keyword">null</span> &amp;&amp; root.right == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        TreeNode temp = root.left;</span><br><span class="line">        root.left = root.right;</span><br><span class="line">        root.right = temp;</span><br><span class="line">        invertTree(root.left);</span><br><span class="line">        invertTree(root.right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>下面是非递归的方式反转二叉树，使用栈这种数据结构，把递归转化为循环。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 非递归方式反转二叉树</span><br><span class="line"> * <span class="doctag">@param</span> root</span><br><span class="line"> * <span class="doctag">@return</span></span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">invertTreeNR</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    stack.push(root);</span><br><span class="line">    <span class="keyword">while</span> (!stack.empty()) &#123;</span><br><span class="line">        TreeNode top = stack.pop();</span><br><span class="line">        <span class="keyword">if</span> (top.right != <span class="keyword">null</span> || top.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            swapTwoLeaf(top);</span><br><span class="line">            <span class="comment">// 把非空子节点加入栈中</span></span><br><span class="line">            <span class="keyword">if</span> (top.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                stack.push(top.left);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (top.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                stack.push(top.right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swapTwoLeaf</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    TreeNode temp = root.left;</span><br><span class="line">    root.left = root.right;</span><br><span class="line">    root.right = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>点击查看<a href="https://github.com/wjd1218/LeetCode/blob/master/src%2Fcolin%2Fleetcode%2FInvertBinaryTree.java" target="_blank" rel="external">完整代码</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="先说说Max_Howell">先说说Max Howell</h1><p>我想用Mac作为开发工具的程序员应该都知道Homebrew吧，我们使用Homebrew安装、升级一些工具简直不能更方便。Max Howell就是这款程序员必备软件的作者，可是他在前段时间面试G]]>
+    </summary>
+    
+      <category term="tree" scheme="http://colinwang.cn/tags/tree/"/>
+    
+      <category term="Algorithm" scheme="http://colinwang.cn/categories/Algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Macbook Pro入手一个月使用体验]]></title>
@@ -752,32 +791,6 @@
       <category term="collection" scheme="http://colinwang.cn/tags/collection/"/>
     
       <category term="java" scheme="http://colinwang.cn/tags/java/"/>
-    
-      <category term="Java" scheme="http://colinwang.cn/categories/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Spring之思]]></title>
-    <link href="http://colinwang.cn/2015/02/03/SpringThinking/"/>
-    <id>http://colinwang.cn/2015/02/03/SpringThinking/</id>
-    <published>2015-02-03T07:30:07.000Z</published>
-    <updated>2015-06-18T08:04:10.000Z</updated>
-    <content type="html"><![CDATA[<p>一直在断断续续的学习Spring框架，到目前为止，虽然没有在实际项目中应用过，但也算是有一些收获了吧。由于刚刚读完吴军博士的《数学之美》，深受其启发，觉得无论做什么事情，心中都一定要有大格局。就像所谓的学习，我看来就可以分成两种，一种是“<strong>道</strong>”的学习，另一种是“<strong>术</strong>”的学习。道就是原理，术就是技术。技术可以千变万化，而原理永远都是那个原理。这也是我最近又认真学习算法知识的原因之一——新技术虽然层出不穷，但是应用的算法还是那些算法。</p>
-<p>我们回到正题，说到Spring，当然要提IoC（控制反转），Spring就是一个轻量级的IoC容器。IoC是什么意思呢？简单说就是将控制权交出去，创建对象由容器控制，而不需要硬编码，对象之间更加松耦合。做个比喻，我需要一套房子，我不需要自己画图纸然后再自己建造一栋房子，我只需要到房地产开发商那里买他们建造好的房子即可。而依赖注入(Dependency Injection)是控制反转的一种实现方法，通过依赖注入在运行时将实例变量传入到一个对象中去。当然，Spring的控制反转是通过Java的反射机制实现的，关于Java的反射我也写过一点学习心得，详见<a href="http://wjd1218.github.io/2015/01/16/Java%E7%9A%84%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6/" target="_blank" rel="external">Java的反射机制</a>。</p>
-<p>下面继续来谈一下AOP（面向切面编程），AOP可以将那些与业务无关，却被业务模块所共同调用的逻辑或责任，例如日志管理、权限控制等封装起来，减少了系统的重复代码，降低了模块间的耦合度。我总结了一下有关AOP的概念，见下图：<br><img src="http://wjd1218.qiniudn.com/SpringAOP.png" alt="SpringAOP相关概念"><br>我觉得可以这样理解：AOP就是在不同的角度，对业务逻辑的抽象。通过AOP，可以使系统更加灵活，更易于扩展。</p>
-<p>框架的底层实现可能会很复杂，但是框架本身的使用不应该复杂，否则不就违背了框架设计者的初衷了么！集成SSH框架的系统一般可以分为四层：表示层、业务逻辑层、数据持久层和实体层。Struts作为系统的整体基础架构，负责MVC的分离，在Struts框架的模型部分，控制业务跳转。利用Hibernate框架对持久层提供支持。<strong>Spring则作为一个轻量级的IoC容器，负责查找、定位、创建和管理对象及对象之间的依赖关系，并且能使Struts和Hibernate更好地工作。</strong></p>
-<p>我深深的知道，自己仅仅是学到了Spring的一点皮毛，但是罗马也不是一天建成的，希望自己日后能多多积累，多多实践，真正领会其中的“道”。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>一直在断断续续的学习Spring框架，到目前为止，虽然没有在实际项目中应用过，但也算是有一些收获了吧。由于刚刚读完吴军博士的《数学之美》，深受其启发，觉得无论做什么事情，心中都一定要有大格局。就像所谓的学习，我看来就可以分成两种，一种是“<strong>道</strong>]]>
-    </summary>
-    
-      <category term="aop" scheme="http://colinwang.cn/tags/aop/"/>
-    
-      <category term="java" scheme="http://colinwang.cn/tags/java/"/>
-    
-      <category term="spring" scheme="http://colinwang.cn/tags/spring/"/>
     
       <category term="Java" scheme="http://colinwang.cn/categories/Java/"/>
     

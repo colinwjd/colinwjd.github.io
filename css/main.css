@@ -874,17 +874,24 @@ pre .javascript .function {
   margin: 10px;
 }
 .back-to-top {
+  box-sizing: border-box;
   position: fixed;
-  bottom: 19px;
+  bottom: -100px;
   right: 50px;
   z-index: 1050;
-  width: 15px;
-  height: 13px;
-  padding: 5px;
+  padding: 0 6px;
+  width: 25px;
   background: #222;
+  font-size: 12px;
+  opacity: 1;
   color: #fff;
   cursor: pointer;
+  text-align: center;
   -webkit-transform: translateZ(0);
+  transition-property: bottom;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
 }
 @media (max-width: 767px) {
   .back-to-top {
@@ -896,15 +903,8 @@ pre .javascript .function {
     display: none;
   }
 }
-.back-to-top:before {
-  display: block;
-  content: " ";
-  margin-top: 2px;
-  width: 0;
-  height: 0;
-  border-width: 0 7px 8px 7px;
-  border-color: transparent transparent #fff transparent;
-  border-style: solid;
+.back-to-top.back-to-top-on {
+  bottom: 19px;
 }
 .header {
   background: #fff;
@@ -1544,7 +1544,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a3056c;
+  background: #6a6aff;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -1917,6 +1917,19 @@ pre .javascript .function {
   display: inline-block;
 }
 .jiathis_style a {
+  border: none;
+}
+.post-spread {
+  margin-top: 20px;
+  text-align: center;
+}
+.bdshare-slide-button-box a {
+  border: none;
+}
+.bdsharebuttonbox {
+  display: inline-block;
+}
+.bdsharebuttonbox a {
   border: none;
 }
 .search-result-list li {

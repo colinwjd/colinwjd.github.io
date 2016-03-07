@@ -145,7 +145,7 @@
   
 
   
-    <ul id="menu" class="menu menu-left">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
@@ -199,14 +199,10 @@
       
 
       
-
-
-      
-      
         <li class="menu-item menu-item-search">
-        
-          <a href="#" class="st-search-show-outputs">
-        
+          
+            <a href="#" class="st-search-show-outputs">
+          
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
@@ -248,11 +244,134 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
 
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/04/16/WhatIsCopyOnWrite/" itemprop="url">
+                  什么是CopyOnWrite
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-04-16T22:27:34+08:00" content="2015-04-16">
+              2015-04-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/04/16/WhatIsCopyOnWrite/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/16/WhatIsCopyOnWrite/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/04/16/WhatIsCopyOnWrite/" class="leancloud_visitors" data-flag-title="什么是CopyOnWrite">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
     
-    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          前段时间写过一篇关于concurrentHashMap的文章ConcurrentHashMap实现原理，其中讲到了实现ConcurrentHashMap的原理，这篇文章就讲一下CopyOnWrite的实现原理。Java中提供了两个CopyOnWrite容器，分别是CopyOnWriteArrayLi
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/04/16/WhatIsCopyOnWrite/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -773,136 +892,6 @@ Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/03/24/PrincipleOfConcurrentHashMap/" itemprop="url">
-                  ConcurrentHashMap实现原理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-03-24T16:50:03+08:00" content="2015-03-24">
-              2015-03-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/03/24/PrincipleOfConcurrentHashMap/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/24/PrincipleOfConcurrentHashMap/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2015/03/24/PrincipleOfConcurrentHashMap/" class="leancloud_visitors" data-flag-title="ConcurrentHashMap实现原理">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          寒假阶段复习了下Java集合框架，感觉有些收获，但是文中没有提到有关并发集合的内容，这篇文章就来谈谈并发散列表——ConcurrentHashMap，我们知道HashMap本身并不是线程安全的，如果程序需要在多线程的环境下运行，那么我们可以选择Hashtable做为替代，但是看过Hashtable源
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/03/24/PrincipleOfConcurrentHashMap/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-
   </section>
 
   
@@ -948,7 +937,7 @@ Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1078,7 +1067,9 @@ Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
   
@@ -1086,6 +1077,14 @@ Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且
 
   
 
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
@@ -1180,7 +1179,6 @@ Innodb引擎Innodb引擎提供了对数据库ACID事务的支持，并且
   
 
 
-  
   
 
   
