@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="interview," />
+  <meta name="keywords" content="vim," />
 
 
 
@@ -59,19 +59,17 @@
 
 
 
-<meta name="description" content="实现一个算法，找出单项链表中倒数第K个结点。一种比较高效的解法是使用两个指针，使这两个指针分别指向链表中相距K个结点的两个结点。然后沿着链表同时移动这两个指针，当其中一个首先到达链表末端的时候，另一个指针指向的就是倒数第K个结点。显然，该算法的时间复杂度为O(n)。
-1234567891011121314151617181920public ListNode kthToLast(ListNode">
+<meta name="description" content="编辑器简述今天编辑器的种类有很多，像Sublime Text、Atom、Notepad++、Emacs、Vim等等，相比于我提到的前几个，Emacs和Vim可以算是古董级别的了吧，但是至今这两个古董依然在被维护，被广大程序员喜爱，并封之为——上古神器！上面提到的这几款编辑器我基本都接触过，其中Emacs是了解最少的，记得有一次在iTerm里输入emacs之后，就不知道怎么退出去了，后来好像是在知乎">
 <meta property="og:type" content="article">
-<meta property="og:title" content="几个有趣的问题及其解法">
-<meta property="og:url" content="http://colinwang.cn/2015/03/31/SomeInterestingProblemsAndItsSolution/index.html">
+<meta property="og:title" content="高效Vim——编辑器之神">
+<meta property="og:url" content="http://colinwang.cn/2016/03/08/高效Vim——编辑器之神/index.html">
 <meta property="og:site_name" content="从零到无穷大">
-<meta property="og:description" content="实现一个算法，找出单项链表中倒数第K个结点。一种比较高效的解法是使用两个指针，使这两个指针分别指向链表中相距K个结点的两个结点。然后沿着链表同时移动这两个指针，当其中一个首先到达链表末端的时候，另一个指针指向的就是倒数第K个结点。显然，该算法的时间复杂度为O(n)。
-1234567891011121314151617181920public ListNode kthToLast(ListNode">
-<meta property="og:updated_time" content="2015-06-18T07:58:16.000Z">
+<meta property="og:description" content="编辑器简述今天编辑器的种类有很多，像Sublime Text、Atom、Notepad++、Emacs、Vim等等，相比于我提到的前几个，Emacs和Vim可以算是古董级别的了吧，但是至今这两个古董依然在被维护，被广大程序员喜爱，并封之为——上古神器！上面提到的这几款编辑器我基本都接触过，其中Emacs是了解最少的，记得有一次在iTerm里输入emacs之后，就不知道怎么退出去了，后来好像是在知乎">
+<meta property="og:image" content="http://7sbkoj.com1.z0.glb.clouddn.com/2016-03-08-%E6%88%91%E7%9A%84Vim.png">
+<meta property="og:updated_time" content="2016-03-08T07:16:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="几个有趣的问题及其解法">
-<meta name="twitter:description" content="实现一个算法，找出单项链表中倒数第K个结点。一种比较高效的解法是使用两个指针，使这两个指针分别指向链表中相距K个结点的两个结点。然后沿着链表同时移动这两个指针，当其中一个首先到达链表末端的时候，另一个指针指向的就是倒数第K个结点。显然，该算法的时间复杂度为O(n)。
-1234567891011121314151617181920public ListNode kthToLast(ListNode">
+<meta name="twitter:title" content="高效Vim——编辑器之神">
+<meta name="twitter:description" content="编辑器简述今天编辑器的种类有很多，像Sublime Text、Atom、Notepad++、Emacs、Vim等等，相比于我提到的前几个，Emacs和Vim可以算是古董级别的了吧，但是至今这两个古董依然在被维护，被广大程序员喜爱，并封之为——上古神器！上面提到的这几款编辑器我基本都接触过，其中Emacs是了解最少的，记得有一次在iTerm里输入emacs之后，就不知道怎么退出去了，后来好像是在知乎">
 
 
 
@@ -89,7 +87,7 @@
   };
 </script>
 
-  <title> 几个有趣的问题及其解法 | 从零到无穷大 </title>
+  <title> 高效Vim——编辑器之神 | 从零到无穷大 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -267,7 +265,7 @@
             
             
               
-                几个有趣的问题及其解法
+                高效Vim——编辑器之神
               
             
           </h1>
@@ -279,8 +277,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-03-31T09:50:37+08:00" content="2015-03-31">
-              2015-03-31
+            <time itemprop="dateCreated" datetime="2016-03-08T15:10:16+08:00" content="2016-03-08">
+              2016-03-08
             </time>
           </span>
 
@@ -293,8 +291,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
+                  <a href="/categories/Technology/" itemprop="url" rel="index">
+                    <span itemprop="name">Technology</span>
                   </a>
                 </span>
 
@@ -309,8 +307,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/03/31/SomeInterestingProblemsAndItsSolution/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/31/SomeInterestingProblemsAndItsSolution/" itemprop="commentsCount"></span>
+                <a href="/2016/03/08/高效Vim——编辑器之神/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/08/高效Vim——编辑器之神/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -320,7 +318,7 @@
 
           
           
-             <span id="/2015/03/31/SomeInterestingProblemsAndItsSolution/" class="leancloud_visitors" data-flag-title="几个有趣的问题及其解法">
+             <span id="/2016/03/08/高效Vim——编辑器之神/" class="leancloud_visitors" data-flag-title="高效Vim——编辑器之神">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -341,19 +339,94 @@
       
 
       
-        <h2 id="实现一个算法，找出单项链表中倒数第K个结点。">实现一个算法，找出单项链表中倒数第K个结点。</h2><p>一种比较高效的解法是使用两个指针，使这两个指针分别指向链表中相距K个结点的两个结点。然后沿着链表同时移动这两个指针，当其中一个首先到达链表末端的时候，另一个指针指向的就是倒数第K个结点。显然，该算法的时间复杂度为O(n)。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">kthToLast</span><span class="params">(ListNode head, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (K &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">	ListNode fast = head;</span><br><span class="line">	ListNode slow = head;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// fast指针向前移动k个结点</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (slow == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">		fast = fast.next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (fast == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// fast到达末尾时，slow正好指向倒数第K个结点</span></span><br><span class="line">	<span class="keyword">while</span> (fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">		fast = fast.next;</span><br><span class="line">		slow = slow.next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> slow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="检测链表是否存在环路。">检测链表是否存在环路。</h2><p>使用快慢指针法，快指针一次移动2步，慢指针一次移动1步。如果链表中存在环路，则两个指针必然会相遇。使用这种快慢指针的方式可以为解决很多链表相关的问题提供思路，比如使用两倍速的快指针可以让慢指针定位到链表中间位置，三倍速的快指针可以让慢指针定位到链表三分之一的位置等等，这也是解决不少链表问题的基础。</p>
-<h2 id="代码(n_&amp;_(n-1))_==_0是什么含义？">代码<code>(n &amp; (n-1)) == 0</code>是什么含义？</h2><p>该代码可以用用来检查n是否为0或2的某次方。同样的<code>n = n &amp; (n-1)</code>会清除n的最低有效位。</p>
-<h2 id="实现一个方法，不使用临时变量，直接交换两个数。">实现一个方法，不使用临时变量，直接交换两个数。</h2><p>该问题有两种解法，第一种：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">	a = a - b;</span><br><span class="line">	b = a + b;</span><br><span class="line">	a = b - a;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>解法二，使用位操作：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">	a = a^b;</span><br><span class="line">	b = a^b;</span><br><span class="line">	a = a^b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>当转化为二进制时，只要能正确交换两个比特位即可。</p>
-<h2 id="实现一个方法，将两个数字相加，不能使用“+”号或其他运算符。">实现一个方法，将两个数字相加，不能使用“+”号或其他运算符。</h2><p>求解该题的关键在于把“相加”和“进位”两个操作分开进行，对于二进制，两个数相加而不考虑进位，即相当于进行<strong>异或</strong>操作。但是若只考虑进位，则又相当于<strong>按位与</strong>加上<strong>移位</strong>操作。因此代码可以实现为：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (b == <span class="number">0</span>) <span class="keyword">return</span> a;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 相加但不进位</span></span><br><span class="line">	<span class="keyword">int</span> sum = a ^ b;</span><br><span class="line">	<span class="comment">// 只进位</span></span><br><span class="line">	<span class="keyword">int</span> carry = (a &amp; b) &lt;&lt; <span class="number">1</span>;</span><br><span class="line">	<span class="comment">// 递归执行</span></span><br><span class="line">	<span class="keyword">return</span> add(sum, carry);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="有20瓶药丸，其中19瓶装有1克/粒的药丸，余下一瓶装有1-1克/粒的药丸。给你一台精准的天平，怎么找出比较重的那瓶药丸？天平只能用一次。">有20瓶药丸，其中19瓶装有1克/粒的药丸，余下一瓶装有1.1克/粒的药丸。给你一台精准的天平，怎么找出比较重的那瓶药丸？天平只能用一次。</h2><p>对20瓶药丸从1到20编号，从每瓶药丸中取出对应编号颗药丸，如从一号瓶中取出1颗，二号瓶中取出2颗……，然后把这些取出的药丸一起放到天平上称重。如果每颗药丸都重1克，那么总重量应为（1+2+3+4+……+19+20）= 210克，所以如果实际重量大于210克，那么多出来的重量一定来自于没粒多0.1克的那瓶药丸。所以由多出来的重量，除以0.1克，得到的即为瓶子的编号。</p>
-<h2 id="给定两条绳子，每条绳子烧尽正好需要一个小时，怎样用这两条绳子准确计量十五分钟？绳子密度不均匀。">给定两条绳子，每条绳子烧尽正好需要一个小时，怎样用这两条绳子准确计量十五分钟？绳子密度不均匀。</h2><p>此题关键在于，绳子密度虽然不均匀，但是如果从两头同时点燃绳子，那么一根绳子烧完正好需要30分钟。所以，把这两根绳子中的一根从一头点燃，另一根同时从两头点燃，等两头点燃的绳子烧完时，正好过去30分钟。这时从一头点燃的绳子还可以再烧30分钟，这时再点燃这根绳子的另一头，并开始计时，等它烧完时，正好计量15分钟。</p>
-<h2 id="给定一个方法isSubString()可以用来检查一个字符串是否是其他字符串的子串，再给定两个字符串s1和s2。实现一个方法，检查s2是否为s1旋转而成，且只能调用一次isSubString()方法。">给定一个方法isSubString()可以用来检查一个字符串是否是其他字符串的子串，再给定两个字符串s1和s2。实现一个方法，检查s2是否为s1旋转而成，且只能调用一次isSubString()方法。</h2><p>举个例子：s2=colinwang就是由s1=wangcolin旋转而成，所以可以将s1分成两个部分，即：s1=xy，x=wang，y=colin。这时我们会发现yx一定会是xyxy的子串，也就是说，s2一定是s1s1的子串，所以只需要调用isSubString(s1s1,s2)即可。</p>
-<h2 id="给定一个能产生0到4之间整数随机数的方法rand5()，实现一个能产生0到6之间整数随机数的方法rand7()。">给定一个能产生0到4之间整数随机数的方法rand5()，实现一个能产生0到6之间整数随机数的方法rand7()。</h2><p>rand7()应当返回0到6之间的整数，且返回每个整数的概率都应为七分之一。我们可以使用while循环，产生出一个范围的数值（至少含有7个元素），其中每个数值出现的概率相同。这样，我们再舍弃掉其中大于7的倍数的部分，最后在除以7取余数，得到范围0到6的随机数，每个值出现的概率都是七分之一。见下面的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">rand7</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">		<span class="comment">// 该rand取值在0到24之间，取得其中每个值的概率相同，</span></span><br><span class="line">		<span class="comment">// 舍弃掉21、22、23、24，否则该方法返回的0到3之间的数字会偏多</span></span><br><span class="line">		<span class="keyword">int</span> rand = <span class="number">5</span>*rand5() + rand5();</span><br><span class="line">		<span class="keyword">if</span> (rand &lt; <span class="number">21</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> rand % <span class="number">7</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>仍然有个问题要提一下，上面的代码中为什么选择<code>rand=5*rand5()+rand5()</code>呢，因为它能均匀的产生0到24之间的数字，这样就保证了0到24之间每个数字出现的概率相同。如果选择<code>rand=2*rand5()+rand5()</code>则不行，因为这些值不是均匀分布的，比如取得6有两种方式（<code>6=2*1+4和6=2*2+2</code>），而取得0却只有一种方式（<code>0=2*0+0</code>），这样就导致了每个值出现的概率不等。该题目的关键就在于找到一个范围，并使得其中每个值出现的概率相同。</p>
+        <h1 id="编辑器简述">编辑器简述</h1><p>今天编辑器的种类有很多，像Sublime Text、Atom、Notepad++、Emacs、Vim等等，相比于我提到的前几个，Emacs和Vim可以算是古董级别的了吧，但是至今这两个古董依然在被维护，被广大程序员喜爱，并封之为——上古神器！上面提到的这几款编辑器我基本都接触过，其中Emacs是了解最少的，记得有一次在iTerm里输入<code>emacs</code>之后，就不知道怎么退出去了，后来好像是在知乎上看到了一个相关的问题，有人评论：请告诉Vim用户如何退出Emacs，我看到之后会心的笑了。不过说起来我还是记住了几个Emacs的快捷键，都还是非常实用的，我下面会提到。现在我平时最常用的编辑器就是Vim了，所以这篇文章就主要聊聊Vim吧。</p>
+<h1 id="加入Vim阵营">加入Vim阵营</h1><p>首先谈谈我自己对Vim的理解：</p>
+<ul>
+<li>Vim是工具，工具存在的意义在于帮助人们更高效的完成工作。</li>
+<li>Vim是一种语言，就像Java，Python一样，为VimL脚本语言。</li>
+<li>Vim需要配合插件，没有插件的Vim真的很难用。</li>
+<li>Vim不是IDE，另外最好也不要使用Vim作为Java开发的主要工具，谁用谁怀孕。</li>
+</ul>
+<p>下面给大家分享一下<a href="https://github.com/wjd1218/.vim" target="_blank" rel="external">我的Vim配置</a>，配色使用的是solarized方案的dark模式，底色较深，不刺眼。贴图一张：<img src="http://7sbkoj.com1.z0.glb.clouddn.com/2016-03-08-%E6%88%91%E7%9A%84Vim.png" alt="我的Vim"><br>喜欢的朋友可以参考我的配置。接下来就说说Vim的配置和常用的插件吧。</p>
+<h1 id="Vim配置与常用插件">Vim配置与常用插件</h1><p>说到Vim的配置，内容就太多了，想让Vim适合自己的习惯、用的顺手似乎并不是那么容易，我看到GitHub上有的vimrc配置多达上千行，但是并不一定适合每一个人。我自己的vimrc只有几十行，但是对我来说已经足够了。具体的每项配置，大家可以点击我上面的链接参考。介绍几个实用的插件吧：</p>
+<ol>
+<li><a href="https://github.com/VundleVim/Vundle.vim" target="_blank" rel="external">Vundle</a>：管理插件的插件，基于git的方式，很方便也很现代。</li>
+<li><a href="https://github.com/wincent/command-t" target="_blank" rel="external">command-t</a>：快速导航文件，使用<code>:CommandT</code>命令调出Command-T窗口。</li>
+<li><a href="https://github.com/scrooloose/nerdtree" target="_blank" rel="external">NerdTree</a>：树形目录插件，使用<code>:NERDTree</code>命令调出。</li>
+<li><a href="https://github.com/majutsushi/tagbar" target="_blank" rel="external">Tagbar</a>：显示变量、类定义、函数列表等的插件，使用<code>:Tagbar</code>命令调出。</li>
+<li><a href="https://github.com/vim-airline/vim-airline" target="_blank" rel="external">vim-airline</a>：Vim状态栏美化，在不同的模式下有不同的颜色。</li>
+<li><a href="https://github.com/vim-airline/vim-airline-themes" target="_blank" rel="external">vim-airline-themes</a>：这个是vim-airline插件的主题，不过由于主题越来越丰富，作者把主题模块独立创建了一个仓库，所以如果你想使用不同的主题的话，就需要添加这个插件。</li>
+<li><a href="https://github.com/SirVer/ultisnips" target="_blank" rel="external">ultisnips</a>：代码片段补全插件。</li>
+<li><a href="https://github.com/kien/ctrlp.vim" target="_blank" rel="external">ctrlp</a>：快速找到项目中的文件，使用<code>Ctrl+p</code>调出。</li>
+<li><a href="https://github.com/jiangmiao/auto-pairs" target="_blank" rel="external">auto-pairs</a>：自动配对括号、引号等。</li>
+<li><a href="https://github.com/Valloric/YouCompleteMe" target="_blank" rel="external">YouCompleteMe</a>：强大的自动补全插件，支持多种语言。</li>
+<li><a href="https://github.com/mattn/emmet-vim" target="_blank" rel="external">Emmet</a>：快速编写HTML的插件。</li>
+<li><a href="https://github.com/nathanaelkane/vim-indent-guides" target="_blank" rel="external">vim-indent-guides</a>：显示缩进的对齐线，对于Python这种语言十分有用。</li>
+</ol>
+<p>以上是我正在用的几个插件的介绍和链接，安装的时候最好参照官方文档的说明，根据自己的需要进行安装和配置，最终你的Vim会越来越顺手。</p>
+<h1 id="Vim使用">Vim使用</h1><p>工具配置好了，现在就该开始使用了。当你使用Vim的时候，就应该抛弃鼠标和方向键，如果配合HHKB键盘那就再合适不过了。在Vim中使用<code>h,j,k,l</code>移动光标、<code>esc,O,o,a,i</code>切换普通模式和插入模式是最最基础的事情了，我再介绍一些稍微高级一点的比较常用的命令：</p>
+<ol>
+<li>当光标在括号上时，按<code>%</code>键可以在配对的括号之间跳转。</li>
+<li>当光标在一个单词上时，按<code>#</code>或<code>*</code>键可以<strong>向下</strong>或<strong>向上</strong>搜索这个单词。</li>
+<li>使用<code>Ctrl+]</code>可以跳转到光标所在符号的定义，使用<code>Ctrl+t</code>可以回到跳转前的位置。</li>
+<li>数字<code>0</code>可以跳转到光标所在行的<strong>行头</strong>，<code>$</code>可以跳转到<strong>行尾</strong>。</li>
+<li><code>gg</code>跳转到<strong>第一行</strong>，<code>G</code>跳转到最<strong>后一行</strong>，<code>:N</code>可以跳转到<strong>第N行</strong>。</li>
+<li><code>w</code>光标移动到下一个单词的<strong>开头</strong>，<code>e</code>移动到下一个单词的<strong>结尾</strong>。</li>
+<li><code>d</code>删除，<code>dd</code>删除一行，<code>dw</code>删除一个单词，<code>y</code>复制，<code>p</code>粘贴。</li>
+<li><code>r</code>替换光标所在的字符，<code>cw</code>删除一个单词并进入插入模式。</li>
+<li><code>f</code>在当前行查找指定字符，如<code>fw</code>、<code>f=</code>分别可以查找字符’w’和’=’。</li>
+<li><code>t</code>光标定位到当前行指定字符前，如<code>ta</code>、<code>t(</code>分别可以定位光标到字符’a’和’(‘之前。</li>
+<li><code>/pattern</code>或<code>?pattern</code>分别可以向下或向上查找指定的内容。</li>
+<li><code>u</code>撤销，<code>Ctrl+r</code>重做。</li>
+<li><code>=</code>可以对选中的代码进行格式化，比如输入<code>gg=G</code>则会格式化全部代码，十分方便。</li>
+<li>可以将几个命令组合成语句，比如<code>d2w</code>会删除两个单词，<code>yt;</code>会拷贝光标到分号之间的内容。</li>
+</ol>
+<p>上面只是一些相对常用的命令，其实Vim还有相当多的功能，我也还在学习使用当中，当用熟Vim之后，在其他没有Vim模式的编辑器里编辑什么东西时，会感到无比别扭，比如会无意识的去按<code>esc</code>，然后突然发现这是一张网页里的文本框，然后脸一黑😳。</p>
+<h1 id="Vim相关——Chrome插件cVim">Vim相关——Chrome插件cVim</h1><p>有没有想过像控制Vim一样控制你的浏览器，有没有想过脱离鼠标浏览网页，那可是相当的极客范。这里推荐一款Chrome插件——cVim，之前我使用过Vimium，但是Vimium只是支持了少数的Vim快捷键，而cVim可以说是Vimium的加强版，提供了更多的功能并且可定制性更强，包括控制标签页、书签栏检索等等，还能像在Vim中一样使用<code>/pattern</code>来搜索网页中的内容，有没有心动呢？需要的小伙伴赶快去Chrome Store下载吧。</p>
+<h1 id="Emacs系快捷键">Emacs系快捷键</h1><p>这是一篇关于Vim的文章，可是为什么要介绍Emacs的快捷键呢？原因很简单：因为真的很好用啊喂！</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+a</td>
+<td>光标移动到行首</td>
+</tr>
+<tr>
+<td>Ctrl+e</td>
+<td>光标移动到行尾</td>
+</tr>
+<tr>
+<td>Ctrl+f</td>
+<td>光标向前移动一个字符</td>
+</tr>
+<tr>
+<td>Ctrl+b</td>
+<td>光标向后移动一个字符</td>
+</tr>
+<tr>
+<td>Ctrl+p</td>
+<td>光标向上移动一行</td>
+</tr>
+<tr>
+<td>Ctrl+n</td>
+<td>光标向下移动一行</td>
+</tr>
+<tr>
+<td>Ctrl+o</td>
+<td>在当前行之后新增一行</td>
+</tr>
+<tr>
+<td>Ctrl+k</td>
+<td>从光标处删除到行尾</td>
+</tr>
+</tbody>
+</table>
+<p>上面这些快捷键，基本在<strong>任何</strong>可以进行文本输入的地方都能使用，比如<strong>浏览器地址栏</strong>、<strong>Chrome控制台</strong>、<strong>iTerm</strong>、<strong>Terminal</strong>、<strong>网页中的文本框</strong>等等等等。一致性体验非常好，用熟了之后真的就离不开了呢。</p>
 
       
     </div>
@@ -368,7 +441,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/interview/" rel="tag">#interview</a>
+            <a href="/tags/vim/" rel="tag">#vim</a>
           
         </div>
       
@@ -377,17 +450,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/03/29/TalkAboutOperatingSystem/" rel="next" title="聊聊操作系统">
-                <i class="fa fa-chevron-left"></i> 聊聊操作系统
+              <a href="/2016/03/06/反转二叉树/" rel="next" title="反转二叉树">
+                <i class="fa fa-chevron-left"></i> 反转二叉树
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/04/16/ThreadInJava/" rel="prev" title="Java中的线程">
-                Java中的线程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -402,10 +471,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/03/31/SomeInterestingProblemsAndItsSolution/"
-     data-title="几个有趣的问题及其解法"
+        <div class="ds-share flat" data-thread-key="2016/03/08/高效Vim——编辑器之神/"
+     data-title="高效Vim——编辑器之神"
      data-content=""
-     data-url="http://colinwang.cn/2015/03/31/SomeInterestingProblemsAndItsSolution/">
+     data-url="http://colinwang.cn/2016/03/08/高效Vim——编辑器之神/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -432,8 +501,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/03/31/SomeInterestingProblemsAndItsSolution/"
-           data-title="几个有趣的问题及其解法" data-url="http://colinwang.cn/2015/03/31/SomeInterestingProblemsAndItsSolution/">
+      <div class="ds-thread" data-thread-key="2016/03/08/高效Vim——编辑器之神/"
+           data-title="高效Vim——编辑器之神" data-url="http://colinwang.cn/2016/03/08/高效Vim——编辑器之神/">
       </div>
     
   </div>
@@ -580,7 +649,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现一个算法，找出单项链表中倒数第K个结点。"><span class="nav-number">1.</span> <span class="nav-text">实现一个算法，找出单项链表中倒数第K个结点。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检测链表是否存在环路。"><span class="nav-number">2.</span> <span class="nav-text">检测链表是否存在环路。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码(n_&_(n-1))_==_0是什么含义？"><span class="nav-number">3.</span> <span class="nav-text">代码(n & (n-1)) == 0是什么含义？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现一个方法，不使用临时变量，直接交换两个数。"><span class="nav-number">4.</span> <span class="nav-text">实现一个方法，不使用临时变量，直接交换两个数。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现一个方法，将两个数字相加，不能使用“+”号或其他运算符。"><span class="nav-number">5.</span> <span class="nav-text">实现一个方法，将两个数字相加，不能使用“+”号或其他运算符。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有20瓶药丸，其中19瓶装有1克/粒的药丸，余下一瓶装有1-1克/粒的药丸。给你一台精准的天平，怎么找出比较重的那瓶药丸？天平只能用一次。"><span class="nav-number">6.</span> <span class="nav-text">有20瓶药丸，其中19瓶装有1克/粒的药丸，余下一瓶装有1.1克/粒的药丸。给你一台精准的天平，怎么找出比较重的那瓶药丸？天平只能用一次。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给定两条绳子，每条绳子烧尽正好需要一个小时，怎样用这两条绳子准确计量十五分钟？绳子密度不均匀。"><span class="nav-number">7.</span> <span class="nav-text">给定两条绳子，每条绳子烧尽正好需要一个小时，怎样用这两条绳子准确计量十五分钟？绳子密度不均匀。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给定一个方法isSubString()可以用来检查一个字符串是否是其他字符串的子串，再给定两个字符串s1和s2。实现一个方法，检查s2是否为s1旋转而成，且只能调用一次isSubString()方法。"><span class="nav-number">8.</span> <span class="nav-text">给定一个方法isSubString()可以用来检查一个字符串是否是其他字符串的子串，再给定两个字符串s1和s2。实现一个方法，检查s2是否为s1旋转而成，且只能调用一次isSubString()方法。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给定一个能产生0到4之间整数随机数的方法rand5()，实现一个能产生0到6之间整数随机数的方法rand7()。"><span class="nav-number">9.</span> <span class="nav-text">给定一个能产生0到4之间整数随机数的方法rand5()，实现一个能产生0到6之间整数随机数的方法rand7()。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#编辑器简述"><span class="nav-number">1.</span> <span class="nav-text">编辑器简述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加入Vim阵营"><span class="nav-number">2.</span> <span class="nav-text">加入Vim阵营</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vim配置与常用插件"><span class="nav-number">3.</span> <span class="nav-text">Vim配置与常用插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vim使用"><span class="nav-number">4.</span> <span class="nav-text">Vim使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vim相关——Chrome插件cVim"><span class="nav-number">5.</span> <span class="nav-text">Vim相关——Chrome插件cVim</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Emacs系快捷键"><span class="nav-number">6.</span> <span class="nav-text">Emacs系快捷键</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
