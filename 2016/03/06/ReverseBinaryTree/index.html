@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="vim," />
+  <meta name="keywords" content="tree," />
 
 
 
@@ -59,17 +59,22 @@
 
 
 
-<meta name="description" content="编辑器简述今天编辑器的种类有很多，像Sublime Text、Atom、Notepad++、Emacs、Vim等等，相比于我提到的前几个，Emacs和Vim可以算是古董级别的了吧，但是至今这两个古董依然在被维护，被广大程序员喜爱，并封之为——上古神器！上面提到的这几款编辑器我基本都接触过，其中Emacs是了解最少的，记得有一次在iTerm里输入emacs之后，就不知道怎么退出去了，后来好像是在知乎">
+<meta name="description" content="先说说Max Howell我想用Mac作为开发工具的程序员应该都知道Homebrew吧，我们使用Homebrew安装、升级一些工具简直不能更方便。Max Howell就是这款程序员必备软件的作者，可是他在前段时间面试Google时，却因为没有回答出如何获得二叉树的镜像而没有被Google公司录用。
+
+Max Howell在事后发推特：”Google：90% of our engineers use">
 <meta property="og:type" content="article">
-<meta property="og:title" content="高效Vim——编辑器之神">
-<meta property="og:url" content="http://colinwang.cn/2016/03/08/高效Vim——编辑器之神/index.html">
+<meta property="og:title" content="反转二叉树">
+<meta property="og:url" content="http://colinwang.cn/2016/03/06/ReverseBinaryTree/index.html">
 <meta property="og:site_name" content="从零到无穷大">
-<meta property="og:description" content="编辑器简述今天编辑器的种类有很多，像Sublime Text、Atom、Notepad++、Emacs、Vim等等，相比于我提到的前几个，Emacs和Vim可以算是古董级别的了吧，但是至今这两个古董依然在被维护，被广大程序员喜爱，并封之为——上古神器！上面提到的这几款编辑器我基本都接触过，其中Emacs是了解最少的，记得有一次在iTerm里输入emacs之后，就不知道怎么退出去了，后来好像是在知乎">
-<meta property="og:image" content="http://7sbkoj.com1.z0.glb.clouddn.com/2016-03-08-%E6%88%91%E7%9A%84Vim.png">
-<meta property="og:updated_time" content="2016-03-10T03:34:23.000Z">
+<meta property="og:description" content="先说说Max Howell我想用Mac作为开发工具的程序员应该都知道Homebrew吧，我们使用Homebrew安装、升级一些工具简直不能更方便。Max Howell就是这款程序员必备软件的作者，可是他在前段时间面试Google时，却因为没有回答出如何获得二叉树的镜像而没有被Google公司录用。
+
+Max Howell在事后发推特：”Google：90% of our engineers use">
+<meta property="og:updated_time" content="2016-03-07T08:33:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="高效Vim——编辑器之神">
-<meta name="twitter:description" content="编辑器简述今天编辑器的种类有很多，像Sublime Text、Atom、Notepad++、Emacs、Vim等等，相比于我提到的前几个，Emacs和Vim可以算是古董级别的了吧，但是至今这两个古董依然在被维护，被广大程序员喜爱，并封之为——上古神器！上面提到的这几款编辑器我基本都接触过，其中Emacs是了解最少的，记得有一次在iTerm里输入emacs之后，就不知道怎么退出去了，后来好像是在知乎">
+<meta name="twitter:title" content="反转二叉树">
+<meta name="twitter:description" content="先说说Max Howell我想用Mac作为开发工具的程序员应该都知道Homebrew吧，我们使用Homebrew安装、升级一些工具简直不能更方便。Max Howell就是这款程序员必备软件的作者，可是他在前段时间面试Google时，却因为没有回答出如何获得二叉树的镜像而没有被Google公司录用。
+
+Max Howell在事后发推特：”Google：90% of our engineers use">
 
 
 
@@ -87,7 +92,7 @@
   };
 </script>
 
-  <title> 高效Vim——编辑器之神 | 从零到无穷大 </title>
+  <title> 反转二叉树 | 从零到无穷大 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -263,7 +268,7 @@
             
             
               
-                高效Vim——编辑器之神
+                反转二叉树
               
             
           </h1>
@@ -275,8 +280,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-08T15:10:16+08:00" content="2016-03-08">
-              2016-03-08
+            <time itemprop="dateCreated" datetime="2016-03-06T15:08:20+08:00" content="2016-03-06">
+              2016-03-06
             </time>
           </span>
 
@@ -289,8 +294,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Technology/" itemprop="url" rel="index">
-                    <span itemprop="name">Technology</span>
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
                   </a>
                 </span>
 
@@ -305,8 +310,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/08/高效Vim——编辑器之神/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/08/高效Vim——编辑器之神/" itemprop="commentsCount"></span>
+                <a href="/2016/03/06/ReverseBinaryTree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/06/ReverseBinaryTree/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -316,7 +321,7 @@
 
           
           
-             <span id="/2016/03/08/高效Vim——编辑器之神/" class="leancloud_visitors" data-flag-title="高效Vim——编辑器之神">
+             <span id="/2016/03/06/ReverseBinaryTree/" class="leancloud_visitors" data-flag-title="反转二叉树">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -337,95 +342,28 @@
       
 
       
-        <h1 id="编辑器简述">编辑器简述</h1><p>今天编辑器的种类有很多，像Sublime Text、Atom、Notepad++、Emacs、Vim等等，相比于我提到的前几个，Emacs和Vim可以算是古董级别的了吧，但是至今这两个古董依然在被维护，被广大程序员喜爱，并封之为——上古神器！上面提到的这几款编辑器我基本都接触过，其中Emacs是了解最少的，记得有一次在iTerm里输入<code>emacs</code>之后，就不知道怎么退出去了，后来好像是在知乎上看到了一个相关的问题，有人评论：请告诉Vim用户如何退出Emacs，我看到之后会心的笑了。不过说起来我还是记住了几个Emacs的快捷键，都还是非常实用的，我下面会提到。现在我平时最常用的编辑器就是Vim了，所以这篇文章就主要聊聊Vim吧。</p>
-<h1 id="加入Vim阵营">加入Vim阵营</h1><p>首先谈谈我自己对Vim的理解：</p>
-<ul>
-<li>Vim是工具，工具存在的意义在于帮助人们更高效的完成工作。</li>
-<li>Vim是一种语言，就像Java，Python一样，为VimL脚本语言。</li>
-<li>Vim需要配合插件，没有插件的Vim真的很难用。</li>
-<li>Vim不是IDE，另外最好也不要使用Vim作为Java开发的主要工具，谁用谁怀孕。</li>
+        <h1 id="先说说Max_Howell">先说说Max Howell</h1><p>我想用Mac作为开发工具的程序员应该都知道Homebrew吧，我们使用Homebrew安装、升级一些工具简直不能更方便。Max Howell就是这款程序员必备软件的作者，可是他在前段时间面试Google时，却因为没有回答出如何获得二叉树的镜像而没有被Google公司录用。</p>
+<blockquote>
+<p>Max Howell在事后发推特：”Google：90% of our engineers use the software you wrote(Homebrew), but you can’t invert a binary tree on a whiteboard so fuck off.” 并且吐槽说：“我当真可以算是iOS业界的专家了，那家伙几乎没问我任何有关iOS的问题。”</p>
+</blockquote>
+<p>这个消息广为流传，同时引起了大量程序员关于技术面试的吐槽：</p>
+<ol>
+<li>这算什么，Google 当年让我现场重写 TCP 协议！（当然我被拒了）</li>
+<li>技术面试都这德行……当年他们让我翻转一个链接列表，当时我的灵魂就已逃离了那个房间。</li>
+<li>1997 年他们面试了我 6 个小时，最后一个问题是「为什么我们要聘用你？」我的回答是：你们 TM 自己想吧。最后我拿到了 offer</li>
+<li>如果是我，我会当场把那个白板翻过来然后说「看，我完成了」。</li>
+</ol>
+<p>不过由于他没有回答上来，这个题目在LeetCode上火了，请点击<a href="https://leetcode.com/problems/invert-binary-tree/" target="_blank" rel="external">反转二叉树</a>——难度标识：Easy，小伙伴们可以去感受一下超越大牛的感觉啦！同时我还想知道那个被要求现场重写TCP协议的人的心理阴影面积！好了，闲言少述，下面我们就言归正传吧。</p>
+<h1 id="反转二叉树">反转二叉树</h1><ul>
+<li>第一种是递归的方式，用递归的话代码很简单，也容易理解，但是当树高很大时，递归深度会很深，容易导致爆栈。</li>
 </ul>
-<p>下面给大家分享一下<a href="https://github.com/wjd1218/.vim" target="_blank" rel="external">我的Vim配置</a>，配色使用的是solarized方案的dark模式，底色较深，不刺眼。贴图一张：<img src="http://7sbkoj.com1.z0.glb.clouddn.com/2016-03-08-%E6%88%91%E7%9A%84Vim.png" alt="我的Vim"><br>喜欢的朋友可以参考我的配置。接下来就说说Vim的配置和常用的插件吧。</p>
-<h1 id="Vim配置与常用插件">Vim配置与常用插件</h1><p>说到Vim的配置，内容就太多了，想让Vim适合自己的习惯、用的顺手似乎并不是那么容易，我看到GitHub上有的vimrc配置多达上千行，但是并不一定适合每一个人。我自己的vimrc只有几十行，但是对我来说已经足够了。具体的每项配置，大家可以点击我上面的链接参考。介绍几个实用的插件吧：</p>
-<ol>
-<li><a href="https://github.com/VundleVim/Vundle.vim" target="_blank" rel="external">Vundle</a>：管理插件的插件，基于git的方式，很方便也很现代。</li>
-<li><a href="https://github.com/wincent/command-t" target="_blank" rel="external">command-t</a>：快速导航文件，使用<code>:CommandT</code>命令调出Command-T窗口。</li>
-<li><a href="https://github.com/scrooloose/nerdtree" target="_blank" rel="external">NerdTree</a>：树形目录插件，使用<code>:NERDTree</code>命令调出。</li>
-<li><a href="https://github.com/majutsushi/tagbar" target="_blank" rel="external">Tagbar</a>：显示变量、类定义、函数列表等的插件，使用<code>:Tagbar</code>命令调出。</li>
-<li><a href="https://github.com/vim-airline/vim-airline" target="_blank" rel="external">vim-airline</a>：Vim状态栏美化，在不同的模式下有不同的颜色。</li>
-<li><a href="https://github.com/vim-airline/vim-airline-themes" target="_blank" rel="external">vim-airline-themes</a>：这个是vim-airline插件的主题，不过由于主题越来越丰富，作者把主题模块独立创建了一个仓库，所以如果你想使用不同的主题的话，就需要添加这个插件。</li>
-<li><a href="https://github.com/SirVer/ultisnips" target="_blank" rel="external">ultisnips</a>：代码片段补全插件。</li>
-<li><a href="https://github.com/kien/ctrlp.vim" target="_blank" rel="external">ctrlp</a>：快速找到项目中的文件，使用<code>Ctrl+p</code>调出。</li>
-<li><a href="https://github.com/jiangmiao/auto-pairs" target="_blank" rel="external">auto-pairs</a>：自动配对括号、引号等。</li>
-<li><a href="https://github.com/Valloric/YouCompleteMe" target="_blank" rel="external">YouCompleteMe</a>：强大的自动补全插件，支持多种语言。</li>
-<li><a href="https://github.com/mattn/emmet-vim" target="_blank" rel="external">Emmet</a>：快速编写HTML的插件。</li>
-<li><a href="https://github.com/nathanaelkane/vim-indent-guides" target="_blank" rel="external">vim-indent-guides</a>：显示缩进的对齐线，对于Python这种语言十分有用。</li>
-<li><a href="https://github.com/scrooloose/syntastic" target="_blank" rel="external">syntastic</a>：强大的语法检查插件，支持多种语言。</li>
-</ol>
-<p>以上是我正在用的几个插件的介绍和链接，安装的时候最好参照官方文档的说明，根据自己的需要进行安装和配置，最终你的Vim会越来越顺手。</p>
-<h1 id="Vim使用">Vim使用</h1><p>工具配置好了，现在就该开始使用了。当你使用Vim的时候，就应该抛弃鼠标和方向键，如果配合HHKB键盘那就再合适不过了。在Vim中使用<code>h,j,k,l</code>移动光标、<code>esc,O,o,a,i</code>切换普通模式和插入模式是最最基础的事情了，我再介绍一些稍微高级一点的比较常用的命令：</p>
-<ol>
-<li>当光标在括号上时，按<code>%</code>键可以在配对的括号之间跳转。</li>
-<li>当光标在一个单词上时，按<code>#</code>或<code>*</code>键可以<strong>向下</strong>或<strong>向上</strong>搜索这个单词。</li>
-<li>使用<code>Ctrl+]</code>可以跳转到光标所在符号的定义，使用<code>Ctrl+t</code>可以回到跳转前的位置。</li>
-<li>数字<code>0</code>可以跳转到光标所在行的<strong>行头</strong>，<code>$</code>可以跳转到<strong>行尾</strong>。</li>
-<li><code>gg</code>跳转到<strong>第一行</strong>，<code>G</code>跳转到最<strong>后一行</strong>，<code>:N</code>可以跳转到<strong>第N行</strong>。</li>
-<li><code>w</code>光标移动到下一个单词的<strong>开头</strong>，<code>e</code>移动到下一个单词的<strong>结尾</strong>。</li>
-<li><code>d</code>删除，<code>dd</code>删除一行，<code>dw</code>删除一个单词，<code>y</code>复制，<code>p</code>粘贴。</li>
-<li><code>r</code>替换光标所在的字符，<code>cw</code>删除一个单词并进入插入模式。</li>
-<li><code>f</code>在当前行查找指定字符，如<code>fw</code>、<code>f=</code>分别可以查找字符’w’和’=’。</li>
-<li><code>t</code>光标定位到当前行指定字符前，如<code>ta</code>、<code>t(</code>分别可以定位光标到字符’a’和’(‘之前。</li>
-<li><code>/pattern</code>或<code>?pattern</code>分别可以向下或向上查找指定的内容。</li>
-<li><code>u</code>撤销，<code>Ctrl+r</code>重做。</li>
-<li><code>=</code>可以对选中的代码进行格式化，比如输入<code>gg=G</code>则会格式化全部代码，十分方便。</li>
-<li>可以将几个命令组合成语句，比如<code>d2w</code>会删除两个单词，<code>yt;</code>会拷贝光标到分号之间的内容。</li>
-</ol>
-<p>上面只是一些相对常用的命令，其实Vim还有相当多的功能，我也还在学习使用当中，当用熟Vim之后，在其他没有Vim模式的编辑器里编辑什么东西时，会感到无比别扭，比如会无意识的去按<code>esc</code>，然后突然发现这是一张网页里的文本框，然后脸一黑😳。</p>
-<h1 id="Vim相关——Chrome插件cVim">Vim相关——Chrome插件cVim</h1><p>有没有想过像控制Vim一样控制你的浏览器，有没有想过脱离鼠标浏览网页，那可是相当的极客范。这里推荐一款Chrome插件——cVim，之前我使用过Vimium，但是Vimium只是支持了少数的Vim快捷键，而cVim可以说是Vimium的加强版，提供了更多的功能并且可定制性更强，包括控制标签页、书签栏检索等等，还能像在Vim中一样使用<code>/pattern</code>来搜索网页中的内容，有没有心动呢？需要的小伙伴赶快去Chrome Store下载吧。</p>
-<h1 id="Emacs系快捷键">Emacs系快捷键</h1><p>这是一篇关于Vim的文章，可是为什么要介绍Emacs的快捷键呢？原因很简单：因为真的很好用啊喂！</p>
-<table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Ctrl+a</td>
-<td>光标移动到行首</td>
-</tr>
-<tr>
-<td>Ctrl+e</td>
-<td>光标移动到行尾</td>
-</tr>
-<tr>
-<td>Ctrl+f</td>
-<td>光标向前移动一个字符</td>
-</tr>
-<tr>
-<td>Ctrl+b</td>
-<td>光标向后移动一个字符</td>
-</tr>
-<tr>
-<td>Ctrl+p</td>
-<td>光标向上移动一行</td>
-</tr>
-<tr>
-<td>Ctrl+n</td>
-<td>光标向下移动一行</td>
-</tr>
-<tr>
-<td>Ctrl+o</td>
-<td>在当前行之后新增一行</td>
-</tr>
-<tr>
-<td>Ctrl+k</td>
-<td>从光标处删除到行尾</td>
-</tr>
-</tbody>
-</table>
-<p>上面这些快捷键，基本在<strong>任何</strong>可以进行文本输入的地方都能使用，比如<strong>浏览器地址栏</strong>、<strong>Chrome控制台</strong>、<strong>iTerm</strong>、<strong>Terminal</strong>、<strong>网页中的文本框</strong>等等等等。一致性体验非常好，用熟了之后真的就离不开了呢。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 二叉树节点定义</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    TreeNode left = <span class="keyword">null</span>;</span><br><span class="line">    TreeNode right = <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 递归方式反转二叉树</span><br><span class="line"> * <span class="doctag">@param</span> root</span><br><span class="line"> * <span class="doctag">@return</span></span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">invertTree</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (root.left == <span class="keyword">null</span> &amp;&amp; root.right == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        TreeNode temp = root.left;</span><br><span class="line">        root.left = root.right;</span><br><span class="line">        root.right = temp;</span><br><span class="line">        invertTree(root.left);</span><br><span class="line">        invertTree(root.right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>下面是非递归的方式反转二叉树，使用栈这种数据结构，把递归转化为循环。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 非递归方式反转二叉树</span><br><span class="line"> * <span class="doctag">@param</span> root</span><br><span class="line"> * <span class="doctag">@return</span></span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">invertTreeNR</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    stack.push(root);</span><br><span class="line">    <span class="keyword">while</span> (!stack.empty()) &#123;</span><br><span class="line">        TreeNode top = stack.pop();</span><br><span class="line">        <span class="keyword">if</span> (top.right != <span class="keyword">null</span> || top.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            swapTwoLeaf(top);</span><br><span class="line">            <span class="comment">// 把非空子节点加入栈中</span></span><br><span class="line">            <span class="keyword">if</span> (top.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                stack.push(top.left);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (top.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                stack.push(top.right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swapTwoLeaf</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    TreeNode temp = root.left;</span><br><span class="line">    root.left = root.right;</span><br><span class="line">    root.right = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>点击查看<a href="https://github.com/wjd1218/LeetCode/blob/master/src%2Fcolin%2Fleetcode%2FInvertBinaryTree.java" target="_blank" rel="external">完整代码</a></p>
 
       
     </div>
@@ -440,7 +378,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vim/" rel="tag">#vim</a>
+            <a href="/tags/tree/" rel="tag">#tree</a>
           
         </div>
       
@@ -449,13 +387,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/06/反转二叉树/" rel="next" title="反转二叉树">
-                <i class="fa fa-chevron-left"></i> 反转二叉树
+              <a href="/2015/07/01/MacbookPro Start Experience/" rel="next" title="Macbook Pro入手一个月使用体验">
+                <i class="fa fa-chevron-left"></i> Macbook Pro入手一个月使用体验
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/08/HighEfficiencyVim/" rel="prev" title="高效Vim——编辑器之神">
+                高效Vim——编辑器之神 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -470,10 +412,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/03/08/高效Vim——编辑器之神/"
-     data-title="高效Vim——编辑器之神"
+        <div class="ds-share flat" data-thread-key="2016/03/06/ReverseBinaryTree/"
+     data-title="反转二叉树"
      data-content=""
-     data-url="http://colinwang.cn/2016/03/08/高效Vim——编辑器之神/">
+     data-url="http://colinwang.cn/2016/03/06/ReverseBinaryTree/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -500,8 +442,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/08/高效Vim——编辑器之神/"
-           data-title="高效Vim——编辑器之神" data-url="http://colinwang.cn/2016/03/08/高效Vim——编辑器之神/">
+      <div class="ds-thread" data-thread-key="2016/03/06/ReverseBinaryTree/"
+           data-title="反转二叉树" data-url="http://colinwang.cn/2016/03/06/ReverseBinaryTree/">
       </div>
     
   </div>
@@ -648,7 +590,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#编辑器简述"><span class="nav-number">1.</span> <span class="nav-text">编辑器简述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加入Vim阵营"><span class="nav-number">2.</span> <span class="nav-text">加入Vim阵营</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vim配置与常用插件"><span class="nav-number">3.</span> <span class="nav-text">Vim配置与常用插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vim使用"><span class="nav-number">4.</span> <span class="nav-text">Vim使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vim相关——Chrome插件cVim"><span class="nav-number">5.</span> <span class="nav-text">Vim相关——Chrome插件cVim</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Emacs系快捷键"><span class="nav-number">6.</span> <span class="nav-text">Emacs系快捷键</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#先说说Max_Howell"><span class="nav-number">1.</span> <span class="nav-text">先说说Max Howell</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反转二叉树"><span class="nav-number">2.</span> <span class="nav-text">反转二叉树</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
