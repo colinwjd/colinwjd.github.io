@@ -507,8 +507,7 @@ pre,
   color: #4d4d4c;
   line-height: 1.6;
 }
-.highlight .gutter pre,
-.gist .gist-file .gist-data .line-numbers {
+.highlight .gutter pre {
   color: #666;
 }
 pre,
@@ -564,52 +563,6 @@ pre code {
 .highlight .line {
   height: 20px;
 }
-.gist {
-  margin: 20px 0;
-  border-style: solid;
-  border-color: #ccc;
-  border-width: 1px 0;
-  background: #f7f7f7;
-  padding: 15px 40px 15px 15px;
-}
-.gist .gist-file {
-  border: none;
-  font-family: "Input Mono", "PT Mono", Consolas, Monaco, Menlo, monospace;
-  margin: 0;
-}
-.gist .gist-file .gist-data {
-  background: none;
-  border: none;
-}
-.gist .gist-file .gist-data .line-numbers {
-  background: none;
-  border: none;
-  padding: 0 20px 0 0;
-}
-.gist .gist-file .gist-data .line-data {
-  padding: 0 !important;
-}
-.gist .gist-file .highlight {
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-.gist .gist-file .gist-meta {
-  background: #f7f7f7;
-  color: #8e908c;
-  font: 13px Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
-  text-shadow: 0 0;
-  padding: 0;
-  margin-top: 1em;
-  margin-left: 40px;
-}
-.gist .gist-file .gist-meta a {
-  color: color-link;
-  font-weight: normal;
-}
-.gist .gist-file .gist-meta a:hover {
-  text-decoration: underline;
-}
 pre .comment {
   color: #8e908c;
 }
@@ -632,7 +585,8 @@ pre .preprocessor,
 pre .built_in,
 pre .literal,
 pre .params,
-pre .constant {
+pre .constant,
+pre .command {
   color: #f5871f;
 }
 pre .ruby .class .title,
@@ -644,7 +598,10 @@ pre .value,
 pre .inheritance,
 pre .header,
 pre .ruby .symbol,
-pre .xml .cdata {
+pre .xml .cdata,
+pre .special,
+pre .number,
+pre .formula {
   color: #718c00;
 }
 pre .title,
@@ -1037,6 +994,11 @@ pre .javascript .function {
 .use-motion .menu-item {
   opacity: 0;
 }
+@media (max-width: 767px) {
+  .post-body {
+    word-break: break-all;
+  }
+}
 .post-body .fancybox img {
   display: block !important;
   margin: 0 auto;
@@ -1318,6 +1280,7 @@ pre .javascript .function {
   font-size: 14px;
   background: #222;
   border-radius: 0;
+  line-height: 2;
 }
 .posts-expand .post-tags {
   margin-top: 40px;
@@ -1549,7 +1512,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7cfefe;
+  background: #ff737a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2087,8 +2050,7 @@ a.search-result {
   list-style: none;
 }
 .category-all-page .category-list-item {
-  display: inline-block;
-  margin: 10px;
+  margin: 5px 10px;
 }
 .category-all-page .category-list-count {
   color: #bbb;
@@ -2100,6 +2062,9 @@ a.search-result {
 .category-all-page .category-list-count:after {
   display: inline;
   content: ") ";
+}
+.category-all-page .category-list-child {
+  padding-left: 10px;
 }
 .page-post-detail .sidebar-toggle-line {
   background: #87daff;

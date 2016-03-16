@@ -70,6 +70,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高效Vim——编辑器之神">
 <meta name="twitter:description" content="编辑器简述今天编辑器的种类有很多，像Sublime Text、Atom、Notepad++、Emacs、Vim等等，相比于我提到的前几个，Emacs和Vim可以算是古董级别的了吧，但是至今这两个古董依然在被维护，被广大程序员喜爱，并封之为——上古神器！上面提到的这几款编辑器我基本都接触过，其中Emacs是了解最少的，记得有一次在iTerm里输入emacs之后，就不知道怎么退出去了，后来好像是在知乎">
+<meta name="twitter:image" content="http://7sbkoj.com1.z0.glb.clouddn.com/2016-03-08-%E6%88%91%E7%9A%84Vim.png">
 
 
 
@@ -330,8 +331,8 @@
       
 
       
-        <h1 id="编辑器简述">编辑器简述</h1><p>今天编辑器的种类有很多，像Sublime Text、Atom、Notepad++、Emacs、Vim等等，相比于我提到的前几个，Emacs和Vim可以算是古董级别的了吧，但是至今这两个古董依然在被维护，被广大程序员喜爱，并封之为——上古神器！上面提到的这几款编辑器我基本都接触过，其中Emacs是了解最少的，记得有一次在iTerm里输入<code>emacs</code>之后，就不知道怎么退出去了，后来好像是在知乎上看到了一个相关的问题，有人评论：请告诉Vim用户如何退出Emacs，我看到之后会心的笑了。不过说起来我还是记住了几个Emacs的快捷键，都还是非常实用的，我下面会提到。现在我平时最常用的编辑器就是Vim了，所以这篇文章就主要聊聊Vim吧。</p>
-<h1 id="加入Vim阵营">加入Vim阵营</h1><p>首先谈谈我自己对Vim的理解：</p>
+        <h1 id="编辑器简述"><a href="#编辑器简述" class="headerlink" title="编辑器简述"></a>编辑器简述</h1><p>今天编辑器的种类有很多，像Sublime Text、Atom、Notepad++、Emacs、Vim等等，相比于我提到的前几个，Emacs和Vim可以算是古董级别的了吧，但是至今这两个古董依然在被维护，被广大程序员喜爱，并封之为——上古神器！上面提到的这几款编辑器我基本都接触过，其中Emacs是了解最少的，记得有一次在iTerm里输入<code>emacs</code>之后，就不知道怎么退出去了，后来好像是在知乎上看到了一个相关的问题，有人评论：请告诉Vim用户如何退出Emacs，我看到之后会心的笑了。不过说起来我还是记住了几个Emacs的快捷键，都还是非常实用的，我下面会提到。现在我平时最常用的编辑器就是Vim了，所以这篇文章就主要聊聊Vim吧。</p>
+<h1 id="加入Vim阵营"><a href="#加入Vim阵营" class="headerlink" title="加入Vim阵营"></a>加入Vim阵营</h1><p>首先谈谈我自己对Vim的理解：</p>
 <ul>
 <li>Vim是工具，工具存在的意义在于帮助人们更高效的完成工作。</li>
 <li>Vim是一种语言，就像Java，Python一样，为VimL脚本语言。</li>
@@ -339,7 +340,7 @@
 <li>Vim不是IDE，另外最好也不要使用Vim作为Java开发的主要工具，谁用谁怀孕。</li>
 </ul>
 <p>下面给大家分享一下<a href="https://github.com/wjd1218/.vim" target="_blank" rel="external">我的Vim配置</a>，配色使用的是solarized方案的dark模式，底色较深，不刺眼。贴图一张：<img src="http://7sbkoj.com1.z0.glb.clouddn.com/2016-03-08-%E6%88%91%E7%9A%84Vim.png" alt="我的Vim"><br>喜欢的朋友可以参考我的配置。接下来就说说Vim的配置和常用的插件吧。</p>
-<h1 id="Vim配置与常用插件">Vim配置与常用插件</h1><p>说到Vim的配置，内容就太多了，想让Vim适合自己的习惯、用的顺手似乎并不是那么容易，我看到GitHub上有的vimrc配置多达上千行，但是并不一定适合每一个人。我自己的vimrc只有几十行，但是对我来说已经足够了。具体的每项配置，大家可以点击我上面的链接参考。介绍几个实用的插件吧：</p>
+<h1 id="Vim配置与常用插件"><a href="#Vim配置与常用插件" class="headerlink" title="Vim配置与常用插件"></a>Vim配置与常用插件</h1><p>说到Vim的配置，内容就太多了，想让Vim适合自己的习惯、用的顺手似乎并不是那么容易，我看到GitHub上有的vimrc配置多达上千行，但是并不一定适合每一个人。我自己的vimrc只有几十行，但是对我来说已经足够了。具体的每项配置，大家可以点击我上面的链接参考。介绍几个实用的插件吧：</p>
 <ol>
 <li><a href="https://github.com/VundleVim/Vundle.vim" target="_blank" rel="external">Vundle</a>：管理插件的插件，基于git的方式，很方便也很现代。</li>
 <li><a href="https://github.com/wincent/command-t" target="_blank" rel="external">command-t</a>：快速导航文件，使用<code>:CommandT</code>命令调出Command-T窗口。</li>
@@ -356,7 +357,7 @@
 <li><a href="https://github.com/scrooloose/syntastic" target="_blank" rel="external">syntastic</a>：强大的语法检查插件，支持多种语言。</li>
 </ol>
 <p>以上是我正在用的几个插件的介绍和链接，安装的时候最好参照官方文档的说明，根据自己的需要进行安装和配置，最终你的Vim会越来越顺手。</p>
-<h1 id="Vim使用">Vim使用</h1><p>工具配置好了，现在就该开始使用了。当你使用Vim的时候，就应该抛弃鼠标和方向键，如果配合HHKB键盘那就再合适不过了。在Vim中使用<code>h,j,k,l</code>移动光标、<code>esc,O,o,a,i</code>切换普通模式和插入模式是最最基础的事情了，我再介绍一些稍微高级一点的比较常用的命令：</p>
+<h1 id="Vim使用"><a href="#Vim使用" class="headerlink" title="Vim使用"></a>Vim使用</h1><p>工具配置好了，现在就该开始使用了。当你使用Vim的时候，就应该抛弃鼠标和方向键，如果配合HHKB键盘那就再合适不过了。在Vim中使用<code>h,j,k,l</code>移动光标、<code>esc,O,o,a,i</code>切换普通模式和插入模式是最最基础的事情了，我再介绍一些稍微高级一点的比较常用的命令：</p>
 <ol>
 <li>当光标在括号上时，按<code>%</code>键可以在配对的括号之间跳转。</li>
 <li>当光标在一个单词上时，按<code>#</code>或<code>*</code>键可以<strong>向下</strong>或<strong>向上</strong>搜索这个单词。</li>
@@ -374,8 +375,8 @@
 <li>可以将几个命令组合成语句，比如<code>d2w</code>会删除两个单词，<code>yt;</code>会拷贝光标到分号之间的内容。</li>
 </ol>
 <p>上面只是一些相对常用的命令，其实Vim还有相当多的功能，我也还在学习使用当中，当用熟Vim之后，在其他没有Vim模式的编辑器里编辑什么东西时，会感到无比别扭，比如会无意识的去按<code>esc</code>，然后突然发现这是一张网页里的文本框，然后脸一黑😳。</p>
-<h1 id="Vim相关——Chrome插件cVim">Vim相关——Chrome插件cVim</h1><p>有没有想过像控制Vim一样控制你的浏览器，有没有想过脱离鼠标浏览网页，那可是相当的极客范。这里推荐一款Chrome插件——cVim，之前我使用过Vimium，但是Vimium只是支持了少数的Vim快捷键，而cVim可以说是Vimium的加强版，提供了更多的功能并且可定制性更强，包括控制标签页、书签栏检索等等，还能像在Vim中一样使用<code>/pattern</code>来搜索网页中的内容，有没有心动呢？需要的小伙伴赶快去Chrome Store下载吧。</p>
-<h1 id="Emacs系快捷键">Emacs系快捷键</h1><p>这是一篇关于Vim的文章，可是为什么要介绍Emacs的快捷键呢？原因很简单：因为真的很好用啊喂！</p>
+<h1 id="Vim相关——Chrome插件cVim"><a href="#Vim相关——Chrome插件cVim" class="headerlink" title="Vim相关——Chrome插件cVim"></a>Vim相关——Chrome插件cVim</h1><p>有没有想过像控制Vim一样控制你的浏览器，有没有想过脱离鼠标浏览网页，那可是相当的极客范。这里推荐一款Chrome插件——cVim，之前我使用过Vimium，但是Vimium只是支持了少数的Vim快捷键，而cVim可以说是Vimium的加强版，提供了更多的功能并且可定制性更强，包括控制标签页、书签栏检索等等，还能像在Vim中一样使用<code>/pattern</code>来搜索网页中的内容，有没有心动呢？需要的小伙伴赶快去Chrome Store下载吧。</p>
+<h1 id="Emacs系快捷键"><a href="#Emacs系快捷键" class="headerlink" title="Emacs系快捷键"></a>Emacs系快捷键</h1><p>这是一篇关于Vim的文章，可是为什么要介绍Emacs的快捷键呢？原因很简单：因为真的很好用啊喂！</p>
 <table>
 <thead>
 <tr>
@@ -886,7 +887,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }

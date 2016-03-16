@@ -335,7 +335,7 @@ Max Howell在事后发推特：”Google：90% of our engineers use">
       
 
       
-        <h1 id="先说说Max_Howell">先说说Max Howell</h1><p>我想用Mac作为开发工具的程序员应该都知道Homebrew吧，我们使用Homebrew安装、升级一些工具简直不能更方便。Max Howell就是这款程序员必备软件的作者，可是他在前段时间面试Google时，却因为没有回答出如何获得二叉树的镜像而没有被Google公司录用。</p>
+        <h1 id="先说说Max-Howell"><a href="#先说说Max-Howell" class="headerlink" title="先说说Max Howell"></a>先说说Max Howell</h1><p>我想用Mac作为开发工具的程序员应该都知道Homebrew吧，我们使用Homebrew安装、升级一些工具简直不能更方便。Max Howell就是这款程序员必备软件的作者，可是他在前段时间面试Google时，却因为没有回答出如何获得二叉树的镜像而没有被Google公司录用。</p>
 <blockquote>
 <p>Max Howell在事后发推特：”Google：90% of our engineers use the software you wrote(Homebrew), but you can’t invert a binary tree on a whiteboard so fuck off.” 并且吐槽说：“我当真可以算是iOS业界的专家了，那家伙几乎没问我任何有关iOS的问题。”</p>
 </blockquote>
@@ -347,7 +347,7 @@ Max Howell在事后发推特：”Google：90% of our engineers use">
 <li>如果是我，我会当场把那个白板翻过来然后说「看，我完成了」。</li>
 </ol>
 <p>不过由于他没有回答上来，这个题目在LeetCode上火了，请点击<a href="https://leetcode.com/problems/invert-binary-tree/" target="_blank" rel="external">反转二叉树</a>——难度标识：Easy，小伙伴们可以去感受一下超越大牛的感觉啦！同时我还想知道那个被要求现场重写TCP协议的人的心理阴影面积！好了，闲言少述，下面我们就言归正传吧。</p>
-<h1 id="反转二叉树">反转二叉树</h1><ul>
+<h1 id="反转二叉树"><a href="#反转二叉树" class="headerlink" title="反转二叉树"></a>反转二叉树</h1><ul>
 <li>第一种是递归的方式，用递归的话代码很简单，也容易理解，但是当树高很大时，递归深度会很深，容易导致爆栈。</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 二叉树节点定义</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    TreeNode left = <span class="keyword">null</span>;</span><br><span class="line">    TreeNode right = <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -586,7 +586,7 @@ Max Howell在事后发推特：”Google：90% of our engineers use">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#先说说Max_Howell"><span class="nav-number">1.</span> <span class="nav-text">先说说Max Howell</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反转二叉树"><span class="nav-number">2.</span> <span class="nav-text">反转二叉树</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#先说说Max-Howell"><span class="nav-number">1.</span> <span class="nav-text">先说说Max Howell</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反转二叉树"><span class="nav-number">2.</span> <span class="nav-text">反转二叉树</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -828,7 +828,7 @@ Max Howell在事后发推特：”Google：90% of our engineers use">
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }

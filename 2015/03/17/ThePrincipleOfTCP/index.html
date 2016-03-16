@@ -74,6 +74,7 @@ TCP是什么？TCP是Transmission Control Protocol（传输控制协议）的缩
 <meta name="twitter:title" content="TCP原理">
 <meta name="twitter:description" content="写这篇文章我已经考虑了很久，总是不愿意草草的下笔，总想等到自己对TCP理解的更深入些再提笔来写。但是又觉得，在写这篇文章的过程中，才能发现自己哪些地方理解的还不够深入，哪些地方已经掌握了。因为检测自己是否理解了一个技术原理的很好的途径，就是看自己能不能把它讲出来。下面就看看我能讲到什么程度吧。
 TCP是什么？TCP是Transmission Control Protocol（传输控制协议）的缩写。">
+<meta name="twitter:image" content="http://wjd1218.qiniudn.com/TCPHeader.png">
 
 
 
@@ -335,8 +336,8 @@ TCP是什么？TCP是Transmission Control Protocol（传输控制协议）的缩
 
       
         <p>写这篇文章我已经考虑了很久，总是不愿意草草的下笔，总想等到自己对TCP理解的更深入些再提笔来写。但是又觉得，在写这篇文章的过程中，才能发现自己哪些地方理解的还不够深入，哪些地方已经掌握了。因为检测自己是否理解了一个技术原理的很好的途径，就是看自己能不能把它讲出来。下面就看看我能讲到什么程度吧。</p>
-<h2 id="TCP是什么？">TCP是什么？</h2><p>TCP是Transmission Control Protocol（传输控制协议）的缩写。它位于网络OSI七层模型中的传输层（IP协议位于网络层；ARP协议位于数据链路层，ARP协议将IP地址解析为物理地址）。程序中的数据会先由TCP协议包装，然后再由IP协议包装，各层由上到下用自己的协议对上层传下来的数据进行包装，传到对端后，各层再由下到上解析自己的协议并把本层解析后的数据交给更高层的协议处理。</p>
-<h2 id="TCP的特点">TCP的特点</h2><ul>
+<h2 id="TCP是什么？"><a href="#TCP是什么？" class="headerlink" title="TCP是什么？"></a>TCP是什么？</h2><p>TCP是Transmission Control Protocol（传输控制协议）的缩写。它位于网络OSI七层模型中的传输层（IP协议位于网络层；ARP协议位于数据链路层，ARP协议将IP地址解析为物理地址）。程序中的数据会先由TCP协议包装，然后再由IP协议包装，各层由上到下用自己的协议对上层传下来的数据进行包装，传到对端后，各层再由下到上解析自己的协议并把本层解析后的数据交给更高层的协议处理。</p>
+<h2 id="TCP的特点"><a href="#TCP的特点" class="headerlink" title="TCP的特点"></a>TCP的特点</h2><ul>
 <li>TCP是面向连接的，这里的连接指的是逻辑上的连接（虚连接），就是说在通讯的双方都维护一个“连接状态”，看上去就像有链接一样，而实际上数据在网络中的传输是没有链接的。</li>
 <li>每一个TCP链接有且只有两个端点，数据的点对点传输。</li>
 <li>TCP是可靠的，使用TCP连接传送的数据，无差错，不重复，不丢失。</li>
@@ -344,13 +345,13 @@ TCP是什么？TCP是Transmission Control Protocol（传输控制协议）的缩
 <li>TCP是面向字节流的，即二进制流，TCP只管数据传送，而不管是什么数据，或者数据是什么结构。</li>
 <li>TCP的发送方和接收方都设有发送缓存和接收缓存，发送方应用程序把数据放入发送缓存，TCP在合适的时候将数据发送出去，放入接收方的接收缓存。接收方应用程序在合适的时候从接收缓存中取出数据。这就好比生活中的邮箱，我们需要寄信的时候就把信放到邮箱里，邮递员会在合适的时候把我们的信件取走寄出，放入对方的邮箱中，收信人也会在需要的时候去查看他的邮箱。我觉得这便是一种解耦，应用程序不需要知道通信的细节，它只需要把数据传给专门负责通信的TCP协议，真正的数据通信则由TCP代劳。</li>
 </ul>
-<h2 id="TCP可靠传输的工作原理">TCP可靠传输的工作原理</h2><p>我们知道，TCP下面的网络层提供的是不可靠的传输。而TCP要保证可靠传输，就要采取适当的措施：</p>
+<h2 id="TCP可靠传输的工作原理"><a href="#TCP可靠传输的工作原理" class="headerlink" title="TCP可靠传输的工作原理"></a>TCP可靠传输的工作原理</h2><p>我们知道，TCP下面的网络层提供的是不可靠的传输。而TCP要保证可靠传输，就要采取适当的措施：</p>
 <ol>
 <li>当传输的数据出现差错时，让发送方重传出现差错的数据。</li>
 <li>在接收方来不及处理收到的数据的时候，让发送方适当降低发送数据的速度。</li>
 </ol>
 <p>那么，发送方是如何知道传输的数据出现了差错呢，在正常的情况下，即传输的数据没有出现差错的时候，接收方会向发送方回应一个确认号。当发送方经过了一段时间之后仍然没有收到接收方的确认，就认为刚才发送的数据丢失了，因此就对刚才发送的数据进行重传，这便是<strong>超时重传</strong>。这就像两个人对话，A对B说一句话，B要回应A说他听见了第一句，然后A再对B说下一句，B再回应A说听见了第二句……如果A经过了一段时间没有收到B的回应，那么A就会认为B没有听见，A就会再说一次。这其实就是一种规则，而这种规则就是所谓的协议，通信双方都要遵守这个协议，可靠通信才能达成。</p>
-<h2 id="TCP报文首部格式">TCP报文首部格式</h2><p><img src="http://wjd1218.qiniudn.com/TCPHeader.png" alt="TCPHeader"></p>
+<h2 id="TCP报文首部格式"><a href="#TCP报文首部格式" class="headerlink" title="TCP报文首部格式"></a>TCP报文首部格式</h2><p><img src="http://wjd1218.qiniudn.com/TCPHeader.png" alt="TCPHeader"></p>
 <p>如图所示：</p>
 <ul>
 <li>Sequence Number即报文段序号，TCP是面向字节流的，在一个TCP连接中传送的字节流中的每一个字节都按顺序编号，起始序号要在连接建立时设置。该序号指本报文段所发送的数据的第一个字节的序号。</li>
@@ -367,8 +368,8 @@ TCP是什么？TCP是Transmission Control Protocol（传输控制协议）的缩
 <li>Fin用来释放一个连接，Fin=1时表明发送方的数据已发送完毕，并请求关闭连接。</li>
 </ul>
 <p>TCP滑动窗口（Window）：滑动窗口用来做网络流控制，因为TCP要做到可靠传输，需要知道网络实际的数据处理速度，然后根据网络的实际情况进行数据发送，这样才不会引起网络拥塞，导致丢包。Window这个字段被<strong>接收端</strong>用来告诉<strong>发送端</strong>自己还有多少缓冲区可以用来接收数据。于是发送端就可以参考这个值来发送数据，避免接收端处理不过来。</p>
-<h2 id="TCP连接的建立与释放">TCP连接的建立与释放</h2><p><img src="http://wjd1218.qiniudn.com/TCPConnection.jpg" alt="TCPConnection"></p>
-<h3 id="TCP连接的建立，三次握手">TCP连接的建立，三次握手</h3><ol>
+<h2 id="TCP连接的建立与释放"><a href="#TCP连接的建立与释放" class="headerlink" title="TCP连接的建立与释放"></a>TCP连接的建立与释放</h2><p><img src="http://wjd1218.qiniudn.com/TCPConnection.jpg" alt="TCPConnection"></p>
+<h3 id="TCP连接的建立，三次握手"><a href="#TCP连接的建立，三次握手" class="headerlink" title="TCP连接的建立，三次握手"></a>TCP连接的建立，三次握手</h3><ol>
 <li>起初Client端和Server端都处于<strong>Close</strong>状态。</li>
 <li>服务器端创建TCB（传输控制块），进入<strong>Listen（监听）</strong>状态。</li>
 <li>客户端首先建立TCB，然后向服务器发送连接请求报文段。客户端进入<strong>同步已发送</strong>状态。</li>
@@ -376,7 +377,7 @@ TCP是什么？TCP是Transmission Control Protocol（传输控制协议）的缩
 <li>客户端收到服务器的确认后，客户端进入<strong>连接建立</strong>状态。同时向服务器发送确认的确认。</li>
 <li>服务器收到客户端发送的确认的确认后，进入<strong>连接建立</strong>状态。</li>
 </ol>
-<h3 id="TCP连接的释放，四次挥手">TCP连接的释放，四次挥手</h3><ol>
+<h3 id="TCP连接的释放，四次挥手"><a href="#TCP连接的释放，四次挥手" class="headerlink" title="TCP连接的释放，四次挥手"></a>TCP连接的释放，四次挥手</h3><ol>
 <li>连接释放前双方都处于<strong>连接建立</strong>状态。</li>
 <li>客户端向其TCP发送缓冲放入连接释放报文段(Fin=1)，停止再发送数据，客户端进入<strong>终止等待_1</strong>状态，等待服务器的确认。</li>
 <li>服务器收到释放连接请求后发出确认，服务器进入<strong>关闭等待</strong>状态。此时TCP连接处于半关闭状态，即客户端已经没有数据要发送了，但是服务器要发送数据，客户端仍要接收。</li>
@@ -387,7 +388,7 @@ TCP是什么？TCP是Transmission Control Protocol（传输控制协议）的缩
 <li>客户端经过<strong>时间等待计时器</strong>设置的时间后，进入<strong>Close</strong>状态。</li>
 </ol>
 <p>所谓的四次挥手，实际上是两个两次握手，因为TCP是全双工通信，双方都需要告诉对方我要关闭了，并得到对方的确认。</p>
-<h2 id="简单聊聊UDP">简单聊聊UDP</h2><p>UDP和TCP都是传输层协议，但他们之间有很大的区别，UDP是用户数据报协议（User Datagram Protocol）的缩写，它具有如下的特点：</p>
+<h2 id="简单聊聊UDP"><a href="#简单聊聊UDP" class="headerlink" title="简单聊聊UDP"></a>简单聊聊UDP</h2><p>UDP和TCP都是传输层协议，但他们之间有很大的区别，UDP是用户数据报协议（User Datagram Protocol）的缩写，它具有如下的特点：</p>
 <ol>
 <li><strong>不面向连接</strong>，即在发送数据之前不需要建立连接，数据发送完毕时也不需要断开连接，因此减少了建立连接和释放连接的开销。</li>
 <li><strong>不可靠</strong>，UDP只是尽最大努力交付，但不能保证可靠性。</li>
@@ -396,7 +397,7 @@ TCP是什么？TCP是Transmission Control Protocol（传输控制协议）的缩
 <li>支持一对一、一对多、多对一和多对多的交互通信。</li>
 <li>首部占用8个字节，而TCP至少需要20个字节。</li>
 </ol>
-<h2 id="总结">总结</h2><p>此文梳理了一下TCP协议的基本原理，也仅仅是最基本的东西而已，由于TCP协议过于复杂，有一些算法自己也没有完全理解，写下这篇文章，算是对自己近期所学的一个反馈吧。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>此文梳理了一下TCP协议的基本原理，也仅仅是最基本的东西而已，由于TCP协议过于复杂，有一些算法自己也没有完全理解，写下这篇文章，算是对自己近期所学的一个反馈吧。</p>
 
       
     </div>
@@ -868,7 +869,7 @@ TCP是什么？TCP是Transmission Control Protocol（传输控制协议）的缩
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }

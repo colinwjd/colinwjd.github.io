@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="lfs,linux," />
+  <meta name="keywords" content="linux,lfs," />
 
 
 
@@ -332,36 +332,36 @@
         <p>记得是大学刚入学的时候，开始对Linux操作系统产生了兴趣，那时候对Linux也不是很了解，但是作为一名学习软件工程专业的学生，渐渐地也在网上了解到了很多有关Linux的知识。我对新鲜的事物充满了好奇，尽管Linux在这世界上早已不是什么新鲜事物了，但是在那时的我眼里，它就是新鲜事物！记得当时接触的第一个Linux发行版是ubuntu12.04，那是还有学校里的学长写的使用手册，介绍了ubuntu12.04图形界面的简单使用和一些特别基础的命令。慢慢的就对Linux入了门，然后深深的喜欢上了这个系统。后来，又陆陆续续的更换了很多发行版，Fedora、centOS、ArchLinux，不断的尝试，不断的重装系统，也不断的更换着图形界面，用gnome、kde、unity。慢慢的也就对Linux有了更深的理解，也对Linux的操作方式命令行更加熟悉。大二的时候在学校的实验室学习了Hadoop等一些分布式的架构，对Linux的应用更是充满神往之情。于是最近心血来潮，想要自己编译一下Linux系统，选择了当前算是比较新的LFS7.5，花费了大概一周的时间，完成了LFS7.5的编译安装，并成功通过Grub2启动，于是这篇文章也就应运而生了。</p>
 <hr>
 <p>先说一说编译安装LFS的过程吧，首先下载了LFS7.5的文档（html版）和所有需要用到的源码包。用了大概一天的时间，通读了一遍文档（当然有LFS6.6的中文对照版），了解了整个LFS的过程是要做什么，分清楚了LFS文档每个章节的任务和目的。整个LFS过程可以分成4个部分：<br><strong>1. 对磁盘和用户的准备</strong><br><strong>2. 通过宿主系统建立临时系统</strong><br><strong>3. 通过临时系统建立LFS系统</strong><br><strong>4. 最后的配置和调整</strong><br>我用了大概一周的时间，弄完了这四个步骤，其实也不是十分困难，只要按照LFS文档的步骤，一步一步的做下去，文档中容易被读者忽视的地方都会有重要提示标示出来，如果不是切身体会，我也不敢相信竟有如此为读者着想的高质量的文档！</p>
-<h2 id="一、对用户和磁盘的准备">一、对用户和磁盘的准备</h2><p>接下来我们就开始第一个步骤。首先要创建一个单独的硬盘分区作为LFS分区，我分了20个G，这个步骤我是在Windows下操作的，因为担心使用命令行操作失误使得硬盘数据丢失。然后就可以进入宿主系统了（我的宿主系统选择的是64位ubuntu14.04，简单粗暴有效，嘿嘿），编译LFS7.5对宿主系统有一些要求，ubuntu14.04下的gcc的版本过高，没有经过LFS测试过，LFS文档不推荐使用，所以把gcc4.8换成了gcc4.4（ubuntu14.04默认gcc4.8)，命令如下：</p>
-<pre><code>sudo apt-get <span class="operator"><span class="keyword">install</span> gcc-<span class="number">4.4</span> <span class="keyword">g</span>++-<span class="number">4.4</span>
-sudo rm <span class="string">`which gcc`</span>
-sudo rm  <span class="string">`which g++`</span>
-sudo <span class="keyword">ln</span> -sv /usr/<span class="keyword">bin</span>/gcc-<span class="number">4.4</span>  /usr/<span class="keyword">bin</span>/gcc
-sudo <span class="keyword">ln</span> -sv /usr/<span class="keyword">bin</span>/<span class="keyword">g</span>++-<span class="number">4.4</span>  /usr/<span class="keyword">bin</span>/<span class="keyword">g</span>++</span>
+<h2 id="一、对用户和磁盘的准备"><a href="#一、对用户和磁盘的准备" class="headerlink" title="一、对用户和磁盘的准备"></a>一、对用户和磁盘的准备</h2><p>接下来我们就开始第一个步骤。首先要创建一个单独的硬盘分区作为LFS分区，我分了20个G，这个步骤我是在Windows下操作的，因为担心使用命令行操作失误使得硬盘数据丢失。然后就可以进入宿主系统了（我的宿主系统选择的是64位ubuntu14.04，简单粗暴有效，嘿嘿），编译LFS7.5对宿主系统有一些要求，ubuntu14.04下的gcc的版本过高，没有经过LFS测试过，LFS文档不推荐使用，所以把gcc4.8换成了gcc4.4（ubuntu14.04默认gcc4.8)，命令如下：</p>
+<pre><code>sudo apt-get install gcc-4.4 g++-4.4
+sudo rm `which gcc`
+sudo rm  `which g++`
+sudo ln -sv /usr/bin/gcc-4.4  /usr/bin/gcc
+sudo ln -sv /usr/bin/g++-4.4  /usr/bin/g++
 </code></pre><p>LFS手册还要求安装Bison，命令如下：</p>
-<pre><code>sudo apt-<span class="keyword">get</span> install bison
+<pre><code>sudo apt-get install bison
 </code></pre><p>接下来就是格式化LFS分区：</p>
-<pre><code>sudo mkfs -v -t ext4  <span class="regexp">/dev/</span>sda12
+<pre><code>sudo mkfs -v -t ext4  /dev/sda12
 </code></pre><p>因为我的LFS分区号是sda12，这里是一些硬件基础，不了解的同学自行google。并且因为现在计算机的内存都比较大，所以可以不需要swap分区。（第一次进行LFS，一个根(/)分区就够了，等以后有经验了，在进行多分区的操作）。<br>接下来就是用户准备了，按照文档上的说明一步步来。需要注意的一点是：每次开机，或是重启后，在进入lfs用户前，都要对 LFS变量进行检查，查看LFS=/mnt/lfs变量是否存在，然后对lfs使用的分区进行挂载。这一部分没有什么难点，准备硬盘分区是因为要让LFS作为独立的硬盘来启动。新建分区、格式化分区、准备lfs用户是Linux操作的基础素质。至此，第一个步骤就算是完成了。</p>
-<h2 id="二、通过宿主系统建立临时系统">二、通过宿主系统建立临时系统</h2><p>下面开始进入第二个步骤，通过宿主系统建立临时系统，根据我的理解，因为LFS的目的是编译出一个可以独立启动独立运行的操作系统，而不能通过寄生在宿主系统上，所以需要通过宿主系统的编译工具，编译出一系列临时的编译工具，再通过这一系列临时的编译工具，编译出与宿主系统无关的LFS系统，当然这个与宿主系统无关的LFS系统中也包含一系列的编译工具，所以像Gcc，Binutils等将会编译至少三次！说的再多也比不上动手实践更容易理解这个过程，就让我们开始动手吧。<br>首先导入LFS变量</p>
-<pre><code><span class="keyword">export</span> LFS=<span class="regexp">/mnt/</span>lfs
+<h2 id="二、通过宿主系统建立临时系统"><a href="#二、通过宿主系统建立临时系统" class="headerlink" title="二、通过宿主系统建立临时系统"></a>二、通过宿主系统建立临时系统</h2><p>下面开始进入第二个步骤，通过宿主系统建立临时系统，根据我的理解，因为LFS的目的是编译出一个可以独立启动独立运行的操作系统，而不能通过寄生在宿主系统上，所以需要通过宿主系统的编译工具，编译出一系列临时的编译工具，再通过这一系列临时的编译工具，编译出与宿主系统无关的LFS系统，当然这个与宿主系统无关的LFS系统中也包含一系列的编译工具，所以像Gcc，Binutils等将会编译至少三次！说的再多也比不上动手实践更容易理解这个过程，就让我们开始动手吧。<br>首先导入LFS变量</p>
+<pre><code>export LFS=/mnt/lfs
 </code></pre><p>然后挂载lfs分区</p>
-<pre><code>sudo mount -v -t ext4 /dev/sda12 <span class="variable">$LFS</span>
+<pre><code>sudo mount -v -t ext4 /dev/sda12 $LFS
 </code></pre><p>最后就可以切换到lfs用户了</p>
-<pre><code><span class="title">su</span> - lfs <span class="comment">#注意中间这个 - 符号是一定要的，代表为lfs用户启动一个login shell</span>
+<pre><code>su - lfs #注意中间这个 - 符号是一定要的，代表为lfs用户启动一个login shell
 </code></pre><p>每次重启系统进行LFS之前，参照以上步骤进入到LFS编译环境。<br>补充：通常我们在开机后，启动的第一个shell称之为login shell,当进入GUI界面后，不需要输入密码启动的shell称之为non-login shell。这两种shell是有区别的，大家都知道shell的运行是需要环境变量的支持的。配置这些环境变量的文件就是配置shell工作环境的文件。两种shell在读取配置文件时有很大的不同，下面是总结它们分别读取哪些配置文件：<br>login shell 启动—&gt;读取/etc/porfile文件—&gt;读取~/.bash_profile文件<br>no-login shell 启动—&gt;读取~/.bashrc文件<br>exec env -i /bin/bash命令会开启一个全新的non-login shell<br>&emsp;&emsp;这个阶段的主要任务是编译出一个临时系统，这个临时系统具有必要的编译工具，这个过程又分成以下两个个步骤：<br>第一步，编译出一个全新的与主机系统无关的工具链接。（这些工具链包含了：compiler(就是我们常用的gcc,g++),assembler(就是把汇编程序变成a.obj文件的工具)，linker(就是把很多*.obj文件和库文件链接成可运行文件a.out的工具)，还有各类库文件(为后面编译其它的软件提供基础设施)，当然还有大量的其它工具）<br>第二步，得用第一步编译出来的工具，编译其它的工具（这里可以看出，在制作LFS的过程中，编译的先后顺序是非常生要的，因为有了鸡，才能下蛋）</p>
 <blockquote>
 <p>当然有几点需要注意一下：<br>一、上面两步编译出来的工具都会安装到 \$LFS/tools目录下面（也就是/mnt/lfs/tools目录下面）。LFS手册中把这个称之为临时的文件系统，就是因为\$LFS/tools这个目录在第6章结束时就会被删除，因为$LFS/tools已经使用完了，没有利用价值了。<br>二、LFS文档上的configure的位置一定要注意有三种情况，第一种是在源代码目录之外进行configure，第二种是在源代码目录里面进行configure，第三种（特殊情况）如libstdc++是在gcc源码目录的子目录里面进行configure。所以在执行命令之前一定要看好执行命令的前提条件，不妨思考一下LFS的作者为什么这么写。</p>
 </blockquote>
 <p>到此，一个可以用来编译与当前宿主系统（ubuntu14.04）无关的LFS系统的临时系统已经创建完成。可以进入LFS手册的第六章了。</p>
-<h2 id="三、通过临时系统建立LFS系统">三、通过临时系统建立LFS系统</h2><p>现在来完成第三个阶段，通过宿主系统建立LFS系统。这个过程十分简单，仅仅是按照文档操作，把需要的软件源码包一个一个解压并打开，然后<strong>configure、make、make check、make install</strong>，当然，有一些对后续操作有重要影响的部分，如编译gcc等，文档会有重要提示，提醒读者进行check。只要细心的按照文档做，就不会出现问题。</p>
-<h2 id="四、最后的配置和调整">四、最后的配置和调整</h2><p>现在就要进入最后一个阶段了，因为我的电脑是ubuntu+windows双系统，而且拥有单独的/boot分区，并已经安装了grub，所以我没有再次在LFS时安装grub，在各个脚本都按照文档配置好之后，我直接选择了重启电脑，通过原来的grub2引导这个LFS7.5系统并且成功启动，心情十分激动！<br>以下就是我通过Grub2引导LFS的命令</p>
-<pre><code>grub&gt;set root=<span class="list">(<span class="keyword">hd0</span>,gpt12)</span>
+<h2 id="三、通过临时系统建立LFS系统"><a href="#三、通过临时系统建立LFS系统" class="headerlink" title="三、通过临时系统建立LFS系统"></a>三、通过临时系统建立LFS系统</h2><p>现在来完成第三个阶段，通过宿主系统建立LFS系统。这个过程十分简单，仅仅是按照文档操作，把需要的软件源码包一个一个解压并打开，然后<strong>configure、make、make check、make install</strong>，当然，有一些对后续操作有重要影响的部分，如编译gcc等，文档会有重要提示，提醒读者进行check。只要细心的按照文档做，就不会出现问题。</p>
+<h2 id="四、最后的配置和调整"><a href="#四、最后的配置和调整" class="headerlink" title="四、最后的配置和调整"></a>四、最后的配置和调整</h2><p>现在就要进入最后一个阶段了，因为我的电脑是ubuntu+windows双系统，而且拥有单独的/boot分区，并已经安装了grub，所以我没有再次在LFS时安装grub，在各个脚本都按照文档配置好之后，我直接选择了重启电脑，通过原来的grub2引导这个LFS7.5系统并且成功启动，心情十分激动！<br>以下就是我通过Grub2引导LFS的命令</p>
+<pre><code>grub&gt;set root=(hd0,gpt12)
 </code></pre><p>这个是vmlinuz和initrd.img所在分区，要搞不清楚就用 </p>
-<pre><code>grub&gt;<span class="keyword">search</span> -s -f -<span class="keyword">n</span> /vmlinuz
+<pre><code>grub&gt;search -s -f -n /vmlinuz
 grub&gt;linux /vmlinuz root=/dev/sda12
 grub&gt;initrd /initrd.img
-grub&gt;<span class="keyword">boot</span>
+grub&gt;boot
 </code></pre><p>这里就不再单独讲解grub了，因为grub足足可以单独写成一本书，我目前也正在学习当中。至此，整个LFS系统就算编译完成了。下面说一些我的体会吧。<br>从心血来潮产生了编译LFS的想法开始，到成功启动自己编译的LFS系统，总共花了不到一周的时间，文档中也有很多没有看懂的地方，有很多命令也是直接粘贴进命令行去执行，但是经过这整个流程后，也算是对Linux有了更深刻的理解，更加体会到了Linux模块化的优美，就像小时候玩的积木一样，一个庞大的系统，竟是由这一个个小模块组装起来的。对自己今后的软件开发也有一定的指导意义。再有就是体会到了软件是一个持续改进的过程与软件测试的重要性，在软件行业，没有最好，只有更好。<br>最后，希望自己可以在Linux世界中走的更远。</p>
 
       
@@ -377,9 +377,9 @@ grub&gt;<span class="keyword">boot</span>
       
         <div class="post-tags">
           
-            <a href="/tags/lfs/" rel="tag">#lfs</a>
-          
             <a href="/tags/linux/" rel="tag">#linux</a>
+          
+            <a href="/tags/lfs/" rel="tag">#lfs</a>
           
         </div>
       
@@ -832,7 +832,7 @@ grub&gt;<span class="keyword">boot</span>
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }

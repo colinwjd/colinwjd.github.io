@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="about,life," />
+  <meta name="keywords" content="life,about," />
 
 
 
@@ -348,9 +348,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/about/" rel="tag">#about</a>
-          
             <a href="/tags/life/" rel="tag">#life</a>
+          
+            <a href="/tags/about/" rel="tag">#about</a>
           
         </div>
       
@@ -807,7 +807,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }

@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="clean,code,java," />
+  <meta name="keywords" content="java,code,clean," />
 
 
 
@@ -61,20 +61,20 @@
 
 <meta name="description" content="是的，我们就是一群代码猴子，上窜下跳，自以为领略了编程的真谛。可惜，当我们抓着几个酸桃子，得意洋洋的坐到树枝上，却对自己造成的混乱熟视无睹。那堆“可以运行”的乱麻程序，就在我们的眼皮底下慢慢腐坏。
 
-这段话引用自Robert C.Martin（鲍勃大叔）所著的《代码整洁之道》。当时刚买来这本书时，只是随便翻了翻，觉得没什么意思就扔到一边去了。最近在书堆里又偶然发现了它，便又拿出来重新读了读。而这次">
+这段话引用自Robert C.Martin（鲍勃大叔）所著的《代码整洁之道》。当时刚买来这本书时，只是随便翻了翻，觉得没什么意思就扔到一边去了。最近在书堆里又偶然发现了它，便又拿出来重新读了读。而这">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码整洁之道">
 <meta property="og:url" content="http://colinwang.cn/2015/01/30/CleanCode/index.html">
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="是的，我们就是一群代码猴子，上窜下跳，自以为领略了编程的真谛。可惜，当我们抓着几个酸桃子，得意洋洋的坐到树枝上，却对自己造成的混乱熟视无睹。那堆“可以运行”的乱麻程序，就在我们的眼皮底下慢慢腐坏。
 
-这段话引用自Robert C.Martin（鲍勃大叔）所著的《代码整洁之道》。当时刚买来这本书时，只是随便翻了翻，觉得没什么意思就扔到一边去了。最近在书堆里又偶然发现了它，便又拿出来重新读了读。而这次">
+这段话引用自Robert C.Martin（鲍勃大叔）所著的《代码整洁之道》。当时刚买来这本书时，只是随便翻了翻，觉得没什么意思就扔到一边去了。最近在书堆里又偶然发现了它，便又拿出来重新读了读。而这">
 <meta property="og:updated_time" content="2015-06-18T08:04:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代码整洁之道">
 <meta name="twitter:description" content="是的，我们就是一群代码猴子，上窜下跳，自以为领略了编程的真谛。可惜，当我们抓着几个酸桃子，得意洋洋的坐到树枝上，却对自己造成的混乱熟视无睹。那堆“可以运行”的乱麻程序，就在我们的眼皮底下慢慢腐坏。
 
-这段话引用自Robert C.Martin（鲍勃大叔）所著的《代码整洁之道》。当时刚买来这本书时，只是随便翻了翻，觉得没什么意思就扔到一边去了。最近在书堆里又偶然发现了它，便又拿出来重新读了读。而这次">
+这段话引用自Robert C.Martin（鲍勃大叔）所著的《代码整洁之道》。当时刚买来这本书时，只是随便翻了翻，觉得没什么意思就扔到一边去了。最近在书堆里又偶然发现了它，便又拿出来重新读了读。而这">
 
 
 
@@ -384,11 +384,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/clean/" rel="tag">#clean</a>
+            <a href="/tags/java/" rel="tag">#java</a>
           
             <a href="/tags/code/" rel="tag">#code</a>
           
-            <a href="/tags/java/" rel="tag">#java</a>
+            <a href="/tags/clean/" rel="tag">#clean</a>
           
         </div>
       
@@ -845,7 +845,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }

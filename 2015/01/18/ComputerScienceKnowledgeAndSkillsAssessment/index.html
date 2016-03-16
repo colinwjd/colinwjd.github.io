@@ -70,6 +70,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机科学知识和技能评估">
 <meta name="twitter:description" content="前段时间在网上看到《30分钟，让你成为更好的程序员》这篇文章，觉得很有实用价值，对我也很有启发。通过画一张图表分析自己的知识和技能，很高效而且很实用，所以我也对自己的知识和技能进行了分析。也正如那篇文章所说，这个图表并不是要详细列出自己所有的知识和技能，而是让你自己对自己的专业技能有一个全局的了解。下图就是我自己现阶段的相关专业技能评估，每个技能分为5个等级，1代表了解但没有实际操作过，5代表熟练">
+<meta name="twitter:image" content="http://wjd1218.qiniudn.com/Skills.jpg">
 
 
 
@@ -805,7 +806,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }

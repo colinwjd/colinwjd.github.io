@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="concurrent,hashmap,java," />
+  <meta name="keywords" content="java,concurrent,hashmap," />
 
 
 
@@ -70,6 +70,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ConcurrentHashMap实现原理">
 <meta name="twitter:description" content="寒假阶段复习了下Java集合框架，感觉有些收获，但是文中没有提到有关并发集合的内容，这篇文章就来谈谈并发散列表——ConcurrentHashMap，我们知道HashMap本身并不是线程安全的，如果程序需要在多线程的环境下运行，那么我们可以选择Hashtable做为替代，但是看过Hashtable源码的同学应该都知道，Hashtable内部实现是将需要同步的方法加上synchronized关键字来">
+<meta name="twitter:image" content="http://wjd1218.qiniudn.com/ConcurrentHashMap.png">
 
 
 
@@ -349,11 +350,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/java/" rel="tag">#java</a>
+          
             <a href="/tags/concurrent/" rel="tag">#concurrent</a>
           
             <a href="/tags/hashmap/" rel="tag">#hashmap</a>
-          
-            <a href="/tags/java/" rel="tag">#java</a>
           
         </div>
       
@@ -810,7 +811,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }

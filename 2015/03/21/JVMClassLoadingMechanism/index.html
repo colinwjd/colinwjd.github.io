@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="classloader,java,jvm," />
+  <meta name="keywords" content="java,jvm,classloader," />
 
 
 
@@ -342,13 +342,13 @@
 
       
         <p>几个月前写了<a href="http://wjd1218.github.io/2014/12/12/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%8E%9F%E7%90%86/" target="_blank" rel="external">深入理解Java类加载原理</a>这篇文章，简单的谈了下我对Java类加载的理解，最近这段时间又研习了《深入理解Java虚拟机》一书，对JVM的类加载机制又有了更加系统的认识，下面我就再来讲讲学习心得吧。</p>
-<h2 id="虚拟机如何进行类的加载">虚拟机如何进行类的加载</h2><ol>
+<h2 id="虚拟机如何进行类的加载"><a href="#虚拟机如何进行类的加载" class="headerlink" title="虚拟机如何进行类的加载"></a>虚拟机如何进行类的加载</h2><ol>
 <li>通过一个类的全限定名来获取定义此类的二进制字节流。</li>
 <li>将这个字节流所代表的静态存储结构转化为方法区中的运行时数据结构。</li>
 <li>在内存（对于HotSpot虚拟机来说，这个内存是指方法区）中生成一个代表这个类的java.lang.Class对象，作为方法区中这个类型信息的访问入口。</li>
 </ol>
-<h2 id="对加载进内存的类的准备">对加载进内存的类的准备</h2><p>类刚刚被加载进内存之后还不能直接使用，需要进行基础的准备，在准备阶段，会对类变量（静态变量或理解成全局变量）进行赋初值（这个初值为数据类型的“零值”）的操作，类变量使用的内存在方法区中分配，对于方法区的介绍请见<a href="http://wjd1218.github.io/2015/03/19/JVM%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90/" target="_blank" rel="external">JVM自动内存管理机制分析</a>这篇文章。而把类变量赋成程序员指定的值是在类进行<strong>初始化</strong>的阶段完成的，这个操作位于类的构造器<code>&lt;clinit&gt;()</code>中。比如代码<code>public static int value = 1218;</code>，在经过准备阶段之后，value的值为0，在经过初始化阶段之后value的值才为1218。但是如果给value变量加上final修饰，那么在准备阶段value的值就会被设置为1218。</p>
-<h2 id="类的初始化">类的初始化</h2><h3 id="何时对类进行初始化">何时对类进行初始化</h3><ol>
+<h2 id="对加载进内存的类的准备"><a href="#对加载进内存的类的准备" class="headerlink" title="对加载进内存的类的准备"></a>对加载进内存的类的准备</h2><p>类刚刚被加载进内存之后还不能直接使用，需要进行基础的准备，在准备阶段，会对类变量（静态变量或理解成全局变量）进行赋初值（这个初值为数据类型的“零值”）的操作，类变量使用的内存在方法区中分配，对于方法区的介绍请见<a href="http://wjd1218.github.io/2015/03/19/JVM%E8%87%AA%E5%8A%A8%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90/" target="_blank" rel="external">JVM自动内存管理机制分析</a>这篇文章。而把类变量赋成程序员指定的值是在类进行<strong>初始化</strong>的阶段完成的，这个操作位于类的构造器<code>&lt;clinit&gt;()</code>中。比如代码<code>public static int value = 1218;</code>，在经过准备阶段之后，value的值为0，在经过初始化阶段之后value的值才为1218。但是如果给value变量加上final修饰，那么在准备阶段value的值就会被设置为1218。</p>
+<h2 id="类的初始化"><a href="#类的初始化" class="headerlink" title="类的初始化"></a>类的初始化</h2><h3 id="何时对类进行初始化"><a href="#何时对类进行初始化" class="headerlink" title="何时对类进行初始化"></a>何时对类进行初始化</h3><ol>
 <li>使用new关键字实例化对象时。</li>
 <li>访问类的静态字段时，但是被final修饰的静态字段除外。</li>
 <li>调用一个类的静态方法时。</li>
@@ -358,8 +358,8 @@
 <li>当使用JDK1.7的动态语言支持时，java.lang.invoke.MethodHandle实例最后的解析结果REF_getStatic、REF_putStatic、REF_invokeStatic的方法句柄所对应的类还未初始化时。</li>
 </ol>
 <p>这几种方式称为对类的主动引用，而其他的任何方式引用类都不会触发类的初始化，称为被动引用。</p>
-<h3 id="初始化的过程">初始化的过程</h3><p>执行类构造器<code>&lt;clinit&gt;()</code>方法，该方法由编译器自动收集类中的所有类变量的赋值动作和静态语句块中的语句合并产生的，该方法不同于类的构造函数（实例构造器），构造函数是用于创建对象的，而类构造器是用来创建类的。在多线程环境下虚拟机会保证该方法被正确的同步，并且在同一个类加载器下，一个类只会被初始化一次。我觉得可以这样理解，类的初始化表示创建一个构造对象的模版，而对象的初始化则表示调用构造方法构造一个对象。</p>
-<h2 id="类加载器">类加载器</h2><p>顾名思义，类加载器是用来加载类的，每一个类加载器都拥有自己的类命名空间，即由两个类加载器分别加载的类不会相等。<strong>Java的类加载遵循双亲委派模型，即当一个加载器收到了加载类的请求时，它首先会把这项工作委派给父类加载器去完成，当父类加载器反馈自己无法完成加载请求（它的搜索范围没有找到所需的类）时，子类才会尝试自己加载。</strong>这种机制保证了越基础的类由越上层的类加载器加载，因此java.lang.Object在多种类加载器环境中都是同一个类。如果用户自己编写了一个java.lang.Object，那么这个类就根本不会被加载进内存。</p>
+<h3 id="初始化的过程"><a href="#初始化的过程" class="headerlink" title="初始化的过程"></a>初始化的过程</h3><p>执行类构造器<code>&lt;clinit&gt;()</code>方法，该方法由编译器自动收集类中的所有类变量的赋值动作和静态语句块中的语句合并产生的，该方法不同于类的构造函数（实例构造器），构造函数是用于创建对象的，而类构造器是用来创建类的。在多线程环境下虚拟机会保证该方法被正确的同步，并且在同一个类加载器下，一个类只会被初始化一次。我觉得可以这样理解，类的初始化表示创建一个构造对象的模版，而对象的初始化则表示调用构造方法构造一个对象。</p>
+<h2 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h2><p>顾名思义，类加载器是用来加载类的，每一个类加载器都拥有自己的类命名空间，即由两个类加载器分别加载的类不会相等。<strong>Java的类加载遵循双亲委派模型，即当一个加载器收到了加载类的请求时，它首先会把这项工作委派给父类加载器去完成，当父类加载器反馈自己无法完成加载请求（它的搜索范围没有找到所需的类）时，子类才会尝试自己加载。</strong>这种机制保证了越基础的类由越上层的类加载器加载，因此java.lang.Object在多种类加载器环境中都是同一个类。如果用户自己编写了一个java.lang.Object，那么这个类就根本不会被加载进内存。</p>
 <ul>
 <li>启动类加载器：BootStrap ClassLoader，不能被Java程序直接引用，如果需要把类加载请求委派给它，只需要使用null即可。它负责加载Java的核心库。</li>
 <li>扩展类加载器：Extension ClassLoader，用来加载Java扩展库。</li>
@@ -380,11 +380,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/classloader/" rel="tag">#classloader</a>
-          
             <a href="/tags/java/" rel="tag">#java</a>
           
             <a href="/tags/jvm/" rel="tag">#jvm</a>
+          
+            <a href="/tags/classloader/" rel="tag">#classloader</a>
           
         </div>
       
@@ -841,7 +841,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }

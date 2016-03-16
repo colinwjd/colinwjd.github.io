@@ -70,6 +70,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解Java类加载原理">
 <meta name="twitter:description" content="虽然每天都在用Java，现在做的项目后台也是用的Java语言，近期帮师兄做的算法实验也是用Java实现的，但是总觉得自己对这门语言学习的不够深入，仅仅停留在会用的层面上。今天看了一位中科大师姐的文章，觉得自己很有必要再深入学习这门语言，还需要加深自己对Java的理解。我个人觉得，对一个程序员来说，理解力十分重要。一门编程语言，学会使用很容易，但是要真正理解这门语言的设计哲学似乎就没那么容易了。而一">
+<meta name="twitter:image" content="http://wjd1218.qiniudn.com/JavaClassloader.jpg">
 
 
 
@@ -333,9 +334,9 @@
         <p>虽然每天都在用Java，现在做的项目后台也是用的Java语言，近期帮师兄做的算法实验也是用Java实现的，但是总觉得自己对这门语言学习的不够深入，仅仅停留在会用的层面上。今天看了一位中科大师姐的文章，觉得自己很有必要再深入学习这门语言，还需要加深自己对Java的理解。我个人觉得，对一个程序员来说，理解力十分重要。一门编程语言，学会使用很容易，但是要真正理解这门语言的设计哲学似乎就没那么容易了。而一但真正理解了，那么就会对自身有一个质的提升。</p>
 <hr>
 <p>接下来就谈谈正题吧，Java类加载机制这个词相信对于任何一个使用过Java的人都不会陌生，但是并不是每一个写Java程序的人都十分清楚Java类是什么时候被加载的，是什么时候被初始化的，下面我们就来分析一下吧。</p>
-<h2 id="类的加载">类的加载</h2><p>首先要清楚，类的加载和类的初始化是不同的。类的加载是由类加载器完成的，类加载器也是一个程序，如ClassLoader类就是一个类加载器，它也是用Java语言写的，可以通过继承并重写它的方法来实现自己的类加载方式。常见的类加载方式是当用到这个类的时候，系统才加载这个类。一个JVM中可以有多个类加载器，如下图</p>
+<h2 id="类的加载"><a href="#类的加载" class="headerlink" title="类的加载"></a>类的加载</h2><p>首先要清楚，类的加载和类的初始化是不同的。类的加载是由类加载器完成的，类加载器也是一个程序，如ClassLoader类就是一个类加载器，它也是用Java语言写的，可以通过继承并重写它的方法来实现自己的类加载方式。常见的类加载方式是当用到这个类的时候，系统才加载这个类。一个JVM中可以有多个类加载器，如下图</p>
 <p> <img src="http://wjd1218.qiniudn.com/JavaClassloader.jpg" alt="Java类加载器的树状结构"></p>
-<h2 id="类的初始化">类的初始化</h2><p>而类的初始化发生在类加载完成之后，这时会把类的<strong>静态属性</strong>初始化。当类发生以下情况时也会初始化这个类：</p>
+<h2 id="类的初始化"><a href="#类的初始化" class="headerlink" title="类的初始化"></a>类的初始化</h2><p>而类的初始化发生在类加载完成之后，这时会把类的<strong>静态属性</strong>初始化。当类发生以下情况时也会初始化这个类：</p>
 <ol>
 <li>通过使用new关键字创建实例</li>
 <li>使用Class.forName()反射创建实例（有可能导致ClassNotFoundException）</li>
@@ -344,7 +345,7 @@
 <li>类的静态域被访问，而且它不是常量（没有final修饰，被final关键字修饰的常量为编译时常量，不会触发类的初始化）</li>
 <li>在顶层类中执行assert语句</li>
 </ol>
-<h2 id="类的初始化步骤">类的初始化步骤</h2><ol>
+<h2 id="类的初始化步骤"><a href="#类的初始化步骤" class="headerlink" title="类的初始化步骤"></a>类的初始化步骤</h2><ol>
 <li>类按照代码从上到下的顺序初始化，所以声明在顶部的字段初始化早于底部的字段</li>
 <li>超类的初始化早于子类和衍生类</li>
 <li>如果类的初始化是由于访问静态域而触发，那么只有该声明静态域的类被初始化，而不会触发超类或者子类的初始化，即使该类的静态域被子类或子接口或者它的实现类所引用</li>
@@ -352,55 +353,55 @@
 <li>静态域的初始化在类的静态初始化期间，<strong>非静态域的初始化时在类的实例创建期间</strong>，这意味这静态域初始化在非静态域之前</li>
 <li>非静态域通过构造器初始化，子类在做任何初始化之前构造器会隐含地调用父类的构造器</li>
 </ol>
-<h2 id="示例代码">示例代码</h2><p>定义父类</p>
+<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><p>定义父类</p>
 <pre><code>package org.colin.classinit;
-<span class="keyword">public</span> <span class="keyword">class</span> <span class="title">SuperClass</span> {
-    <span class="keyword">static</span> {
-        System.<span class="keyword">out</span>.println(<span class="string">"SuperClass:Static block of Super class is initialized!"</span>);
+public class SuperClass {
+    static {
+        System.out.println(&quot;SuperClass:Static block of Super class is initialized!&quot;);
     }
     {
-        System.<span class="keyword">out</span>.println(<span class="string">"SuperClass:Non static block of Super class is initialized!"</span>);
+        System.out.println(&quot;SuperClass:Non static block of Super class is initialized!&quot;);
     }
 }
 </code></pre><p>定义子类</p>
-<pre><code><span class="keyword">package</span> org.colin.classinit;
-public <span class="class"><span class="keyword">class</span> <span class="title">SubClass</span> <span class="keyword"><span class="keyword">extends</span></span> <span class="title">SuperClass</span> {</span>
+<pre><code>package org.colin.classinit;
+public class SubClass extends SuperClass {
     static {
-        <span class="type">System</span>.out.println(<span class="string">"SubClass:Static block of Sub class is initialized!"</span>);
+        System.out.println(&quot;SubClass:Static block of Sub class is initialized!&quot;);
     }
     {
-        <span class="type">System</span>.out.println(<span class="string">"SubClass:Non static blocks of Sub class is initialized!"</span>);
+        System.out.println(&quot;SubClass:Non static blocks of Sub class is initialized!&quot;);
     }
 }
 </code></pre><p>定义一个不被使用的类</p>
 <pre><code>package org.colin.classinit;
-<span class="keyword">public</span> <span class="keyword">class</span> <span class="title">NotUsedClass</span> {
-    <span class="keyword">static</span> {
-        System.<span class="keyword">out</span>.println(<span class="string">"NotUsedClass:NotUsedClass has been initialized!"</span>);
+public class NotUsedClass {
+    static {
+        System.out.println(&quot;NotUsedClass:NotUsedClass has been initialized!&quot;);
     }
 }
 </code></pre><p>测试类</p>
-<pre><code><span class="keyword">package</span> org.colin.classinit;
-<span class="keyword">public</span> class ClassInitializationTest {
-    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) {
-        NotUsedClass notUsedClass = <span class="keyword">null</span>;
-        SubClass subClass = <span class="keyword">new</span> SubClass();
-        System.out.<span class="built_in">println</span>((<span class="keyword">Object</span>) notUsedClass == (<span class="keyword">Object</span>) subClass);
+<pre><code>package org.colin.classinit;
+public class ClassInitializationTest {
+    public static void main(String[] args) {
+        NotUsedClass notUsedClass = null;
+        SubClass subClass = new SubClass();
+        System.out.println((Object) notUsedClass == (Object) subClass);
     }
 }
 </code></pre><p>输出结果为：</p>
-<pre><code>SuperClass:<span class="keyword">Static</span> <span class="keyword">block</span> <span class="keyword">of</span> Super <span class="keyword">class</span> <span class="keyword">is</span> initialized!
-SubClass:<span class="keyword">Static</span> <span class="keyword">block</span> <span class="keyword">of</span> Sub <span class="keyword">class</span> <span class="keyword">is</span> initialized!
-SuperClass:Non <span class="keyword">static</span> <span class="keyword">block</span> <span class="keyword">of</span> Super <span class="keyword">class</span> <span class="keyword">is</span> initialized!
-SubClass:Non <span class="keyword">static</span> blocks <span class="keyword">of</span> Sub <span class="keyword">class</span> <span class="keyword">is</span> initialized!
-<span class="keyword">false</span>
+<pre><code>SuperClass:Static block of Super class is initialized!
+SubClass:Static block of Sub class is initialized!
+SuperClass:Non static block of Super class is initialized!
+SubClass:Non static blocks of Sub class is initialized!
+false
 </code></pre><p>由此可见：</p>
 <ol>
 <li>超类初始化早于子类</li>
 <li>静态变量或代码块初始化早于非静态块和域</li>
 <li>没使用的类根本不会被初始化，因为他没有被使用</li>
 </ol>
-<h2 id="总结">总结</h2><p>Java类在第一次被<strong>用到</strong>的时候，被类加载器加载，接着初始化静态部分（被final关键字修饰的常量不会被初始化，因为它在编译的时候就已经确定了），如果有父类，会先进行父类的初始化（Java需要保证父类的成员初始化早于子类的成员初始化，否则，在子类中使用父类的成员变量就会出现问题）。当这个类被实例化的时候，会初始化类的非静态部分。因为静态部分是属于类本身的，类初始化就要初始化它。而非静态部分是属于具体实例的，所以在类被实例化时初始化。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Java类在第一次被<strong>用到</strong>的时候，被类加载器加载，接着初始化静态部分（被final关键字修饰的常量不会被初始化，因为它在编译的时候就已经确定了），如果有父类，会先进行父类的初始化（Java需要保证父类的成员初始化早于子类的成员初始化，否则，在子类中使用父类的成员变量就会出现问题）。当这个类被实例化的时候，会初始化类的非静态部分。因为静态部分是属于类本身的，类初始化就要初始化它。而非静态部分是属于具体实例的，所以在类被实例化时初始化。</p>
 
       
     </div>
@@ -872,7 +873,7 @@ SubClass:Non <span class="keyword">static</span> blocks <span class="keyword">of
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }

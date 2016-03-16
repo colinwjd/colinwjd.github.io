@@ -330,7 +330,7 @@
 
       
         <p>前段时间写过一篇关于concurrentHashMap的文章<a href="http://colin.coding.io/2015/03/24/PrincipleOfConcurrentHashMap/" target="_blank" rel="external">ConcurrentHashMap实现原理</a>，其中讲到了实现ConcurrentHashMap的原理，这篇文章就讲一下CopyOnWrite的实现原理。Java中提供了两个CopyOnWrite容器，分别是CopyOnWriteArrayList和CopyOnWriteArraySet。如果想要高效的使用这两个容器，我觉的首先要弄懂CopyOnWrite的原理。那么下面就先来谈谈什么是CopyOnWrite吧。</p>
-<h2 id="什么是CopyOnWrite">什么是CopyOnWrite</h2><p>CopyOnWrite即写时复制，该机制在于控制对数据的操作，什么时候需要对数据的操作进行控制呢，当然是在并发的时候，如果程序只是单线程的，所有对数据的操作都是顺序执行，那么数据的一致性就自然能得到保证。但是当有多个线程并发对数据进行操作的时候，情况就没那么简单了，一个线程修改了数据，另一个线程在数据被修改的过程中又读取了数据并对它进行修改，然后把修改的结果写回主内存，于是就会丢失一个线程对数据所做的修改。这种情况可以通过线程同步来解决，但是同步代码会大大降低并发效率。那么，有没有什么更好的方法来解决这个问题呢，当然，这个方法就是CopyOnWrite！首先我们可以来分析一下对数据的并发访问有哪些情况，如果我们仔细一想就会发现，并发访问数据的情况也无非下面这几种：读读、读写、写读、写写。针对这几种情况，可以分别对并发效率进行优化。</p>
+<h2 id="什么是CopyOnWrite"><a href="#什么是CopyOnWrite" class="headerlink" title="什么是CopyOnWrite"></a>什么是CopyOnWrite</h2><p>CopyOnWrite即写时复制，该机制在于控制对数据的操作，什么时候需要对数据的操作进行控制呢，当然是在并发的时候，如果程序只是单线程的，所有对数据的操作都是顺序执行，那么数据的一致性就自然能得到保证。但是当有多个线程并发对数据进行操作的时候，情况就没那么简单了，一个线程修改了数据，另一个线程在数据被修改的过程中又读取了数据并对它进行修改，然后把修改的结果写回主内存，于是就会丢失一个线程对数据所做的修改。这种情况可以通过线程同步来解决，但是同步代码会大大降低并发效率。那么，有没有什么更好的方法来解决这个问题呢，当然，这个方法就是CopyOnWrite！首先我们可以来分析一下对数据的并发访问有哪些情况，如果我们仔细一想就会发现，并发访问数据的情况也无非下面这几种：读读、读写、写读、写写。针对这几种情况，可以分别对并发效率进行优化。</p>
 <ul>
 <li><strong>读读</strong>这种情况是不需要加锁的，多个线程可以同时读取数据。</li>
 <li><strong>读写</strong>这种情况我们可以将<strong>读锁</strong>和<strong>写锁</strong>分离，读取数据时加读锁，修改数据时加写锁，读锁可以被多个线程持有，适用于读多写少的情况。</li>
@@ -338,8 +338,8 @@
 <li><strong>写写</strong>这种情况就只好进行同步了，但是仍然可以通过降低锁的粒度来进行优化。</li>
 </ul>
 <p>其实上面所讲到的这些，不仅仅是在Java多线程并发处理领域有应用，在数据库并发事务处理方面也有广泛应用，这篇文章<a href="http://colin.coding.io/2015/03/18/DatabaseTransactionAndTheIsolationLevel/" target="_blank" rel="external">数据库事务与其隔离级别</a>中有相关概念的介绍。</p>
-<h2 id="对多线程并发的分析">对多线程并发的分析</h2><p>Java类库中实现了很多并发容器，比如concurrent包下实现的ConcurrentHashMap，CopyOnWriteArrayList等。这些并发容器与同步容器实现机制不同，在同步容器，比如Hashtable、Vector、……中，是通过synchronized关键字获取对象锁来实现同步，这个锁将会锁住整个容器，如果容器的规模很大时对容器进行遍历将会消耗很长的时间，而因为锁的存在，其他线程必须等待。持有锁的时间越长，那么在锁上的竞争就可能越激烈，如果等待锁的线程很多，将极大的降低吞吐量和CPU利用率。如果不希望在对容器中的内容进行迭代时锁住容器，有一种方法就是把该容器复制（复制时仍需要对容器加锁）一份，使线程在容器副本中对元素进行迭代。因此多个线程可以同时对CopyOnWrite容器进行迭代而不彼此干扰也不会被修改容器的线程干扰。但是，当容器中元素数量过多时，底层数组的复制仍然会有很大的开销。</p>
-<h2 id="CopyOnWrite适用场景">CopyOnWrite适用场景</h2><p>CopyOnWrite机制适用于读多写少的场景，比如搜索引擎对某些关键词的过滤使用的黑名单，黑名单很久才会更新一次，但是几乎每时每刻都在被读取。这种机制不适用于对数据实时性要求较高的场景中，因为一个线程修改了数据，其他线程并不一定能够马上读取到新的数据。</p>
+<h2 id="对多线程并发的分析"><a href="#对多线程并发的分析" class="headerlink" title="对多线程并发的分析"></a>对多线程并发的分析</h2><p>Java类库中实现了很多并发容器，比如concurrent包下实现的ConcurrentHashMap，CopyOnWriteArrayList等。这些并发容器与同步容器实现机制不同，在同步容器，比如Hashtable、Vector、……中，是通过synchronized关键字获取对象锁来实现同步，这个锁将会锁住整个容器，如果容器的规模很大时对容器进行遍历将会消耗很长的时间，而因为锁的存在，其他线程必须等待。持有锁的时间越长，那么在锁上的竞争就可能越激烈，如果等待锁的线程很多，将极大的降低吞吐量和CPU利用率。如果不希望在对容器中的内容进行迭代时锁住容器，有一种方法就是把该容器复制（复制时仍需要对容器加锁）一份，使线程在容器副本中对元素进行迭代。因此多个线程可以同时对CopyOnWrite容器进行迭代而不彼此干扰也不会被修改容器的线程干扰。但是，当容器中元素数量过多时，底层数组的复制仍然会有很大的开销。</p>
+<h2 id="CopyOnWrite适用场景"><a href="#CopyOnWrite适用场景" class="headerlink" title="CopyOnWrite适用场景"></a>CopyOnWrite适用场景</h2><p>CopyOnWrite机制适用于读多写少的场景，比如搜索引擎对某些关键词的过滤使用的黑名单，黑名单很久才会更新一次，但是几乎每时每刻都在被读取。这种机制不适用于对数据实时性要求较高的场景中，因为一个线程修改了数据，其他线程并不一定能够马上读取到新的数据。</p>
 
       
     </div>
@@ -813,7 +813,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }

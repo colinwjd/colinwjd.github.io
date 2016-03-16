@@ -347,21 +347,21 @@ sudo vim /etc/mysql/my.cnf
         <p>今天在实验室的服务器上安装MySQL，装好后却发现远程的电脑无法连接到MySql服务器。服务器操作系统是Ubuntu 14.04。于是在网上查了些资料，折腾了半天后终于搞定了，下面是具体的步骤。</p>
 <hr>
 <p>安装好MySQL后，修改如下文件</p>
-<pre><code>sudo <span class="keyword">vim</span> /etc/mysql/my.<span class="keyword">cnf</span>
+<pre><code>sudo vim /etc/mysql/my.cnf
 </code></pre><p>找到<code>bind-address = 127.0.0.1</code>，将绑定地址改成<code>0.0.0.0</code>或者直接将该行注释掉</p>
 <p>然后启动MySQL服务</p>
-<pre><code>sudo /etc/init.d/mysql <span class="literal">start</span>
+<pre><code>sudo /etc/init.d/mysql start
 </code></pre><p>打开MySQL</p>
-<pre><code><span class="title">sudo</span> mysql -uroot -p
+<pre><code>sudo mysql -uroot -p
 </code></pre><p>输入密码，进入MySQL命令行，在MySQL命令行中执行下列命令</p>
-<pre><code><span class="operator"><span class="keyword">grant</span> all <span class="keyword">PRIVILEGES</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> root@<span class="string">'%'</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'onePassword'</span>;</span>
+<pre><code>grant all PRIVILEGES on *.* to root@&apos;%&apos; identified by &apos;onePassword&apos;;
 </code></pre><p>执行</p>
-<pre><code><span class="operator"><span class="keyword">use</span> information_schema
-<span class="keyword">select</span> * <span class="keyword">from</span> user_privileges;</span>
+<pre><code>use information_schema
+select * from user_privileges;
 </code></pre><p>如果查询有如下的结果：<code>&#39;root&#39;@&#39;%&#39;</code>，说明mysql已经授权远程连接。<br>退出MySQL命令行，在终端中执行</p>
-<pre><code>iptables -A INPUT -<span class="tag">p</span> tcp --dport <span class="number">3306</span> -j ACCEPT
+<pre><code>iptables -A INPUT -p tcp --dport 3306 -j ACCEPT
 </code></pre><p>将3306端口添加到iptables中。<br>最后执行以下命令，重新启动MySQL服务</p>
-<pre><code>sudo <span class="regexp">/etc/i</span>nit.d<span class="regexp">/mysql restart</span>
+<pre><code>sudo /etc/init.d/mysql restart
 </code></pre><p>然后其他的电脑就可以远程连接服务器上的MySLQ了，问题虽然不大，也不是第一次遇到了，但是每次都要花费很多的时间才能解决，做个小记录，以防今后再碰到类似的问题，又要从头开始。</p>
 
       
@@ -836,7 +836,7 @@ sudo vim /etc/mysql/my.cnf
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }

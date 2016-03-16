@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="aop,java,spring," />
+  <meta name="keywords" content="java,spring,aop," />
 
 
 
@@ -70,6 +70,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring之思">
 <meta name="twitter:description" content="一直在断断续续的学习Spring框架，到目前为止，虽然没有在实际项目中应用过，但也算是有一些收获了吧。由于刚刚读完吴军博士的《数学之美》，深受其启发，觉得无论做什么事情，心中都一定要有大格局。就像所谓的学习，我看来就可以分成两种，一种是“道”的学习，另一种是“术”的学习。道就是原理，术就是技术。技术可以千变万化，而原理永远都是那个原理。这也是我最近又认真学习算法知识的原因之一——新技术虽然层出不穷">
+<meta name="twitter:image" content="http://wjd1218.qiniudn.com/SpringAOP.png">
 
 
 
@@ -349,11 +350,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/aop/" rel="tag">#aop</a>
-          
             <a href="/tags/java/" rel="tag">#java</a>
           
             <a href="/tags/spring/" rel="tag">#spring</a>
+          
+            <a href="/tags/aop/" rel="tag">#aop</a>
           
         </div>
       
@@ -810,7 +811,7 @@
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
