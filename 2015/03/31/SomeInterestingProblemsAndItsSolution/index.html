@@ -566,9 +566,6 @@
 
       
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
           <div class="post-toc">
             
               
@@ -576,9 +573,6 @@
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现一个算法，找出单项链表中倒数第K个结点。"><span class="nav-number">1.</span> <span class="nav-text">实现一个算法，找出单项链表中倒数第K个结点。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检测链表是否存在环路。"><span class="nav-number">2.</span> <span class="nav-text">检测链表是否存在环路。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码-n-amp-n-1-0是什么含义？"><span class="nav-number">3.</span> <span class="nav-text">代码(n & (n-1)) == 0是什么含义？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现一个方法，不使用临时变量，直接交换两个数。"><span class="nav-number">4.</span> <span class="nav-text">实现一个方法，不使用临时变量，直接交换两个数。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现一个方法，将两个数字相加，不能使用“-”号或其他运算符。"><span class="nav-number">5.</span> <span class="nav-text">实现一个方法，将两个数字相加，不能使用“+”号或其他运算符。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有20瓶药丸，其中19瓶装有1克-粒的药丸，余下一瓶装有1-1克-粒的药丸。给你一台精准的天平，怎么找出比较重的那瓶药丸？天平只能用一次。"><span class="nav-number">6.</span> <span class="nav-text">有20瓶药丸，其中19瓶装有1克/粒的药丸，余下一瓶装有1.1克/粒的药丸。给你一台精准的天平，怎么找出比较重的那瓶药丸？天平只能用一次。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给定两条绳子，每条绳子烧尽正好需要一个小时，怎样用这两条绳子准确计量十五分钟？绳子密度不均匀。"><span class="nav-number">7.</span> <span class="nav-text">给定两条绳子，每条绳子烧尽正好需要一个小时，怎样用这两条绳子准确计量十五分钟？绳子密度不均匀。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给定一个方法isSubString-可以用来检查一个字符串是否是其他字符串的子串，再给定两个字符串s1和s2。实现一个方法，检查s2是否为s1旋转而成，且只能调用一次isSubString-方法。"><span class="nav-number">8.</span> <span class="nav-text">给定一个方法isSubString()可以用来检查一个字符串是否是其他字符串的子串，再给定两个字符串s1和s2。实现一个方法，检查s2是否为s1旋转而成，且只能调用一次isSubString()方法。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给定一个能产生0到4之间整数随机数的方法rand5-，实现一个能产生0到6之间整数随机数的方法rand7-。"><span class="nav-number">9.</span> <span class="nav-text">给定一个能产生0到4之间整数随机数的方法rand5()，实现一个能产生0到6之间整数随机数的方法rand7()。</span></a></li></ol></div>
             
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
           </div>
         </section>
       
@@ -665,165 +659,9 @@
   
 
   
-  
-<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    NexT.motion.middleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          NexT.utils.displaySidebar();
-        }
-      }
-    };
-  });
-</script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/vendors/jquery-scrollintoview/jquery.scrollintoview.min.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
 
 
 

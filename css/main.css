@@ -393,6 +393,13 @@ dd {
   font-size: 14px;
   color: #999;
 }
+.scrollbar-measure {
+  width: 100px;
+  height: 100px;
+  overflow: scroll;
+  position: absolute;
+  top: -9999px;
+}
 .use-motion .motion-element {
   opacity: 0;
 }
@@ -499,16 +506,13 @@ body {
 }
 pre,
 .highlight {
-  background: #f7f7f7;
+  overflow: auto;
   margin: 20px 0;
   padding: 15px;
-  overflow: auto;
   font-size: 13px;
   color: #4d4d4c;
+  background: #f7f7f7;
   line-height: 1.6;
-}
-.highlight .gutter pre {
-  color: #666;
 }
 pre,
 code {
@@ -516,14 +520,14 @@ code {
 }
 code {
   word-break: break-all;
-  background: #eee;
+  background: #f7f7f7;
   text-shadow: 0 1px #fff;
   padding: 0 0.3em;
 }
 pre code {
+  padding: 0;
   background: none;
   text-shadow: none;
-  padding: 0;
 }
 .highlight pre {
   border: none;
@@ -557,6 +561,7 @@ pre code {
   float: right;
 }
 .highlight .gutter pre {
+  color: #666;
   text-align: right;
   padding-right: 20px;
 }
@@ -590,9 +595,7 @@ pre .command {
   color: #f5871f;
 }
 pre .ruby .class .title,
-pre .css .rules .attribute {
-  color: #718c00;
-}
+pre .css .rules .attribute,
 pre .string,
 pre .value,
 pre .inheritance,
@@ -1360,11 +1363,11 @@ pre .javascript .function {
   border: none;
 }
 .sidebar {
-  width: 0;
   position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
+  width: 0;
   z-index: 1040;
   box-shadow: inset 0 2px 6px #000;
   background: #222;
@@ -1512,7 +1515,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #785599;
+  background: #0a9837;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1562,27 +1565,43 @@ pre .javascript .function {
 .sidebar-panel-active {
   display: block;
 }
-.post-toc {
-  overflow: hidden;
-  position: relative;
-}
 .post-toc-empty {
   font-size: 14px;
   color: #666;
 }
-.post-toc ol {
+.post-toc-wrap {
+  overflow: hidden;
+}
+.post-toc {
   overflow: auto;
+}
+.post-toc ol {
   margin: 0;
-  padding: 0 10px 10px;
+  padding: 0 2px 5px 10px;
   text-align: left;
   list-style: none;
   font-size: 14px;
 }
+.post-toc ol > ol {
+  padding-left: 0;
+}
 .post-toc ol a {
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+  transition-property: all;
   color: #999;
+  border-bottom-color: #555;
 }
 .post-toc ol a:hover {
   color: #ccc;
+  border-bottom-color: #ccc;
+}
+.post-toc .nav-item {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.8;
 }
 .post-toc .nav .nav-child {
   display: none;
@@ -1597,27 +1616,14 @@ pre .javascript .function {
   display: block;
 }
 .post-toc .nav .active > a {
-  color: #ccc;
+  color: #87daff;
+  border-bottom-color: #87daff;
 }
 .post-toc .nav .active-current > a {
   color: #87daff;
 }
 .post-toc .nav .active-current > a:hover {
   color: #87daff;
-}
-.post-toc-indicator {
-  height: 20px;
-  text-align: center;
-  color: #fff;
-  font-size: 14px;
-}
-.post-toc-indicator-top {
-  opacity: 0;
-  margin-top: 10px;
-}
-.post-toc-indicator-bottom {
-  position: absolute;
-  width: 100%;
 }
 .footer {
   font-size: 14px;
