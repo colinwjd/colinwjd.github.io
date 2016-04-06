@@ -521,13 +521,14 @@ code {
 code {
   padding: 2px 4px;
   word-break: break-all;
-  color: #222;
+  color: #555;
   background: #eee;
   border-radius: 4px;
   font-size: 13px;
 }
 pre code {
   padding: 0;
+  color: #4d4d4c;
   background: none;
   text-shadow: none;
 }
@@ -1517,7 +1518,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff4ec3;
+  background: #991466;
 }
 .links-of-blogroll {
   font-size: 13px;
