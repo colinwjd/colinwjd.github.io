@@ -1107,7 +1107,20 @@ pre .javascript .function {
   }
 }
 .posts-collapse {
+  position: relative;
+  z-index: 1010;
   margin-left: 55px;
+}
+.posts-collapse::after {
+  content: " ";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  margin-left: -2px;
+  width: 4px;
+  height: 100%;
+  background: #f5f5f5;
+  z-index: -1;
 }
 @media (max-width: 767px) {
   .posts-collapse {
@@ -1521,7 +1534,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0aff9c;
+  background: #fe8bdb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1653,6 +1666,29 @@ pre .javascript .function {
   margin-right: 10px;
 }
 .powered-by::after {
+  content: "|";
+  padding-left: 10px;
+}
+.busuanzi-count:before {
+  content: " ";
+  float: left;
+  width: 260px;
+  min-height: 25px;
+}
+.site-uv,
+.site-pv,
+.page-pv {
+  display: inline-block;
+}
+.site-uv .busuanzi-value,
+.site-pv .busuanzi-value,
+.page-pv .busuanzi-value {
+  margin: 0 5px;
+}
+.site-uv {
+  margin-right: 10px;
+}
+.site-uv::after {
   content: "|";
   padding-left: 10px;
 }
@@ -2020,19 +2056,6 @@ a.search-result {
     top: 5px;
   }
 }
-.page-archive .posts-collapse {
-  position: relative;
-  z-index: 1010;
-}
-.page-archive .posts-collapse::after {
-  top: 20px;
-  left: 0;
-  margin-left: -2px;
-  width: 4px;
-  height: 100%;
-  background: #f5f5f5;
-  z-index: -1;
-}
 .page-archive .posts-collapse .archive-move-on {
   position: absolute;
   top: 11px;
@@ -2044,11 +2067,6 @@ a.search-result {
   background: #555;
   border: 1px solid #fff;
   border-radius: 50%;
-}
-.page-archive .posts-collapse::before,
-.page-archive .posts-collapse::after {
-  content: " ";
-  position: absolute;
 }
 .category-all-page .category-all-title {
   text-align: center;
