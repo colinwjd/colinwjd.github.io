@@ -289,9 +289,9 @@
       <category term="Java" scheme="http://colinwang.cn/categories/Java/"/>
     
     
-      <category term="concurrent" scheme="http://colinwang.cn/tags/concurrent/"/>
-    
       <category term="lock" scheme="http://colinwang.cn/tags/lock/"/>
+    
+      <category term="concurrent" scheme="http://colinwang.cn/tags/concurrent/"/>
     
       <category term="cas" scheme="http://colinwang.cn/tags/cas/"/>
     
@@ -556,9 +556,9 @@
     
       <category term="java" scheme="http://colinwang.cn/tags/java/"/>
     
-      <category term="hashmap" scheme="http://colinwang.cn/tags/hashmap/"/>
-    
       <category term="concurrent" scheme="http://colinwang.cn/tags/concurrent/"/>
+    
+      <category term="hashmap" scheme="http://colinwang.cn/tags/hashmap/"/>
     
   </entry>
   
