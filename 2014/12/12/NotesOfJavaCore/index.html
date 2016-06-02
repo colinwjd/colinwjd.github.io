@@ -27,7 +27,9 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -55,6 +57,8 @@
     
     <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
+
+
 
 
 
@@ -174,7 +178,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -184,7 +188,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -194,7 +198,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -204,7 +208,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -214,7 +218,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -362,7 +366,7 @@
 <figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class <span class="type">YourHandler</span> implements <span class="type">InvocationHandler</span>&#123;</span><br><span class="line">	// 要代理的原始对象</span><br><span class="line">	private <span class="type">Object</span> obj; </span><br><span class="line">	public <span class="type">YourHandler</span>(<span class="type">Object</span> obj) &#123;</span><br><span class="line">		super();</span><br><span class="line">		this.obj = obj;</span><br><span class="line">	&#125;</span><br><span class="line">	/**</span><br><span class="line">	* 在代理实例上处理方法调用并返回结果</span><br><span class="line">	* </span><br><span class="line">	* @param proxy 代理类</span><br><span class="line">	* @param <span class="keyword">method</span> 被代理的方法</span><br><span class="line">	* @param args 该方法的参数数组</span><br><span class="line">	*/</span><br><span class="line">	public <span class="type">Object</span> invoke(<span class="type">Object</span> proxy, <span class="type">Method</span> <span class="keyword">method</span>, <span class="type">Object</span>[] args) throws <span class="type">Throwable</span> &#123;</span><br><span class="line">		<span class="type">Object</span> <span class="literal">result</span> = null;</span><br><span class="line">		// 调用之前</span><br><span class="line">		doBefore();</span><br><span class="line">		// 调用原始对象的方法</span><br><span class="line">		<span class="literal">result</span>=<span class="keyword">method</span>.invoke(obj, args);</span><br><span class="line">		// 调用之后</span><br><span class="line">		doAfter();</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	private <span class="built_in">void</span> doBefore()&#123;</span><br><span class="line">		<span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"before method invoke"</span>);</span><br><span class="line">	&#125; </span><br><span class="line">	private <span class="built_in">void</span> doAfter()&#123;</span><br><span class="line">		<span class="type">System</span>.<span class="keyword">out</span>.println(<span class="string">"after method invoke"</span>);</span><br><span class="line">	&#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
-    
+
     <div>
       
         
@@ -372,6 +376,7 @@
     <div>
       
         
+
       
     </div>
 
@@ -529,7 +534,7 @@
               <span class="links-of-author-item">
                 <a href="https://github.com/colinwjd" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-github"></i>
+                    <i class="fa fa-fw fa-github"></i>
                   
                   GitHub
                 </a>
@@ -538,7 +543,7 @@
               <span class="links-of-author-item">
                 <a href="http://weibo.com/wjd1218" target="_blank" title="Weibo">
                   
-                    <i class="fa fa-weibo"></i>
+                    <i class="fa fa-fw fa-weibo"></i>
                   
                   Weibo
                 </a>
@@ -547,7 +552,7 @@
               <span class="links-of-author-item">
                 <a href="https://www.zhihu.com/people/colinwjd" target="_blank" title="Zhihu">
                   
-                    <i class="fa fa-book"></i>
+                    <i class="fa fa-fw fa-book"></i>
                   
                   Zhihu
                 </a>
@@ -569,7 +574,7 @@
         
           <div class="links-of-blogroll motion-element links-of-blogroll-inline">
             <div class="links-of-blogroll-title">
-              <i class="fa fa-globe fa-fw"></i>
+              <i class="fa  fa-fw fa-globe"></i>
               Links
             </div>
             <ul class="links-of-blogroll-list">
@@ -757,6 +762,7 @@
       <script src="/js/src/hook-duoshuo.js"></script>
     
   
+
 
 
 
@@ -958,6 +964,12 @@
             });
           } else {
             var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
             newcounter.set("title", title);
             newcounter.set("url", url);
             newcounter.set("time", 1);
