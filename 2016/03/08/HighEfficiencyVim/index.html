@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="从零到无穷大">
 <meta property="og:description" content="编辑器简述今天编辑器的种类有很多，像Sublime Text、Atom、Notepad++、Emacs、Vim等等，相比于我提到的前几个，Emacs和Vim可以算是古董级别的了吧，但是至今这两个古董依然在被维护，被广大程序员喜爱，并封之为——上古神器！上面提到的这几款编辑器我基本都接触过，其中Emacs是了解最少的，记得有一次在iTerm里输入emacs之后，就不知道怎么退出去了，后来好像是在知乎">
 <meta property="og:image" content="http://7sbkoj.com1.z0.glb.clouddn.com/2016-03-08-%E6%88%91%E7%9A%84Vim.png">
-<meta property="og:updated_time" content="2016-03-10T11:17:20.000Z">
+<meta property="og:updated_time" content="2016-07-21T03:48:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高效Vim——编辑器之神">
 <meta name="twitter:description" content="编辑器简述今天编辑器的种类有很多，像Sublime Text、Atom、Notepad++、Emacs、Vim等等，相比于我提到的前几个，Emacs和Vim可以算是古董级别的了吧，但是至今这两个古董依然在被维护，被广大程序员喜爱，并封之为——上古神器！上面提到的这几款编辑器我基本都接触过，其中Emacs是了解最少的，记得有一次在iTerm里输入emacs之后，就不知道怎么退出去了，后来好像是在知乎">
@@ -115,6 +115,11 @@
   };
 </script>
 
+
+
+
+  <link rel="canonical" href="http://colinwang.cn/2016/03/08/HighEfficiencyVim/"/>
+
   <title> 高效Vim——编辑器之神 | 从零到无穷大 </title>
 </head>
 
@@ -130,7 +135,7 @@
 
 
   <div style="display: none;">
-    <script src="http://s6.cnzz.com/stat.php?id=1253704177&web_id=1253704177" type="text/javascript"></script>
+    <script src="http://s95.cnzz.com/z_stat.php?id=1253704177&web_id=1253704177" language="JavaScript"></script>
   </div>
 
 
@@ -227,7 +232,7 @@
       
         <li class="menu-item menu-item-search">
           
-            <a href="#" class="popup-trigger">
+            <a href="javascript:;" class="popup-trigger">
           
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -455,6 +460,7 @@
     <div>
       
         
+
       
     </div>
 
@@ -645,7 +651,7 @@
         
         
           <div class="cc-license motion-element" itemprop="license">
-            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
               <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
             </a>
           </div>
@@ -716,7 +722,7 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
@@ -838,10 +844,8 @@
 
   
     
-      
-      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="/js/src/hook-duoshuo.js"></script>
-    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
@@ -889,7 +893,7 @@
             var $resultContent = document.getElementById(content_id);
             $input.addEventListener('input', function(){
                 var matchcounts = 0;
-                var str='<ul class=\"search-result-list\">';                
+                var str='<ul class=\"search-result-list\">';
                 var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
                 $resultContent.innerHTML = "";
                 if (this.value.trim().length > 1) {
@@ -944,7 +948,7 @@
                                 var regS = new RegExp(keyword, "gi");
                                 match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
                             });
-                            
+
                             str += "<p class=\"search-result\">" + match_content +"...</p>"
                         }
                         str += "</li>";
@@ -960,7 +964,7 @@
     });}
 
     // handle and trigger popup window;
-    $('.popup-trigger').mousedown(function(e) {
+    $('.popup-trigger').click(function(e) {
       e.stopPropagation();
       if (isfetched == false) {
         searchFunc(path, 'local-search-input', 'local-search-result');
@@ -979,6 +983,7 @@
       e.stopPropagation();
     });
   </script>
+
 
   
 
@@ -1014,6 +1019,14 @@
             var element = document.getElementById(url);
 
             $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
           }
         })
         .fail(function (object, error) {

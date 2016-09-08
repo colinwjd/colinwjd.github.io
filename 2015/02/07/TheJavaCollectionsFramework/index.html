@@ -143,6 +143,11 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
   };
 </script>
 
+
+
+
+  <link rel="canonical" href="http://colinwang.cn/2015/02/07/TheJavaCollectionsFramework/"/>
+
   <title> Java集合框架 | 从零到无穷大 </title>
 </head>
 
@@ -158,7 +163,7 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
 
 
   <div style="display: none;">
-    <script src="http://s6.cnzz.com/stat.php?id=1253704177&web_id=1253704177" type="text/javascript"></script>
+    <script src="http://s95.cnzz.com/z_stat.php?id=1253704177&web_id=1253704177" language="JavaScript"></script>
   </div>
 
 
@@ -255,7 +260,7 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
       
         <li class="menu-item menu-item-search">
           
-            <a href="#" class="popup-trigger">
+            <a href="javascript:;" class="popup-trigger">
           
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -454,6 +459,7 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
     <div>
       
         
+
       
     </div>
 
@@ -650,7 +656,7 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
         
         
           <div class="cc-license motion-element" itemprop="license">
-            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
               <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
             </a>
           </div>
@@ -721,7 +727,7 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
@@ -843,10 +849,8 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
 
   
     
-      
-      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="/js/src/hook-duoshuo.js"></script>
-    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
@@ -894,7 +898,7 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
             var $resultContent = document.getElementById(content_id);
             $input.addEventListener('input', function(){
                 var matchcounts = 0;
-                var str='<ul class=\"search-result-list\">';                
+                var str='<ul class=\"search-result-list\">';
                 var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
                 $resultContent.innerHTML = "";
                 if (this.value.trim().length > 1) {
@@ -949,7 +953,7 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
                                 var regS = new RegExp(keyword, "gi");
                                 match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
                             });
-                            
+
                             str += "<p class=\"search-result\">" + match_content +"...</p>"
                         }
                         str += "</li>";
@@ -965,7 +969,7 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
     });}
 
     // handle and trigger popup window;
-    $('.popup-trigger').mousedown(function(e) {
+    $('.popup-trigger').click(function(e) {
       e.stopPropagation();
       if (isfetched == false) {
         searchFunc(path, 'local-search-input', 'local-search-result');
@@ -984,6 +988,7 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
       e.stopPropagation();
     });
   </script>
+
 
   
 
@@ -1019,6 +1024,14 @@ Iterator接口：这个接口定义了从集合中获取元素和判断集合中
             var element = document.getElementById(url);
 
             $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
           }
         })
         .fail(function (object, error) {
